@@ -106,6 +106,14 @@ The free preview is intentionally limited. It shows the method and direction, bu
 
 The tool does not require login, does not store user input, does not send data to a backend, does not call an AI API, does not allow file uploads, and does not use real customer data.
 
+## What happens after the preview
+
+A public-safe deliverable preview is available at `docs/public-safe-review-deliverable-preview.md`.
+
+It explains what a public-safe workflow review may produce after the free mini audit preview, such as a workflow idea summary, manual workflow sketch, AI touchpoint candidates, data boundary notes, human review gate notes, blocked first-step list, starter validation checklist, safe first experiment, questions before paid pilot, and recommended next decision.
+
+This remains high-level and does not include pricing, sales scripts, customer scoring, payability qualification, production architecture, or full implementation methodology.
+
 ## Free user objection response
 
 Common skeptical questions from free users are handled by `docs/free-user-objection-response-department.md`.
