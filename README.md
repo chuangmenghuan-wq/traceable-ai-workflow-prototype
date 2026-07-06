@@ -1,0 +1,60 @@
+# WorkflowGuard AI — Traceable AI Workflow Prototype
+
+**Repository:** `traceable-ai-workflow-prototype`  
+**Status:** Independent prototype / pre-company project  
+**Release state:** Public-safe draft, not launched yet  
+**Version:** Public-safe v0.1
+
+WorkflowGuard AI is a public-safe prototype for traceable AI workflow evaluation before using sensitive production data.
+
+It demonstrates how a vague AI adoption request can be turned into a structured workflow with task intake, classification, execution planning, capability routing, validation checks, reporting, trace logs, and safety boundaries.
+
+This repository uses synthetic examples only. It does not use real customer data, private company data, production systems, secrets, or internal business development materials.
+
+## The problem
+
+Many teams want to use AI, but they do not know where to start safely.
+
+## Demo flow
+
+```text
+Vague AI adoption task
+  → Task Intake
+  → Task Classification
+  → Execution Plan
+  → Capability Routing
+  → Demo Execution
+  → Validation
+  → Report
+  → Trace Log
+```
+
+Example task:
+
+> Our company wants to use AI in customer service. Which workflow should we start with, what data should we avoid, and what is the safest first step?
+
+## Architecture
+
+See `docs/architecture.md` and `assets/workflowguard_architecture.svg`.
+
+## Public-safe examples
+
+See the `examples/` folder for sample task intake, execution plan, validation checklist, report, and trace log.
+
+## What this is not
+
+This prototype is not a finished AI operating system, mature commercial SaaS product, production automation system, legal/privacy/cybersecurity/compliance guarantee, replacement for professional review, or repository for internal customer discovery strategy.
+
+## Public-safe boundaries
+
+This repository intentionally does not include real customer data, internal customer lists, customer scoring, sales scripts, private outreach strategy, production runner details, API keys, secrets, private file paths, confidential business materials, or unrelated production systems.
+
+## Current stage
+
+WorkflowGuard AI is currently an early independent prototype. It is not publicly launched yet.
+
+## Roadmap
+
+Short term: improve samples, add demo video, collect feedback from 3–5 reviewers, and refine public-safe wording.  
+Medium term: create controlled pilot templates, improve validation rules, and add optional UI mockup.  
+Long term: turn repeated workflow patterns into reusable capabilities.
