@@ -7,6 +7,8 @@
 
 This sample is intentionally limited. It demonstrates the preview structure and safety-preview style, but it is not a full consulting report, implementation plan, legal review, cybersecurity review, privacy review, compliance guarantee, or production integration plan.
 
+A short visual summary card example is available at `examples/mini-audit-visual-summary-card.md`.
+
 ---
 
 ## 30-second plain-language overview
@@ -78,17 +80,17 @@ Create a draft for a human to review
 Human review before external use
 ```
 
-**Selected data / system boundaries**
+**Selected data and system boundary checks**
 
 ```text
-- Customer records or customer conversations
-- Personal data such as names, phones, emails, IDs, or addresses
+Customer messages or customer records
+Personal data
 ```
 
-**Selected human review**
+**Human review setting**
 
 ```text
-A human reviews before any real use
+Yes, every AI output is reviewed by a human
 ```
 
 ---
@@ -97,128 +99,99 @@ A human reviews before any real use
 
 ```text
 WorkflowGuard Mini Audit Preview
-Public-safe safety preview generated in browser · Not a full consulting report
+Public-safe preview generated in browser · Not a full consulting report
 
 0. What this preview is for
-This preview helps answer: where can this AI idea start safely? It is not a complete workflow design, tool recommendation, ROI estimate, or implementation roadmap.
+
+This preview helps decide where an AI workflow idea can start safely before using sensitive production data.
+
+It is a triage preview, not a full workflow design.
 
 1. Original AI idea
+
 We want AI to help our support team turn repeated customer questions into draft replies, but a human should approve before sending.
 
 2. Initial risk level
-Yellow: can start, but not with direct automation
+
+Yellow — Needs human review and clearer boundary before use.
 
 3. Safety risk snapshot
-- Data exposure risk: High — Sensitive data may be involved. Use synthetic examples only in the first version.
-- External output risk: Medium — External use may be possible only after human review.
-- Automation risk: Low — Drafting or organizing is safer than automatic execution.
-- Production system risk: Low — No production system boundary was selected. Keep it disconnected first.
-- Human review gap: Low — Human review is planned before real use.
-- Traceability gap: Medium — The free preview includes a trace log preview, but a real pilot needs stronger decision logs and validation records.
+
+- Data exposure risk: High — Customer or personal data may be involved. Use synthetic or anonymized examples first.
+- External output risk: Medium — Output may eventually affect customer-facing communication. Keep AI output internal until approved.
+- Automation risk: Low — AI is drafting for human review, not executing automatically.
+- Production system risk: Low — No production system access should be used in the first experiment.
+- Human review gap: Low — Human review is required.
+- Traceability gap: Medium — Keep a simple record of why the workflow was classified this way.
 
 4. Why this is not just a generic chatbot answer
-- It uses the same safety checklist every time.
-- It checks data, external output, automation, production system, human review, and traceability boundaries.
-- It gives reason codes and a trace preview so the recommendation is easier to inspect.
-- It blocks unsafe first steps instead of jumping directly to a full plan.
+
+This preview checks risk boundary before giving a solution. It looks at data exposure, output audience, automation, production-system involvement, human review, and traceability.
 
 5. Reason codes
+
 - draft_requires_review
 - external_use_after_review
 - customer_data_possible
 - personal_data_possible
 
 6. Why this was classified this way
-- AI would create drafts, so human review should stay in the loop.
-- AI output may be used externally after review.
-- The workflow may touch sensitive data or systems, so the first version should use synthetic or anonymized examples only.
+
+This idea can be a reasonable first AI workflow, but it may touch customer messages and personal data. It should not start with real customer records or direct customer output.
 
 7. Workflow map preview
-1. User or customer request arrives
-2. Human identifies the request type
-3. AI assists with a narrow internal step
-4. Human reviews AI output
-5. Reviewed output may be used externally
+
+Intake customer question → AI groups repeated themes and drafts internal reply suggestion → Human checks accuracy, tone, and missing context → Approved response may be used by staff.
 
 8. AI touchpoint preview
-Safe first AI role: Use AI to create internal drafts that a human reviews before any real use.
-Blocked first AI role: Do not let AI directly send the draft or decide whether the draft is correct.
+
+AI should help with internal draft suggestions only. It should not directly send a reply or update customer records.
 
 9. Data boundary preview
-Selected boundary: customer records or customer conversations; personal data such as names, phones, emails, IDs, or addresses
-Avoid for now:
-- customer names, phone numbers, emails, addresses, IDs, or full conversations
-- order numbers, billing records, payment details, refunds, or transaction history
-- API keys, passwords, tokens, private file paths, and production credentials
-- confidential strategy, HR, legal, finance, or security documents
+
+Start with synthetic or anonymized examples. Do not paste real customer names, emails, phone numbers, addresses, order numbers, payment details, or private conversations into the preview.
 
 10. Human review gate preview
-A human must check accuracy, tone, missing context, privacy exposure, and whether the output should be rejected.
+
+Every AI draft should be reviewed by a human before it is used externally. The human reviewer should check correctness, tone, privacy exposure, and whether escalation is needed.
 
 11. First safe experiment
-Use 10 fake or anonymized examples and record what a human had to correct.
+
+Use 10 fake or anonymized customer questions. Ask AI to group repeated question types and draft internal reply suggestions. A human records what needed correction.
 
 12. Starter validation checklist preview
-[ ] Is the output based only on public-safe or synthetic examples?
-[ ] Can a human quickly verify the output before use?
-[ ] Does the output avoid personal data, secrets, and production credentials?
-[ ] Is there a clear rule for rejecting unsafe or uncertain output?
-[ ] Is external use blocked until a human approves the final version?
-[ ] Is the first experiment limited to draft-only, summary-only, or checklist-only use?
+
+[ ] Synthetic or anonymized examples only
+[ ] AI output stays internal
+[ ] Human reviews every draft
+[ ] Reviewer can reject unsafe or uncertain output
+[ ] Corrections are recorded
 
 13. Why this preview is limited
-A full plan requires your actual workflow, data access, people, tools, review owner, failure cases, customer impact, and business goal. Those details should not be guessed from a public form or tested with real customer data in a free browser preview.
+
+A full workflow plan would need real workflow context, allowed data, reviewer ownership, tools, failure cases, customer impact, and business goals.
+
+This public-safe preview intentionally avoids guessing those details.
 
 14. Locked advanced sections
-These are intentionally not included in the free preview:
-- Full safety control design and review workflow
-- Full workflow redesign and step-by-step operating procedure
-- Detailed AI touchpoint design and capability routing
-- Production data policy and integration plan
-- Tool selection, build-vs-buy comparison, and implementation architecture
-- ROI, cost, effort, timeline, and paid pilot roadmap
-- Client-specific risk review and stakeholder decision map
+
+- Full workflow redesign
+- Client-specific data policy
+- Production integration design
+- Tool selection
+- ROI or cost estimate
+- Paid pilot roadmap
 
 15. Suggested next step
-Use a public-safe workflow review to turn this preview into a more specific workflow map and paid pilot decision. Do not use real customer data for the review.
+
+Run a public-safe experiment with synthetic or anonymized examples. Do not connect this to CRM, email, ticketing, database, or customer-facing output yet.
 
 16. Trace log preview
+
 {
   "preview_type": "mini_audit_preview_v0_4",
   "risk_level": "Yellow",
   "risk_score_band": "5_to_9",
-  "reason_codes": [
-    "draft_requires_review",
-    "external_use_after_review",
-    "customer_data_possible",
-    "personal_data_possible"
-  ],
-  "safety_snapshot": [
-    {
-      "risk": "Data exposure risk",
-      "level": "High"
-    },
-    {
-      "risk": "External output risk",
-      "level": "Medium"
-    },
-    {
-      "risk": "Automation risk",
-      "level": "Low"
-    },
-    {
-      "risk": "Production system risk",
-      "level": "Low"
-    },
-    {
-      "risk": "Human review gap",
-      "level": "Low"
-    },
-    {
-      "risk": "Traceability gap",
-      "level": "Medium"
-    }
-  ],
   "recommended_start": "internal_human_reviewed_experiment",
   "blocked_start": [
     "direct_external_output",
@@ -227,42 +200,10 @@ Use a public-safe workflow review to turn this preview into a more specific work
     "automatic_execution"
   ]
 }
-
-Disclaimer
-This is a limited rule-based safety preview. It is not legal, privacy, cybersecurity, compliance, financial, medical, or professional advice. It does not include full safety control design, full workflow redesign, implementation planning, ROI analysis, tool selection, production integration, or a formal consulting report.
 ```
-
----
-
-## What this sample is meant to show
-
-This sample shows the value of the free preview:
-
-- It does not only return a short answer.
-- It turns one vague AI idea into a structured safety preview.
-- It identifies data exposure, external output, automation, production system, human review, and traceability risks.
-- It shows what should be blocked in the first version.
-- It gives a safe first experiment without giving away a complete consulting plan.
-- It explains why the free version is a safety boundary, not only a paid wall.
-
----
-
-## What remains locked for a paid review or pilot
-
-The free preview does not include:
-
-- full safety control design
-- detailed workflow redesign
-- client-specific data policy
-- production integration architecture
-- tool selection or vendor comparison
-- ROI and cost estimation
-- paid pilot roadmap
-- stakeholder decision map
-- internal customer discovery or payability scoring
 
 ---
 
 ## Public-safe note
 
-This file uses a synthetic customer-service example only. It does not include real customer records, private company data, secrets, production credentials, internal sales strategy, customer scoring, or unrelated production systems.
+This sample does not include real customer data, private company data, production credentials, pricing, sales scripts, internal customer scoring, payability qualification, production runner details, Hermes_sport internals, WorldCup_AI internals, secrets, credentials, or private system paths.
