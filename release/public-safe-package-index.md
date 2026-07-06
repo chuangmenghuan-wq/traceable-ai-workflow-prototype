@@ -39,11 +39,12 @@ For an internal operator preparing a controlled reviewer preview:
 
 ```text
 1. release/public-safe-launch-readiness-checklist.md
-2. release/controlled-reviewer-outreach-message.md
-3. demo/reviewer-walkthrough.md
-4. release/trusted-reviewer-feedback-form.md
-5. release/reviewer-feedback-summary-template.md
-6. release/picky-free-user-simulation-retest-001.md
+2. release/review-response-scope.md
+3. release/controlled-reviewer-outreach-message.md
+4. demo/reviewer-walkthrough.md
+5. release/trusted-reviewer-feedback-form.md
+6. release/reviewer-feedback-summary-template.md
+7. release/picky-free-user-simulation-retest-001.md
 ```
 
 ---
@@ -66,6 +67,7 @@ For an internal operator preparing a controlled reviewer preview:
 
 | File | Role | When to use | Notes |
 |---|---|---|---|
+| `release/review-response-scope.md` | Review response scope | Before answering reviewer follow-up questions | Keeps answers focused on the public-safe prototype |
 | `demo/reviewer-walkthrough.md` | Reviewer walkthrough | Before asking a reviewer to inspect the repo | Guides 3 to 5 minute review |
 | `release/controlled-reviewer-outreach-message.md` | Outreach message | When inviting a known trusted reviewer | Not a sales script or public launch message |
 | `release/trusted-reviewer-feedback-form.md` | Feedback form | After reviewer reads the package | Collects structured feedback |
@@ -130,6 +132,7 @@ There is a response to picky free-user objections.
 There is a public-safe review deliverable preview.
 There is a public-safe sample review note.
 There are launch-readiness and reviewer-feedback controls.
+There is a review response scope for controlled reviewer conversations.
 ```
 
 ---
@@ -168,6 +171,7 @@ Before any wider sharing, use:
 
 ```text
 release/public-safe-launch-readiness-checklist.md
+release/review-response-scope.md
 ```
 
 ---
