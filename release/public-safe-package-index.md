@@ -13,6 +13,16 @@ It is not a launch approval, public announcement, sales kit, pricing document, c
 
 ## 1. Recommended reading path
 
+For a Traditional Chinese plain-language introduction:
+
+```text
+1. docs/chinese-plain-language-overview.md
+2. README.md
+3. examples/mini-audit-preview-sample.md
+4. web/ai-workflow-planner.html
+5. examples/public-safe-review-note-sample.md
+```
+
 For a quick 5 to 10 minute review:
 
 ```text
@@ -43,6 +53,7 @@ For an internal operator preparing a controlled reviewer preview:
 | File | Role | What it proves | Public-safe boundary |
 |---|---|---|---|
 | `README.md` | Main entry point | Explains problem, positioning, safety focus, free/paid boundary, and next files | No real data, no launch claim, no pricing |
+| `docs/chinese-plain-language-overview.md` | Traditional Chinese overview | Explains the concept for Taiwanese small business owners and non-technical readers | No sales page, no pricing, no real data |
 | `web/ai-workflow-planner.html` | Static mini audit tool | Shows browser-only free preview: risk level, safety snapshot, data boundary, human review gate, trace preview | No login, no backend, no storage, no API, no file upload |
 | `examples/mini-audit-preview-sample.md` | Free preview sample | Shows what the free mini audit output looks like | Synthetic example only, not a full consulting report |
 | `docs/free-user-objection-response-department.md` | Objection response capability | Answers why not GPT, why free is limited, why real data is not allowed | No sales script, no overclaim, no internal strategy |
@@ -114,6 +125,7 @@ There is a clear AI workflow safety-preview concept.
 There is a browser-only free mini audit tool.
 There is a repeatable output structure.
 There is a free / paid boundary.
+There is a Traditional Chinese plain-language entry point.
 There is a response to picky free-user objections.
 There is a public-safe review deliverable preview.
 There is a public-safe sample review note.
@@ -165,11 +177,11 @@ release/public-safe-launch-readiness-checklist.md
 Possible future patches:
 
 ```text
-Chinese plain-language overview for Taiwanese business owners
 Mini audit output visual summary card
 Public-safe reviewer package one-pager
 Controlled demo video script
 Competition-safe submission summary
+Chinese static tool page variant
 ```
 
 Do not add pricing, sales scripts, customer scoring, payability qualification, lead capture, production integration, or real customer examples without a separate public-safe review.
