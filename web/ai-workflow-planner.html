@@ -24,9 +24,7 @@
       --lock-text: #475467;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -42,10 +40,7 @@
       padding: 48px 20px;
     }
 
-    .wrap {
-      max-width: 1120px;
-      margin: 0 auto;
-    }
+    .wrap { max-width: 1120px; margin: 0 auto; }
 
     .eyebrow {
       margin: 0 0 8px;
@@ -62,15 +57,13 @@
     }
 
     .hero-copy {
-      max-width: 780px;
+      max-width: 820px;
       margin: 0;
       color: #eaecf0;
       font-size: 1.1rem;
     }
 
-    main {
-      padding: 28px 20px 56px;
-    }
+    main { padding: 28px 20px 56px; }
 
     .grid {
       display: grid;
@@ -79,11 +72,7 @@
       align-items: start;
     }
 
-    @media (max-width: 940px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width: 940px) { .grid { grid-template-columns: 1fr; } }
 
     .card {
       background: var(--card);
@@ -93,21 +82,9 @@
       box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06);
     }
 
-    .card + .card {
-      margin-top: 18px;
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      color: var(--strong);
-      font-size: 1.3rem;
-    }
-
-    h3 {
-      margin: 22px 0 10px;
-      color: var(--strong);
-      font-size: 1.05rem;
-    }
+    .card + .card { margin-top: 18px; }
+    h2 { margin: 0 0 14px; color: var(--strong); font-size: 1.3rem; }
+    h3 { margin: 22px 0 10px; color: var(--strong); font-size: 1.05rem; }
 
     label {
       display: block;
@@ -116,14 +93,9 @@
       font-weight: 650;
     }
 
-    .hint {
-      margin: 2px 0 8px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
+    .hint { margin: 2px 0 8px; color: var(--muted); font-size: 0.92rem; }
 
-    textarea,
-    select {
+    textarea, select {
       width: 100%;
       border: 1px solid var(--line);
       border-radius: 12px;
@@ -133,10 +105,7 @@
       font: inherit;
     }
 
-    textarea {
-      min-height: 116px;
-      resize: vertical;
-    }
+    textarea { min-height: 116px; resize: vertical; }
 
     .counter {
       display: flex;
@@ -154,11 +123,7 @@
       margin: 18px 0 0;
     }
 
-    legend {
-      padding: 0 6px;
-      color: var(--strong);
-      font-weight: 700;
-    }
+    legend { padding: 0 6px; color: var(--strong); font-weight: 700; }
 
     .option {
       display: flex;
@@ -169,16 +134,9 @@
       font-weight: 500;
     }
 
-    .option input {
-      margin-top: 4px;
-    }
+    .option input { margin-top: 4px; }
 
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 
     button {
       border: 0;
@@ -189,15 +147,8 @@
       font-weight: 750;
     }
 
-    .primary {
-      background: #111827;
-      color: white;
-    }
-
-    .secondary {
-      background: #eaecf0;
-      color: #1f2937;
-    }
+    .primary { background: #111827; color: white; }
+    .secondary { background: #eaecf0; color: #1f2937; }
 
     .badge {
       display: inline-flex;
@@ -209,33 +160,11 @@
       margin-bottom: 12px;
     }
 
-    .risk-green {
-      color: var(--green-text);
-      background: var(--green-bg);
-    }
+    .risk-green { color: var(--green-text); background: var(--green-bg); }
+    .risk-yellow { color: var(--yellow-text); background: var(--yellow-bg); }
+    .risk-red { color: var(--red-text); background: var(--red-bg); }
 
-    .risk-yellow {
-      color: var(--yellow-text);
-      background: var(--yellow-bg);
-    }
-
-    .risk-red {
-      color: var(--red-text);
-      background: var(--red-bg);
-    }
-
-    .notice {
-      border-radius: 14px;
-      padding: 14px 16px;
-      background: var(--blue-bg);
-      color: var(--blue-text);
-      margin-top: 14px;
-    }
-
-    .small {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+    .small { color: var(--muted); font-size: 0.9rem; }
 
     .section-list {
       display: grid;
@@ -246,11 +175,7 @@
       list-style: none;
     }
 
-    @media (max-width: 680px) {
-      .section-list {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width: 680px) { .section-list { grid-template-columns: 1fr; } }
 
     .section-list li {
       border: 1px solid var(--line);
@@ -265,62 +190,47 @@
       border-radius: 14px;
       padding: 16px;
       background: #fcfcfd;
-      min-height: 360px;
+      min-height: 400px;
       overflow-wrap: anywhere;
     }
 
-    .empty {
-      color: var(--muted);
+    .empty { color: var(--muted); }
+
+    .locked-box, .safety-box {
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 14px;
     }
 
     .locked-box {
       border: 1px dashed #98a2b3;
-      border-radius: 14px;
-      padding: 14px 16px;
-      margin-top: 14px;
       background: var(--lock-bg);
       color: var(--lock-text);
     }
 
-    footer {
-      padding: 0 20px 36px;
-      color: var(--muted);
+    .safety-box {
+      border: 1px solid #b2ddff;
+      background: var(--blue-bg);
+      color: var(--blue-text);
     }
 
+    footer { padding: 0 20px 36px; color: var(--muted); }
+
     @media print {
-      header,
-      .audit-form,
-      .button-row,
-      footer,
-      .method-card {
-        display: none;
-      }
-
-      main {
-        padding: 0;
-      }
-
-      body {
-        background: white;
-      }
-
-      .grid {
-        display: block;
-      }
-
-      .card {
-        border: 0;
-        box-shadow: none;
-      }
+      header, .audit-form, .button-row, footer, .method-card { display: none; }
+      main { padding: 0; }
+      body { background: white; }
+      .grid { display: block; }
+      .card { border: 0; box-shadow: none; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap">
-      <p class="eyebrow">WorkflowGuard AI · Mini Audit Preview v0.2</p>
-      <h1>AI workflow audit preview, not just an AI answer.</h1>
-      <p class="hero-copy">Turn one AI idea into a public-safe preview: risk level, workflow map, AI touchpoints, data boundaries, human review gate, validation preview, and locked advanced sections.</p>
+      <p class="eyebrow">WorkflowGuard AI · Mini Audit Preview v0.3</p>
+      <h1>AI workflow safety analysis before production use.</h1>
+      <p class="hero-copy">Turn one AI idea into a public-safe preview: risk level, safety risk snapshot, workflow map, AI touchpoints, data boundaries, human review gate, validation preview, and locked advanced sections.</p>
     </div>
   </header>
 
@@ -397,18 +307,23 @@
 
     <div class="wrap">
       <section class="card method-card">
+        <h2>Why safety analysis matters</h2>
+        <p>Most AI workflow problems do not start because the AI model is not smart enough. They usually start because the workflow boundary is unclear: what data AI can see, whether output can reach customers, whether AI can affect production systems, who reviews the result, and what happens when AI is uncertain or wrong.</p>
+        <div class="safety-box">WorkflowGuard focuses on the early safety layer: safer first workflow, data boundaries, human review, validation checks, and traceability before any production use.</div>
+      </section>
+
+      <section class="card method-card">
         <h2>What the free preview shows</h2>
         <ul class="section-list">
           <li><strong>Unlocked:</strong> initial risk level and reason codes.</li>
+          <li><strong>Unlocked:</strong> safety risk snapshot.</li>
           <li><strong>Unlocked:</strong> simple workflow map preview.</li>
           <li><strong>Unlocked:</strong> safe AI touchpoint preview.</li>
           <li><strong>Unlocked:</strong> data boundary and human review gate preview.</li>
           <li><strong>Unlocked:</strong> first safe experiment and starter validation checks.</li>
-          <li><strong>Locked:</strong> full workflow redesign, ROI analysis, production integration, tool selection, and paid pilot roadmap.</li>
+          <li><strong>Locked:</strong> full safety control design, workflow redesign, ROI analysis, production integration, tool selection, and paid pilot roadmap.</li>
         </ul>
-        <div class="locked-box">
-          This free version is intentionally limited. It helps a user understand the direction and safety boundary, but it does not provide a complete implementation plan.
-        </div>
+        <div class="locked-box">This free version is intentionally limited. It helps a user understand the direction and safety boundary, but it does not provide a complete implementation or safety control plan.</div>
       </section>
 
       <section class="card">
@@ -548,17 +463,51 @@
       return { score, level, label, className, reasons, reasonCodes };
     }
 
+    function safetyRiskSnapshot(form) {
+      const hasPersonal = form.dataRisks.some((risk) => risk.code === "personal_data_possible");
+      const hasCustomer = form.dataRisks.some((risk) => risk.code === "customer_data_possible");
+      const hasPayment = form.dataRisks.some((risk) => risk.code === "payment_data_possible");
+      const hasProduction = form.dataRisks.some((risk) => risk.code === "production_system_possible");
+      const hasConfidential = form.dataRisks.some((risk) => risk.code === "confidential_data_possible");
+
+      return [
+        {
+          label: "Data exposure risk",
+          level: hasPayment || hasConfidential || hasPersonal ? "High" : hasCustomer ? "Medium" : "Low",
+          note: hasPayment || hasConfidential || hasPersonal ? "Sensitive data may be involved. Use synthetic examples only in the first version." : hasCustomer ? "Customer context may be involved. Avoid real records in the preview." : "No sensitive data boundary was selected, but real data should still be avoided first."
+        },
+        {
+          label: "External output risk",
+          level: form.audience === "external_direct" ? "High" : form.audience === "review_then_external" ? "Medium" : "Low",
+          note: form.audience === "external_direct" ? "Direct customer-facing output is not a safe first step." : form.audience === "review_then_external" ? "External use may be possible only after human review." : "Output can stay internal in the first experiment."
+        },
+        {
+          label: "Automation risk",
+          level: form.aiUse === "auto_execute" ? "High" : form.aiUse === "judgment" ? "Medium" : "Low",
+          note: form.aiUse === "auto_execute" ? "Automatic execution should be blocked in the preview version." : form.aiUse === "judgment" ? "Recommendations need validation and rejection rules." : "Drafting or organizing is safer than automatic execution."
+        },
+        {
+          label: "Production system risk",
+          level: hasProduction ? "High" : "Low",
+          note: hasProduction ? "Production systems should not be connected in the first experiment." : "No production system boundary was selected. Keep it disconnected first."
+        },
+        {
+          label: "Human review gap",
+          level: form.humanReview === "no" ? "High" : form.humanReview === "partial" ? "Medium" : "Low",
+          note: form.humanReview === "no" ? "Human review is missing and should be added before real use." : form.humanReview === "partial" ? "Partial review is not enough for sensitive or external workflows." : "Human review is planned before real use."
+        },
+        {
+          label: "Traceability gap",
+          level: "Medium",
+          note: "The free preview includes a trace log preview, but a real pilot needs stronger decision logs and validation records."
+        }
+      ];
+    }
+
     function workflowMapPreview(form) {
       const baseStart = form.workflowType === "customer_service" ? "User or customer request arrives" : "Workflow input arrives";
       const baseEnd = form.audience === "internal_only" ? "Internal team uses reviewed output" : "Reviewed output may be used externally";
-
-      return [
-        baseStart,
-        "Human identifies the request type",
-        "AI assists with a narrow internal step",
-        "Human reviews AI output",
-        baseEnd
-      ];
+      return [baseStart, "Human identifies the request type", "AI assists with a narrow internal step", "Human reviews AI output", baseEnd];
     }
 
     function touchpointPreview(form, risk) {
@@ -568,28 +517,24 @@
           blocked: "Do not allow AI to send messages, update records, approve actions, change orders, or connect to production tools."
         };
       }
-
       if (form.aiUse === "draft") {
         return {
           safe: "Use AI to create internal drafts that a human reviews before any real use.",
           blocked: "Do not let AI directly send the draft or decide whether the draft is correct."
         };
       }
-
       if (form.aiUse === "judgment") {
         return {
           safe: "Use AI to prepare a recommendation preview, then require human validation and written rejection rules.",
           blocked: "Do not use the recommendation as an automatic approval, rejection, refund, legal, finance, HR, or customer decision."
         };
       }
-
       if (form.aiUse === "auto_execute") {
         return {
           safe: "Convert the first version into a draft-only or checklist-only workflow.",
           blocked: "Do not start with automatic execution. Treat execution as a later paid pilot design topic."
         };
       }
-
       return {
         safe: "Use AI to summarize, group, or organize internal information from synthetic examples.",
         blocked: "Do not expand into sensitive data, external users, or automatic execution in the preview version."
@@ -604,7 +549,6 @@
           gate: "Human approval is required before any real data, external output, or production system is touched."
         };
       }
-
       if (risk.level === "Yellow") {
         return {
           firstStep: "Start with an internal draft, summary, or FAQ-building workflow. Keep human review mandatory.",
@@ -612,7 +556,6 @@
           gate: "A human must check accuracy, tone, missing context, privacy exposure, and whether the output should be rejected."
         };
       }
-
       return {
         firstStep: "Start with a narrow internal workflow using synthetic examples, clear success criteria, and a short validation checklist.",
         experiment: "Use 5 to 10 synthetic examples and check whether the output is complete, useful, and easy for a human to verify.",
@@ -628,18 +571,13 @@
         "API keys, passwords, tokens, private file paths, and production credentials",
         "confidential strategy, HR, legal, finance, or security documents"
       ];
-
       if (selected.length === 0) {
         return {
           selected: "No sensitive boundary selected, but the first experiment should still use synthetic examples.",
           avoid: ["real customer data", "production system access", "secrets or credentials", "private company files"]
         };
       }
-
-      return {
-        selected: selected.join("; "),
-        avoid
-      };
+      return { selected: selected.join("; "), avoid };
     }
 
     function validationPreview(form, risk) {
@@ -649,20 +587,14 @@
         "Does the output avoid personal data, secrets, and production credentials?",
         "Is there a clear rule for rejecting unsafe or uncertain output?"
       ];
-
-      if (form.audience !== "internal_only") {
-        checks.push("Is external use blocked until a human approves the final version?");
-      }
-
-      if (risk.level !== "Green") {
-        checks.push("Is the first experiment limited to draft-only, summary-only, or checklist-only use?");
-      }
-
+      if (form.audience !== "internal_only") checks.push("Is external use blocked until a human approves the final version?");
+      if (risk.level !== "Green") checks.push("Is the first experiment limited to draft-only, summary-only, or checklist-only use?");
       return checks;
     }
 
     function lockedSections() {
       return [
+        "Full safety control design and review workflow",
         "Full workflow redesign and step-by-step operating procedure",
         "Detailed AI touchpoint design and capability routing",
         "Production data policy and integration plan",
@@ -672,29 +604,31 @@
       ];
     }
 
-    function buildTraceLog(form, risk) {
+    function buildTraceLog(form, risk, safety) {
       return {
-        preview_type: "mini_audit_preview_v0_2",
+        preview_type: "mini_audit_preview_v0_3",
         risk_level: risk.level,
         risk_score_band: risk.score >= 10 ? "10_plus" : risk.score >= 5 ? "5_to_9" : "0_to_4",
         reason_codes: risk.reasonCodes,
+        safety_snapshot: safety.map((item) => ({ risk: item.label, level: item.level })),
         recommended_start: risk.level === "Red" ? "public_safe_workflow_mapping" : form.aiUse === "auto_execute" ? "draft_or_checklist_only" : "internal_human_reviewed_experiment",
         blocked_start: ["direct_external_output", "production_write_access", "sensitive_data_processing", "automatic_execution"]
       };
     }
 
     function buildReport(form, risk) {
+      const safety = safetyRiskSnapshot(form);
       const recommendation = recommendationFor(form, risk);
       const map = workflowMapPreview(form);
       const touchpoint = touchpointPreview(form, risk);
       const boundary = dataBoundaryPreview(form);
       const checks = validationPreview(form, risk);
-      const trace = buildTraceLog(form, risk);
+      const trace = buildTraceLog(form, risk, safety);
       const idea = form.idea.trim() || "No detailed workflow description was provided.";
 
       return [
         "WorkflowGuard Mini Audit Preview",
-        "Public-safe preview generated in browser · Not a full consulting report",
+        "Public-safe safety analysis preview generated in browser · Not a full consulting report",
         "",
         "1. Original AI idea",
         idea,
@@ -702,45 +636,48 @@
         "2. Initial risk level",
         risk.label,
         "",
-        "3. Reason codes",
+        "3. Safety risk snapshot",
+        safety.map((item) => "- " + item.label + ": " + item.level + " — " + item.note).join("\n"),
+        "",
+        "4. Reason codes",
         risk.reasonCodes.length ? risk.reasonCodes.map((item) => "- " + item).join("\n") : "- no_major_risk_code_selected",
         "",
-        "4. Why this was classified this way",
+        "5. Why this was classified this way",
         risk.reasons.map((item) => "- " + item).join("\n"),
         "",
-        "5. Workflow map preview",
+        "6. Workflow map preview",
         map.map((item, index) => (index + 1) + ". " + item).join("\n"),
         "",
-        "6. AI touchpoint preview",
+        "7. AI touchpoint preview",
         "Safe first AI role: " + touchpoint.safe,
         "Blocked first AI role: " + touchpoint.blocked,
         "",
-        "7. Data boundary preview",
+        "8. Data boundary preview",
         "Selected boundary: " + boundary.selected,
         "Avoid for now:",
         boundary.avoid.map((item) => "- " + item).join("\n"),
         "",
-        "8. Human review gate preview",
+        "9. Human review gate preview",
         recommendation.gate,
         "",
-        "9. First safe experiment",
+        "10. First safe experiment",
         recommendation.experiment,
         "",
-        "10. Starter validation checklist preview",
+        "11. Starter validation checklist preview",
         checks.map((item) => "[ ] " + item).join("\n"),
         "",
-        "11. Locked advanced sections",
+        "12. Locked advanced sections",
         "These are intentionally not included in the free preview:",
         lockedSections().map((item) => "- " + item).join("\n"),
         "",
-        "12. Suggested next step",
+        "13. Suggested next step",
         "Use a 20-minute public-safe workflow review to turn this preview into a more specific workflow map and paid pilot decision. Do not use real customer data for the review.",
         "",
-        "13. Trace log preview",
+        "14. Trace log preview",
         JSON.stringify(trace, null, 2),
         "",
         "Disclaimer",
-        "This is a limited rule-based preview. It is not legal, privacy, cybersecurity, compliance, financial, medical, or professional advice. It does not include full workflow redesign, implementation planning, ROI analysis, tool selection, production integration, or a formal consulting report."
+        "This is a limited rule-based safety analysis preview. It is not legal, privacy, cybersecurity, compliance, financial, medical, or professional advice. It does not include full safety control design, full workflow redesign, implementation planning, ROI analysis, tool selection, production integration, or a formal consulting report."
       ].join("\n");
     }
 
@@ -761,7 +698,6 @@
       const report = buildReport(form, risk);
       const reportEl = document.getElementById("report");
       const badge = document.getElementById("riskBadge");
-
       reportEl.textContent = report;
       reportEl.classList.remove("empty");
       badge.textContent = risk.label;
@@ -794,7 +730,6 @@
         status.textContent = "Generate a preview first.";
         return;
       }
-
       try {
         await navigator.clipboard.writeText(reportText);
         status.textContent = "Preview copied to clipboard.";
