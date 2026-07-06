@@ -40,12 +40,13 @@ For an internal operator preparing a controlled reviewer preview:
 ```text
 1. release/public-safe-launch-readiness-checklist.md
 2. release/review-response-scope.md
-3. release/controlled-reviewer-operator-checklist.md
-4. release/controlled-reviewer-outreach-message.md
-5. demo/reviewer-walkthrough.md
-6. release/trusted-reviewer-feedback-form.md
-7. release/reviewer-feedback-summary-template.md
-8. release/picky-free-user-simulation-retest-001.md
+3. release/friendly-question-boundary-copy.md
+4. release/controlled-reviewer-operator-checklist.md
+5. release/controlled-reviewer-outreach-message.md
+6. demo/reviewer-walkthrough.md
+7. release/trusted-reviewer-feedback-form.md
+8. release/reviewer-feedback-summary-template.md
+9. release/picky-free-user-simulation-retest-001.md
 ```
 
 ---
@@ -69,6 +70,7 @@ For an internal operator preparing a controlled reviewer preview:
 | File | Role | When to use | Notes |
 |---|---|---|---|
 | `release/review-response-scope.md` | Review response scope | Before answering reviewer follow-up questions | Keeps answers focused on the public-safe prototype |
+| `release/friendly-question-boundary-copy.md` | Friendly boundary copy | When explaining what reviewers can ask | Makes answer boundaries feel like useful guidance, not refusal |
 | `release/controlled-reviewer-operator-checklist.md` | Operator checklist | Before, during, and after reviewer follow-up answers | Prevents answers from becoming a complete playbook |
 | `demo/reviewer-walkthrough.md` | Reviewer walkthrough | Before asking a reviewer to inspect the repo | Guides 3 to 5 minute review |
 | `release/controlled-reviewer-outreach-message.md` | Outreach message | When inviting a known trusted reviewer | Not a sales script or public launch message |
@@ -135,6 +137,7 @@ There is a public-safe review deliverable preview.
 There is a public-safe sample review note.
 There are launch-readiness and reviewer-feedback controls.
 There is a review response scope for controlled reviewer conversations.
+There is a friendly question boundary copy for reviewer conversations.
 There is an operator checklist for controlled reviewer conversations.
 ```
 
@@ -175,6 +178,7 @@ Before any wider sharing, use:
 ```text
 release/public-safe-launch-readiness-checklist.md
 release/review-response-scope.md
+release/friendly-question-boundary-copy.md
 release/controlled-reviewer-operator-checklist.md
 ```
 
