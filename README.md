@@ -3,7 +3,7 @@
 **Repository:** `traceable-ai-workflow-prototype`  
 **Status:** Independent prototype / pre-company project  
 **Release state:** Public-safe draft, not launched yet  
-**Version:** Public-safe v0.3
+**Version:** Public-safe v0.4
 
 WorkflowGuard AI is a public-safe prototype for traceable AI workflow evaluation before using sensitive production data.
 
@@ -12,6 +12,45 @@ In simple terms, this prototype helps a team decide where AI should start, what 
 It demonstrates how a vague AI adoption request can be turned into a structured workflow with task intake, classification, execution planning, capability routing, validation checks, reporting, trace logs, and safety boundaries.
 
 This repository uses synthetic examples only. It does not use real customer data, private company data, production systems, secrets, or internal business development materials.
+
+## 30-second plain-language overview
+
+WorkflowGuard AI helps answer one early question:
+
+```text
+Before we use AI in a real workflow, where can we start safely?
+```
+
+It is not trying to be a smarter chatbot. It is a repeatable safety preview for AI workflow ideas. It checks whether the idea may touch sensitive data, customer-facing output, automatic actions, production systems, missing human review, or weak traceability.
+
+The free preview gives a safe starting direction. It does not design the full workflow, choose tools, estimate ROI, or build the implementation roadmap.
+
+## Why not just ask GPT?
+
+You can ask GPT for ideas. WorkflowGuard AI is designed for a different job: making the first AI workflow step safer and more traceable.
+
+| Asking a generic chatbot | WorkflowGuard Mini Audit Preview |
+|---|---|
+| One-off answer | Repeatable safety preview |
+| May jump straight to solution | Checks risk boundary first |
+| May skip data exposure | Forces data-boundary review |
+| May ignore human review | Requires review-gate thinking |
+| Hard to trace why it said something | Gives reason codes and trace preview |
+| May give a full-sounding plan too early | Blocks unsafe first steps |
+
+## Why the free preview is limited
+
+The free preview is limited because a full AI workflow plan needs real workflow context: data access, people, tools, review owner, failure cases, customer impact, and business goal.
+
+Those details should not be guessed from a public free form, and users should not paste real customer data into a public-safe browser preview.
+
+```text
+Free preview = safe direction.
+Paid review = actual workflow design.
+Paid pilot = implementation path.
+```
+
+The limitation is not only a paid wall. It is also a safety boundary.
 
 ## The problem
 
