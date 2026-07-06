@@ -112,6 +112,8 @@ A public-safe deliverable preview is available at `docs/public-safe-review-deliv
 
 It explains what a public-safe workflow review may produce after the free mini audit preview, such as a workflow idea summary, manual workflow sketch, AI touchpoint candidates, data boundary notes, human review gate notes, blocked first-step list, starter validation checklist, safe first experiment, questions before paid pilot, and recommended next decision.
 
+A synthetic example review note is available at `examples/public-safe-review-note-sample.md`.
+
 This remains high-level and does not include pricing, sales scripts, customer scoring, payability qualification, production architecture, or full implementation methodology.
 
 ## Free user objection response
@@ -148,7 +150,7 @@ See `docs/architecture.md` and `assets/workflowguard_architecture.svg`.
 
 ## Public-safe examples
 
-See the `examples/` folder for sample task intake, execution plan, validation checklist, report, trace log, and mini audit preview sample output.
+See the `examples/` folder for sample task intake, execution plan, validation checklist, report, trace log, mini audit preview sample output, and public-safe review note sample.
 
 ## What this is not
 
