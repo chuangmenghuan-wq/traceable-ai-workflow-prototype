@@ -79,6 +79,12 @@ Before enabling GitHub Pages, changing repository visibility, sharing with wider
 
 The checklist verifies product maturity wording, legal/privacy/cybersecurity/compliance disclaimers, data safety, technical boundaries, internal strategy exposure, private system exposure, free / paid boundary, and reviewer flow readiness.
 
+## Reviewer feedback
+
+For controlled trusted-reviewer preview, use `release/trusted-reviewer-feedback-form.md` after the reviewer has followed `demo/reviewer-walkthrough.md`.
+
+The feedback form focuses on problem clarity, safety-analysis positioning, difference from a generic chatbot, free / paid boundary, trust, business usefulness, next-step clarity, overclaim risk, and public-safe boundary checks.
+
 ## Architecture
 
 See `docs/architecture.md` and `assets/workflowguard_architecture.svg`.
