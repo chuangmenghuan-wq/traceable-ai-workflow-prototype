@@ -81,7 +81,9 @@ The checklist verifies product maturity wording, legal/privacy/cybersecurity/com
 
 ## Reviewer feedback
 
-For controlled trusted-reviewer preview, use `release/trusted-reviewer-feedback-form.md` after the reviewer has followed `demo/reviewer-walkthrough.md`.
+For controlled trusted-reviewer preview, use `release/controlled-reviewer-outreach-message.md` to invite reviewers without turning the request into a sales message or public launch announcement.
+
+Then use `release/trusted-reviewer-feedback-form.md` after the reviewer has followed `demo/reviewer-walkthrough.md`.
 
 After collecting 3 to 5 reviewer responses, use `release/reviewer-feedback-summary-template.md` to create an anonymized public-safe summary and convert feedback into the next patch decision.
 
