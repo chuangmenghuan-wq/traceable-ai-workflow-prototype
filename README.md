@@ -67,6 +67,12 @@ The free preview is intentionally limited. It shows the method and direction, bu
 
 The tool does not require login, does not store user input, does not send data to a backend, does not call an AI API, does not allow file uploads, and does not use real customer data.
 
+## Free user objection response
+
+Common skeptical questions from free users are handled by `docs/free-user-objection-response-department.md`.
+
+This public-safe department answers questions such as why the free preview is limited, why it is different from asking GPT, why real customer data should not be pasted, what is free, what remains locked, and why this is not a safety guarantee.
+
 ## Sample output
 
 A public-safe sample output is available at `examples/mini-audit-preview-sample.md`.
