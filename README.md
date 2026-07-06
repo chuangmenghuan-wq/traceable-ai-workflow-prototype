@@ -3,7 +3,7 @@
 **Repository:** `traceable-ai-workflow-prototype`  
 **Status:** Independent prototype / pre-company project  
 **Release state:** Public-safe draft, not launched yet  
-**Version:** Public-safe v0.1
+**Version:** Public-safe v0.2
 
 WorkflowGuard AI is a public-safe prototype for traceable AI workflow evaluation before using sensitive production data.
 
@@ -35,13 +35,15 @@ Example task:
 
 > Our company wants to use AI in customer service. Which workflow should we start with, what data should we avoid, and what is the safest first step?
 
-## Free planner
+## Mini audit preview
 
 A first static browser-only tool is available at `web/ai-workflow-planner.html`.
 
-The planner helps a user turn one AI workflow idea into a small AI Workflow Starter Report with an initial Green / Yellow / Red risk level, recommended first step, data to avoid, a safe first experiment, human review requirements, and a public-safe next step.
+The tool is positioned as a **WorkflowGuard Mini Audit Preview**, not a full consulting report. It helps a user turn one AI workflow idea into a public-safe preview with an initial Green / Yellow / Red risk level, reason codes, workflow map preview, AI touchpoint preview, data boundary preview, human review gate preview, starter validation checklist, trace log preview, and a public-safe next step.
 
-The planner is intentionally simple and public-safe. It does not require login, does not store user input, does not send data to a backend, does not call an AI API, and does not use real customer data.
+The free preview is intentionally limited. It shows the method and direction, but it does not include full workflow redesign, implementation planning, ROI analysis, tool selection, production integration, client-specific risk review, or a paid pilot roadmap.
+
+The tool does not require login, does not store user input, does not send data to a backend, does not call an AI API, does not allow file uploads, and does not use real customer data.
 
 ## Architecture
 
@@ -65,6 +67,6 @@ WorkflowGuard AI is currently an early independent prototype. It is not publicly
 
 ## Roadmap
 
-Short term: improve samples, add demo video, collect feedback from 3–5 reviewers, and refine public-safe wording.  
+Short term: improve the mini audit preview, add demo video, collect feedback from 3–5 reviewers, and refine public-safe wording.  
 Medium term: create controlled pilot templates, improve validation rules, and add optional UI mockup.  
 Long term: turn repeated workflow patterns into reusable capabilities.
