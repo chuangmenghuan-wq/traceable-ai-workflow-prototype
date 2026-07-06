@@ -13,6 +13,12 @@ It demonstrates how a vague AI adoption request can be turned into a structured 
 
 This repository uses synthetic examples only. It does not use real customer data, private company data, production systems, secrets, or internal business development materials.
 
+## Chinese overview
+
+For a Traditional Chinese plain-language introduction, see `docs/chinese-plain-language-overview.md`.
+
+This overview is designed for Taiwanese small business owners, operations leads, non-technical reviewers, and first-time readers. It explains the concept without turning it into a sales page, pricing document, or launch announcement.
+
 ## 30-second plain-language overview
 
 WorkflowGuard AI helps answer one early question:
