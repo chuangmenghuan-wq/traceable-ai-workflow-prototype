@@ -90,6 +90,12 @@ Example task:
 
 > Our company wants to use AI in customer service. Which workflow should we start with, what data should we avoid, and what is the safest first step?
 
+## Package index
+
+For a single map of the public-safe package, use `release/public-safe-package-index.md`.
+
+The index explains the recommended reading path, core package files, reviewer flow files, launch and safety files, supporting examples, what the package currently proves, and what it does not prove yet.
+
 ## Quick reviewer path
 
 For a 3 to 5 minute review, start with `demo/reviewer-walkthrough.md`.
