@@ -51,6 +51,12 @@ Example task:
 
 > Our company wants to use AI in customer service. Which workflow should we start with, what data should we avoid, and what is the safest first step?
 
+## Quick reviewer path
+
+For a 3 to 5 minute review, start with `demo/reviewer-walkthrough.md`.
+
+The walkthrough guides a reviewer through the README, sample output, browser-only mini audit tool, synthetic test case, free / paid boundary, public-safe boundary, and suggested feedback questions.
+
 ## Mini audit preview
 
 A first static browser-only tool is available at `web/ai-workflow-planner.html`.
