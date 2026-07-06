@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WorkflowGuard Free Planner</title>
+  <title>WorkflowGuard Mini Audit Preview</title>
   <style>
     :root {
       --bg: #f6f7f9;
@@ -20,6 +20,8 @@
       --red-text: #b42318;
       --blue-bg: #eff8ff;
       --blue-text: #175cd3;
+      --lock-bg: #f2f4f7;
+      --lock-text: #475467;
     }
 
     * {
@@ -41,7 +43,7 @@
     }
 
     .wrap {
-      max-width: 1040px;
+      max-width: 1120px;
       margin: 0 auto;
     }
 
@@ -55,12 +57,12 @@
 
     h1 {
       margin: 0 0 12px;
-      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-size: clamp(2rem, 5vw, 3.5rem);
       line-height: 1.05;
     }
 
     .hero-copy {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0;
       color: #eaecf0;
       font-size: 1.1rem;
@@ -72,12 +74,12 @@
 
     .grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+      grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1.15fr);
       gap: 24px;
       align-items: start;
     }
 
-    @media (max-width: 880px) {
+    @media (max-width: 940px) {
       .grid {
         grid-template-columns: 1fr;
       }
@@ -121,8 +123,7 @@
     }
 
     textarea,
-    select,
-    input[type="text"] {
+    select {
       width: 100%;
       border: 1px solid var(--line);
       border-radius: 12px;
@@ -133,8 +134,17 @@
     }
 
     textarea {
-      min-height: 112px;
+      min-height: 116px;
       resize: vertical;
+    }
+
+    .counter {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 6px;
     }
 
     fieldset {
@@ -227,17 +237,49 @@
       font-size: 0.9rem;
     }
 
+    .section-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    @media (max-width: 680px) {
+      .section-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section-list li {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: #fcfcfd;
+    }
+
     .report {
       white-space: pre-wrap;
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 16px;
       background: #fcfcfd;
-      min-height: 260px;
+      min-height: 360px;
+      overflow-wrap: anywhere;
     }
 
     .empty {
       color: var(--muted);
+    }
+
+    .locked-box {
+      border: 1px dashed #98a2b3;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 14px;
+      background: var(--lock-bg);
+      color: var(--lock-text);
     }
 
     footer {
@@ -247,9 +289,10 @@
 
     @media print {
       header,
-      .planner-form,
+      .audit-form,
       .button-row,
-      footer {
+      footer,
+      .method-card {
         display: none;
       }
 
@@ -275,20 +318,21 @@
 <body>
   <header>
     <div class="wrap">
-      <p class="eyebrow">WorkflowGuard AI · Free Planner v0.1</p>
-      <h1>AI Workflow Starter Report</h1>
-      <p class="hero-copy">A browser-only planning tool for choosing a safer first AI workflow before using sensitive production data.</p>
+      <p class="eyebrow">WorkflowGuard AI · Mini Audit Preview v0.2</p>
+      <h1>AI workflow audit preview, not just an AI answer.</h1>
+      <p class="hero-copy">Turn one AI idea into a public-safe preview: risk level, workflow map, AI touchpoints, data boundaries, human review gate, validation preview, and locked advanced sections.</p>
     </div>
   </header>
 
   <main>
     <div class="wrap grid">
-      <section class="card planner-form" aria-labelledby="planner-title">
-        <h2 id="planner-title">Describe your AI workflow idea</h2>
-        <p class="hint">This tool runs entirely in your browser. It does not log in, upload, store, or send your input anywhere.</p>
+      <section class="card audit-form" aria-labelledby="planner-title">
+        <h2 id="planner-title">Start with one workflow idea</h2>
+        <p class="hint">Use one workflow only. Do not paste customer records, private documents, secrets, or production data.</p>
 
         <label for="workflowIdea">What workflow do you want AI to improve?</label>
-        <textarea id="workflowIdea" placeholder="Example: We want AI to help our team answer repeated customer questions faster."></textarea>
+        <textarea id="workflowIdea" maxlength="500" placeholder="Example: We want AI to help our support team turn repeated customer questions into draft replies, but a human should approve before sending."></textarea>
+        <div class="counter"><span>Preview limit: 500 characters</span><span id="charCount">0 / 500</span></div>
 
         <label for="workflowType">Workflow type</label>
         <select id="workflowType">
@@ -334,17 +378,17 @@
         </fieldset>
 
         <div class="button-row">
-          <button class="primary" type="button" id="generateBtn">Generate starter report</button>
+          <button class="primary" type="button" id="generateBtn">Generate mini audit preview</button>
           <button class="secondary" type="button" id="resetBtn">Reset</button>
         </div>
       </section>
 
       <aside class="card" aria-labelledby="report-title">
-        <h2 id="report-title">Starter report</h2>
+        <h2 id="report-title">Mini audit preview</h2>
         <div id="riskBadge" class="badge risk-yellow">Not generated yet</div>
-        <div id="report" class="report empty">Fill in the planner and generate a public-safe starter report.</div>
+        <div id="report" class="report empty">Fill in the form to generate a public-safe mini audit preview.</div>
         <div class="button-row">
-          <button class="secondary" type="button" id="copyBtn">Copy report</button>
+          <button class="secondary" type="button" id="copyBtn">Copy preview</button>
           <button class="secondary" type="button" id="printBtn">Print or save as PDF</button>
         </div>
         <p class="small" id="copyStatus" role="status" aria-live="polite"></p>
@@ -352,10 +396,25 @@
     </div>
 
     <div class="wrap">
+      <section class="card method-card">
+        <h2>What the free preview shows</h2>
+        <ul class="section-list">
+          <li><strong>Unlocked:</strong> initial risk level and reason codes.</li>
+          <li><strong>Unlocked:</strong> simple workflow map preview.</li>
+          <li><strong>Unlocked:</strong> safe AI touchpoint preview.</li>
+          <li><strong>Unlocked:</strong> data boundary and human review gate preview.</li>
+          <li><strong>Unlocked:</strong> first safe experiment and starter validation checks.</li>
+          <li><strong>Locked:</strong> full workflow redesign, ROI analysis, production integration, tool selection, and paid pilot roadmap.</li>
+        </ul>
+        <div class="locked-box">
+          This free version is intentionally limited. It helps a user understand the direction and safety boundary, but it does not provide a complete implementation plan.
+        </div>
+      </section>
+
       <section class="card">
         <h2>Public-safe disclaimer</h2>
-        <p>This free planner is a rule-based prototype. It is not legal, privacy, cybersecurity, compliance, financial, medical, or professional advice. Do not paste real customer data, secrets, production credentials, private company data, or confidential documents into this page.</p>
-        <p>For the safest first experiment, use synthetic examples, public-safe sample workflows, and human review before any real deployment.</p>
+        <p>This mini audit preview is a rule-based prototype. It is not legal, privacy, cybersecurity, compliance, financial, medical, or professional advice. Do not paste real customer data, secrets, production credentials, private company data, or confidential documents into this page.</p>
+        <p>The page runs in the browser only. It does not require login, does not store user input, does not send data to a backend, and does not call an AI API.</p>
       </section>
     </div>
   </main>
@@ -397,63 +456,77 @@
 
     function getCheckedDataRisks() {
       const risks = [];
-      if (document.getElementById("touchCustomerData").checked) risks.push("customer records or customer conversations");
-      if (document.getElementById("touchPersonalData").checked) risks.push("personal data such as names, phones, emails, IDs, or addresses");
-      if (document.getElementById("touchPaymentData").checked) risks.push("payment, billing, order, or transaction data");
-      if (document.getElementById("touchProductionSystem").checked) risks.push("production systems such as CRM, email, database, ticketing, or ERP");
-      if (document.getElementById("touchConfidentialData").checked) risks.push("confidential strategy, finance, HR, legal, or security information");
+      if (document.getElementById("touchCustomerData").checked) risks.push({ code: "customer_data_possible", label: "customer records or customer conversations" });
+      if (document.getElementById("touchPersonalData").checked) risks.push({ code: "personal_data_possible", label: "personal data such as names, phones, emails, IDs, or addresses" });
+      if (document.getElementById("touchPaymentData").checked) risks.push({ code: "payment_data_possible", label: "payment, billing, order, or transaction data" });
+      if (document.getElementById("touchProductionSystem").checked) risks.push({ code: "production_system_possible", label: "production systems such as CRM, email, database, ticketing, or ERP" });
+      if (document.getElementById("touchConfidentialData").checked) risks.push({ code: "confidential_data_possible", label: "confidential strategy, finance, HR, legal, or security information" });
       return risks;
     }
 
     function scoreRisk(form) {
       let score = 0;
       const reasons = [];
+      const reasonCodes = [];
 
       if (form.aiUse === "draft") {
         score += 1;
         reasons.push("AI would create drafts, so human review should stay in the loop.");
+        reasonCodes.push("draft_requires_review");
       }
 
       if (form.aiUse === "judgment") {
         score += 2;
         reasons.push("AI would make recommendations or judgments, which need validation before real use.");
+        reasonCodes.push("judgment_requires_validation");
       }
 
       if (form.aiUse === "auto_execute") {
         score += 4;
         reasons.push("AI would automatically execute actions, which is not a safe first step for a new workflow.");
+        reasonCodes.push("auto_execution_blocked_for_preview");
       }
 
       if (form.audience === "review_then_external") {
         score += 1;
-        reasons.push("AI output may be used externally, even with review.");
+        reasons.push("AI output may be used externally after review.");
+        reasonCodes.push("external_use_after_review");
       }
 
       if (form.audience === "external_direct") {
         score += 4;
         reasons.push("AI output would go directly to external users or customers.");
+        reasonCodes.push("direct_external_output_risk");
       }
 
       form.dataRisks.forEach((risk) => {
-        if (risk.includes("customer")) score += 2;
-        if (risk.includes("personal")) score += 3;
-        if (risk.includes("Payment") || risk.includes("payment")) score += 4;
-        if (risk.includes("Production") || risk.includes("production")) score += 3;
-        if (risk.includes("Confidential") || risk.includes("confidential")) score += 4;
+        reasonCodes.push(risk.code);
+        if (risk.code === "customer_data_possible") score += 2;
+        if (risk.code === "personal_data_possible") score += 3;
+        if (risk.code === "payment_data_possible") score += 4;
+        if (risk.code === "production_system_possible") score += 3;
+        if (risk.code === "confidential_data_possible") score += 4;
       });
+
+      if (form.dataRisks.length) {
+        reasons.push("The workflow may touch sensitive data or systems, so the first version should use synthetic or anonymized examples only.");
+      }
 
       if (form.humanReview === "partial") {
         score += 2;
         reasons.push("Only some outputs would be reviewed by a human.");
+        reasonCodes.push("partial_human_review");
       }
 
       if (form.humanReview === "no") {
         score += 4;
         reasons.push("No human review is planned.");
+        reasonCodes.push("missing_human_review");
       }
 
       if (form.dataRisks.length === 0 && form.aiUse === "organize" && form.audience === "internal_only" && form.humanReview === "yes") {
         reasons.push("The first version can stay internal, synthetic, and human-reviewed.");
+        reasonCodes.push("safe_internal_preview_candidate");
       }
 
       let level = "Green";
@@ -472,106 +545,208 @@
         className = "risk-red";
       }
 
-      return { score, level, label, className, reasons };
+      return { score, level, label, className, reasons, reasonCodes };
+    }
+
+    function workflowMapPreview(form) {
+      const baseStart = form.workflowType === "customer_service" ? "User or customer request arrives" : "Workflow input arrives";
+      const baseEnd = form.audience === "internal_only" ? "Internal team uses reviewed output" : "Reviewed output may be used externally";
+
+      return [
+        baseStart,
+        "Human identifies the request type",
+        "AI assists with a narrow internal step",
+        "Human reviews AI output",
+        baseEnd
+      ];
+    }
+
+    function touchpointPreview(form, risk) {
+      if (risk.level === "Red") {
+        return {
+          safe: "Use AI only to organize synthetic examples or create an internal checklist preview.",
+          blocked: "Do not allow AI to send messages, update records, approve actions, change orders, or connect to production tools."
+        };
+      }
+
+      if (form.aiUse === "draft") {
+        return {
+          safe: "Use AI to create internal drafts that a human reviews before any real use.",
+          blocked: "Do not let AI directly send the draft or decide whether the draft is correct."
+        };
+      }
+
+      if (form.aiUse === "judgment") {
+        return {
+          safe: "Use AI to prepare a recommendation preview, then require human validation and written rejection rules.",
+          blocked: "Do not use the recommendation as an automatic approval, rejection, refund, legal, finance, HR, or customer decision."
+        };
+      }
+
+      if (form.aiUse === "auto_execute") {
+        return {
+          safe: "Convert the first version into a draft-only or checklist-only workflow.",
+          blocked: "Do not start with automatic execution. Treat execution as a later paid pilot design topic."
+        };
+      }
+
+      return {
+        safe: "Use AI to summarize, group, or organize internal information from synthetic examples.",
+        blocked: "Do not expand into sensitive data, external users, or automatic execution in the preview version."
+      };
     }
 
     function recommendationFor(form, risk) {
       if (risk.level === "Red") {
         return {
-          firstStep: "Start with a public-safe mapping exercise: define the workflow, list decision points, and create synthetic sample cases before using any real data.",
-          avoidStep: "Do not connect AI to production systems, customer channels, payment data, confidential files, or automatic actions in the first version.",
-          experiment: "Create 10 synthetic examples and test whether AI can produce an internal checklist or draft summary. A human should review every output."
+          firstStep: "Run a public-safe workflow mapping review before building anything. Use synthetic examples only.",
+          experiment: "Create 10 fake cases and test whether AI can produce an internal checklist or draft summary. A human reviews every output.",
+          gate: "Human approval is required before any real data, external output, or production system is touched."
         };
       }
 
       if (risk.level === "Yellow") {
         return {
-          firstStep: "Start with an internal draft or summary workflow, then require a human to review before anything is sent, published, or used operationally.",
-          avoidStep: "Do not start with direct customer replies, automatic decisions, or write access to production tools.",
-          experiment: "Use 10 fake or anonymized examples to test whether AI can produce useful draft outputs, then record what a human had to correct."
+          firstStep: "Start with an internal draft, summary, or FAQ-building workflow. Keep human review mandatory.",
+          experiment: "Use 10 fake or anonymized examples and record what a human had to correct.",
+          gate: "A human must check accuracy, tone, missing context, privacy exposure, and whether the output should be rejected."
         };
       }
 
       return {
         firstStep: "Start with a narrow internal workflow using synthetic examples, clear success criteria, and a short validation checklist.",
-        avoidStep: "Do not expand into sensitive data, external users, or automatic execution until the small experiment has been reviewed.",
-        experiment: "Use 5 to 10 synthetic examples and check whether the output is complete, useful, and easy for a human to verify."
+        experiment: "Use 5 to 10 synthetic examples and check whether the output is complete, useful, and easy for a human to verify.",
+        gate: "Human review should remain in place until repeated results are stable and low-risk."
       };
     }
 
-    function dataToAvoid(form) {
-      const base = [
-        "customer names, phone numbers, emails, addresses, or IDs",
-        "order numbers, billing records, payment details, or transaction history",
-        "full customer conversations, complaints, or support tickets",
+    function dataBoundaryPreview(form) {
+      const selected = form.dataRisks.map((risk) => risk.label);
+      const avoid = [
+        "customer names, phone numbers, emails, addresses, IDs, or full conversations",
+        "order numbers, billing records, payment details, refunds, or transaction history",
         "API keys, passwords, tokens, private file paths, and production credentials",
         "confidential strategy, HR, legal, finance, or security documents"
       ];
 
-      if (form.dataRisks.length === 0) {
-        return [
-          "real customer data until a clear review process exists",
-          "secrets, credentials, and private company files",
-          "production system access in the first experiment"
-        ];
+      if (selected.length === 0) {
+        return {
+          selected: "No sensitive boundary selected, but the first experiment should still use synthetic examples.",
+          avoid: ["real customer data", "production system access", "secrets or credentials", "private company files"]
+        };
       }
 
-      return base;
+      return {
+        selected: selected.join("; "),
+        avoid
+      };
+    }
+
+    function validationPreview(form, risk) {
+      const checks = [
+        "Is the output based only on public-safe or synthetic examples?",
+        "Can a human quickly verify the output before use?",
+        "Does the output avoid personal data, secrets, and production credentials?",
+        "Is there a clear rule for rejecting unsafe or uncertain output?"
+      ];
+
+      if (form.audience !== "internal_only") {
+        checks.push("Is external use blocked until a human approves the final version?");
+      }
+
+      if (risk.level !== "Green") {
+        checks.push("Is the first experiment limited to draft-only, summary-only, or checklist-only use?");
+      }
+
+      return checks;
+    }
+
+    function lockedSections() {
+      return [
+        "Full workflow redesign and step-by-step operating procedure",
+        "Detailed AI touchpoint design and capability routing",
+        "Production data policy and integration plan",
+        "Tool selection, build-vs-buy comparison, and implementation architecture",
+        "ROI, cost, effort, timeline, and paid pilot roadmap",
+        "Client-specific risk review and stakeholder decision map"
+      ];
+    }
+
+    function buildTraceLog(form, risk) {
+      return {
+        preview_type: "mini_audit_preview_v0_2",
+        risk_level: risk.level,
+        risk_score_band: risk.score >= 10 ? "10_plus" : risk.score >= 5 ? "5_to_9" : "0_to_4",
+        reason_codes: risk.reasonCodes,
+        recommended_start: risk.level === "Red" ? "public_safe_workflow_mapping" : form.aiUse === "auto_execute" ? "draft_or_checklist_only" : "internal_human_reviewed_experiment",
+        blocked_start: ["direct_external_output", "production_write_access", "sensitive_data_processing", "automatic_execution"]
+      };
     }
 
     function buildReport(form, risk) {
       const recommendation = recommendationFor(form, risk);
-      const avoidData = dataToAvoid(form);
-      const reasons = risk.reasons.length ? risk.reasons : ["The workflow can begin as a narrow, internal, human-reviewed experiment."];
+      const map = workflowMapPreview(form);
+      const touchpoint = touchpointPreview(form, risk);
+      const boundary = dataBoundaryPreview(form);
+      const checks = validationPreview(form, risk);
+      const trace = buildTraceLog(form, risk);
       const idea = form.idea.trim() || "No detailed workflow description was provided.";
 
       return [
-        "AI Workflow Starter Report",
-        "Generated by WorkflowGuard Free Planner v0.1",
+        "WorkflowGuard Mini Audit Preview",
+        "Public-safe preview generated in browser · Not a full consulting report",
         "",
-        "1. Workflow idea",
+        "1. Original AI idea",
         idea,
         "",
-        "2. Initial judgment",
-        "Risk level: " + risk.level,
+        "2. Initial risk level",
         risk.label,
         "",
-        "3. Why this was classified this way",
-        reasons.map((item) => "- " + item).join("\n"),
+        "3. Reason codes",
+        risk.reasonCodes.length ? risk.reasonCodes.map((item) => "- " + item).join("\n") : "- no_major_risk_code_selected",
         "",
-        "4. Workflow profile",
-        "- Workflow type: " + workflowLabels[form.workflowType],
-        "- Main AI use: " + aiUseLabels[form.aiUse],
-        "- First output audience: " + audienceLabels[form.audience],
-        "- Human review: " + (form.humanReview === "yes" ? "review before real use" : form.humanReview === "partial" ? "partial review only" : "no review planned"),
-        "- Sensitive boundaries selected: " + (form.dataRisks.length ? form.dataRisks.join("; ") : "none selected"),
+        "4. Why this was classified this way",
+        risk.reasons.map((item) => "- " + item).join("\n"),
         "",
-        "5. Recommended first step",
-        recommendation.firstStep,
+        "5. Workflow map preview",
+        map.map((item, index) => (index + 1) + ". " + item).join("\n"),
         "",
-        "6. Not recommended as the first step",
-        recommendation.avoidStep,
+        "6. AI touchpoint preview",
+        "Safe first AI role: " + touchpoint.safe,
+        "Blocked first AI role: " + touchpoint.blocked,
         "",
-        "7. Data to avoid for now",
-        avoidData.map((item) => "- " + item).join("\n"),
+        "7. Data boundary preview",
+        "Selected boundary: " + boundary.selected,
+        "Avoid for now:",
+        boundary.avoid.map((item) => "- " + item).join("\n"),
         "",
-        "8. First safe experiment",
+        "8. Human review gate preview",
+        recommendation.gate,
+        "",
+        "9. First safe experiment",
         recommendation.experiment,
         "",
-        "9. Human review requirement",
-        "Before this workflow touches real users, real customer data, production tools, or official decisions, define who reviews the output, what they check, and when the AI result must be rejected.",
+        "10. Starter validation checklist preview",
+        checks.map((item) => "[ ] " + item).join("\n"),
         "",
-        "10. Suggested next step",
-        "For a stronger plan, run a 20-minute public-safe workflow review using only synthetic examples and a high-level workflow description.",
+        "11. Locked advanced sections",
+        "These are intentionally not included in the free preview:",
+        lockedSections().map((item) => "- " + item).join("\n"),
+        "",
+        "12. Suggested next step",
+        "Use a 20-minute public-safe workflow review to turn this preview into a more specific workflow map and paid pilot decision. Do not use real customer data for the review.",
+        "",
+        "13. Trace log preview",
+        JSON.stringify(trace, null, 2),
         "",
         "Disclaimer",
-        "This is a rule-based public-safe prototype. It is not legal, privacy, cybersecurity, compliance, financial, medical, or professional advice. Do not paste real customer data, secrets, production credentials, private company data, or confidential documents into this tool."
+        "This is a limited rule-based preview. It is not legal, privacy, cybersecurity, compliance, financial, medical, or professional advice. It does not include full workflow redesign, implementation planning, ROI analysis, tool selection, production integration, or a formal consulting report."
       ].join("\n");
     }
 
     function collectForm() {
       return {
-        idea: document.getElementById("workflowIdea").value,
+        idea: document.getElementById("workflowIdea").value.slice(0, 500),
         workflowType: document.getElementById("workflowType").value,
         aiUse: document.getElementById("aiUse").value,
         audience: document.getElementById("audience").value,
@@ -591,7 +766,7 @@
       reportEl.classList.remove("empty");
       badge.textContent = risk.label;
       badge.className = "badge " + risk.className;
-      document.getElementById("copyStatus").textContent = "Report generated locally in your browser.";
+      document.getElementById("copyStatus").textContent = "Mini audit preview generated locally in your browser.";
     }
 
     function resetForm() {
@@ -606,31 +781,39 @@
       document.getElementById("riskBadge").textContent = "Not generated yet";
       document.getElementById("riskBadge").className = "badge risk-yellow";
       const reportEl = document.getElementById("report");
-      reportEl.textContent = "Fill in the planner and generate a public-safe starter report.";
+      reportEl.textContent = "Fill in the form to generate a public-safe mini audit preview.";
       reportEl.classList.add("empty");
       document.getElementById("copyStatus").textContent = "";
+      updateCharCount();
     }
 
     async function copyReport() {
       const reportText = document.getElementById("report").textContent;
       const status = document.getElementById("copyStatus");
-      if (!reportText || reportText.includes("Fill in the planner")) {
-        status.textContent = "Generate a report first.";
+      if (!reportText || reportText.includes("Fill in the form")) {
+        status.textContent = "Generate a preview first.";
         return;
       }
 
       try {
         await navigator.clipboard.writeText(reportText);
-        status.textContent = "Report copied to clipboard.";
+        status.textContent = "Preview copied to clipboard.";
       } catch (error) {
-        status.textContent = "Copy failed. You can select the report text manually.";
+        status.textContent = "Copy failed. You can select the preview text manually.";
       }
+    }
+
+    function updateCharCount() {
+      const input = document.getElementById("workflowIdea");
+      document.getElementById("charCount").textContent = input.value.length + " / 500";
     }
 
     document.getElementById("generateBtn").addEventListener("click", generateReport);
     document.getElementById("resetBtn").addEventListener("click", resetForm);
     document.getElementById("copyBtn").addEventListener("click", copyReport);
     document.getElementById("printBtn").addEventListener("click", () => window.print());
+    document.getElementById("workflowIdea").addEventListener("input", updateCharCount);
+    updateCharCount();
   </script>
 </body>
 </html>
