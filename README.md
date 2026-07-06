@@ -7,6 +7,8 @@
 
 WorkflowGuard AI is a public-safe prototype for traceable AI workflow evaluation before using sensitive production data.
 
+In simple terms, this prototype helps a team decide where AI should start, what data should be avoided, and what should be checked before trying AI in a real workflow.
+
 It demonstrates how a vague AI adoption request can be turned into a structured workflow with task intake, classification, execution planning, capability routing, validation checks, reporting, trace logs, and safety boundaries.
 
 This repository uses synthetic examples only. It does not use real customer data, private company data, production systems, secrets, or internal business development materials.
@@ -32,6 +34,14 @@ Vague AI adoption task
 Example task:
 
 > Our company wants to use AI in customer service. Which workflow should we start with, what data should we avoid, and what is the safest first step?
+
+## Free planner
+
+A first static browser-only tool is available at `web/ai-workflow-planner.html`.
+
+The planner helps a user turn one AI workflow idea into a small AI Workflow Starter Report with an initial Green / Yellow / Red risk level, recommended first step, data to avoid, a safe first experiment, human review requirements, and a public-safe next step.
+
+The planner is intentionally simple and public-safe. It does not require login, does not store user input, does not send data to a backend, does not call an AI API, and does not use real customer data.
 
 ## Architecture
 
