@@ -83,6 +83,8 @@ The checklist verifies product maturity wording, legal/privacy/cybersecurity/com
 
 For controlled trusted-reviewer preview, use `release/trusted-reviewer-feedback-form.md` after the reviewer has followed `demo/reviewer-walkthrough.md`.
 
+After collecting 3 to 5 reviewer responses, use `release/reviewer-feedback-summary-template.md` to create an anonymized public-safe summary and convert feedback into the next patch decision.
+
 The feedback form focuses on problem clarity, safety-analysis positioning, difference from a generic chatbot, free / paid boundary, trust, business usefulness, next-step clarity, overclaim risk, and public-safe boundary checks.
 
 ## Architecture
