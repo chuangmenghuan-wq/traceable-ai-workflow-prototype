@@ -61,13 +61,19 @@ The free preview is intentionally limited. It shows the method and direction, bu
 
 The tool does not require login, does not store user input, does not send data to a backend, does not call an AI API, does not allow file uploads, and does not use real customer data.
 
+## Sample output
+
+A public-safe sample output is available at `examples/mini-audit-preview-sample.md`.
+
+The sample shows how one synthetic customer-service AI idea becomes a mini audit preview with safety risk snapshot, reason codes, workflow map preview, AI touchpoint preview, data boundary preview, validation checklist, locked advanced sections, and trace log preview.
+
 ## Architecture
 
 See `docs/architecture.md` and `assets/workflowguard_architecture.svg`.
 
 ## Public-safe examples
 
-See the `examples/` folder for sample task intake, execution plan, validation checklist, report, and trace log.
+See the `examples/` folder for sample task intake, execution plan, validation checklist, report, trace log, and mini audit preview sample output.
 
 ## What this is not
 
