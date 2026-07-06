@@ -73,6 +73,12 @@ A public-safe sample output is available at `examples/mini-audit-preview-sample.
 
 The sample shows how one synthetic customer-service AI idea becomes a mini audit preview with safety risk snapshot, reason codes, workflow map preview, AI touchpoint preview, data boundary preview, validation checklist, locked advanced sections, and trace log preview.
 
+## Launch readiness
+
+Before enabling GitHub Pages, changing repository visibility, sharing with wider reviewers, or presenting this as a controlled public-safe demo, use `release/public-safe-launch-readiness-checklist.md`.
+
+The checklist verifies product maturity wording, legal/privacy/cybersecurity/compliance disclaimers, data safety, technical boundaries, internal strategy exposure, private system exposure, free / paid boundary, and reviewer flow readiness.
+
 ## Architecture
 
 See `docs/architecture.md` and `assets/workflowguard_architecture.svg`.
