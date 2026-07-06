@@ -3,7 +3,7 @@
 **Repository:** `traceable-ai-workflow-prototype`  
 **Status:** Independent prototype / pre-company project  
 **Release state:** Public-safe draft, not launched yet  
-**Version:** Public-safe v0.2
+**Version:** Public-safe v0.3
 
 WorkflowGuard AI is a public-safe prototype for traceable AI workflow evaluation before using sensitive production data.
 
@@ -17,12 +17,28 @@ This repository uses synthetic examples only. It does not use real customer data
 
 Many teams want to use AI, but they do not know where to start safely.
 
+Most AI workflow problems do not start because the AI model is not smart enough. They usually start because the workflow boundary is unclear: what data AI can see, whether output can reach customers, whether AI can affect production systems, who reviews the result, and what happens when AI is uncertain or wrong.
+
+## Safety analysis focus
+
+WorkflowGuard AI focuses on the early safety layer before production use:
+
+- choosing a safer first workflow
+- identifying data that should be avoided
+- checking whether AI output may reach customers
+- checking whether AI may affect production systems
+- keeping humans in the review loop
+- creating validation checks and traceable decision records
+
+This is a public-safe workflow safety preview. It is not a legal, privacy, cybersecurity, compliance, financial, medical, or professional guarantee.
+
 ## Demo flow
 
 ```text
 Vague AI adoption task
   → Task Intake
   → Task Classification
+  → Safety Risk Snapshot
   → Execution Plan
   → Capability Routing
   → Demo Execution
@@ -39,9 +55,9 @@ Example task:
 
 A first static browser-only tool is available at `web/ai-workflow-planner.html`.
 
-The tool is positioned as a **WorkflowGuard Mini Audit Preview**, not a full consulting report. It helps a user turn one AI workflow idea into a public-safe preview with an initial Green / Yellow / Red risk level, reason codes, workflow map preview, AI touchpoint preview, data boundary preview, human review gate preview, starter validation checklist, trace log preview, and a public-safe next step.
+The tool is positioned as a **WorkflowGuard Mini Audit Preview**, not a full consulting report. It helps a user turn one AI workflow idea into a public-safe preview with an initial Green / Yellow / Red risk level, safety risk snapshot, reason codes, workflow map preview, AI touchpoint preview, data boundary preview, human review gate preview, starter validation checklist, trace log preview, and a public-safe next step.
 
-The free preview is intentionally limited. It shows the method and direction, but it does not include full workflow redesign, implementation planning, ROI analysis, tool selection, production integration, client-specific risk review, or a paid pilot roadmap.
+The free preview is intentionally limited. It shows the method and direction, but it does not include full safety control design, full workflow redesign, implementation planning, ROI analysis, tool selection, production integration, client-specific risk review, or a paid pilot roadmap.
 
 The tool does not require login, does not store user input, does not send data to a backend, does not call an AI API, does not allow file uploads, and does not use real customer data.
 
