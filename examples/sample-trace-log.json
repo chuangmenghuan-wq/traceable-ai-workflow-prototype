@@ -1,0 +1,19 @@
+{
+  "task_id": "demo-customer-service-001",
+  "project": "WorkflowGuard AI",
+  "status": "PASS_PUBLIC_SAFE_DEMO_VALIDATION",
+  "risk_level": "medium",
+  "production_access_required": false,
+  "sensitive_data_required": false,
+  "blocked_operations": [
+    "use_real_customer_data",
+    "connect_to_crm",
+    "send_customer_email",
+    "claim_compliance_guarantee"
+  ],
+  "safety_notes": [
+    "Synthetic examples only",
+    "Human review required",
+    "Prototype status disclosed"
+  ]
+}
