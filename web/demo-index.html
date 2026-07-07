@@ -50,6 +50,13 @@
       margin-top: 18px;
     }
     @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+    .two-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    @media (max-width: 820px) { .two-grid { grid-template-columns: 1fr; } }
     .card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -149,7 +156,58 @@
   </header>
 
   <main>
-    <section class="card" aria-label="Current package status">
+    <section class="card" aria-label="Thirty second clarity card">
+      <h2 class="section-title">30-second clarity card｜30 秒看懂</h2>
+      <div class="two-grid">
+        <div class="status-item">
+          <span class="status-label">What it is｜它是什麼</span>
+          <span class="status-value">A safety preview for AI workflow ideas.</span>
+          <p class="note">It helps turn a vague AI adoption idea into a small, reviewable first test.</p>
+          <p class="note">它幫你把模糊的 AI 想法，先整理成小型、可審查的第一步。</p>
+        </div>
+        <div class="status-item">
+          <span class="status-label">What it is not｜它不是什麼</span>
+          <span class="status-value">Not a launched SaaS, not production automation.</span>
+          <p class="note">It is not a legal, privacy, cybersecurity, compliance, ROI, or deployment guarantee.</p>
+          <p class="note">它不是正式產品、不是正式自動化系統，也不是資安/合規/法律保證。</p>
+        </div>
+      </div>
+      <p class="focus-note">Capability = reusable workflow ability.｜Capability 在這裡是「可重複使用的工作流程能力」。</p>
+    </section>
+
+    <section class="card" style="margin-top: 18px;" aria-label="Implementation boundary">
+      <h2 class="section-title">Implementation boundary｜實作邊界</h2>
+      <div class="status-grid">
+        <div class="status-item">
+          <span class="status-label">Runtime｜執行方式</span>
+          <span class="status-value">Static browser demo</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Backend｜後端</span>
+          <span class="status-value">None</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">AI API｜模型呼叫</span>
+          <span class="status-value">None</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Login｜登入</span>
+          <span class="status-value">None</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Storage｜儲存</span>
+          <span class="status-value">None</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Data｜資料</span>
+          <span class="status-value">Synthetic examples only</span>
+        </div>
+      </div>
+      <p class="status-guide">This boundary is intentional: the prototype is meant to show the review method before any real data, backend, production system, or AI model is involved.</p>
+      <p class="status-guide">這個邊界是刻意保留的：先展示審查方法，不先接真實資料、後端、正式系統或 AI 模型。</p>
+    </section>
+
+    <section class="card" style="margin-top: 18px;" aria-label="Current package status">
       <h2 class="section-title">Current Status｜目前狀態</h2>
       <p class="note">English: A quick visual status summary for this static public prototype.</p>
       <p class="note">繁中：這裡快速說明目前展示包的狀態，避免被誤會成正式產品。</p>
@@ -256,7 +314,9 @@
     <section class="card" style="margin-top: 18px;">
       <h2 class="section-title">Suggested review order｜建議閱讀順序</h2>
       <ol class="steps">
-        <li>Read the current status section.｜先看目前狀態。</li>
+        <li>Read the 30-second clarity card.｜先看 30 秒看懂卡。</li>
+        <li>Read the implementation boundary.｜確認它只是靜態展示，不是正式系統。</li>
+        <li>Read the current status section.｜再看目前狀態。</li>
         <li>Open the Chinese first-read card or English summary card.｜中文讀者看中文卡，英文 reviewer 看 English card。</li>
         <li>Open the 5 synthetic scenarios.｜看 5 個合成情境。</li>
         <li>Try the Mini Audit Preview.｜試用 Mini Audit Preview。</li>
