@@ -17,13 +17,11 @@ This repository uses synthetic examples only. It does not use real customer data
 
 For a first 3 to 5 minute review, read these files in order:
 
-```text
-1. docs/chinese-plain-language-overview.md
-2. web/demo-index.html
-3. examples/5-synthetic-workflow-scenarios.md
-4. web/ai-workflow-planner.html
-5. docs/public-repo-final-check.md
-```
+1. [Traditional Chinese plain-language overview](docs/chinese-plain-language-overview.md)
+2. [Demo index](web/demo-index.html)
+3. [5 synthetic workflow scenarios](examples/5-synthetic-workflow-scenarios.md)
+4. [Mini audit preview](web/ai-workflow-planner.html)
+5. [Public repo final check](docs/public-repo-final-check.md)
 
 This is a public prototype repository, not a finished product launch.
 
