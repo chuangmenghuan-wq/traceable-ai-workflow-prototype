@@ -140,6 +140,12 @@ A public-safe sample output is available at `examples/mini-audit-preview-sample.
 
 The sample shows how one synthetic customer-service AI idea becomes a mini audit preview with safety risk snapshot, reason codes, workflow map preview, AI touchpoint preview, data boundary preview, validation checklist, locked advanced sections, and trace log preview.
 
+## 5 synthetic workflow scenarios
+
+A public-safe scenario pack is available at `examples/5-synthetic-workflow-scenarios.md`.
+
+It shows FAQ grouping, appointment notes, daily work notes, small-test value check, and quality gate review using synthetic examples only. These scenarios are not real customer case studies.
+
 ## Launch readiness
 
 Before enabling GitHub Pages, changing repository visibility, sharing with wider reviewers, or presenting this as a controlled public-safe demo, use `release/public-safe-launch-readiness-checklist.md`.
@@ -162,7 +168,7 @@ See `docs/architecture.md` and `assets/workflowguard_architecture.svg`.
 
 ## Public-safe examples
 
-See the `examples/` folder for sample task intake, execution plan, validation checklist, report, trace log, mini audit preview sample output, and public-safe review note sample.
+See the `examples/` folder for sample task intake, execution plan, validation checklist, report, trace log, mini audit preview sample output, public-safe review note sample, and 5 synthetic workflow scenarios.
 
 ## What this is not
 
