@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WorkflowGuard Demo Index</title>
+  <title>WorkflowGuard Demo Index｜中英雙語 Demo 首頁</title>
   <style>
     :root {
       --bg: #f6f7f9;
@@ -14,6 +14,8 @@
       --strong: #111827;
       --blue: #175cd3;
       --blue-bg: #eff8ff;
+      --green: #027a48;
+      --green-bg: #ecfdf3;
     }
     * { box-sizing: border-box; }
     body {
@@ -39,7 +41,8 @@
       font-weight: 700;
     }
     h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; }
-    .hero-copy { max-width: 780px; margin: 0; color: #eaecf0; font-size: 1.08rem; }
+    .hero-copy { max-width: 820px; margin: 0; color: #eaecf0; font-size: 1.08rem; }
+    .hero-copy + .hero-copy { margin-top: 10px; }
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -58,7 +61,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      min-height: 220px;
+      min-height: 230px;
     }
     .tag {
       display: inline-flex;
@@ -70,8 +73,11 @@
       font-size: 0.85rem;
       font-weight: 800;
     }
+    .tag.green { background: var(--green-bg); color: var(--green); }
     h2 { margin: 0; color: var(--strong); font-size: 1.18rem; }
     p { margin: 0; }
+    .zh { color: var(--strong); font-weight: 650; }
+    .en { color: var(--muted); }
     a.button {
       display: inline-flex;
       width: fit-content;
@@ -135,119 +141,130 @@
 <body>
   <header>
     <div class="wrap">
-      <p class="eyebrow">WorkflowGuard AI · Static Demo Pack</p>
-      <h1>Demo entry point</h1>
-      <p class="hero-copy">A simple static preview for understanding how an AI workflow idea can start from a small, checkable test before becoming a larger workflow.</p>
+      <p class="eyebrow">WorkflowGuard AI · Bilingual Static Demo｜中英雙語靜態展示</p>
+      <h1>Demo entry point｜Demo 首頁</h1>
+      <p class="hero-copy">English: A public-safe prototype for reviewing where an AI workflow can start before using sensitive or production data.</p>
+      <p class="hero-copy">繁中：這是一個公開安全的原型，用來在接觸敏感資料或正式流程前，先看 AI 工作流程可以從哪裡安全起步。</p>
     </div>
   </header>
 
   <main>
     <section class="card" aria-label="Current package status">
-      <h2 class="section-title">Current Package Status</h2>
-      <p class="note">A quick visual status summary for the current static demo package.</p>
+      <h2 class="section-title">Current Status｜目前狀態</h2>
+      <p class="note">English: A quick visual status summary for this static public prototype.</p>
+      <p class="note">繁中：這裡快速說明目前展示包的狀態，避免被誤會成正式產品。</p>
       <div class="status-grid">
         <div class="status-item">
-          <span class="status-label">Entry layer</span>
+          <span class="status-label">Public repo｜公開 repo</span>
           <span class="status-value">READY</span>
         </div>
         <div class="status-item">
-          <span class="status-label">Chinese clarity</span>
+          <span class="status-label">GitHub Pages｜網頁展示</span>
+          <span class="status-value">ENABLED</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Chinese + English｜中英雙語</span>
           <span class="status-value">READY</span>
         </div>
         <div class="status-item">
-          <span class="status-label">Capability packs</span>
+          <span class="status-label">Capability packs｜能力包</span>
           <span class="status-value">PASS</span>
         </div>
         <div class="status-item">
-          <span class="status-label">Quality gate</span>
-          <span class="status-value">PASS</span>
-        </div>
-        <div class="status-item">
-          <span class="status-label">Public-safe boundary</span>
+          <span class="status-label">Public-safe boundary｜公開安全邊界</span>
           <span class="status-value">RECORDED</span>
         </div>
         <div class="status-item">
-          <span class="status-label">Live deployment</span>
-          <span class="status-value">NOT ENABLED</span>
+          <span class="status-label">Product launch｜正式產品發布</span>
+          <span class="status-value">NOT LAUNCHED</span>
         </div>
       </div>
-      <p class="status-guide">Guide: READY means available, PASS means checked, RECORDED means written down, and NOT ENABLED means turned off.</p>
-      <p class="focus-note">First-read focus: understand the status, read the Chinese card, then open the capability overview.</p>
+      <p class="status-guide">Guide: READY / PASS means available or checked. NOT LAUNCHED means this is still a prototype, not a finished product.</p>
+      <p class="focus-note">閱讀重點：先看它是什麼，再看 5 個 synthetic scenarios，最後再試 Mini Audit Preview。</p>
     </section>
 
     <section class="card" style="margin-top: 18px;" aria-label="What to learn here">
-      <h2 class="section-title">What to learn here</h2>
+      <h2 class="section-title">What to learn here｜你可以看懂什麼</h2>
       <ol class="steps">
-        <li>How a small AI workflow test can be made easy to check.</li>
-        <li>How repeated patterns become reusable capability packs.</li>
-        <li>How the quality gate keeps each pack simple and reviewable.</li>
+        <li>English: How a vague AI workflow idea becomes a small, checkable first test.</li>
+        <li>繁中：一個模糊的 AI 想法，如何先變成小型、可檢查的安全測試。</li>
+        <li>English: How repeated patterns become reusable capability packs.</li>
+        <li>繁中：重複出現的流程，如何抽象成可重複使用的 Capability。</li>
+        <li>English: How human review and validation stay visible before production use.</li>
+        <li>繁中：在正式使用前，如何保留人工審查與驗證紀錄。</li>
       </ol>
     </section>
 
     <section class="grid" aria-label="Demo links">
       <article class="card demo-card" lang="zh-Hant">
-        <span class="tag">第一眼</span>
+        <span class="tag green">繁中入門</span>
         <h2>中文第一眼理解卡</h2>
-        <p>先用白話看懂這個封包是什麼、為什麼有用，以及目前不是什麼。</p>
-        <a class="button" href="../examples/zh-first-read-clarity-card.md">開啟第一眼理解卡</a>
-      </article>
-
-      <article class="card demo-card" lang="zh-Hant">
-        <span class="tag">繁中</span>
-        <h2>中文摘要卡</h2>
-        <p>用白話看懂 AI 工作流程想法的起步方向。</p>
-        <a class="button" href="./zh-summary-card-demo.html">開啟中文摘要卡</a>
+        <p class="zh">先用白話看懂這個原型是什麼、為什麼有用，以及目前不是什麼。</p>
+        <p class="en">Traditional Chinese first-read card for fast plain-language understanding.</p>
+        <a class="button" href="../examples/zh-first-read-clarity-card.md">開啟中文卡</a>
       </article>
 
       <article class="card demo-card">
-        <span class="tag">Capability</span>
-        <h2>Capability Pack Overview</h2>
-        <p>See the reusable capability packs and how the same small-test pattern is reused.</p>
-        <a class="button" href="../docs/capability-pack-overview.md">Open overview</a>
-      </article>
-
-      <article class="card demo-card">
-        <span class="tag">Scenarios</span>
-        <h2>5 Synthetic Scenarios</h2>
-        <p>See five public-safe workflow scenarios that show how the method can repeat across different work types.</p>
-        <a class="button" href="../examples/5-synthetic-workflow-scenarios.md">Open scenarios</a>
-      </article>
-
-      <article class="card demo-card">
-        <span class="tag">Interactive</span>
-        <h2>Mini Audit Tool</h2>
-        <p>Try the browser-only mini audit preview and generate a longer structured result.</p>
-        <a class="button" href="./ai-workflow-planner.html">Open mini audit tool</a>
-      </article>
-
-      <article class="card demo-card">
-        <span class="tag">Quick read</span>
+        <span class="tag">English intro</span>
         <h2>English Summary Card</h2>
-        <p>View a short card that summarizes the result before reading a full report.</p>
+        <p class="en">View a short English card that summarizes the prototype before reading the full README.</p>
+        <p class="zh">英文審查者可先看這張摘要卡，快速理解原型定位。</p>
         <a class="button" href="./summary-card-demo.html">Open English card</a>
       </article>
 
       <article class="card demo-card">
-        <span class="tag">Gate</span>
+        <span class="tag">Scenarios｜情境</span>
+        <h2>5 Synthetic Scenarios</h2>
+        <p class="en">See five public-safe workflow scenarios with synthetic input, safe test, output, and human check.</p>
+        <p class="zh">看 5 個合成情境，理解方法如何套用到不同工作流程。</p>
+        <a class="button" href="../examples/5-synthetic-workflow-scenarios.md">Open scenarios</a>
+      </article>
+
+      <article class="card demo-card">
+        <span class="tag">Interactive｜互動</span>
+        <h2>Mini Audit Preview</h2>
+        <p class="en">Try the browser-only mini audit preview. No login, no backend, no AI API call.</p>
+        <p class="zh">試用瀏覽器版 Mini Audit Preview。不登入、不送後端、不呼叫 AI API。</p>
+        <a class="button" href="./ai-workflow-planner.html">Open mini audit tool</a>
+      </article>
+
+      <article class="card demo-card">
+        <span class="tag">Capability｜能力</span>
+        <h2>Capability Pack Overview</h2>
+        <p class="en">See how reusable workflow abilities are documented as capability packs.</p>
+        <p class="zh">看重複流程如何被整理成可重複使用的能力包。</p>
+        <a class="button" href="../docs/capability-pack-overview.md">Open overview</a>
+      </article>
+
+      <article class="card demo-card">
+        <span class="tag">Safety｜安全</span>
+        <h2>Secret / API Key Checklist</h2>
+        <p class="en">Check the public-safe boundary for secrets, API keys, backend use, and production credentials.</p>
+        <p class="zh">確認這個公開原型沒有 API key、secret、後端依賴或正式環境憑證。</p>
+        <a class="button" href="../docs/secret-api-key-safety-checklist.md">Open checklist</a>
+      </article>
+
+      <article class="card demo-card">
+        <span class="tag">Gate｜品質</span>
         <h2>Quality Gate</h2>
-        <p>Check whether the capability packs have a value card, an example layer, and Chinese / English versions.</p>
+        <p class="en">Check whether a capability pack has enough structure to stay simple and reviewable.</p>
+        <p class="zh">檢查能力包是否足夠簡單、可審查、可重複使用。</p>
         <a class="button" href="../docs/capability-pack-quality-gate.md">Open quality gate</a>
       </article>
     </section>
 
     <section class="card" style="margin-top: 18px;">
-      <h2 class="section-title">Suggested review order</h2>
+      <h2 class="section-title">Suggested review order｜建議閱讀順序</h2>
       <ol class="steps">
-        <li>Start with the package status section to understand the current state.</li>
-        <li>Read what to learn here before opening the links.</li>
-        <li>Open the Traditional Chinese first-read card for the fastest plain-language view.</li>
-        <li>Open the Traditional Chinese summary card to see the core idea.</li>
-        <li>Open the capability overview to see the reusable packs.</li>
-        <li>Open the 5 synthetic scenarios to see reusable examples.</li>
-        <li>Use the mini audit tool to see the longer structured preview.</li>
-        <li>Use the quality gate before adding or changing more packs.</li>
+        <li>Read the current status section.｜先看目前狀態。</li>
+        <li>Open the Chinese first-read card or English summary card.｜中文讀者看中文卡，英文 reviewer 看 English card。</li>
+        <li>Open the 5 synthetic scenarios.｜看 5 個合成情境。</li>
+        <li>Try the Mini Audit Preview.｜試用 Mini Audit Preview。</li>
+        <li>Open the capability overview and quality gate.｜再看 capability overview 與 quality gate。</li>
+        <li>Check the Secret / API Key checklist if reviewing public safety.｜若在意公開安全，查看 API key / secret 檢查表。</li>
       </ol>
-      <p class="note">Static preview only. No login, no backend, no storage, no real client data, and no live deployment.</p>
+      <p class="note">Static preview only. No login, no backend, no storage, no real client data, no AI API call, and no production automation.</p>
+      <p class="note">這只是靜態展示：不登入、不接後端、不儲存、不使用真實客戶資料、不呼叫 AI API、不做正式自動化。</p>
     </section>
   </main>
 </body>
