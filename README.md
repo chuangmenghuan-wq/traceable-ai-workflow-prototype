@@ -3,9 +3,21 @@
 **Repository:** `traceable-ai-workflow-prototype`  
 **Status:** Independent prototype / pre-company project  
 **Release state:** Public-safe draft, not launched yet  
-**Version:** Public-safe v0.5
+**Version:** Public-safe v0.6
 
 > **Public prototype notice:** This is an early public prototype for reviewing AI workflow ideas before using sensitive or production data. It is not a finished SaaS product, production automation system, or legal / privacy / cybersecurity / compliance guarantee.
+
+---
+
+## Live demo
+
+Open the static GitHub Pages demo:
+
+```text
+https://chuangmenghuan-wq.github.io/traceable-ai-workflow-prototype/
+```
+
+The live demo is a static public prototype page. It does not require login, does not store input, does not call an AI API, and does not connect to a backend.
 
 ---
 
@@ -33,11 +45,12 @@ This prototype is mainly for first-time reviewers, small teams, operators, and n
 
 ### What you can review in 3 minutes
 
-1. [Traditional Chinese plain-language overview](docs/chinese-plain-language-overview.md)
-2. [Demo index](web/demo-index.html)
-3. [5 synthetic workflow scenarios](examples/5-synthetic-workflow-scenarios.md)
-4. [Mini audit preview](web/ai-workflow-planner.html)
-5. [Public repo final check](docs/public-repo-final-check.md)
+1. [Live demo](https://chuangmenghuan-wq.github.io/traceable-ai-workflow-prototype/)
+2. [Traditional Chinese plain-language overview](docs/chinese-plain-language-overview.md)
+3. [Demo index](web/demo-index.html)
+4. [5 synthetic workflow scenarios](examples/5-synthetic-workflow-scenarios.md)
+5. [Mini audit preview](web/ai-workflow-planner.html)
+6. [Public repo final check](docs/public-repo-final-check.md)
 
 ### What this repository proves
 
@@ -127,7 +140,8 @@ Example task:
 | [docs/capability-pack-quality-gate.md](docs/capability-pack-quality-gate.md) | Quality gate for keeping capability packs reviewable. |
 | [docs/secret-api-key-safety-checklist.md](docs/secret-api-key-safety-checklist.md) | Explicit checklist for API key / secret boundaries. |
 | [docs/external-review-synthesis-001.md](docs/external-review-synthesis-001.md) | External review synthesis and next improvement plan. |
-| [release/public-safe-launch-readiness-checklist.md](release/public-safe-launch-readiness-checklist.md) | Checklist before wider sharing, GitHub Pages, or public demo positioning. |
+| [docs/github-pages-readiness-note.md](docs/github-pages-readiness-note.md) | GitHub Pages readiness and owner approval record. |
+| [release/public-safe-launch-readiness-checklist.md](release/public-safe-launch-readiness-checklist.md) | Checklist before wider sharing or public demo positioning. |
 
 ---
 
@@ -208,14 +222,14 @@ unrelated production systems
 
 ## Current stage
 
-WorkflowGuard AI is currently an early independent prototype. It is public as a repository, but it is not publicly launched as a product.
+WorkflowGuard AI is currently an early independent prototype. It is public as a repository and available as a static GitHub Pages demo, but it is not publicly launched as a finished product.
 
 Short-term improvements:
 
 ```text
 - keep reducing first-reader confusion
 - improve synthetic scenario examples
-- prepare GitHub Pages readiness without enabling it automatically
+- periodically check the GitHub Pages demo link
 - collect trusted reviewer feedback
 - decide license with owner approval
 ```
