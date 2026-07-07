@@ -1,7 +1,7 @@
 # 5 Synthetic Workflow Scenarios
 
 **Status:** Public-safe synthetic examples  
-**Task ID:** REVIEW-001D  
+**Task ID:** REVIEW-001D / SCENARIO-002  
 **Date:** 2026-07-08
 
 This file shows five synthetic workflow scenarios. They are not real customer cases.
@@ -17,6 +17,20 @@ messy input → safe small test → visible output → human check → reusable 
 ## How to read these scenarios
 
 Each scenario uses only synthetic or public-style sample content. The examples are intentionally small so a reviewer can see what the workflow is trying to prove without needing private data, production access, or a real customer case.
+
+Start with the comparison table, then read the full scenarios only if you want more detail.
+
+---
+
+## One-page comparison table
+
+| Scenario | Pain point | Safe first test | Human check | Reusable capability |
+|---|---|---|---|---|
+| FAQ grouping | Repeated questions are mixed together and hard to prioritize. | Group synthetic questions into topic labels only. | Check whether topic labels are understandable and correctly grouped. | FAQ Topic Capability |
+| Appointment notes | Free-text messages contain time, person, and follow-up details. | Extract appointment fields for review, without updating a real schedule. | Check whether fields match the original message before any real change. | Appointment-Service Capability |
+| Daily work notes | Daily notes mix delays, checklist items, follow-ups, and review tasks. | Group notes into simple operational categories. | Check whether grouping is useful and whether owners are needed. | Daily Note Capability |
+| Small-test value check | A broad AI idea may jump to sensitive data or customer-facing automation too early. | Turn the vague idea into one small synthetic-data experiment. | Check whether the test avoids sensitive data and external automation. | Small-Test Value Capability |
+| Quality gate review | A capability draft may sound useful but lack reusable structure. | Check whether the draft has examples, language coverage, and review rules. | Check whether the capability is simple, visible, and not overclaiming. | Capability Pack Quality Gate |
 
 ---
 
@@ -65,6 +79,10 @@ A human reviewer confirms whether the topic labels are understandable and whethe
 FAQ Topic Capability
 ```
 
+### Reusable when
+
+This capability can be reused when a team has repeated questions or messages and wants to group them before writing answers, automating replies, or touching real customer data.
+
 ---
 
 ## Scenario 2: Appointment notes
@@ -103,6 +121,10 @@ A human reviewer checks whether the extracted fields match the original message 
 ```text
 Appointment-Service Capability
 ```
+
+### Reusable when
+
+This capability can be reused when a workflow contains short free-text service notes that should be converted into reviewable fields before any real schedule, CRM, or production system is changed.
 
 ---
 
@@ -148,6 +170,10 @@ A human reviewer checks whether the grouping is useful and whether any item need
 Daily Note Capability
 ```
 
+### Reusable when
+
+This capability can be reused when a team has messy daily notes and wants to turn them into reviewable categories before assigning owners, building SOPs, or connecting task tools.
+
 ---
 
 ## Scenario 4: Small-test value check
@@ -192,6 +218,10 @@ A human reviewer confirms whether the test avoids sensitive data, avoids custome
 Small-Test Value Capability
 ```
 
+### Reusable when
+
+This capability can be reused when an AI idea is too broad and needs to be reduced into a safe first experiment before real data, customers, or production systems are involved.
+
 ---
 
 ## Scenario 5: Quality gate review
@@ -199,6 +229,12 @@ Small-Test Value Capability
 ### Before
 
 A drafted capability pack may sound useful, but it is not clear whether it is reusable, explainable, and reviewable.
+
+Plain-language version:
+
+```text
+The idea sounds good, but we cannot tell whether another person can reuse it safely.
+```
 
 ### Synthetic input
 
@@ -240,6 +276,10 @@ A human reviewer confirms whether the capability is simple enough, has a visible
 ```text
 Capability Pack Quality Gate
 ```
+
+### Reusable when
+
+This capability can be reused when a workflow ability sounds useful but still needs a visible example, language support, human review rule, and public-safe boundary before being shared or reused.
 
 ---
 
