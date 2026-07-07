@@ -39,7 +39,7 @@
       font-weight: 700;
     }
     h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; }
-    .hero-copy { max-width: 760px; margin: 0; color: #eaecf0; font-size: 1.08rem; }
+    .hero-copy { max-width: 780px; margin: 0; color: #eaecf0; font-size: 1.08rem; }
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -98,12 +98,33 @@
     <div class="wrap">
       <p class="eyebrow">WorkflowGuard AI · Static Demo Pack</p>
       <h1>Demo entry point</h1>
-      <p class="hero-copy">A simple place to open the current WorkflowGuard demos: the mini audit tool, the English summary card, and the Traditional Chinese summary card.</p>
+      <p class="hero-copy">A simple static preview for understanding how an AI workflow idea can start from a small, checkable test before becoming a larger workflow.</p>
     </div>
   </header>
 
   <main>
     <section class="grid" aria-label="Demo links">
+      <article class="card demo-card" lang="zh-Hant">
+        <span class="tag">第一眼</span>
+        <h2>中文第一眼理解卡</h2>
+        <p>先用白話看懂這個封包是什麼、為什麼有用，以及目前不是什麼。</p>
+        <a class="button" href="../examples/zh-first-read-clarity-card.md">開啟第一眼理解卡</a>
+      </article>
+
+      <article class="card demo-card" lang="zh-Hant">
+        <span class="tag">繁中</span>
+        <h2>中文摘要卡</h2>
+        <p>用白話看懂 AI 工作流程想法的起步方向。</p>
+        <a class="button" href="./zh-summary-card-demo.html">開啟中文摘要卡</a>
+      </article>
+
+      <article class="card demo-card">
+        <span class="tag">Capability</span>
+        <h2>Capability Pack Overview</h2>
+        <p>See the reusable capability packs and how the same small-test pattern is reused.</p>
+        <a class="button" href="../docs/capability-pack-overview.md">Open overview</a>
+      </article>
+
       <article class="card demo-card">
         <span class="tag">Interactive</span>
         <h2>Mini Audit Tool</h2>
@@ -118,22 +139,24 @@
         <a class="button" href="./summary-card-demo.html">Open English card</a>
       </article>
 
-      <article class="card demo-card" lang="zh-Hant">
-        <span class="tag">繁中</span>
-        <h2>中文摘要卡</h2>
-        <p>用白話看懂 AI 工作流程想法的起步方向。</p>
-        <a class="button" href="./zh-summary-card-demo.html">開啟中文摘要卡</a>
+      <article class="card demo-card">
+        <span class="tag">Gate</span>
+        <h2>Quality Gate</h2>
+        <p>Check whether the capability packs have a value card, an example layer, and Chinese / English versions.</p>
+        <a class="button" href="../docs/capability-pack-quality-gate.md">Open quality gate</a>
       </article>
     </section>
 
     <section class="card" style="margin-top: 18px;">
       <h2 class="section-title">Suggested review order</h2>
       <ol class="steps">
-        <li>Start with the Traditional Chinese summary card if you want the fastest plain-language view.</li>
-        <li>Open the English summary card to compare the same idea in a compact English format.</li>
+        <li>Start with the Traditional Chinese first-read card for the fastest plain-language view.</li>
+        <li>Open the Traditional Chinese summary card to see the core idea.</li>
+        <li>Open the capability overview to see the reusable packs.</li>
         <li>Use the mini audit tool to see the longer structured preview.</li>
+        <li>Use the quality gate before adding or changing more packs.</li>
       </ol>
-      <p class="note">Static pages only. No login, no backend, no storage.</p>
+      <p class="note">Static preview only. No login, no backend, no storage, no real client data, and no live deployment.</p>
     </section>
   </main>
 </body>
