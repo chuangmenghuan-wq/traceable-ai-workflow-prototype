@@ -46,11 +46,12 @@ This prototype is mainly for first-time reviewers, small teams, operators, and n
 ### What you can review in 3 minutes
 
 1. [Live demo](https://chuangmenghuan-wq.github.io/traceable-ai-workflow-prototype/)
-2. [Traditional Chinese plain-language overview](docs/chinese-plain-language-overview.md)
-3. [Demo index](web/demo-index.html)
-4. [5 synthetic workflow scenarios](examples/5-synthetic-workflow-scenarios.md)
-5. [Mini audit preview](web/ai-workflow-planner.html)
-6. [Public repo final check](docs/public-repo-final-check.md)
+2. [Public prototype package index](docs/public-prototype-package-index.md)
+3. [Traditional Chinese plain-language overview](docs/chinese-plain-language-overview.md)
+4. [Demo index](web/demo-index.html)
+5. [5 synthetic workflow scenarios](examples/5-synthetic-workflow-scenarios.md)
+6. [Mini audit preview](web/ai-workflow-planner.html)
+7. [Public repo final check](docs/public-repo-final-check.md)
 
 ### What this repository proves
 
@@ -131,6 +132,7 @@ Example task:
 
 | File | Why it matters |
 |---|---|
+| [docs/public-prototype-package-index.md](docs/public-prototype-package-index.md) | Central reviewer index showing ready, draft-only, and not-launched materials. |
 | [docs/chinese-plain-language-overview.md](docs/chinese-plain-language-overview.md) | Fast Traditional Chinese explanation for first-time readers. |
 | [web/demo-index.html](web/demo-index.html) | Static demo index and reading path. |
 | [web/ai-workflow-planner.html](web/ai-workflow-planner.html) | Browser-only mini audit preview. |
@@ -180,7 +182,7 @@ Small-test value check
 Quality gate review
 ```
 
-Each scenario now includes a before state, synthetic input, safe first test, example output, human check, and capability shown.
+Each scenario now includes a before state, synthetic input, safe first test, example output, human check, capability shown, and a one-page comparison table.
 
 ---
 
@@ -197,6 +199,7 @@ Daily Note Capability
 Small-Test Value Capability
 Capability Pack Quality Gate
 External Feedback Intake Capability
+Public Prototype Package Index Capability
 ```
 
 This keeps the prototype focused on repeatable workflow patterns instead of one-off prompts.
