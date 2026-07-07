@@ -214,7 +214,7 @@
 
     .empty { color: var(--muted); }
 
-    .locked-box, .safety-box {
+    .locked-box, .safety-box, .sample-box, .legend-box {
       border-radius: 14px;
       padding: 14px 16px;
       margin-top: 14px;
@@ -226,7 +226,7 @@
       color: var(--lock-text);
     }
 
-    .safety-box {
+    .safety-box, .sample-box, .legend-box {
       border: 1px solid #b2ddff;
       background: var(--blue-bg);
       color: var(--blue-text);
@@ -246,9 +246,9 @@
 <body>
   <header>
     <div class="wrap">
-      <p class="eyebrow">WorkflowGuard AI · Mini Audit Preview v0.4</p>
+      <p class="eyebrow">WorkflowGuard AI · Mini Audit Preview v0.5</p>
       <h1>AI workflow safety preview before production use.</h1>
-      <p class="hero-copy">Turn one AI idea into a public-safe starting direction: risk level, safety snapshot, workflow map preview, AI touchpoints, data boundaries, human review gate, validation preview, and locked advanced sections.</p>
+      <p class="hero-copy">Turn one AI idea into a public-safe starting direction: risk level, safety snapshot, workflow map preview, AI touchpoints, data boundaries, human review gate, validation preview, and trace note.</p>
     </div>
   </header>
 
@@ -257,6 +257,12 @@
       <section class="card audit-form" aria-labelledby="planner-title">
         <h2 id="planner-title">Start with one workflow idea</h2>
         <p class="hint">Use one workflow only. Do not paste customer records, private documents, secrets, or production data.</p>
+
+        <div class="sample-box">
+          <strong>Need a safe sample?</strong>
+          <p class="hint">Use the sample to understand the form before typing your own public-safe idea.</p>
+          <button class="secondary" type="button" id="sampleBtn">Use sample input</button>
+        </div>
 
         <label for="workflowIdea">What workflow do you want AI to improve?</label>
         <textarea id="workflowIdea" maxlength="500" placeholder="Example: We want AI to help our support team turn repeated customer questions into draft replies, but a human should approve before sending."></textarea>
@@ -325,6 +331,16 @@
 
     <div class="wrap">
       <section class="card method-card">
+        <h2>Output legend</h2>
+        <div class="legend-box">
+          <p><strong>Risk level:</strong> Green, Yellow, or Red estimate for the first safe test.</p>
+          <p><strong>Reason codes:</strong> short labels showing why the preview classified the workflow that way.</p>
+          <p><strong>Human review gate:</strong> the point where a person must approve, reject, or revise the AI output before any real use.</p>
+          <p><strong>Trace note:</strong> a simple record of the decision path so a reviewer can inspect why the preview suggested that first step.</p>
+        </div>
+      </section>
+
+      <section class="card method-card">
         <h2>What this does in plain language</h2>
         <p>WorkflowGuard helps answer one early question: before using AI in a real workflow, where can we start safely?</p>
         <div class="safety-box">The free preview gives a safe starting direction. It does not design the full workflow, choose tools, estimate ROI, or build the implementation roadmap.</div>
@@ -347,9 +363,9 @@
       </section>
 
       <section class="card method-card">
-        <h2>Why the free preview is limited</h2>
+        <h2>Why the preview is limited</h2>
         <p>A full AI workflow plan needs real workflow context: data access, people, tools, review owner, failure cases, customer impact, and business goal. Those details should not be guessed from a public free form, and users should not paste real customer data into a public-safe browser preview.</p>
-        <div class="locked-box"><strong>Free preview = safe direction.</strong><br />Paid review = actual workflow design.<br />Paid pilot = implementation path.<br /><br />The limitation is not only a paid wall. It is also a safety boundary.</div>
+        <div class="locked-box"><strong>Preview = safe direction.</strong><br />Deeper review = actual workflow design.<br />Pilot planning = implementation path.<br /><br />The limitation is not only a product boundary. It is also a safety boundary.</div>
       </section>
 
       <section class="card method-card">
@@ -361,7 +377,7 @@
           <li><strong>Unlocked:</strong> safe AI touchpoint preview.</li>
           <li><strong>Unlocked:</strong> data boundary and human review gate preview.</li>
           <li><strong>Unlocked:</strong> first safe experiment and starter validation checks.</li>
-          <li><strong>Locked:</strong> full safety control design, workflow redesign, ROI analysis, production integration, tool selection, and paid pilot roadmap.</li>
+          <li><strong>Locked:</strong> full safety control design, workflow redesign, ROI analysis, production integration, tool selection, and pilot roadmap.</li>
         </ul>
       </section>
 
@@ -495,7 +511,7 @@
       if (risk.level === "Red") return { safe: "Use AI only to organize synthetic examples or create an internal checklist preview.", blocked: "Do not allow AI to send messages, update records, approve actions, change orders, or connect to production tools." };
       if (form.aiUse === "draft") return { safe: "Use AI to create internal drafts that a human reviews before any real use.", blocked: "Do not let AI directly send the draft or decide whether the draft is correct." };
       if (form.aiUse === "judgment") return { safe: "Use AI to prepare a recommendation preview, then require human validation and written rejection rules.", blocked: "Do not use the recommendation as an automatic approval, rejection, refund, legal, finance, HR, or customer decision." };
-      if (form.aiUse === "auto_execute") return { safe: "Convert the first version into a draft-only or checklist-only workflow.", blocked: "Do not start with automatic execution. Treat execution as a later paid pilot design topic." };
+      if (form.aiUse === "auto_execute") return { safe: "Convert the first version into a draft-only or checklist-only workflow.", blocked: "Do not start with automatic execution. Treat execution as a later controlled pilot design topic." };
       return { safe: "Use AI to summarize, group, or organize internal information from synthetic examples.", blocked: "Do not expand into sensitive data, external users, or automatic execution in the preview version." };
     }
 
@@ -520,12 +536,12 @@
     }
 
     function lockedSections() {
-      return ["Full safety control design and review workflow", "Full workflow redesign and step-by-step operating procedure", "Detailed AI touchpoint design and capability routing", "Production data policy and integration plan", "Tool selection, build-vs-buy comparison, and implementation architecture", "ROI, cost, effort, timeline, and paid pilot roadmap", "Client-specific risk review and stakeholder decision map"];
+      return ["Full safety control design and review workflow", "Full workflow redesign and step-by-step operating procedure", "Detailed AI touchpoint design and capability routing", "Production data policy and integration plan", "Tool selection, build-vs-buy comparison, and implementation architecture", "ROI, cost, effort, timeline, and pilot roadmap", "Client-specific risk review and stakeholder decision map"];
     }
 
     function buildTraceLog(form, risk, safety) {
       return {
-        preview_type: "mini_audit_preview_v0_4",
+        preview_type: "mini_audit_preview_v0_5",
         risk_level: risk.level,
         risk_score_band: risk.score >= 10 ? "10_plus" : risk.score >= 5 ? "5_to_9" : "0_to_4",
         reason_codes: risk.reasonCodes,
@@ -549,8 +565,8 @@
         "WorkflowGuard Mini Audit Preview",
         "Public-safe safety preview generated in browser · Not a full consulting report",
         "",
-        "0. What this preview is for",
-        "This preview helps answer: where can this AI idea start safely? It is not a complete workflow design, tool recommendation, ROI estimate, or implementation roadmap.",
+        "0. Output legend",
+        "Risk level = first safe-test estimate. Reason codes = why this preview classified the workflow this way. Human review gate = where a person must approve, reject, or revise before real use. Trace log = inspectable decision path.",
         "",
         "1. Original AI idea",
         idea,
@@ -594,15 +610,15 @@
         "12. Starter validation checklist preview",
         checks.map((item) => "[ ] " + item).join("\n"),
         "",
-        "13. Why this preview is limited",
-        "A full plan requires your actual workflow, data access, people, tools, review owner, failure cases, customer impact, and business goal. Those details should not be guessed from a public form or tested with real customer data in a free browser preview.",
+        "13. Safe next step",
+        "Use this preview to discuss a narrow, synthetic-data workflow review. Do not connect real customer data, production systems, or automatic execution until a human-reviewed workflow map and validation plan exist.",
         "",
-        "14. Locked advanced sections",
-        "These are intentionally not included in the free preview:",
+        "14. Why this preview is limited",
+        "A full plan requires your actual workflow, data access, people, tools, review owner, failure cases, customer impact, and business goal. Those details should not be guessed from a public form or tested with real customer data in a browser preview.",
+        "",
+        "15. Locked advanced sections",
+        "These are intentionally not included in the preview:",
         lockedSections().map((item) => "- " + item).join("\n"),
-        "",
-        "15. Suggested next step",
-        "Use a public-safe workflow review to turn this preview into a more specific workflow map and paid pilot decision. Do not use real customer data for the review.",
         "",
         "16. Trace log preview",
         JSON.stringify(trace, null, 2),
@@ -634,6 +650,17 @@
       badge.textContent = risk.label;
       badge.className = "badge " + risk.className;
       document.getElementById("copyStatus").textContent = "Mini audit preview generated locally in your browser.";
+    }
+
+    function loadSampleInput() {
+      document.getElementById("workflowIdea").value = "We want AI to group repeated internal support questions into FAQ topic drafts. The first test should use fake examples only, and a human should review every output before anything is shared.";
+      document.getElementById("workflowType").value = "knowledge_base";
+      document.getElementById("aiUse").value = "draft";
+      document.getElementById("audience").value = "internal_only";
+      ["touchCustomerData", "touchPersonalData", "touchPaymentData", "touchProductionSystem", "touchConfidentialData"].forEach((id) => { document.getElementById(id).checked = false; });
+      document.querySelector("input[name='humanReview'][value='yes']").checked = true;
+      updateCharCount();
+      document.getElementById("copyStatus").textContent = "Safe sample loaded. You can generate a preview now.";
     }
 
     function resetForm() {
@@ -674,6 +701,7 @@
 
     document.getElementById("generateBtn").addEventListener("click", generateReport);
     document.getElementById("resetBtn").addEventListener("click", resetForm);
+    document.getElementById("sampleBtn").addEventListener("click", loadSampleInput);
     document.getElementById("copyBtn").addEventListener("click", copyReport);
     document.getElementById("printBtn").addEventListener("click", () => window.print());
     document.getElementById("workflowIdea").addEventListener("input", updateCharCount);
