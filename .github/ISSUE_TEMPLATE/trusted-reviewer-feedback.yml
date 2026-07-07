@@ -4,10 +4,6 @@ description: Structured feedback for the WorkflowGuard AI public-safe prototype.
 
 title: "Reviewer feedback: <short summary>"
 
-labels:
-  - feedback
-  - prototype-review
-
 body:
   - type: markdown
     attributes:
