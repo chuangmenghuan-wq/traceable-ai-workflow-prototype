@@ -91,6 +91,32 @@
     }
     .steps li { margin: 8px 0; }
     .note { color: var(--muted); font-size: 0.95rem; margin-top: 16px; }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 820px) { .status-grid { grid-template-columns: 1fr; } }
+    .status-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fcfcfd;
+    }
+    .status-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .status-value {
+      display: block;
+      color: var(--strong);
+      font-size: 1rem;
+      font-weight: 900;
+    }
   </style>
 </head>
 <body>
@@ -103,6 +129,37 @@
   </header>
 
   <main>
+    <section class="card" aria-label="Current package status">
+      <h2 class="section-title">Current Package Status</h2>
+      <p class="note">A quick visual status summary for the current static demo package.</p>
+      <div class="status-grid">
+        <div class="status-item">
+          <span class="status-label">Entry layer</span>
+          <span class="status-value">READY</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Chinese clarity</span>
+          <span class="status-value">READY</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Capability packs</span>
+          <span class="status-value">PASS</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Quality gate</span>
+          <span class="status-value">PASS</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Public-safe boundary</span>
+          <span class="status-value">RECORDED</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Live deployment</span>
+          <span class="status-value">NOT ENABLED</span>
+        </div>
+      </div>
+    </section>
+
     <section class="grid" aria-label="Demo links">
       <article class="card demo-card" lang="zh-Hant">
         <span class="tag">第一眼</span>
@@ -150,7 +207,8 @@
     <section class="card" style="margin-top: 18px;">
       <h2 class="section-title">Suggested review order</h2>
       <ol class="steps">
-        <li>Start with the Traditional Chinese first-read card for the fastest plain-language view.</li>
+        <li>Start with the package status section to understand the current state.</li>
+        <li>Open the Traditional Chinese first-read card for the fastest plain-language view.</li>
         <li>Open the Traditional Chinese summary card to see the core idea.</li>
         <li>Open the capability overview to see the reusable packs.</li>
         <li>Use the mini audit tool to see the longer structured preview.</li>
