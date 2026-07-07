@@ -1,0 +1,110 @@
+name: Trusted Reviewer Feedback
+
+description: Structured feedback for the WorkflowGuard AI public-safe prototype.
+
+title: "Reviewer feedback: <short summary>"
+
+labels:
+  - feedback
+  - prototype-review
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reviewing WorkflowGuard AI.
+
+        Please treat this as a prototype / portfolio review, not as a production product, SaaS launch, legal review, cybersecurity review, compliance review, or enterprise deployment review.
+
+        Do not include real customer data, private company data, secrets, credentials, API keys, personal data, or confidential business information.
+
+  - type: dropdown
+    id: reviewer_type
+    attributes:
+      label: Reviewer perspective
+      description: Which perspective are you reviewing from?
+      options:
+        - First-time non-technical reviewer
+        - Operator / small team user
+        - Product / workflow reviewer
+        - Technical reviewer
+        - AI governance / risk reviewer
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: first_three_minutes
+    attributes:
+      label: 3-minute understanding
+      description: After 3 minutes, what do you think this prototype is trying to do?
+      placeholder: Write your first understanding in plain language.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: clarity_rating
+    attributes:
+      label: First-read clarity
+      description: How clear is the project on first read?
+      options:
+        - 5 - Very clear
+        - 4 - Mostly clear
+        - 3 - Understandable but needs tightening
+        - 2 - Confusing
+        - 1 - Not understandable
+    validations:
+      required: true
+
+  - type: textarea
+    id: boundary_feedback
+    attributes:
+      label: Public-safe boundary feedback
+      description: Does the boundary feel clear without being too defensive?
+      placeholder: Mention anything that feels unclear, overclaimed, too defensive, or missing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scenario_feedback
+    attributes:
+      label: Synthetic scenarios feedback
+      description: Did the 5 synthetic scenarios make the workflow idea easier to understand?
+      placeholder: Which scenario helped most? Which one was weakest?
+    validations:
+      required: true
+
+  - type: textarea
+    id: mini_audit_feedback
+    attributes:
+      label: Mini Audit Preview feedback
+      description: Does the Mini Audit Preview feel useful as an early review tool?
+      placeholder: What should be added, removed, or simplified?
+    validations:
+      required: true
+
+  - type: textarea
+    id: biggest_confusion
+    attributes:
+      label: Biggest confusing point
+      description: What is the biggest confusing part for a first-time reviewer?
+      placeholder: Name the single biggest source of confusion.
+    validations:
+      required: true
+
+  - type: textarea
+    id: improvement_suggestions
+    attributes:
+      label: Suggested improvements
+      description: What would make this easier to understand, trust, or share?
+      placeholder: List concrete suggestions.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: safety_confirmation
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I did not include real customer data, private data, credentials, API keys, secrets, or confidential information.
+          required: true
