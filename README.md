@@ -13,6 +13,20 @@ It demonstrates how a vague AI adoption request can be turned into a structured 
 
 This repository uses synthetic examples only. It does not use real customer data, private company data, production systems, secrets, or internal business development materials.
 
+## Start here
+
+For a first 3 to 5 minute review, read these files in order:
+
+```text
+1. docs/chinese-plain-language-overview.md
+2. web/demo-index.html
+3. examples/5-synthetic-workflow-scenarios.md
+4. web/ai-workflow-planner.html
+5. docs/public-repo-final-check.md
+```
+
+This is a public prototype repository, not a finished product launch.
+
 ## Chinese overview
 
 For a Traditional Chinese plain-language introduction, see `docs/chinese-plain-language-overview.md`.
