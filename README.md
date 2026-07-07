@@ -139,6 +139,9 @@ Example task:
 | [docs/capability-pack-overview.md](docs/capability-pack-overview.md) | How repeated patterns become capability packs. |
 | [docs/capability-pack-quality-gate.md](docs/capability-pack-quality-gate.md) | Quality gate for keeping capability packs reviewable. |
 | [docs/secret-api-key-safety-checklist.md](docs/secret-api-key-safety-checklist.md) | Explicit checklist for API key / secret boundaries. |
+| [DISCOVERY.md](DISCOVERY.md) | Repo discoverability settings and controlled sharing language. |
+| [docs/trusted-reviewer-feedback-intake-kit.md](docs/trusted-reviewer-feedback-intake-kit.md) | Controlled process for collecting trusted reviewer feedback. |
+| [docs/trusted-reviewer-feedback-synthesis-template.md](docs/trusted-reviewer-feedback-synthesis-template.md) | Template for grouping feedback into prioritized repo improvements. |
 | [docs/external-review-synthesis-001.md](docs/external-review-synthesis-001.md) | External review synthesis and next improvement plan. |
 | [docs/github-pages-readiness-note.md](docs/github-pages-readiness-note.md) | GitHub Pages readiness and owner approval record. |
 | [release/public-safe-launch-readiness-checklist.md](release/public-safe-launch-readiness-checklist.md) | Checklist before wider sharing or public demo positioning. |
@@ -193,6 +196,7 @@ Appointment-Service Capability
 Daily Note Capability
 Small-Test Value Capability
 Capability Pack Quality Gate
+External Feedback Intake Capability
 ```
 
 This keeps the prototype focused on repeatable workflow patterns instead of one-off prompts.
@@ -230,7 +234,7 @@ Short-term improvements:
 - keep reducing first-reader confusion
 - improve synthetic scenario examples
 - periodically check the GitHub Pages demo link
-- collect trusted reviewer feedback
+- collect trusted reviewer feedback through a controlled intake kit
 - decide license with owner approval
 ```
 
