@@ -58,7 +58,7 @@ This prototype is mainly for first-time reviewers, small teams, operators, and n
 ```text
 - A vague AI workflow idea can be turned into a structured first-step review.
 - A public demo can use synthetic examples instead of real customer data.
-- Repeated workflow patterns can become reusable capability packs.
+- Repeated workflow patterns can be documented as reusable review patterns.
 - Human review and validation can be shown before production use.
 ```
 
@@ -115,7 +115,7 @@ Vague AI adoption task
   → Task Intake
   → Safety Risk Snapshot
   → Safe First Test
-  → Capability Routing
+  → Suitable First-Step Pattern
   → Demo Output
   → Human Review Gate
   → Validation Checklist
@@ -139,7 +139,7 @@ Example task:
 | [examples/5-synthetic-workflow-scenarios.md](examples/5-synthetic-workflow-scenarios.md) | Five synthetic examples showing reusable workflow patterns. |
 | [examples/mini-audit-preview-sample.md](examples/mini-audit-preview-sample.md) | Sample output from a synthetic AI workflow idea. |
 | [docs/capability-pack-overview.md](docs/capability-pack-overview.md) | How repeated patterns become capability packs. |
-| [docs/capability-pack-quality-gate.md](docs/capability-pack-quality-gate.md) | Quality gate for keeping capability packs reviewable. |
+| [docs/capability-pack-quality-gate.md](docs/capability-pack-quality-gate.md) | Review checklist for keeping reusable patterns understandable. |
 | [docs/secret-api-key-safety-checklist.md](docs/secret-api-key-safety-checklist.md) | Explicit checklist for API key / secret boundaries. |
 | [DISCOVERY.md](DISCOVERY.md) | Repo discoverability settings and controlled sharing language. |
 | [docs/trusted-reviewer-feedback-intake-kit.md](docs/trusted-reviewer-feedback-intake-kit.md) | Controlled process for collecting trusted reviewer feedback. |
@@ -244,5 +244,5 @@ Short-term improvements:
 Long-term direction:
 
 ```text
-Turn repeated workflow patterns into reusable capabilities.
+Make repeated workflow patterns easier to review, test, and reuse.
 ```
