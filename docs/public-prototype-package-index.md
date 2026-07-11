@@ -1,4 +1,4 @@
-# PACKAGE-001｜Public Prototype Package Index
+# Public Prototype Package Index
 
 **Project:** WorkflowGuard AI — Traceable AI Workflow Prototype  
 **Status:** Public-safe package index  
@@ -49,7 +49,7 @@ For a 3-minute first review:
 | Scenario pack | [`examples/5-synthetic-workflow-scenarios.md`](../examples/5-synthetic-workflow-scenarios.md) | Ready for controlled review | Synthetic comparison table and reusable capability examples. |
 | Chinese overview | [`docs/chinese-plain-language-overview.md`](chinese-plain-language-overview.md) | Ready for first-time readers | Plain-language Traditional Chinese positioning. |
 | Capability overview | [`docs/capability-pack-overview.md`](capability-pack-overview.md) | Ready for controlled review | Explains reusable capability packs. |
-| Quality gate | [`docs/capability-pack-quality-gate.md`](capability-pack-quality-gate.md) | Ready for controlled review | Defines reviewability requirements for capability packs. |
+| Review checklist | [`docs/capability-pack-quality-gate.md`](capability-pack-quality-gate.md) | Ready for controlled review | Defines reviewability requirements for reusable patterns. |
 | Secret / API key checklist | [`docs/secret-api-key-safety-checklist.md`](secret-api-key-safety-checklist.md) | Ready for public-safe review | Documents no secrets / no API keys / no backend dependency. |
 | Discoverability setup | [`DISCOVERY.md`](../DISCOVERY.md) | Prepared, not fully applied to GitHub metadata | Contains About / Website / Topics recommendations and controlled sharing language. |
 | Trusted reviewer intake | [`docs/trusted-reviewer-feedback-intake-kit.md`](trusted-reviewer-feedback-intake-kit.md) | Prepared, not sent | Controlled reviewer message and feedback intake method. |
@@ -69,8 +69,8 @@ Ready for controlled review:
 - Mini Audit Preview
 - 5 synthetic scenarios
 - Chinese plain-language overview
-- capability pack overview
-- capability quality gate
+- reusable pattern overview
+- reusable pattern review checklist
 - secret / API key safety checklist
 - trusted reviewer feedback intake kit
 ```
@@ -136,7 +136,7 @@ This repository is not:
 2. Mini Audit Preview
 3. Scenario comparison table
 4. Chinese plain-language overview
-5. Capability pack overview
+5. Reusable pattern overview
 ```
 
 ### C. Technical reviewer
@@ -145,7 +145,7 @@ This repository is not:
 1. Demo index implementation boundary
 2. Mini Audit Preview
 3. Secret / API Key Safety Checklist
-4. Capability Pack Quality Gate
+4. Reusable Pattern Review Checklist
 5. Public-safe launch readiness checklist
 ```
 
@@ -166,7 +166,7 @@ This repository is not:
 2. Live demo
 3. Public Prototype Package Index
 4. Scenario comparison table
-5. Capability Pack Overview
+5. Reusable Pattern Overview
 6. Public-safe launch readiness checklist
 ```
 
@@ -191,15 +191,15 @@ No product launch claim.
 
 ---
 
-## 9. Capability abstraction
+## 9. Package structure
 
-### Capability name
+### Package name
 
 ```text
-Public Prototype Package Index Capability v0.1
+Public Prototype Package Index v0.1
 ```
 
-### Input
+### Inputs
 
 ```text
 repo file map
@@ -209,19 +209,19 @@ ready/draft/not-launched statuses
 recommended review paths
 ```
 
-### Output
+### Outputs
 
 ```text
 central package index
 review path map
 status map
 boundary summary
-next-step reviewer routing
+next-step reviewer guidance
 ```
 
-### Quality gate
+### Review checklist
 
-This capability passes only if:
+This package is ready only if:
 
 ```text
 - it separates ready materials from draft-only materials
@@ -237,7 +237,6 @@ This capability passes only if:
 ## 10. Current status
 
 ```text
-PACKAGE-001 status: implemented
 Central package index: done
 Ready / draft / not-launched separation: done
 Reviewer path map: done
@@ -250,14 +249,8 @@ Production use: not allowed
 
 ---
 
-## 11. Recommended next task
+## 11. Possible public improvement
 
 ```text
-README-002｜README Package Entry Tightening
-```
-
-Purpose:
-
-```text
-Make the README point first-time reviewers to this package index without making the README long again.
+Make the README entry path shorter and easier for first-time reviewers.
 ```
