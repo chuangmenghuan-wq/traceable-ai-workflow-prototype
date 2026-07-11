@@ -1,42 +1,41 @@
-# Capability Pack Quality Gate
+# Reusable Pattern Review Checklist
 
-**Status:** Quality gate  
-**Task ID:** LEAD-FLOW-004F  
+**Status:** Public review checklist  
 **Date:** 2026-07-07
 
-This gate checks whether the current capability packs are reusable and easy to understand.
+This checklist checks whether the current reusable patterns are easy to understand and can be applied to another workflow.
 
 ---
 
-## Gate rules
+## Review rules
 
 ```text
-[ ] Pack has a value card.
-[ ] Pack has an example layer.
-[ ] Pack has a Traditional Chinese version.
-[ ] Pack has an English version.
-[ ] Pack uses simple public sample content.
-[ ] Pack can be reused for another workflow.
+[ ] Pattern has a value card.
+[ ] Pattern has an example layer.
+[ ] Pattern has a Traditional Chinese version.
+[ ] Pattern has an English version.
+[ ] Pattern uses simple public sample content.
+[ ] Pattern can be reused for another workflow.
 ```
 
 ---
 
-## Pack status
+## Pattern status
 
-| Pack | Value card | Example layer | Traditional Chinese | English | Result |
+| Pattern | Value card | Example layer | Traditional Chinese | English | Result |
 |---|---|---|---|---|---|
-| Appointment-Service Capability Pack | Yes | Yes | Yes | Yes | PASS |
-| Daily Note Capability Pack | Yes | Yes | Yes | Yes | PASS |
-| FAQ Topic Capability Pack | Yes | Yes | Yes | Yes | PASS |
+| Appointment-Service Pattern | Yes | Yes | Yes | Yes | PASS |
+| Daily Note Pattern | Yes | Yes | Yes | Yes | PASS |
+| FAQ Topic Pattern | Yes | Yes | Yes | Yes | PASS |
 
 ---
 
-## Core capability status
+## Core pattern status
 
 ```text
-Small-Test Value Capability: PASS
-Small-Test Value Capability Checklist: PASS
-Capability Pack Overview: PASS
+Small-Test Value Pattern: PASS
+Small-Test Value Checklist: PASS
+Reusable Pattern Overview: PASS
 ```
 
 ---
@@ -44,7 +43,7 @@ Capability Pack Overview: PASS
 ## Decision
 
 ```text
-LEAD-FLOW-004F result: PASS
+Review result: PASS
 ```
 
-The current capability pack layer is ready for the next expansion step.
+The current reusable pattern set is ready for another public-safe example.
