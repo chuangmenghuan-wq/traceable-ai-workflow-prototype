@@ -1,4 +1,4 @@
-# DISCOVERY-001｜Repo Discoverability Setup
+# Repo Discoverability Setup
 
 **Project:** WorkflowGuard AI — Traceable AI Workflow Prototype  
 **Repository:** `traceable-ai-workflow-prototype`  
@@ -10,7 +10,7 @@
 
 ## 1. Purpose
 
-DISCOVERY-001 makes the public repository easier for a first-time reviewer to understand and find, without changing the project into a formal product launch.
+This setup makes the public repository easier for a first-time reviewer to understand and find, without changing the project into a formal product launch.
 
 The goal is:
 
@@ -150,7 +150,7 @@ It includes:
 - a static GitHub Pages demo
 - 5 synthetic workflow scenarios
 - a Mini Audit Preview
-- capability pack documentation
+- reusable workflow examples
 - public-safe boundary checks
 
 Demo:
@@ -182,7 +182,7 @@ I’m mainly looking for feedback on whether the idea is understandable and usef
 - GitHub Pages 靜態 demo
 - 5 個 synthetic workflow scenarios
 - Mini Audit Preview
-- capability pack 文件
+- 可重複使用的工作流程範例
 - public-safe boundary checks
 
 Demo：
@@ -197,15 +197,15 @@ https://github.com/chuangmenghuan-wq/traceable-ai-workflow-prototype
 
 ---
 
-## 5. Capability abstraction
+## 5. Discoverability package specification
 
-### Capability name
+### Package name
 
 ```text
-Repo Discoverability Setup Capability v0.1
+Repo Discoverability Setup v0.1
 ```
 
-### Input
+### Inputs
 
 ```text
 public repo URL
@@ -217,7 +217,7 @@ reviewer audience
 public-safe boundary
 ```
 
-### Output
+### Outputs
 
 ```text
 repo description
@@ -229,9 +229,9 @@ public intro post draft
 status / boundary record
 ```
 
-### Quality gate
+### Public review checklist
 
-A discoverability package passes only if:
+A discoverability package is ready only if:
 
 ```text
 - It explains what the prototype is.
@@ -248,7 +248,6 @@ A discoverability package passes only if:
 ## 6. Current status
 
 ```text
-DISCOVERY-001 status: prepared
 Repo metadata values: prepared
 Reviewer message: prepared
 Public intro post: draft only
