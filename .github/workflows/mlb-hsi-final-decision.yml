@@ -7,6 +7,12 @@ on:
     paths:
       - research/mlb_hsi_2026_current.py
       - .github/workflows/mlb-hsi-final-decision.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - research/mlb_hsi_2026_current.py
+      - .github/workflows/mlb-hsi-final-decision.yml
 
 permissions:
   contents: read
