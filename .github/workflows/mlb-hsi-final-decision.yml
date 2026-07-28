@@ -1,5 +1,6 @@
 name: MLB-HSI-FINAL-DECISION
 
+# Triggered after public-data runner workflow was placed on main.
 on:
   push:
     branches:
