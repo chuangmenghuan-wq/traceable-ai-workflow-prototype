@@ -1,0 +1,31 @@
+name: horse-round033-paper-forward
+on:
+  push:
+    branches:
+      - research/horse-round033-paper-forward
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: horse-round033-paper-forward
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install numpy pandas requests
+      - name: Execute frozen paper-forward arming audit
+        run: python research/horse_round033_paper_forward.py
+      - name: Commit compact research outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round033
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record horse round033 paper-forward arming audit"
+          git push
