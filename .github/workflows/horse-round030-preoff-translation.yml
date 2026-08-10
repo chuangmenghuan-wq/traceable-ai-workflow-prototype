@@ -23,6 +23,8 @@ jobs:
         run: python research/horse_round030_preoff_translation_v2.py
       - name: Audit join coverage
         run: python research/horse_round030_join_qa.py
+      - name: Probe April 2025 official assets
+        run: python research/horse_round030_april_probe.py
       - name: Commit compact research outputs
         run: |
           git config user.name "github-actions[bot]"
