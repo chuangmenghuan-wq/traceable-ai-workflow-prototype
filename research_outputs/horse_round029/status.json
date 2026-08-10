@@ -32,7 +32,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin01082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     },
@@ -46,7 +46,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin02082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     },
@@ -60,7 +60,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin03082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     },
@@ -74,7 +74,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin04082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     },
@@ -88,7 +88,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin05082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     },
@@ -102,7 +102,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin06082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     },
@@ -116,7 +116,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin07082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     },
@@ -130,7 +130,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin08082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     },
@@ -144,7 +144,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin09082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     },
@@ -158,7 +158,7 @@
       "bsp_url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin10082026.csv",
       "bsp_http_status": 403,
       "bsp_content_type": "text/html; charset=UTF-8",
-      "bsp_bytes": 2346,
+      "bsp_bytes": 2345,
       "bsp_sha256": null,
       "status": "SOURCE_UNAVAILABLE"
     }
