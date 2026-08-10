@@ -1,0 +1,42 @@
+name: horse-round030-date-probe
+on:
+  push:
+    branches:
+      - research/horse-round030-preoff-translation
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: horse-round030-date-probe
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas requests
+      - name: Inspect April raw dates
+        run: |
+          python - <<'PY'
+          import io,json,requests,pandas as pd
+          from pathlib import Path
+          u='https://betfair-datascientists.github.io/data/assets/ANZ_Thoroughbreds_2025_04.csv'
+          r=requests.get(u,timeout=(20,120)); r.raise_for_status()
+          d=pd.read_csv(io.BytesIO(r.content),usecols=['LOCAL_MEETING_DATE','TRACK','STATE_CODE','WIN_MARKET_ID','SELECTION_ID'],low_memory=False)
+          vals=d.LOCAL_MEETING_DATE.astype(str).drop_duplicates().head(30).tolist()
+          out={'rows':len(d),'dtype':str(d.LOCAL_MEETING_DATE.dtype),'raw_date_examples':vals,'first_rows':d.head(5).astype(str).to_dict(orient='records')}
+          Path('research_outputs/horse_round030').mkdir(parents=True,exist_ok=True)
+          Path('research_outputs/horse_round030/april_raw_date_probe.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
+          print(json.dumps(out,indent=2))
+          PY
+      - name: Commit probe
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round030/april_raw_date_probe.json
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record April raw date probe"
+          git push
