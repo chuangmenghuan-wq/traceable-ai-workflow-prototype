@@ -1,0 +1,122 @@
+{
+  "round": 33,
+  "capability": "HorseRacing.PaperForwardExecutionContract",
+  "status": "COMPLETE",
+  "contract_id": "HorseRacing.PaperForwardExecutionContract.v1",
+  "contract_sha256": "e446a15ebc40bd4ad7ccc820e60ec829d623311f22d71b425c98c01fc13724e3",
+  "paper_date_adelaide": "2026-08-11",
+  "mode": "PAPER_ONLY",
+  "real_betting_allowed": false,
+  "tuning_allowed": false,
+  "historical_gate_snapshot": {
+    "past_window": 50,
+    "known_prior_n": 50,
+    "brier_advantage": 0.0011826074722739444,
+    "gate_on": true,
+    "latest_known_settled_candidate_date": "2026-07-29",
+    "required_ledger_through": "2026-08-10",
+    "gate_ledger_current": false
+  },
+  "ratings_source": {
+    "url": "https://betfair-data-supplier-prod.herokuapp.com/api/widgets/kash-ratings-model/datasets?date=2026-08-11&presenter=RatingsPresenter&csv=true",
+    "http_status": 500,
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 1635,
+    "sha256": null,
+    "qa": {
+      "status": "HTTP_UNAVAILABLE",
+      "http_status": 500
+    },
+    "staged_sa_rank2_n": 0
+  },
+  "settlement_monthly_probe": {
+    "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_08.csv",
+    "http_status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 63239,
+    "sha256": null
+  },
+  "live_price_adapter": {
+    "betfair_app_key_present": false,
+    "betfair_session_token_present": false,
+    "ready": false,
+    "orders_enabled": false
+  },
+  "paper_bets_created": 0,
+  "classification": "RATINGS_UNAVAILABLE",
+  "governance": {
+    "final_bsp_entry_forbidden": true,
+    "stale_gate_forbidden": true,
+    "post_hoc_threshold_tuning_forbidden": true,
+    "minimum_new_gated_bets_before_review": 30,
+    "historical_results_do_not_count_toward_forward_counter": true
+  },
+  "history_integrity": [
+    {
+      "period": "2023",
+      "raw_usable_rows": 171541,
+      "dedup_rows": 171193,
+      "duplicate_rows": 696,
+      "date_min": "2023-01-01",
+      "date_max": "2023-12-31",
+      "date_parsers": {
+        "Kash_Model_Results_2023.csv": "%d/%m/%Y"
+      },
+      "sa_markets": 1353,
+      "sa_r2": 1353,
+      "candidate_rows": 208,
+      "candidate_markets": 208
+    },
+    {
+      "period": "2024",
+      "raw_usable_rows": 183332,
+      "dedup_rows": 183120,
+      "duplicate_rows": 369,
+      "date_min": "2024-01-01",
+      "date_max": "2024-12-31",
+      "date_parsers": {
+        "Kash_Model_Results_2024.csv": "%d/%m/%Y"
+      },
+      "sa_markets": 1360,
+      "sa_r2": 1360,
+      "candidate_rows": 176,
+      "candidate_markets": 176
+    },
+    {
+      "period": "2025",
+      "raw_usable_rows": 180187,
+      "dedup_rows": 179688,
+      "duplicate_rows": 997,
+      "date_min": "2025-01-01",
+      "date_max": "2025-12-31",
+      "date_parsers": {
+        "Kash_Model_Results_2025.csv": "%d/%m/%Y"
+      },
+      "sa_markets": 1353,
+      "sa_r2": 1353,
+      "candidate_rows": 171,
+      "candidate_markets": 171
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "raw_usable_rows": 102616,
+      "dedup_rows": 102464,
+      "duplicate_rows": 277,
+      "date_min": "2026-01-01",
+      "date_max": "2026-07-31",
+      "date_parsers": {
+        "Kash_Model_Results_2026_01.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_02.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_03.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_04.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_05.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_06.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_07.csv": "%Y-%m-%d"
+      },
+      "sa_markets": 767,
+      "sa_r2": 767,
+      "candidate_rows": 69,
+      "candidate_markets": 69
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "contract_id": "HorseRacing.PaperForwardExecutionContract.v1",
+  "round": 33,
+  "frozen_at": "2026-08-11T06:24:00+08:00",
+  "mode": "PAPER_ONLY",
+  "real_betting_allowed": false,
+  "research_tuning_allowed": false,
+  "signal": {
+    "state": "SA",
+    "model_rank": 2,
+    "model_price": "RP",
+    "current_market_price": "BEST_AVAILABLE_LAY_PREOFF",
+    "value_formula": "1/RP - 1/current_market_price",
+    "value_threshold": -0.07,
+    "side": "LAY"
+  },
+  "historical_gate": {
+    "population": "SA x model_rank_2 x (1/RP - 1/final_BSP) < -0.07",
+    "window": 50,
+    "date_rule": "only settled candidates with date strictly before current race date",
+    "metric": "market_Brier - RP_Brier",
+    "gate_on_rule": "metric > 0"
+  },
+  "execution": {
+    "entry_price_source": "Betfair Exchange observable available-to-lay price near scheduled off",
+    "final_BSP_for_entry_forbidden": true,
+    "same_day_settlement_for_gate_forbidden": true,
+    "commission_stress": 0.07,
+    "stake_mode": "paper_flat_nominal_lay_stake_1",
+    "real_order_submission": "FORBIDDEN"
+  },
+  "fail_closed": {
+    "ratings_missing": "NO_PAPER_SIGNAL",
+    "historical_gate_ledger_stale": "NO_PAPER_SIGNAL",
+    "live_price_adapter_missing": "NO_PAPER_SIGNAL",
+    "price_not_captured_near_preoff": "NO_PAPER_SIGNAL",
+    "schema_or_source_version_change": "NO_PAPER_SIGNAL"
+  },
+  "promotion": {
+    "paper_forward_required": true,
+    "minimum_new_gated_bets_before_review": 30,
+    "rule_changes_before_review": "FORBIDDEN",
+    "historical_results_cannot_reset_counter": true
+  }
+}
