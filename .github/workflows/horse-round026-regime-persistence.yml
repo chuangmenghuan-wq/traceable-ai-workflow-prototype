@@ -19,6 +19,8 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install numpy pandas requests
+      - name: Fingerprint official source assets
+        run: python research/horse_round026_source_fingerprint.py
       - name: Execute frozen regime persistence audit
         run: python research/horse_round026_persistence.py
       - name: Commit compact research outputs
