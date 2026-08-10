@@ -1,0 +1,22 @@
+{
+  "2025_sa_r2": 1353,
+  "2025_joined_sa_r2": 1242,
+  "2025_join_rate_sa_r2": 0.917960088691796,
+  "2025_final_candidates": 171,
+  "2025_final_candidates_joined": 154,
+  "2025_final_candidates_preoff_ok": 154,
+  "missing_month_counts": {
+    "2025-04": 111
+  },
+  "missing_track_counts": {
+    "Morphettville": 27,
+    "Balaklava": 23,
+    "Murray Bridge": 16,
+    "Oakbank": 16,
+    "Penola": 8,
+    "Clare": 7,
+    "Naracoorte": 7,
+    "Strathalbyn": 7
+  },
+  "largest_2023_bsp_diff": 110.0
+}
