@@ -57,10 +57,10 @@
     {
       "period": "2025",
       "kash_rows": 179688,
-      "joined_rows": 164279,
-      "join_rate": 0.9142458038377632,
-      "joined_preoff_lay_rows": 163744,
-      "joined_preoff_lay_rate": 0.9112684208183073,
+      "joined_rows": 179688,
+      "join_rate": 1.0,
+      "joined_preoff_lay_rows": 179125,
+      "joined_preoff_lay_rate": 0.9968667913271894,
       "bsp_max_abs_diff": 0.0,
       "bsp_mean_abs_diff": 0.0,
       "win_match_rate": 1.0,
@@ -114,6 +114,10 @@
       "duplicate_rows": 510,
       "date_min": "2023-01-01",
       "date_max": "2023-12-31",
+      "date_formats": {
+        "ISO_YMD": 195578,
+        "DMY_SLASH": 0
+      },
       "preoff_lay_coverage": 0.9993700480914506
     },
     {
@@ -124,17 +128,25 @@
       "duplicate_rows": 163,
       "date_min": "2024-01-01",
       "date_max": "2024-12-31",
+      "date_formats": {
+        "ISO_YMD": 193342,
+        "DMY_SLASH": 0
+      },
       "preoff_lay_coverage": 0.9986018983114039
     },
     {
       "period": "2025",
       "file": "ANZ_Thoroughbreds_2025.zip:ANZ_Thoroughbreds_2025_12.csv|ANZ_Thoroughbreds_2025_01.csv|ANZ_Thoroughbreds_2025_02.csv|ANZ_Thoroughbreds_2025_03.csv|ANZ_Thoroughbreds_2025_04.csv|ANZ_Thoroughbreds_2025_05.csv|ANZ_Thoroughbreds_2025_06.csv|ANZ_Thoroughbreds_2025_07.csv|ANZ_Thoroughbreds_2025_08.csv|ANZ_Thoroughbreds_2025_09.csv|ANZ_Thoroughbreds_2025_10.csv|ANZ_Thoroughbreds_2025_11.csv",
       "archive_sha256": "bdd4bf3a617fa7056982e85e58c536aa2566bf4cebb11fd0fb51875b7d899540",
-      "rows": 173455,
-      "duplicate_rows": 554,
+      "rows": 189489,
+      "duplicate_rows": 600,
       "date_min": "2025-01-01",
       "date_max": "2025-12-31",
-      "preoff_lay_coverage": 0.9968406791386815
+      "date_formats": {
+        "ISO_YMD": 173776,
+        "DMY_SLASH": 16057
+      },
+      "preoff_lay_coverage": 0.9969549683622796
     },
     {
       "period": "2026_JAN_JUL",
@@ -144,6 +156,10 @@
       "duplicate_rows": 79,
       "date_min": "2026-01-01",
       "date_max": "2026-01-31",
+      "date_formats": {
+        "ISO_YMD": 16284,
+        "DMY_SLASH": 0
+      },
       "preoff_lay_coverage": 0.9955049261083744
     },
     {
@@ -154,6 +170,10 @@
       "duplicate_rows": 20,
       "date_min": "2026-02-01",
       "date_max": "2026-02-28",
+      "date_formats": {
+        "ISO_YMD": 14368,
+        "DMY_SLASH": 0
+      },
       "preoff_lay_coverage": 0.9934531271764869
     },
     {
@@ -164,6 +184,10 @@
       "duplicate_rows": 0,
       "date_min": "2026-03-01",
       "date_max": "2026-03-31",
+      "date_formats": {
+        "ISO_YMD": 14923,
+        "DMY_SLASH": 0
+      },
       "preoff_lay_coverage": 0.9985257655967299
     },
     {
@@ -174,6 +198,10 @@
       "duplicate_rows": 28,
       "date_min": "2026-04-01",
       "date_max": "2026-04-30",
+      "date_formats": {
+        "ISO_YMD": 16324,
+        "DMY_SLASH": 0
+      },
       "preoff_lay_coverage": 0.9973630956031152
     },
     {
@@ -184,6 +212,10 @@
       "duplicate_rows": 72,
       "date_min": "2026-05-01",
       "date_max": "2026-05-31",
+      "date_formats": {
+        "ISO_YMD": 16188,
+        "DMY_SLASH": 0
+      },
       "preoff_lay_coverage": 0.9991945976085744
     },
     {
@@ -194,6 +226,10 @@
       "duplicate_rows": 36,
       "date_min": "2026-06-01",
       "date_max": "2026-06-30",
+      "date_formats": {
+        "ISO_YMD": 15747,
+        "DMY_SLASH": 0
+      },
       "preoff_lay_coverage": 0.9986643770272848
     },
     {
@@ -204,6 +240,10 @@
       "duplicate_rows": 0,
       "date_min": "2026-07-01",
       "date_max": "2026-07-31",
+      "date_formats": {
+        "ISO_YMD": 16401,
+        "DMY_SLASH": 0
+      },
       "preoff_lay_coverage": 0.9996341686482532
     }
   ],
@@ -232,14 +272,14 @@
     },
     {
       "period": "2025",
-      "eligible_r2": 1242,
-      "final_candidate_n": 154,
-      "preoff_candidate_n": 108,
-      "intersection_n": 89,
-      "recall_vs_final": 0.577922077922078,
-      "precision_vs_final": 0.8240740740740741,
-      "jaccard": 0.5144508670520231,
-      "preoff_lay_mean": 6.16195652173913
+      "eligible_r2": 1353,
+      "final_candidate_n": 171,
+      "preoff_candidate_n": 120,
+      "intersection_n": 99,
+      "recall_vs_final": 0.5789473684210527,
+      "precision_vs_final": 0.825,
+      "jaccard": 0.515625,
+      "preoff_lay_mean": 6.173902439024391
     },
     {
       "period": "2026_JAN_JUL",
@@ -254,14 +294,14 @@
     },
     {
       "period": "ALL",
-      "eligible_r2": 4722,
-      "final_candidate_n": 607,
-      "preoff_candidate_n": 499,
-      "intersection_n": 433,
-      "recall_vs_final": 0.71334431630972,
-      "precision_vs_final": 0.8677354709418837,
-      "jaccard": 0.6433878157503715,
-      "preoff_lay_mean": 6.218005082592121
+      "eligible_r2": 4833,
+      "final_candidate_n": 624,
+      "preoff_candidate_n": 511,
+      "intersection_n": 443,
+      "recall_vs_final": 0.7099358974358975,
+      "precision_vs_final": 0.8669275929549902,
+      "jaccard": 0.6401734104046243,
+      "preoff_lay_mean": 6.220062073246431
     }
   ],
   "period_economics": [
@@ -359,48 +399,48 @@
     },
     {
       "period": "2025",
-      "candidate_n": 108,
-      "gate_on_n": 38,
-      "gate_off_n": 70,
+      "candidate_n": 120,
+      "gate_on_n": 22,
+      "gate_off_n": 98,
       "all_5pct": {
-        "n": 108,
-        "net_pl": 13.860000000000003,
-        "pot": 0.12833333333333335,
-        "rol": 0.05282414818202608,
+        "n": 120,
+        "net_pl": 12.460000000000004,
+        "pot": 0.10383333333333337,
+        "rol": 0.042770836193876165,
         "maxdd": 11.94,
-        "horse_win_rate": 0.25925925925925924
+        "horse_win_rate": 0.26666666666666666
       },
       "all_7pct": {
-        "n": 108,
-        "net_pl": 12.259999999999987,
-        "pot": 0.11351851851851841,
-        "rol": 0.046726122417867166,
+        "n": 120,
+        "net_pl": 10.699999999999985,
+        "pot": 0.08916666666666655,
+        "rol": 0.0367293697652066,
         "maxdd": 12.08,
-        "horse_win_rate": 0.25925925925925924
+        "horse_win_rate": 0.26666666666666666
       },
       "gate_on_5pct": {
-        "n": 38,
-        "net_pl": 11.869999999999994,
-        "pot": 0.3123684210526314,
-        "rol": 0.12662684019628753,
-        "maxdd": 6.28,
-        "horse_win_rate": 0.18421052631578946
+        "n": 22,
+        "net_pl": 3.369999999999999,
+        "pot": 0.15318181818181814,
+        "rol": 0.06239585261988519,
+        "maxdd": 4.630000000000001,
+        "horse_win_rate": 0.22727272727272727
       },
       "gate_on_7pct": {
-        "n": 38,
-        "net_pl": 11.249999999999996,
-        "pot": 0.2960526315789473,
-        "rol": 0.12001280136547895,
-        "maxdd": 6.34,
-        "horse_win_rate": 0.18421052631578946
+        "n": 22,
+        "net_pl": 3.0299999999999976,
+        "pot": 0.13772727272727261,
+        "rol": 0.056100722088502086,
+        "maxdd": 4.750000000000001,
+        "horse_win_rate": 0.22727272727272727
       },
       "gate_off_7pct": {
-        "n": 70,
-        "net_pl": 1.0099999999999927,
-        "pot": 0.014428571428571324,
-        "rol": 0.0059890891840606785,
+        "n": 98,
+        "net_pl": 7.669999999999988,
+        "pot": 0.07826530612244886,
+        "rol": 0.03232059331675862,
         "maxdd": 12.08,
-        "horse_win_rate": 0.3
+        "horse_win_rate": 0.2755102040816326
       }
     },
     {
@@ -452,43 +492,43 @@
   ],
   "aggregate_economics": {
     "all_candidates_7pct": {
-      "n": 499,
-      "net_pl": -21.340000000000032,
-      "pot": -0.042765531062124315,
-      "rol": -0.018039494150267153,
+      "n": 511,
+      "net_pl": -22.90000000000004,
+      "pot": -0.044814090019569555,
+      "rol": -0.01889594851060322,
       "maxdd": 58.53000000000003,
-      "horse_win_rate": 0.3106212424849699
+      "horse_win_rate": 0.3111545988258317
     },
     "gate_on_7pct": {
-      "n": 116,
-      "net_pl": 6.689999999999985,
-      "pot": 0.057672413793103325,
-      "rol": 0.023956169877533434,
-      "maxdd": 22.800000000000004,
-      "horse_win_rate": 0.2672413793103448
+      "n": 100,
+      "net_pl": -1.5300000000000142,
+      "pot": -0.015300000000000142,
+      "rol": -0.006387508871540159,
+      "maxdd": 21.210000000000008,
+      "horse_win_rate": 0.29
     },
     "gate_off_7pct": {
-      "n": 383,
-      "net_pl": -28.03000000000003,
-      "pot": -0.07318537859007841,
-      "rol": -0.031016930397255758,
+      "n": 411,
+      "net_pl": -21.370000000000026,
+      "pot": -0.051995133819951404,
+      "rol": -0.021977230889476253,
       "maxdd": 56.75000000000003,
-      "horse_win_rate": 0.3237597911227154
+      "horse_win_rate": 0.31630170316301703
     },
     "gate_on_month_bootstrap_7pct": {
       "ci95": [
-        -0.3093264575741801,
-        0.3546673350041769
+        -0.4067597425686247,
+        0.2822701719576718
       ],
-      "p_nonpositive": 0.3579,
-      "months": 16
+      "p_nonpositive": 0.5293,
+      "months": 15
     }
   },
   "decision": {
     "classification": "PREOFF_TRANSLATION_NOT_PROVEN",
     "tests": {
       "kash_hashes_match_round026": true,
-      "overall_gate_on_pot_7pct_positive": true,
+      "overall_gate_on_pot_7pct_positive": false,
       "overall_gate_on_bootstrap_ci_low_positive": false,
       "2025_gate_on_positive": true,
       "2026_gate_on_positive": true,
