@@ -132,11 +132,13 @@ def candidate_history() -> tuple[pd.DataFrame, list[dict]]:
 
 def apply_gate(x: pd.DataFrame, window: int) -> pd.DataFrame:
     y = x.copy()
-    fields = [
-        f"gate_{window}", f"hist_n_{window}", f"hist_brier_adv_{window}",
+    gate_field = f"gate_{window}"
+    numeric_fields = [
+        f"hist_n_{window}", f"hist_brier_adv_{window}",
         f"hist_market_brier_{window}", f"hist_model_brier_{window}",
     ]
-    for f in fields:
+    y[gate_field] = False
+    for f in numeric_fields:
         y[f] = np.nan
     history_idx: list[int] = []
     for _, idx in y.groupby("date", sort=True).groups.items():
@@ -146,13 +148,16 @@ def apply_gate(x: pd.DataFrame, window: int) -> pd.DataFrame:
             mb = float(prior.market_sqerr.mean())
             rb = float(prior.model_sqerr.mean())
             adv = mb - rb
-            vals = [bool(adv > 0), int(len(prior)), adv, mb, rb]
+            gate = bool(adv > 0)
+            vals = [int(len(prior)), adv, mb, rb]
         else:
-            vals = [False, int(len(prior)), np.nan, np.nan, np.nan]
-        for f, v in zip(fields, vals):
+            gate = False
+            vals = [int(len(prior)), np.nan, np.nan, np.nan]
+        y.loc[idx, gate_field] = gate
+        for f, v in zip(numeric_fields, vals):
             y.loc[idx, f] = v
         history_idx.extend(idx)
-    y[f"gate_{window}"] = y[f"gate_{window}"].astype(bool)
+    y[gate_field] = y[gate_field].astype(bool)
     return y
 
 
