@@ -1,0 +1,31 @@
+name: horse-round032-hybrid-stability
+on:
+  push:
+    branches:
+      - research/horse-round032-hybrid-stability
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: horse-round032-hybrid-stability
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install numpy pandas
+      - name: Execute frozen stability audit
+        run: python research/horse_round032_hybrid_stability.py
+      - name: Commit compact research outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round032
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record horse round032 stability audit"
+          git push
