@@ -1,0 +1,548 @@
+{
+  "kash_sa_r2": 111,
+  "anz_sa_rows": 1289,
+  "selection_overlap_count": 111,
+  "kash_unique_selections": 111,
+  "market_overlap_count": 111,
+  "kash_unique_markets": 111,
+  "market_selection_overlap": 111,
+  "date_market_selection_overlap": 0,
+  "kash_market_raw_examples": [
+    {
+      "market_id": "241667625.0",
+      "market_key": "241667625"
+    },
+    {
+      "market_id": "241667634.0",
+      "market_key": "241667634"
+    },
+    {
+      "market_id": "241667643.0",
+      "market_key": "241667643"
+    },
+    {
+      "market_id": "241667652.0",
+      "market_key": "241667652"
+    },
+    {
+      "market_id": "241667661.0",
+      "market_key": "241667661"
+    },
+    {
+      "market_id": "241667670.0",
+      "market_key": "241667670"
+    },
+    {
+      "market_id": "241667679.0",
+      "market_key": "241667679"
+    },
+    {
+      "market_id": "241667688.0",
+      "market_key": "241667688"
+    },
+    {
+      "market_id": "241780005.0",
+      "market_key": "241780005"
+    },
+    {
+      "market_id": "241780014.0",
+      "market_key": "241780014"
+    }
+  ],
+  "anz_market_raw_examples": [
+    {
+      "WIN_MARKET_ID": "241667625",
+      "market_key": "241667625"
+    },
+    {
+      "WIN_MARKET_ID": "241667634",
+      "market_key": "241667634"
+    },
+    {
+      "WIN_MARKET_ID": "241667643",
+      "market_key": "241667643"
+    },
+    {
+      "WIN_MARKET_ID": "241667652",
+      "market_key": "241667652"
+    },
+    {
+      "WIN_MARKET_ID": "241667661",
+      "market_key": "241667661"
+    },
+    {
+      "WIN_MARKET_ID": "241667670",
+      "market_key": "241667670"
+    },
+    {
+      "WIN_MARKET_ID": "241667679",
+      "market_key": "241667679"
+    },
+    {
+      "WIN_MARKET_ID": "241667688",
+      "market_key": "241667688"
+    },
+    {
+      "WIN_MARKET_ID": "241780005",
+      "market_key": "241780005"
+    },
+    {
+      "WIN_MARKET_ID": "241780014",
+      "market_key": "241780014"
+    }
+  ],
+  "sample_by_selection": [
+    {
+      "k_date": "2025-04-02",
+      "k_track": "Balaklava",
+      "k_market_raw": "241667625.0",
+      "k_market_key": "241667625",
+      "selection_key": "82018112",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Balaklava"
+      ],
+      "anz_market_keys": [
+        "241667625"
+      ]
+    },
+    {
+      "k_date": "2025-04-02",
+      "k_track": "Balaklava",
+      "k_market_raw": "241667634.0",
+      "k_market_key": "241667634",
+      "selection_key": "80300474",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Balaklava"
+      ],
+      "anz_market_keys": [
+        "241667634"
+      ]
+    },
+    {
+      "k_date": "2025-04-02",
+      "k_track": "Balaklava",
+      "k_market_raw": "241667643.0",
+      "k_market_key": "241667643",
+      "selection_key": "82018130",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Balaklava"
+      ],
+      "anz_market_keys": [
+        "241667643"
+      ]
+    },
+    {
+      "k_date": "2025-04-02",
+      "k_track": "Balaklava",
+      "k_market_raw": "241667652.0",
+      "k_market_key": "241667652",
+      "selection_key": "58569476",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Balaklava"
+      ],
+      "anz_market_keys": [
+        "241667652"
+      ]
+    },
+    {
+      "k_date": "2025-04-02",
+      "k_track": "Balaklava",
+      "k_market_raw": "241667661.0",
+      "k_market_key": "241667661",
+      "selection_key": "82018135",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Balaklava"
+      ],
+      "anz_market_keys": [
+        "241667661"
+      ]
+    },
+    {
+      "k_date": "2025-04-02",
+      "k_track": "Balaklava",
+      "k_market_raw": "241667670.0",
+      "k_market_key": "241667670",
+      "selection_key": "72167556",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Balaklava"
+      ],
+      "anz_market_keys": [
+        "241667670"
+      ]
+    },
+    {
+      "k_date": "2025-04-02",
+      "k_track": "Balaklava",
+      "k_market_raw": "241667679.0",
+      "k_market_key": "241667679",
+      "selection_key": "81517783",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Balaklava"
+      ],
+      "anz_market_keys": [
+        "241667679"
+      ]
+    },
+    {
+      "k_date": "2025-04-02",
+      "k_track": "Balaklava",
+      "k_market_raw": "241667688.0",
+      "k_market_key": "241667688",
+      "selection_key": "71903715",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Balaklava"
+      ],
+      "anz_market_keys": [
+        "241667688"
+      ]
+    },
+    {
+      "k_date": "2025-04-05",
+      "k_track": "Morphettville",
+      "k_market_raw": "241780005.0",
+      "k_market_key": "241780005",
+      "selection_key": "57883708",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Morphettville"
+      ],
+      "anz_market_keys": [
+        "241780005"
+      ]
+    },
+    {
+      "k_date": "2025-04-05",
+      "k_track": "Morphettville",
+      "k_market_raw": "241780014.0",
+      "k_market_key": "241780014",
+      "selection_key": "64367546",
+      "anz_match_count_by_selection": 2,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Morphettville",
+        "Oakbank"
+      ],
+      "anz_market_keys": [
+        "241780014",
+        "242470185"
+      ]
+    },
+    {
+      "k_date": "2025-04-05",
+      "k_track": "Morphettville",
+      "k_market_raw": "241780023.0",
+      "k_market_key": "241780023",
+      "selection_key": "64959007",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Morphettville"
+      ],
+      "anz_market_keys": [
+        "241780023"
+      ]
+    },
+    {
+      "k_date": "2025-04-05",
+      "k_track": "Morphettville",
+      "k_market_raw": "241780032.0",
+      "k_market_key": "241780032",
+      "selection_key": "16279652",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Morphettville"
+      ],
+      "anz_market_keys": [
+        "241780032"
+      ]
+    },
+    {
+      "k_date": "2025-04-05",
+      "k_track": "Morphettville",
+      "k_market_raw": "241780041.0",
+      "k_market_key": "241780041",
+      "selection_key": "82078016",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Morphettville"
+      ],
+      "anz_market_keys": [
+        "241780041"
+      ]
+    },
+    {
+      "k_date": "2025-04-05",
+      "k_track": "Morphettville",
+      "k_market_raw": "241780050.0",
+      "k_market_key": "241780050",
+      "selection_key": "82078017",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Morphettville"
+      ],
+      "anz_market_keys": [
+        "241780050"
+      ]
+    },
+    {
+      "k_date": "2025-04-05",
+      "k_track": "Morphettville",
+      "k_market_raw": "241780059.0",
+      "k_market_key": "241780059",
+      "selection_key": "230221",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Morphettville"
+      ],
+      "anz_market_keys": [
+        "241780059"
+      ]
+    },
+    {
+      "k_date": "2025-04-05",
+      "k_track": "Morphettville",
+      "k_market_raw": "241780068.0",
+      "k_market_key": "241780068",
+      "selection_key": "51454755",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Morphettville"
+      ],
+      "anz_market_keys": [
+        "241780068"
+      ]
+    },
+    {
+      "k_date": "2025-04-05",
+      "k_track": "Morphettville",
+      "k_market_raw": "241780077.0",
+      "k_market_key": "241780077",
+      "selection_key": "63402168",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Morphettville"
+      ],
+      "anz_market_keys": [
+        "241780077"
+      ]
+    },
+    {
+      "k_date": "2025-04-06",
+      "k_track": "Naracoorte",
+      "k_market_raw": "241873233.0",
+      "k_market_key": "241873233",
+      "selection_key": "58672001",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Naracoorte"
+      ],
+      "anz_market_keys": [
+        "241873233"
+      ]
+    },
+    {
+      "k_date": "2025-04-06",
+      "k_track": "Naracoorte",
+      "k_market_raw": "241873239.0",
+      "k_market_key": "241873239",
+      "selection_key": "81155840",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Naracoorte"
+      ],
+      "anz_market_keys": [
+        "241873239"
+      ]
+    },
+    {
+      "k_date": "2025-04-06",
+      "k_track": "Naracoorte",
+      "k_market_raw": "241873245.0",
+      "k_market_key": "241873245",
+      "selection_key": "82115601",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Naracoorte"
+      ],
+      "anz_market_keys": [
+        "241873245"
+      ]
+    },
+    {
+      "k_date": "2025-04-06",
+      "k_track": "Naracoorte",
+      "k_market_raw": "241873251.0",
+      "k_market_key": "241873251",
+      "selection_key": "544210",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Naracoorte"
+      ],
+      "anz_market_keys": [
+        "241873251"
+      ]
+    },
+    {
+      "k_date": "2025-04-06",
+      "k_track": "Naracoorte",
+      "k_market_raw": "241873257.0",
+      "k_market_key": "241873257",
+      "selection_key": "38285273",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Naracoorte"
+      ],
+      "anz_market_keys": [
+        "241873257"
+      ]
+    },
+    {
+      "k_date": "2025-04-06",
+      "k_track": "Naracoorte",
+      "k_market_raw": "241873263.0",
+      "k_market_key": "241873263",
+      "selection_key": "68157328",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Naracoorte"
+      ],
+      "anz_market_keys": [
+        "241873263"
+      ]
+    },
+    {
+      "k_date": "2025-04-06",
+      "k_track": "Naracoorte",
+      "k_market_raw": "241873269.0",
+      "k_market_key": "241873269",
+      "selection_key": "42343092",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Naracoorte"
+      ],
+      "anz_market_keys": [
+        "241873269"
+      ]
+    },
+    {
+      "k_date": "2025-04-09",
+      "k_track": "Murray Bridge",
+      "k_market_raw": "242012585.0",
+      "k_market_key": "242012585",
+      "selection_key": "82018129",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Murray Bridge"
+      ],
+      "anz_market_keys": [
+        "242012585"
+      ]
+    },
+    {
+      "k_date": "2025-04-09",
+      "k_track": "Murray Bridge",
+      "k_market_raw": "242012594.0",
+      "k_market_key": "242012594",
+      "selection_key": "82277807",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Murray Bridge"
+      ],
+      "anz_market_keys": [
+        "242012594"
+      ]
+    },
+    {
+      "k_date": "2025-04-09",
+      "k_track": "Murray Bridge",
+      "k_market_raw": "242012603.0",
+      "k_market_key": "242012603",
+      "selection_key": "82277811",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Murray Bridge"
+      ],
+      "anz_market_keys": [
+        "242012603"
+      ]
+    },
+    {
+      "k_date": "2025-04-09",
+      "k_track": "Murray Bridge",
+      "k_market_raw": "242012612.0",
+      "k_market_key": "242012612",
+      "selection_key": "58371149",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Murray Bridge"
+      ],
+      "anz_market_keys": [
+        "242012612"
+      ]
+    },
+    {
+      "k_date": "2025-04-09",
+      "k_track": "Murray Bridge",
+      "k_market_raw": "242012621.0",
+      "k_market_key": "242012621",
+      "selection_key": "636097",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Murray Bridge"
+      ],
+      "anz_market_keys": [
+        "242012621"
+      ]
+    },
+    {
+      "k_date": "2025-04-09",
+      "k_track": "Murray Bridge",
+      "k_market_raw": "242012630.0",
+      "k_market_key": "242012630",
+      "selection_key": "61592883",
+      "anz_match_count_by_selection": 1,
+      "anz_dates": [],
+      "anz_tracks": [
+        "Murray Bridge"
+      ],
+      "anz_market_keys": [
+        "242012630"
+      ]
+    }
+  ]
+}
