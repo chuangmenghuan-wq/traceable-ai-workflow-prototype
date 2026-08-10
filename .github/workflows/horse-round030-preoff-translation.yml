@@ -21,6 +21,8 @@ jobs:
         run: pip install numpy pandas requests
       - name: Execute frozen pre-off translation
         run: python research/horse_round030_preoff_translation_v2.py
+      - name: Audit join coverage
+        run: python research/horse_round030_join_qa.py
       - name: Commit compact research outputs
         run: |
           git config user.name "github-actions[bot]"
