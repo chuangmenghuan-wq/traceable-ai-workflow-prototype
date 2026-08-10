@@ -1,0 +1,172 @@
+{
+  "purpose": "Freeze exact official CSV assets used by Round 026; detect publisher-side historical data revisions across rounds.",
+  "files": [
+    {
+      "period": "2023",
+      "file": "Kash_Model_Results_2023.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2023.csv",
+      "bytes": 19321962,
+      "sha256": "68208577fb67d24057a651db65ff99b526a2b79129f930efde4dc5760f229e2e",
+      "usable_rows_before_dedup": 171541,
+      "dedup_rows": 171193,
+      "duplicate_rows": 696,
+      "unique_markets": 17571,
+      "candidate_rows": 208,
+      "date_min": "2023-01-01",
+      "date_max": "2023-12-31"
+    },
+    {
+      "period": "2024",
+      "file": "Kash_Model_Results_2024.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2024.csv",
+      "bytes": 22099201,
+      "sha256": "fe2604156e36fd05af80e125cc0ed5ae088cc57f02d512c03dc9204a8cdadfef",
+      "usable_rows_before_dedup": 183332,
+      "dedup_rows": 183120,
+      "duplicate_rows": 369,
+      "unique_markets": 18566,
+      "candidate_rows": 176,
+      "date_min": "2024-01-01",
+      "date_max": "2024-12-31"
+    },
+    {
+      "period": "2025",
+      "file": "Kash_Model_Results_2025.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2025.csv",
+      "bytes": 24108603,
+      "sha256": "a6b51f3f174a44a169fb320b09e34d734f817d378144d733ac25345065feb758",
+      "usable_rows_before_dedup": 180187,
+      "dedup_rows": 179688,
+      "duplicate_rows": 997,
+      "unique_markets": 18506,
+      "candidate_rows": 171,
+      "date_min": "2025-01-01",
+      "date_max": "2025-12-31"
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "Kash_Model_Results_2026_01.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_01.csv",
+      "bytes": 2425772,
+      "sha256": "54c8980ccffbd43efa799569da4e563e5b5c63f16330a287f5978d1f599c6d16",
+      "usable_rows_before_dedup": 15795,
+      "dedup_rows": 15748,
+      "duplicate_rows": 85,
+      "unique_markets": 1632,
+      "candidate_rows": 10,
+      "date_min": "2026-01-01",
+      "date_max": "2026-01-31"
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "Kash_Model_Results_2026_02.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_02.csv",
+      "bytes": 2134038,
+      "sha256": "4efc4513ab58fd91a7769110683f1581759a29669e4e097ed1918a1bf4a77ab2",
+      "usable_rows_before_dedup": 13763,
+      "dedup_rows": 13749,
+      "duplicate_rows": 28,
+      "unique_markets": 1456,
+      "candidate_rows": 10,
+      "date_min": "2026-02-01",
+      "date_max": "2026-02-28"
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "Kash_Model_Results_2026_03.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_03.csv",
+      "bytes": 2144084,
+      "sha256": "6e2900590efd1effc2b6fa834ea0a130df948400985b86fca5f5beddcb6d4aaf",
+      "usable_rows_before_dedup": 13915,
+      "dedup_rows": 13913,
+      "duplicate_rows": 4,
+      "unique_markets": 1465,
+      "candidate_rows": 10,
+      "date_min": "2026-03-01",
+      "date_max": "2026-03-31"
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "Kash_Model_Results_2026_04.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_04.csv",
+      "bytes": 2312618,
+      "sha256": "724f10686d438a886227c6aa9c85efd039e7ada149046d53b88522d312b22882",
+      "usable_rows_before_dedup": 15140,
+      "dedup_rows": 15134,
+      "duplicate_rows": 12,
+      "unique_markets": 1603,
+      "candidate_rows": 8,
+      "date_min": "2026-04-01",
+      "date_max": "2026-04-30"
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "Kash_Model_Results_2026_05.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_05.csv",
+      "bytes": 2286944,
+      "sha256": "c8b5824d0964085fbe147a73fb6c2af0681fadcbdd5b5d04744a3e49158b8c3b",
+      "usable_rows_before_dedup": 14685,
+      "dedup_rows": 14638,
+      "duplicate_rows": 88,
+      "unique_markets": 1466,
+      "candidate_rows": 15,
+      "date_min": "2026-05-01",
+      "date_max": "2026-05-31"
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "Kash_Model_Results_2026_06.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_06.csv",
+      "bytes": 2115652,
+      "sha256": "c689c8586ac28c013cd249a987bed8172e7d197b6dea07bfadbdfa9714211641",
+      "usable_rows_before_dedup": 14188,
+      "dedup_rows": 14157,
+      "duplicate_rows": 50,
+      "unique_markets": 1402,
+      "candidate_rows": 5,
+      "date_min": "2026-06-01",
+      "date_max": "2026-06-30"
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "Kash_Model_Results_2026_07.csv",
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_07.csv",
+      "bytes": 2323019,
+      "sha256": "8dbab7c394347e87e6ad55193370d81d19c2690bfb4c7ffce243c1b25ea29c7c",
+      "usable_rows_before_dedup": 15130,
+      "dedup_rows": 15125,
+      "duplicate_rows": 10,
+      "unique_markets": 1531,
+      "candidate_rows": 11,
+      "date_min": "2026-07-01",
+      "date_max": "2026-07-31"
+    }
+  ],
+  "period_totals": [
+    {
+      "period": "2023",
+      "usable_rows_before_dedup": 171541,
+      "dedup_rows": 171193,
+      "candidate_rows": 208
+    },
+    {
+      "period": "2024",
+      "usable_rows_before_dedup": 183332,
+      "dedup_rows": 183120,
+      "candidate_rows": 176
+    },
+    {
+      "period": "2025",
+      "usable_rows_before_dedup": 180187,
+      "dedup_rows": 179688,
+      "candidate_rows": 171
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "usable_rows_before_dedup": 102616,
+      "dedup_rows": 102464,
+      "candidate_rows": 69
+    }
+  ],
+  "qa_note": "No prior raw-file hashes were stored in Round 020, so exact byte-level revision timing cannot be proven retrospectively. Current hashes freeze the Round 026 source version going forward."
+}
