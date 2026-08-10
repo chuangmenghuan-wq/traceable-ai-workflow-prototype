@@ -1,0 +1,91 @@
+{
+  "probes": [
+    {
+      "url": "https://betfair-datascientists.github.io/data/assets/ANZ_Thoroughbreds_2025_04.csv",
+      "status": 200,
+      "content_type": "text/csv; charset=utf-8",
+      "bytes": 4085585,
+      "sha256": "fe21278ec9f40f8a4832c1d87f20f5a8db3c2141eb69a2e723c5e5dacd4076bd",
+      "prefix": null
+    },
+    {
+      "url": "https://betfair-datascientists.github.io/data/assets/ANZ_Thoroughbreds_2025_04.zip",
+      "status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 63239,
+      "sha256": null,
+      "prefix": "\n<!doctype html>\n<html lang=\"en\" class=\"no-js\">\n  <head>\n    \n      <meta charse"
+    },
+    {
+      "url": "https://betfair-datascientists.github.io/data/assets/ANZ_Thoroughbreds_2025_April.csv",
+      "status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 63239,
+      "sha256": null,
+      "prefix": "\n<!doctype html>\n<html lang=\"en\" class=\"no-js\">\n  <head>\n    \n      <meta charse"
+    }
+  ],
+  "annual_zip_sha256": "bdd4bf3a617fa7056982e85e58c536aa2566bf4cebb11fd0fb51875b7d899540",
+  "annual_members": [
+    {
+      "name": "ANZ_Thoroughbreds_2025_12.csv",
+      "bytes": 4175163,
+      "compressed_bytes": 1119538
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_01.csv",
+      "bytes": 4166056,
+      "compressed_bytes": 1112646
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_02.csv",
+      "bytes": 3898393,
+      "compressed_bytes": 1039543
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_03.csv",
+      "bytes": 4119236,
+      "compressed_bytes": 1100006
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_04.csv",
+      "bytes": 4085585,
+      "compressed_bytes": 1107456
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_05.csv",
+      "bytes": 4501390,
+      "compressed_bytes": 1196669
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_06.csv",
+      "bytes": 4389434,
+      "compressed_bytes": 1164670
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_07.csv",
+      "bytes": 4163706,
+      "compressed_bytes": 1105955
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_08.csv",
+      "bytes": 4020190,
+      "compressed_bytes": 1078085
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_09.csv",
+      "bytes": 3705444,
+      "compressed_bytes": 991793
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_10.csv",
+      "bytes": 4015938,
+      "compressed_bytes": 1079186
+    },
+    {
+      "name": "ANZ_Thoroughbreds_2025_11.csv",
+      "bytes": 4400331,
+      "compressed_bytes": 1178623
+    }
+  ]
+}
