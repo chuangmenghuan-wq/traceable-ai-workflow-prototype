@@ -1,0 +1,206 @@
+{
+  "round": 28,
+  "capability": "HorseRacing.ForwardEconomicValueAudit",
+  "status": "COMPLETE",
+  "source_vintage": "ROUND026_SHA256_FROZEN_VINTAGE",
+  "all_source_hashes_match": true,
+  "frozen_signal": "SA \u00d7 model rank 2 \u00d7 continuous value_calc < -7% \u00d7 LAY",
+  "frozen_gate": "past 50 candidate outcomes; MODEL_TRUSTED iff RP Brier < BSP Brier",
+  "primary_forward_horizon": 20,
+  "same_day_guard": "past window uses outcomes strictly before anchor date; future block never splits a date",
+  "nonoverlap_guard": "future economic blocks are chronological and non-overlapping",
+  "commission_contract": "market-net-winnings; flat nominal lay stake=1; primary economic stress uses 7% commission",
+  "integrity": [
+    {
+      "period": "2023",
+      "raw_usable_rows": 171541,
+      "dedup_rows": 171193,
+      "duplicate_rows": 696,
+      "date_min": "2023-01-01",
+      "date_max": "2023-12-31",
+      "date_parsers": {
+        "Kash_Model_Results_2023.csv": "%d/%m/%Y"
+      },
+      "sa_markets": 1353,
+      "sa_r2": 1353,
+      "candidate_rows": 208,
+      "candidate_markets": 208
+    },
+    {
+      "period": "2024",
+      "raw_usable_rows": 183332,
+      "dedup_rows": 183120,
+      "duplicate_rows": 369,
+      "date_min": "2024-01-01",
+      "date_max": "2024-12-31",
+      "date_parsers": {
+        "Kash_Model_Results_2024.csv": "%d/%m/%Y"
+      },
+      "sa_markets": 1360,
+      "sa_r2": 1360,
+      "candidate_rows": 176,
+      "candidate_markets": 176
+    },
+    {
+      "period": "2025",
+      "raw_usable_rows": 180187,
+      "dedup_rows": 179688,
+      "duplicate_rows": 997,
+      "date_min": "2025-01-01",
+      "date_max": "2025-12-31",
+      "date_parsers": {
+        "Kash_Model_Results_2025.csv": "%d/%m/%Y"
+      },
+      "sa_markets": 1353,
+      "sa_r2": 1353,
+      "candidate_rows": 171,
+      "candidate_markets": 171
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "raw_usable_rows": 102616,
+      "dedup_rows": 102464,
+      "duplicate_rows": 277,
+      "date_min": "2026-01-01",
+      "date_max": "2026-07-31",
+      "date_parsers": {
+        "Kash_Model_Results_2026_01.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_02.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_03.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_04.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_05.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_06.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_07.csv": "%Y-%m-%d"
+      },
+      "sa_markets": 767,
+      "sa_r2": 767,
+      "candidate_rows": 69,
+      "candidate_markets": 69
+    }
+  ],
+  "block_count": 28,
+  "trusted_block_count": 8,
+  "untrusted_block_count": 20,
+  "trusted_positive_block_rate_7pct": 0.75,
+  "untrusted_positive_block_rate_7pct": 0.35,
+  "all_forward_metrics": {
+    "n": 569,
+    "blocks": 28,
+    "net_pl_5pct": 18.547860277,
+    "pot_5pct": 0.032597293984182776,
+    "rol_5pct": 0.01375925922983373,
+    "maxdd_5pct": 50.53213972299999,
+    "net_pl_7pct": 10.487860276999953,
+    "pot_7pct": 0.018432091875219603,
+    "rol_7pct": 0.007780152867361291,
+    "maxdd_7pct": 53.49213972300005
+  },
+  "trusted_metrics": {
+    "n": 162,
+    "blocks": 8,
+    "net_pl_5pct": 48.41,
+    "pot_5pct": 0.2988271604938271,
+    "rol_5pct": 0.12247014774337178,
+    "maxdd_5pct": 9.949999999999996,
+    "net_pl_7pct": 45.80999999999999,
+    "pot_7pct": 0.2827777777777777,
+    "rol_7pct": 0.1158925318761384,
+    "maxdd_7pct": 9.990000000000002
+  },
+  "untrusted_metrics": {
+    "n": 407,
+    "blocks": 20,
+    "net_pl_5pct": -29.86213972299999,
+    "pot_5pct": -0.07337135067076166,
+    "rol_5pct": -0.031343182412190605,
+    "maxdd_5pct": 50.53213972299999,
+    "net_pl_7pct": -35.32213972300004,
+    "pot_7pct": -0.08678658408599518,
+    "rol_7pct": -0.03707397657355989,
+    "maxdd_7pct": 53.49213972300005
+  },
+  "bootstrap": {
+    "draws": 10000,
+    "trusted_pot_7pct_ci95": [
+      0.10324543711656434,
+      0.46242191734417304
+    ],
+    "untrusted_pot_7pct_ci95": [
+      -0.22412706453798048,
+      0.04910663288393746
+    ],
+    "trusted_minus_untrusted_pot_7pct_ci95": [
+      0.14012683786133806,
+      0.5976793650432997
+    ],
+    "trusted_positive_block_rate_ci95": [
+      0.375,
+      1.0
+    ],
+    "p_trusted_pot_nonpositive": 0.0009,
+    "p_trusted_not_better_than_untrusted": 0.0007
+  },
+  "period_summary": [
+    {
+      "period": "2023",
+      "blocks": 8,
+      "trusted_blocks": 0,
+      "untrusted_blocks": 8,
+      "trusted_positive_block_rate_7pct": null,
+      "trusted_n": 0,
+      "trusted_pot_7pct": null,
+      "untrusted_n": 161,
+      "untrusted_pot_7pct": -0.1728704330621119
+    },
+    {
+      "period": "2024",
+      "blocks": 9,
+      "trusted_blocks": 1,
+      "untrusted_blocks": 8,
+      "trusted_positive_block_rate_7pct": 0.0,
+      "trusted_n": 20,
+      "trusted_pot_7pct": -0.05100000000000009,
+      "untrusted_n": 164,
+      "untrusted_pot_7pct": -0.009939024390243982
+    },
+    {
+      "period": "2025",
+      "blocks": 8,
+      "trusted_blocks": 4,
+      "untrusted_blocks": 4,
+      "trusted_positive_block_rate_7pct": 1.0,
+      "trusted_n": 81,
+      "trusted_pot_7pct": 0.34111111111111103,
+      "untrusted_n": 82,
+      "untrusted_pot_7pct": -0.07146341463414645
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "blocks": 3,
+      "trusted_blocks": 3,
+      "untrusted_blocks": 0,
+      "trusted_positive_block_rate_7pct": 0.6666666666666666,
+      "trusted_n": 61,
+      "trusted_pot_7pct": 0.3147540983606556,
+      "untrusted_n": 0,
+      "untrusted_pot_7pct": null
+    }
+  ],
+  "decision": {
+    "classification": "ECONOMIC_VALUE_SUPPORTED",
+    "tests": {
+      "at_least_20_forward_blocks": true,
+      "at_least_5_trusted_blocks": true,
+      "trusted_pot_7pct_positive": true,
+      "trusted_rol_7pct_positive": true,
+      "trusted_positive_block_rate_at_least_60pct": true,
+      "trusted_minus_untrusted_ci_low_positive": true,
+      "trusted_pot_ci_low_positive": true
+    },
+    "guardrail": "Frozen Round026 gate: past 50 candidates by Brier advantage; primary future horizon=20 candidates, non-overlapping and date-safe. No parameter tuning in Round028."
+  },
+  "governance": {
+    "betting_ready": false,
+    "note": "Retrospective leakage-safe forward-block audit on already-inspected historical years; not untouched live OOS."
+  }
+}
