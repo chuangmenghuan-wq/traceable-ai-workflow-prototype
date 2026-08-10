@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pip install numpy pandas requests
       - name: Execute frozen untouched holdout
-        run: python research/horse_round029_untouched_holdout.py
+        run: python research/horse_round029_untouched_holdout_v3.py
       - name: Commit compact research outputs
         run: |
           git config user.name "github-actions[bot]"
