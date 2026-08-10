@@ -1,0 +1,29 @@
+name: horse-round030-probe
+on:
+  push:
+    branches:
+      - research/horse-round030-preoff-translation
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: horse-round030-probe
+  cancel-in-progress: true
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pandas requests
+      - run: python research/horse_round030_probe_anz.py
+      - name: Commit output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round030
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record round030 ANZ schema probe"
+          git push
