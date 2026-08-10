@@ -6,6 +6,10 @@ on:
       - research/horse-round027-source-reconcile
   workflow_dispatch:
 
+concurrency:
+  group: horse-round027-source-reconcile
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
