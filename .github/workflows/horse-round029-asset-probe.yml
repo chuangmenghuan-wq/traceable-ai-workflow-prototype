@@ -1,0 +1,30 @@
+name: horse-round029-asset-probe
+
+on:
+  push:
+    branches:
+      - research/horse-round029-untouched-holdout
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Probe August official settlement assets
+        run: python research/horse_round029_asset_probe.py
+      - name: Commit probe output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round029/august_asset_probe.json
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record round029 august asset probe"
+          git push
