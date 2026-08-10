@@ -1,0 +1,11 @@
+date,kind,url,http_status,content_type,bytes,sha256,attempt
+2026-08-01,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin01082026.csv,403,text/html; charset=UTF-8,2345,,2
+2026-08-02,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin02082026.csv,403,text/html; charset=UTF-8,2345,,2
+2026-08-03,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin03082026.csv,403,text/html; charset=UTF-8,2345,,2
+2026-08-04,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin04082026.csv,403,text/html; charset=UTF-8,2345,,2
+2026-08-05,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin05082026.csv,403,text/html; charset=UTF-8,2345,,2
+2026-08-06,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin06082026.csv,403,text/html; charset=UTF-8,2345,,2
+2026-08-07,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin07082026.csv,403,text/html; charset=UTF-8,2345,,2
+2026-08-08,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin08082026.csv,403,text/html; charset=UTF-8,2345,,2
+2026-08-09,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin09082026.csv,403,text/html; charset=UTF-8,2345,,2
+2026-08-10,BETFAIR_DAILY_BSP,https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin10082026.csv,403,text/html; charset=UTF-8,2345,,2

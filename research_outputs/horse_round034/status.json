@@ -1,0 +1,73 @@
+{
+  "round": 34,
+  "capability": "HorseRacing.PaperForwardDataPlaneReadiness",
+  "status": "COMPLETE",
+  "paper_date_adelaide": "2026-08-11",
+  "contract": {
+    "expected_sha256": "e446a15ebc40bd4ad7ccc820e60ec829d623311f22d71b425c98c01fc13724e3",
+    "actual_sha256": "e446a15ebc40bd4ad7ccc820e60ec829d623311f22d71b425c98c01fc13724e3",
+    "match": true,
+    "tuning_allowed": false
+  },
+  "ratings_plane": {
+    "today_ready": false,
+    "today_probe": {
+      "date": "2026-08-11",
+      "kind": "KASH_DAILY_RATINGS",
+      "url": "https://betfair-data-supplier-prod.herokuapp.com/api/widgets/kash-ratings-model/datasets?date=2026-08-11&presenter=RatingsPresenter&csv=true",
+      "http_status": 500,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 1635,
+      "sha256": NaN,
+      "attempt": 3
+    },
+    "august_through_yesterday_coverage": 1.0,
+    "days_probed": 11,
+    "days_200": 10
+  },
+  "settlement_plane": {
+    "ready": false,
+    "monthly_kash_probe": {
+      "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_08.csv",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 63239,
+      "sha256": null,
+      "attempt": 2
+    },
+    "monthly_anz_probe": {
+      "url": "https://betfair-datascientists.github.io/data/assets/ANZ_Thoroughbreds_2026_08.csv",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 63239,
+      "sha256": null,
+      "attempt": 2
+    },
+    "daily_bsp_days_probed": 10,
+    "daily_bsp_days_200": 0,
+    "daily_bsp_coverage": 0.0,
+    "monthly_path_ready": false,
+    "daily_path_ready": false
+  },
+  "live_price_plane": {
+    "ready": false,
+    "betfair_app_key_present": false,
+    "betfair_session_token_present": false,
+    "orders_enabled": false,
+    "paper_only": true
+  },
+  "blockers": [
+    "TODAY_RATINGS_UNAVAILABLE",
+    "SETTLEMENT_LEDGER_REFRESH_UNAVAILABLE",
+    "LIVE_PREOFF_PRICE_ADAPTER_NOT_READY"
+  ],
+  "classification": "PAPER_FORWARD_DATA_PLANE_BLOCKED",
+  "paper_bets_created": 0,
+  "governance": {
+    "fail_closed": true,
+    "final_bsp_entry_forbidden": true,
+    "stale_gate_forbidden": true,
+    "post_hoc_tuning_forbidden": true,
+    "minimum_new_gated_bets_before_review": 30
+  }
+}
