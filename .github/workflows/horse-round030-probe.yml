@@ -2,7 +2,7 @@ name: horse-round030-probe
 on:
   push:
     branches:
-      - research/horse-round030-preoff-translation
+      - research/horse-round029-untouched-holdout
   workflow_dispatch:
 permissions:
   contents: write
