@@ -1,0 +1,31 @@
+name: horse-round030-preoff-translation
+on:
+  push:
+    branches:
+      - research/horse-round030-preoff-translation
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: horse-round030-preoff-translation
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install numpy pandas requests
+      - name: Execute frozen pre-off translation
+        run: python research/horse_round030_preoff_translation.py
+      - name: Commit compact research outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round030
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record horse round030 pre-off translation"
+          git push
