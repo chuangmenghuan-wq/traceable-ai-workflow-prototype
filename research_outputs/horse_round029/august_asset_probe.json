@@ -1,0 +1,20 @@
+[
+  {
+    "name": "anz_thoroughbreds_aug",
+    "url": "https://betfair-datascientists.github.io/data/assets/ANZ_Thoroughbreds_2026_08.csv",
+    "status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 63239,
+    "sha256": null,
+    "prefix": "\n<!doctype html>\n<html lang=\"en\" class=\"no-js\">\n  <head>\n    \n      <meta charset=\"utf-8\">\n      <meta name=\"viewport\" c"
+  },
+  {
+    "name": "kash_model_aug",
+    "url": "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_08.csv",
+    "status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 63239,
+    "sha256": null,
+    "prefix": "\n<!doctype html>\n<html lang=\"en\" class=\"no-js\">\n  <head>\n    \n      <meta charset=\"utf-8\">\n      <meta name=\"viewport\" c"
+  }
+]
