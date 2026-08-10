@@ -1,0 +1,334 @@
+{
+  "round": 26,
+  "capability": "HorseRacing.RegimePersistenceAudit",
+  "status": "COMPLETE",
+  "frozen_signal": "SA \u00d7 model rank 2 \u00d7 continuous value_calc < -7% \u00d7 LAY",
+  "primary_test": "past 50 candidate Brier advantage predicts next 20 candidate Brier advantage",
+  "same_day_guard": "past window uses dates strictly before anchor; future block never splits a date",
+  "nonoverlap_guard": "primary future outcome blocks are chronological and non-overlapping",
+  "sensitivity_future_horizons": [
+    30,
+    50
+  ],
+  "integrity": [
+    {
+      "period": "2023",
+      "raw_usable_rows": 171541,
+      "dedup_rows": 171193,
+      "duplicate_rows": 696,
+      "date_min": "2023-01-01",
+      "date_max": "2023-12-31",
+      "date_parsers": {
+        "Kash_Model_Results_2023.csv": "%d/%m/%Y"
+      },
+      "sa_markets": 1353,
+      "sa_r2": 1353,
+      "candidate_rows": 208,
+      "candidate_markets": 208
+    },
+    {
+      "period": "2024",
+      "raw_usable_rows": 183332,
+      "dedup_rows": 183120,
+      "duplicate_rows": 369,
+      "date_min": "2024-01-01",
+      "date_max": "2024-12-31",
+      "date_parsers": {
+        "Kash_Model_Results_2024.csv": "%d/%m/%Y"
+      },
+      "sa_markets": 1360,
+      "sa_r2": 1360,
+      "candidate_rows": 176,
+      "candidate_markets": 176
+    },
+    {
+      "period": "2025",
+      "raw_usable_rows": 180187,
+      "dedup_rows": 179688,
+      "duplicate_rows": 997,
+      "date_min": "2025-01-01",
+      "date_max": "2025-12-31",
+      "date_parsers": {
+        "Kash_Model_Results_2025.csv": "%d/%m/%Y"
+      },
+      "sa_markets": 1353,
+      "sa_r2": 1353,
+      "candidate_rows": 171,
+      "candidate_markets": 171
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "raw_usable_rows": 102616,
+      "dedup_rows": 102464,
+      "duplicate_rows": 277,
+      "date_min": "2026-01-01",
+      "date_max": "2026-07-31",
+      "date_parsers": {
+        "Kash_Model_Results_2026_01.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_02.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_03.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_04.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_05.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_06.csv": "%Y-%m-%d",
+        "Kash_Model_Results_2026_07.csv": "%Y-%m-%d"
+      },
+      "sa_markets": 767,
+      "sa_r2": 767,
+      "candidate_rows": 69,
+      "candidate_markets": 69
+    }
+  ],
+  "summaries": [
+    {
+      "future_horizon": 20,
+      "blocks": 28,
+      "trusted_blocks": 8,
+      "untrusted_blocks": 20,
+      "directional_accuracy": 0.7857142857142857,
+      "trusted_future_positive_rate": 0.75,
+      "untrusted_future_positive_rate": 0.2,
+      "trusted_future_adv_mean": 0.010330301749177392,
+      "untrusted_future_adv_mean": -0.018011795068425273,
+      "trusted_minus_untrusted_future_adv": 0.028342096817602663,
+      "pearson_past_future_adv": 0.352820629979195,
+      "spearman_past_future_adv": 0.2260536398467433,
+      "confusion": {
+        "past_trusted_future_positive": 6,
+        "past_trusted_future_negative": 2,
+        "past_untrusted_future_positive": 4,
+        "past_untrusted_future_negative": 16
+      },
+      "directional_accuracy_ci95": [
+        0.6428571428571429,
+        0.9285714285714286
+      ],
+      "trusted_future_adv_mean_ci95": [
+        -0.0032816169601793464,
+        0.023533094169234634
+      ],
+      "trusted_future_positive_rate_ci95": [
+        0.4,
+        1.0
+      ],
+      "trusted_minus_untrusted_future_adv_ci95": [
+        0.012468454537823885,
+        0.04441497942535227
+      ]
+    },
+    {
+      "future_horizon": 30,
+      "blocks": 18,
+      "trusted_blocks": 4,
+      "untrusted_blocks": 14,
+      "directional_accuracy": 0.8333333333333334,
+      "trusted_future_positive_rate": 0.75,
+      "untrusted_future_positive_rate": 0.14285714285714285,
+      "trusted_future_adv_mean": 0.01323280755829483,
+      "untrusted_future_adv_mean": -0.016394805524835496,
+      "trusted_minus_untrusted_future_adv": 0.029627613083130326,
+      "pearson_past_future_adv": 0.5267556332637299,
+      "spearman_past_future_adv": 0.40970072239422084,
+      "confusion": {
+        "past_trusted_future_positive": 3,
+        "past_trusted_future_negative": 1,
+        "past_untrusted_future_positive": 2,
+        "past_untrusted_future_negative": 12
+      },
+      "directional_accuracy_ci95": [
+        0.6666666666666666,
+        1.0
+      ],
+      "trusted_future_adv_mean_ci95": [
+        -0.012098906353128908,
+        0.03376088690680322
+      ],
+      "trusted_future_positive_rate_ci95": [
+        0.0,
+        1.0
+      ],
+      "trusted_minus_untrusted_future_adv_ci95": [
+        0.007278164237642009,
+        0.04976864976688831
+      ]
+    },
+    {
+      "future_horizon": 50,
+      "blocks": 11,
+      "trusted_blocks": 2,
+      "untrusted_blocks": 9,
+      "directional_accuracy": 0.9090909090909091,
+      "trusted_future_positive_rate": 1.0,
+      "untrusted_future_positive_rate": 0.1111111111111111,
+      "trusted_future_adv_mean": 0.010383808095820748,
+      "untrusted_future_adv_mean": -0.01572540161506128,
+      "trusted_minus_untrusted_future_adv": 0.026109209710882028,
+      "pearson_past_future_adv": 0.5982909808014333,
+      "spearman_past_future_adv": 0.4727272727272727,
+      "confusion": {
+        "past_trusted_future_positive": 2,
+        "past_trusted_future_negative": 0,
+        "past_untrusted_future_positive": 1,
+        "past_untrusted_future_negative": 8
+      },
+      "directional_accuracy_ci95": [
+        0.7272727272727273,
+        1.0
+      ],
+      "trusted_future_adv_mean_ci95": [
+        0.003077629153095479,
+        0.017689987038546018
+      ],
+      "trusted_future_positive_rate_ci95": [
+        1.0,
+        1.0
+      ],
+      "trusted_minus_untrusted_future_adv_ci95": [
+        0.012762615129792647,
+        0.03847141071281432
+      ]
+    }
+  ],
+  "period_summary": [
+    {
+      "future_horizon": 20,
+      "period": "2023",
+      "blocks": 8,
+      "trusted_blocks": 0,
+      "directional_accuracy": 1.0,
+      "trusted_future_positive_rate": null,
+      "trusted_future_adv_mean": null,
+      "false_positive_trusted_blocks": 0
+    },
+    {
+      "future_horizon": 20,
+      "period": "2024",
+      "blocks": 9,
+      "trusted_blocks": 1,
+      "directional_accuracy": 0.5555555555555556,
+      "trusted_future_positive_rate": 0.0,
+      "trusted_future_adv_mean": -0.017157002295077745,
+      "false_positive_trusted_blocks": 1
+    },
+    {
+      "future_horizon": 20,
+      "period": "2025",
+      "blocks": 8,
+      "trusted_blocks": 4,
+      "directional_accuracy": 0.875,
+      "trusted_future_positive_rate": 1.0,
+      "trusted_future_adv_mean": 0.01812154561504671,
+      "false_positive_trusted_blocks": 0
+    },
+    {
+      "future_horizon": 20,
+      "period": "2026_JAN_JUL",
+      "blocks": 3,
+      "trusted_blocks": 3,
+      "directional_accuracy": 0.6666666666666666,
+      "trusted_future_positive_rate": 0.6666666666666666,
+      "trusted_future_adv_mean": 0.009104411276103347,
+      "false_positive_trusted_blocks": 1
+    },
+    {
+      "future_horizon": 30,
+      "period": "2023",
+      "blocks": 6,
+      "trusted_blocks": 0,
+      "directional_accuracy": 1.0,
+      "trusted_future_positive_rate": null,
+      "trusted_future_adv_mean": null,
+      "false_positive_trusted_blocks": 0
+    },
+    {
+      "future_horizon": 30,
+      "period": "2024",
+      "blocks": 5,
+      "trusted_blocks": 1,
+      "directional_accuracy": 0.6,
+      "trusted_future_positive_rate": 0.0,
+      "trusted_future_adv_mean": -0.012098906353128908,
+      "false_positive_trusted_blocks": 1
+    },
+    {
+      "future_horizon": 30,
+      "period": "2025",
+      "blocks": 6,
+      "trusted_blocks": 2,
+      "directional_accuracy": 0.8333333333333334,
+      "trusted_future_positive_rate": 1.0,
+      "trusted_future_adv_mean": 0.02386677052918642,
+      "false_positive_trusted_blocks": 0
+    },
+    {
+      "future_horizon": 30,
+      "period": "2026_JAN_JUL",
+      "blocks": 1,
+      "trusted_blocks": 1,
+      "directional_accuracy": 1.0,
+      "trusted_future_positive_rate": 1.0,
+      "trusted_future_adv_mean": 0.017296595527935388,
+      "false_positive_trusted_blocks": 0
+    },
+    {
+      "future_horizon": 50,
+      "period": "2023",
+      "blocks": 4,
+      "trusted_blocks": 0,
+      "directional_accuracy": 1.0,
+      "trusted_future_positive_rate": null,
+      "trusted_future_adv_mean": null,
+      "false_positive_trusted_blocks": 0
+    },
+    {
+      "future_horizon": 50,
+      "period": "2024",
+      "blocks": 3,
+      "trusted_blocks": 0,
+      "directional_accuracy": 1.0,
+      "trusted_future_positive_rate": null,
+      "trusted_future_adv_mean": null,
+      "false_positive_trusted_blocks": 0
+    },
+    {
+      "future_horizon": 50,
+      "period": "2025",
+      "blocks": 3,
+      "trusted_blocks": 1,
+      "directional_accuracy": 0.6666666666666666,
+      "trusted_future_positive_rate": 1.0,
+      "trusted_future_adv_mean": 0.017689987038546018,
+      "false_positive_trusted_blocks": 0
+    },
+    {
+      "future_horizon": 50,
+      "period": "2026_JAN_JUL",
+      "blocks": 1,
+      "trusted_blocks": 1,
+      "directional_accuracy": 1.0,
+      "trusted_future_positive_rate": 1.0,
+      "trusted_future_adv_mean": 0.003077629153095479,
+      "false_positive_trusted_blocks": 0
+    }
+  ],
+  "primary_2024_false_positive_blocks": [
+    {
+      "anchor_date": "2024-10-11",
+      "end_date": "2024-11-13",
+      "past_adv": 0.003925031494776826,
+      "future_adv": -0.017157002295077745,
+      "future_n": 20
+    }
+  ],
+  "decision": {
+    "classification": "WEAK_PERSISTENCE_ONLY",
+    "tests": {
+      "at_least_20_nonoverlap_blocks": true,
+      "at_least_5_trusted_blocks": true,
+      "directional_accuracy_at_least_60pct": true,
+      "trusted_future_positive_rate_at_least_65pct": true,
+      "trusted_future_adv_mean_positive": true,
+      "trusted_future_adv_bootstrap_ci_low_positive": false
+    },
+    "guardrail": "Primary test frozen as past 50 candidate outcomes -> next 20 candidate outcomes, chronological non-overlapping forward blocks with date boundaries. Horizons 30/50 are sensitivity only and cannot replace the primary horizon 20 in Round 026."
+  }
+}
