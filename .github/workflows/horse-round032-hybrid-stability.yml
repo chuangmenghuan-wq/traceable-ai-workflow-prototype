@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip install numpy pandas
       - name: Execute frozen stability audit
-        run: python research/horse_round032_hybrid_stability.py
+        run: python research/horse_round032_hybrid_stability_v2.py
       - name: Commit compact research outputs
         run: |
           git config user.name "github-actions[bot]"
