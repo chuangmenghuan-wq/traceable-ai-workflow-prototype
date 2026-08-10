@@ -1,0 +1,503 @@
+{
+  "round": 30,
+  "capability": "HorseRacing.PreOffSignalTranslation",
+  "status": "COMPLETE",
+  "source_vintage": "ROUND026_SHA256_FROZEN_VINTAGE for Kash + Round030 ANZ fingerprints",
+  "frozen_final_signal": "SA \u00d7 model rank 2 \u00d7 (1/RP - 1/final BSP) < -7% \u00d7 LAY",
+  "translated_preoff_signal": "SA \u00d7 model rank 2 \u00d7 (1/RP - 1/BEST_AVAIL_LAY_AT_SCHEDULED_OFF) < -7% \u00d7 LAY",
+  "entry_price": "BEST_AVAIL_LAY_AT_SCHEDULED_OFF",
+  "gate": "past 50 translated preoff candidates, date-safe; MODEL_TRUSTED iff RP Brier < preoff market Brier",
+  "threshold_tuning": false,
+  "primary_commission": 0.07,
+  "join_qa": [
+    {
+      "period": "2023",
+      "kash_rows": 171193,
+      "joined_rows": 171073,
+      "join_rate": 0.9992990367596806,
+      "joined_preoff_lay_rows": 170955,
+      "joined_preoff_lay_rate": 0.9986097562400332,
+      "bsp_max_abs_diff": 110.0,
+      "bsp_mean_abs_diff": 0.006184127273514803,
+      "win_match_rate": 1.0,
+      "kash_integrity": {
+        "period": "2023",
+        "raw_usable_rows": 171541,
+        "dedup_rows": 171193,
+        "duplicate_rows": 696,
+        "date_min": "2023-01-01",
+        "date_max": "2023-12-31",
+        "date_parsers": {
+          "Kash_Model_Results_2023.csv": "%d/%m/%Y"
+        }
+      }
+    },
+    {
+      "period": "2024",
+      "kash_rows": 183120,
+      "joined_rows": 183113,
+      "join_rate": 0.9999617737003058,
+      "joined_preoff_lay_rows": 182846,
+      "joined_preoff_lay_rate": 0.9985037134119703,
+      "bsp_max_abs_diff": 0.0,
+      "bsp_mean_abs_diff": 0.0,
+      "win_match_rate": 1.0,
+      "kash_integrity": {
+        "period": "2024",
+        "raw_usable_rows": 183332,
+        "dedup_rows": 183120,
+        "duplicate_rows": 369,
+        "date_min": "2024-01-01",
+        "date_max": "2024-12-31",
+        "date_parsers": {
+          "Kash_Model_Results_2024.csv": "%d/%m/%Y"
+        }
+      }
+    },
+    {
+      "period": "2025",
+      "kash_rows": 179688,
+      "joined_rows": 164279,
+      "join_rate": 0.9142458038377632,
+      "joined_preoff_lay_rows": 163744,
+      "joined_preoff_lay_rate": 0.9112684208183073,
+      "bsp_max_abs_diff": 0.0,
+      "bsp_mean_abs_diff": 0.0,
+      "win_match_rate": 1.0,
+      "kash_integrity": {
+        "period": "2025",
+        "raw_usable_rows": 180187,
+        "dedup_rows": 179688,
+        "duplicate_rows": 997,
+        "date_min": "2025-01-01",
+        "date_max": "2025-12-31",
+        "date_parsers": {
+          "Kash_Model_Results_2025.csv": "%d/%m/%Y"
+        }
+      }
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "kash_rows": 102464,
+      "joined_rows": 102464,
+      "join_rate": 1.0,
+      "joined_preoff_lay_rows": 102205,
+      "joined_preoff_lay_rate": 0.9974722829481574,
+      "bsp_max_abs_diff": 0.0,
+      "bsp_mean_abs_diff": 0.0,
+      "win_match_rate": 1.0,
+      "kash_integrity": {
+        "period": "2026_JAN_JUL",
+        "raw_usable_rows": 102616,
+        "dedup_rows": 102464,
+        "duplicate_rows": 277,
+        "date_min": "2026-01-01",
+        "date_max": "2026-07-31",
+        "date_parsers": {
+          "Kash_Model_Results_2026_01.csv": "%Y-%m-%d",
+          "Kash_Model_Results_2026_02.csv": "%Y-%m-%d",
+          "Kash_Model_Results_2026_03.csv": "%Y-%m-%d",
+          "Kash_Model_Results_2026_04.csv": "%Y-%m-%d",
+          "Kash_Model_Results_2026_05.csv": "%Y-%m-%d",
+          "Kash_Model_Results_2026_06.csv": "%Y-%m-%d",
+          "Kash_Model_Results_2026_07.csv": "%Y-%m-%d"
+        }
+      }
+    }
+  ],
+  "anz_source_fingerprints": [
+    {
+      "period": "2023",
+      "file": "ANZ_Thoroughbreds_2023.zip:ANZ_Thoroughbreds_2023_12.csv|ANZ_Thoroughbreds_2023_01.csv|ANZ_Thoroughbreds_2023_02.csv|ANZ_Thoroughbreds_2023_03.csv|ANZ_Thoroughbreds_2023_04.csv|ANZ_Thoroughbreds_2023_05.csv|ANZ_Thoroughbreds_2023_06.csv|ANZ_Thoroughbreds_2023_07.csv|ANZ_Thoroughbreds_2023_08.csv|ANZ_Thoroughbreds_2023_09.csv|ANZ_Thoroughbreds_2023_10.csv|ANZ_Thoroughbreds_2023_11.csv",
+      "archive_sha256": "419f5210b6c82ffbe9ac7188da07b84ab261df4414c1867baa16ff292474382c",
+      "rows": 195253,
+      "duplicate_rows": 510,
+      "date_min": "2023-01-01",
+      "date_max": "2023-12-31",
+      "preoff_lay_coverage": 0.9993700480914506
+    },
+    {
+      "period": "2024",
+      "file": "ANZ_Thoroughbreds_2024.zip:ANZ_Thoroughbreds_2024_12.csv|ANZ_Thoroughbreds_2024_01.csv|ANZ_Thoroughbreds_2024_02.csv|ANZ_Thoroughbreds_2024_03.csv|ANZ_Thoroughbreds_2024_04.csv|ANZ_Thoroughbreds_2024_05.csv|ANZ_Thoroughbreds_2024_06.csv|ANZ_Thoroughbreds_2024_07.csv|ANZ_Thoroughbreds_2024_08.csv|ANZ_Thoroughbreds_2024_09.csv|ANZ_Thoroughbreds_2024_10.csv|ANZ_Thoroughbreds_2024_11.csv",
+      "archive_sha256": "effe8d4183ffe6dfd410467561f788d199fc6164dd874610a93cb95e93765fef",
+      "rows": 193119,
+      "duplicate_rows": 163,
+      "date_min": "2024-01-01",
+      "date_max": "2024-12-31",
+      "preoff_lay_coverage": 0.9986018983114039
+    },
+    {
+      "period": "2025",
+      "file": "ANZ_Thoroughbreds_2025.zip:ANZ_Thoroughbreds_2025_12.csv|ANZ_Thoroughbreds_2025_01.csv|ANZ_Thoroughbreds_2025_02.csv|ANZ_Thoroughbreds_2025_03.csv|ANZ_Thoroughbreds_2025_04.csv|ANZ_Thoroughbreds_2025_05.csv|ANZ_Thoroughbreds_2025_06.csv|ANZ_Thoroughbreds_2025_07.csv|ANZ_Thoroughbreds_2025_08.csv|ANZ_Thoroughbreds_2025_09.csv|ANZ_Thoroughbreds_2025_10.csv|ANZ_Thoroughbreds_2025_11.csv",
+      "archive_sha256": "bdd4bf3a617fa7056982e85e58c536aa2566bf4cebb11fd0fb51875b7d899540",
+      "rows": 173455,
+      "duplicate_rows": 554,
+      "date_min": "2025-01-01",
+      "date_max": "2025-12-31",
+      "preoff_lay_coverage": 0.9968406791386815
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "ANZ_Thoroughbreds_2026_01.csv",
+      "archive_sha256": "c7a6bf081cec2ed381a8c84f88470ce014c8980fbbb414b8eafbc1660d76e0d0",
+      "rows": 16240,
+      "duplicate_rows": 79,
+      "date_min": "2026-01-01",
+      "date_max": "2026-01-31",
+      "preoff_lay_coverage": 0.9955049261083744
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "ANZ_Thoroughbreds_2026_02.csv",
+      "archive_sha256": "c3e6ad7b2b9ad279164a78e7888744a17c569fc0a09ff04fe315baaa9b485041",
+      "rows": 14358,
+      "duplicate_rows": 20,
+      "date_min": "2026-02-01",
+      "date_max": "2026-02-28",
+      "preoff_lay_coverage": 0.9934531271764869
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "ANZ_Thoroughbreds_2026_03.csv",
+      "archive_sha256": "71b60c4f1472cc32356e24bd08e0f9aabaedd92a984307b8779f66cd3f4ddd88",
+      "rows": 14923,
+      "duplicate_rows": 0,
+      "date_min": "2026-03-01",
+      "date_max": "2026-03-31",
+      "preoff_lay_coverage": 0.9985257655967299
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "ANZ_Thoroughbreds_2026_04.csv",
+      "archive_sha256": "41b5dac09e83d611d9cabb257f3577364ed5e9a3ae917ec088d330a776ba9e32",
+      "rows": 16307,
+      "duplicate_rows": 28,
+      "date_min": "2026-04-01",
+      "date_max": "2026-04-30",
+      "preoff_lay_coverage": 0.9973630956031152
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "ANZ_Thoroughbreds_2026_05.csv",
+      "archive_sha256": "0832ec4bc507a617277fd4c7155684aed4ac0ce922cdaf8c916889fdf6295ab8",
+      "rows": 16141,
+      "duplicate_rows": 72,
+      "date_min": "2026-05-01",
+      "date_max": "2026-05-31",
+      "preoff_lay_coverage": 0.9991945976085744
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "ANZ_Thoroughbreds_2026_06.csv",
+      "archive_sha256": "2dd54c8192a3343682d4a58dc8009cb977ced248e3a964d576806b6f0b159657",
+      "rows": 15723,
+      "duplicate_rows": 36,
+      "date_min": "2026-06-01",
+      "date_max": "2026-06-30",
+      "preoff_lay_coverage": 0.9986643770272848
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "file": "ANZ_Thoroughbreds_2026_07.csv",
+      "archive_sha256": "cd1833e1fa89787f59daadf622b2943d710526294a7d46ae0a63985691e433fb",
+      "rows": 16401,
+      "duplicate_rows": 0,
+      "date_min": "2026-07-01",
+      "date_max": "2026-07-31",
+      "preoff_lay_coverage": 0.9996341686482532
+    }
+  ],
+  "overlap": [
+    {
+      "period": "2023",
+      "eligible_r2": 1353,
+      "final_candidate_n": 208,
+      "preoff_candidate_n": 179,
+      "intersection_n": 155,
+      "recall_vs_final": 0.7451923076923077,
+      "precision_vs_final": 0.8659217877094972,
+      "jaccard": 0.6681034482758621,
+      "preoff_lay_mean": 6.114966740576498
+    },
+    {
+      "period": "2024",
+      "eligible_r2": 1360,
+      "final_candidate_n": 176,
+      "preoff_candidate_n": 157,
+      "intersection_n": 144,
+      "recall_vs_final": 0.8181818181818182,
+      "precision_vs_final": 0.9171974522292994,
+      "jaccard": 0.7619047619047619,
+      "preoff_lay_mean": 6.3403897058823535
+    },
+    {
+      "period": "2025",
+      "eligible_r2": 1242,
+      "final_candidate_n": 154,
+      "preoff_candidate_n": 108,
+      "intersection_n": 89,
+      "recall_vs_final": 0.577922077922078,
+      "precision_vs_final": 0.8240740740740741,
+      "jaccard": 0.5144508670520231,
+      "preoff_lay_mean": 6.16195652173913
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "eligible_r2": 767,
+      "final_candidate_n": 69,
+      "preoff_candidate_n": 55,
+      "intersection_n": 45,
+      "recall_vs_final": 0.6521739130434783,
+      "precision_vs_final": 0.8181818181818182,
+      "jaccard": 0.569620253164557,
+      "preoff_lay_mean": 6.273520208604954
+    },
+    {
+      "period": "ALL",
+      "eligible_r2": 4722,
+      "final_candidate_n": 607,
+      "preoff_candidate_n": 499,
+      "intersection_n": 433,
+      "recall_vs_final": 0.71334431630972,
+      "precision_vs_final": 0.8677354709418837,
+      "jaccard": 0.6433878157503715,
+      "preoff_lay_mean": 6.218005082592121
+    }
+  ],
+  "period_economics": [
+    {
+      "period": "2023",
+      "candidate_n": 179,
+      "gate_on_n": 1,
+      "gate_off_n": 178,
+      "all_5pct": {
+        "n": 179,
+        "net_pl": -21.66,
+        "pot": -0.12100558659217878,
+        "rol": -0.05090721067970292,
+        "maxdd": 22.73000000000002,
+        "horse_win_rate": 0.3407821229050279
+      },
+      "all_7pct": {
+        "n": 179,
+        "net_pl": -24.02000000000001,
+        "pot": -0.13418994413407828,
+        "rol": -0.05645388737425968,
+        "maxdd": 24.230000000000015,
+        "horse_win_rate": 0.3407821229050279
+      },
+      "gate_on_5pct": {
+        "n": 1,
+        "net_pl": -1.7799999999999998,
+        "pot": -1.7799999999999998,
+        "rol": -1.0,
+        "maxdd": 1.7799999999999998,
+        "horse_win_rate": 1.0
+      },
+      "gate_on_7pct": {
+        "n": 1,
+        "net_pl": -1.7799999999999998,
+        "pot": -1.7799999999999998,
+        "rol": -1.0,
+        "maxdd": 1.7799999999999998,
+        "horse_win_rate": 1.0
+      },
+      "gate_off_7pct": {
+        "n": 178,
+        "net_pl": -22.24000000000001,
+        "pot": -0.12494382022471916,
+        "rol": -0.052489969317913644,
+        "maxdd": 24.230000000000015,
+        "horse_win_rate": 0.33707865168539325
+      }
+    },
+    {
+      "period": "2024",
+      "candidate_n": 157,
+      "gate_on_n": 22,
+      "gate_off_n": 135,
+      "all_5pct": {
+        "n": 157,
+        "net_pl": -20.35,
+        "pot": -0.12961783439490446,
+        "rol": -0.05626209565938623,
+        "maxdd": 35.790000000000006,
+        "horse_win_rate": 0.34394904458598724
+      },
+      "all_7pct": {
+        "n": 157,
+        "net_pl": -22.41000000000001,
+        "pot": -0.14273885350318477,
+        "rol": -0.061957423278960484,
+        "maxdd": 36.37,
+        "horse_win_rate": 0.34394904458598724
+      },
+      "gate_on_5pct": {
+        "n": 22,
+        "net_pl": -15.390000000000004,
+        "pot": -0.6995454545454547,
+        "rol": -0.3057210965435042,
+        "maxdd": 19.190000000000005,
+        "horse_win_rate": 0.5
+      },
+      "gate_on_7pct": {
+        "n": 22,
+        "net_pl": -15.61,
+        "pot": -0.7095454545454545,
+        "rol": -0.3100913786253476,
+        "maxdd": 19.33,
+        "horse_win_rate": 0.5
+      },
+      "gate_off_7pct": {
+        "n": 135,
+        "net_pl": -6.800000000000008,
+        "pot": -0.050370370370370426,
+        "rol": -0.021839671120246686,
+        "maxdd": 36.37,
+        "horse_win_rate": 0.31851851851851853
+      }
+    },
+    {
+      "period": "2025",
+      "candidate_n": 108,
+      "gate_on_n": 38,
+      "gate_off_n": 70,
+      "all_5pct": {
+        "n": 108,
+        "net_pl": 13.860000000000003,
+        "pot": 0.12833333333333335,
+        "rol": 0.05282414818202608,
+        "maxdd": 11.94,
+        "horse_win_rate": 0.25925925925925924
+      },
+      "all_7pct": {
+        "n": 108,
+        "net_pl": 12.259999999999987,
+        "pot": 0.11351851851851841,
+        "rol": 0.046726122417867166,
+        "maxdd": 12.08,
+        "horse_win_rate": 0.25925925925925924
+      },
+      "gate_on_5pct": {
+        "n": 38,
+        "net_pl": 11.869999999999994,
+        "pot": 0.3123684210526314,
+        "rol": 0.12662684019628753,
+        "maxdd": 6.28,
+        "horse_win_rate": 0.18421052631578946
+      },
+      "gate_on_7pct": {
+        "n": 38,
+        "net_pl": 11.249999999999996,
+        "pot": 0.2960526315789473,
+        "rol": 0.12001280136547895,
+        "maxdd": 6.34,
+        "horse_win_rate": 0.18421052631578946
+      },
+      "gate_off_7pct": {
+        "n": 70,
+        "net_pl": 1.0099999999999927,
+        "pot": 0.014428571428571324,
+        "rol": 0.0059890891840606785,
+        "maxdd": 12.08,
+        "horse_win_rate": 0.3
+      }
+    },
+    {
+      "period": "2026_JAN_JUL",
+      "candidate_n": 55,
+      "gate_on_n": 55,
+      "gate_off_n": 0,
+      "all_5pct": {
+        "n": 55,
+        "net_pl": 13.689999999999998,
+        "pot": 0.24890909090909086,
+        "rol": 0.102623688155922,
+        "maxdd": 9.01,
+        "horse_win_rate": 0.21818181818181817
+      },
+      "all_7pct": {
+        "n": 55,
+        "net_pl": 12.829999999999995,
+        "pot": 0.2332727272727272,
+        "rol": 0.09617691154422782,
+        "maxdd": 9.03,
+        "horse_win_rate": 0.21818181818181817
+      },
+      "gate_on_5pct": {
+        "n": 55,
+        "net_pl": 13.689999999999998,
+        "pot": 0.24890909090909086,
+        "rol": 0.102623688155922,
+        "maxdd": 9.01,
+        "horse_win_rate": 0.21818181818181817
+      },
+      "gate_on_7pct": {
+        "n": 55,
+        "net_pl": 12.829999999999995,
+        "pot": 0.2332727272727272,
+        "rol": 0.09617691154422782,
+        "maxdd": 9.03,
+        "horse_win_rate": 0.21818181818181817
+      },
+      "gate_off_7pct": {
+        "n": 0,
+        "net_pl": 0.0,
+        "pot": null,
+        "rol": null,
+        "maxdd": 0.0,
+        "horse_win_rate": null
+      }
+    }
+  ],
+  "aggregate_economics": {
+    "all_candidates_7pct": {
+      "n": 499,
+      "net_pl": -21.340000000000032,
+      "pot": -0.042765531062124315,
+      "rol": -0.018039494150267153,
+      "maxdd": 58.53000000000003,
+      "horse_win_rate": 0.3106212424849699
+    },
+    "gate_on_7pct": {
+      "n": 116,
+      "net_pl": 6.689999999999985,
+      "pot": 0.057672413793103325,
+      "rol": 0.023956169877533434,
+      "maxdd": 22.800000000000004,
+      "horse_win_rate": 0.2672413793103448
+    },
+    "gate_off_7pct": {
+      "n": 383,
+      "net_pl": -28.03000000000003,
+      "pot": -0.07318537859007841,
+      "rol": -0.031016930397255758,
+      "maxdd": 56.75000000000003,
+      "horse_win_rate": 0.3237597911227154
+    },
+    "gate_on_month_bootstrap_7pct": {
+      "ci95": [
+        -0.3093264575741801,
+        0.3546673350041769
+      ],
+      "p_nonpositive": 0.3579,
+      "months": 16
+    }
+  },
+  "decision": {
+    "classification": "PREOFF_TRANSLATION_NOT_PROVEN",
+    "tests": {
+      "kash_hashes_match_round026": true,
+      "overall_gate_on_pot_7pct_positive": true,
+      "overall_gate_on_bootstrap_ci_low_positive": false,
+      "2025_gate_on_positive": true,
+      "2026_gate_on_positive": true,
+      "at_least_50_gate_on_bets": true
+    }
+  },
+  "governance": {
+    "betting_ready": false,
+    "reason": "Translation audit is retrospective on previously inspected years; live/paper forward confirmation still required. Scheduled-off snapshot is observable pre-race, but execution latency/slippage remains untested.",
+    "no_parameter_tuning_this_round": true
+  }
+}
