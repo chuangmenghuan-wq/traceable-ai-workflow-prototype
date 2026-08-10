@@ -23,6 +23,7 @@ KASH_DAILY = (
     "https://betfair-data-supplier-prod.herokuapp.com/api/widgets/"
     "kash-ratings-model/datasets?date={date}&presenter=RatingsPresenter&csv=true"
 )
+BSP_DAILY = "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin{ddmmyyyy}.csv"
 MONTHLY_URL = "https://betfair-datascientists.github.io/data/assets/Kash_Model_Results_2026_08.csv"
 
 
@@ -46,72 +47,107 @@ def pick(cm: dict[str, str], *names: str) -> str | None:
     return None
 
 
-def parse_daily(raw: bytes, date: pd.Timestamp, source_name: str) -> tuple[pd.DataFrame, dict]:
+def parse_ratings(raw: bytes, date: pd.Timestamp) -> tuple[pd.DataFrame, dict]:
     text = raw.decode("utf-8-sig", errors="replace")
-    if not text.strip():
-        return pd.DataFrame(), {"date": str(date.date()), "source": source_name, "status": "EMPTY"}
     try:
         d = pd.read_csv(io.StringIO(text), low_memory=False)
     except Exception as e:
-        return pd.DataFrame(), {
-            "date": str(date.date()), "source": source_name,
-            "status": "CSV_PARSE_FAIL", "error": str(e), "prefix": text[:200],
-        }
+        return pd.DataFrame(), {"status": "RATINGS_PARSE_FAIL", "error": str(e), "prefix": text[:200]}
     cm = norm_colmap(d.columns)
     mapped = {
-        "track": pick(cm, "Track", "Venue"),
-        "market_id": pick(cm, "Market", "MarketId", "MARKET_ID"),
-        "selection_id": pick(cm, "Selection", "SelectionId", "SELECTION_ID"),
-        "model_odds": pick(cm, "RP", "Model Odds", "MODEL_ODDS"),
-        "bsp": pick(cm, "WIN_BSP", "BSP", "Win BSP"),
-        "win": pick(cm, "WIN_RESULT", "RESULT", "Win Result"),
+        "track": pick(cm, "meetings.name", "Track", "Venue"),
+        "market_id": pick(cm, "meetings.races.bfExchangeMarketId", "Market", "MarketId", "MARKET_ID"),
+        "selection_id": pick(cm, "meetings.races.runners.bfExchangeSelectionId", "Selection", "SelectionId", "SELECTION_ID"),
+        "model_odds": pick(cm, "meetings.races.runners.ratedPrice", "RP", "Model Odds", "MODEL_ODDS"),
+        "horse": pick(cm, "meetings.races.runners.name", "Horse", "SELECTION_NAME"),
     }
-    qa = {
-        "date": str(date.date()), "source": source_name, "status": "PARSED",
-        "rows": int(len(d)), "columns": [str(c) for c in d.columns], "mapped": mapped,
-    }
-    required = ["track", "market_id", "selection_id", "model_odds", "bsp", "win"]
+    required = ["track", "market_id", "selection_id", "model_odds"]
     missing = [k for k in required if mapped[k] is None]
+    qa = {"status": "PARSED", "rows": int(len(d)), "columns": [str(c) for c in d.columns], "mapped": mapped}
     if missing:
-        qa["status"] = "MISSING_SETTLEMENT_COLUMNS"
+        qa["status"] = "MISSING_RATINGS_COLUMNS"
         qa["missing"] = missing
         return pd.DataFrame(), qa
-
     x = pd.DataFrame({
         "date": date,
         "track": d[mapped["track"]].astype(str).str.strip(),
-        "market_id": d[mapped["market_id"]].astype(str),
-        "selection_id": d[mapped["selection_id"]].astype(str),
+        "market_id": d[mapped["market_id"]].astype(str).str.strip(),
+        "selection_id": d[mapped["selection_id"]].astype(str).str.strip(),
         "model_odds": pd.to_numeric(d[mapped["model_odds"]], errors="coerce"),
-        "bsp": pd.to_numeric(d[mapped["bsp"]], errors="coerce"),
-        "win": pd.to_numeric(d[mapped["win"]], errors="coerce"),
+        "horse": d[mapped["horse"]].astype(str).str.strip() if mapped["horse"] else "",
     })
-    x = x.replace([np.inf, -np.inf], np.nan).dropna(
-        subset=["model_odds", "bsp", "win", "market_id", "selection_id"]
-    )
-    x = x[(x.model_odds > 1) & (x.bsp > 1) & x.win.isin([0, 1])].copy()
-    x = x.sort_values(["market_id", "selection_id"]).drop_duplicates(
-        ["market_id", "selection_id"], keep="last"
-    )
+    x = x.replace([np.inf, -np.inf], np.nan).dropna(subset=["model_odds", "market_id", "selection_id"])
+    x = x[x.model_odds > 1].copy()
+    x = x.sort_values(["market_id", "selection_id"]).drop_duplicates(["market_id", "selection_id"], keep="last")
     x["model_rank"] = x.groupby("market_id").model_odds.rank(method="first", ascending=True)
-    x["model_prob"] = 1.0 / x.model_odds
-    x["market_prob"] = 1.0 / x.bsp
-    x["value_calc"] = x.model_prob - x.market_prob
-    x["model_sqerr"] = (x.win - x.model_prob) ** 2
-    x["market_sqerr"] = (x.win - x.market_prob) ** 2
     qa["usable_rows"] = int(len(x))
     qa["markets"] = int(x.market_id.nunique())
     return x, qa
 
 
+def parse_bsp(raw: bytes) -> tuple[pd.DataFrame, dict]:
+    text = raw.decode("utf-8-sig", errors="replace")
+    try:
+        d = pd.read_csv(io.StringIO(text), low_memory=False)
+    except Exception as e:
+        return pd.DataFrame(), {"status": "BSP_PARSE_FAIL", "error": str(e), "prefix": text[:200]}
+    cm = norm_colmap(d.columns)
+    mapped = {
+        "selection_id": pick(cm, "SELECTION_ID"),
+        "bsp": pick(cm, "BSP"),
+        "win": pick(cm, "WIN_LOSE"),
+        "selection_name": pick(cm, "SELECTION_NAME"),
+        "menu_hint": pick(cm, "MENU_HINT"),
+        "event_name": pick(cm, "EVENT_NAME"),
+    }
+    required = ["selection_id", "bsp", "win"]
+    missing = [k for k in required if mapped[k] is None]
+    qa = {"status": "PARSED", "rows": int(len(d)), "columns": [str(c) for c in d.columns], "mapped": mapped}
+    if missing:
+        qa["status"] = "MISSING_BSP_COLUMNS"
+        qa["missing"] = missing
+        return pd.DataFrame(), qa
+    x = pd.DataFrame({
+        "selection_id": d[mapped["selection_id"]].astype(str).str.strip(),
+        "bsp": pd.to_numeric(d[mapped["bsp"]], errors="coerce"),
+        "win": pd.to_numeric(d[mapped["win"]], errors="coerce"),
+        "bsp_name": d[mapped["selection_name"]].astype(str).str.strip() if mapped["selection_name"] else "",
+        "menu_hint": d[mapped["menu_hint"]].astype(str).str.strip() if mapped["menu_hint"] else "",
+        "event_name": d[mapped["event_name"]].astype(str).str.strip() if mapped["event_name"] else "",
+    })
+    x = x.replace([np.inf, -np.inf], np.nan).dropna(subset=["selection_id", "bsp", "win"])
+    x = x[(x.bsp > 1) & x.win.isin([0, 1])].copy()
+    dup = int(x.duplicated(["selection_id"], keep=False).sum())
+    x = x.sort_values(["selection_id"]).drop_duplicates(["selection_id"], keep="last")
+    qa["usable_rows"] = int(len(x))
+    qa["duplicate_selection_rows"] = dup
+    return x, qa
+
+
+def settle_day(ratings: pd.DataFrame, bsp: pd.DataFrame, date: pd.Timestamp) -> tuple[pd.DataFrame, dict]:
+    if ratings.empty or bsp.empty:
+        return pd.DataFrame(), {"status": "EMPTY_JOIN_INPUT"}
+    z = ratings.merge(bsp, on="selection_id", how="inner", validate="many_to_one")
+    z["model_prob"] = 1.0 / z.model_odds
+    z["market_prob"] = 1.0 / z.bsp
+    z["value_calc"] = z.model_prob - z.market_prob
+    z["model_sqerr"] = (z.win - z.model_prob) ** 2
+    z["market_sqerr"] = (z.win - z.market_prob) ** 2
+    qa = {
+        "status": "SETTLED",
+        "ratings_rows": int(len(ratings)),
+        "bsp_rows": int(len(bsp)),
+        "joined_rows": int(len(z)),
+        "join_rate": float(len(z) / len(ratings)) if len(ratings) else None,
+        "date": str(date.date()),
+    }
+    return z, qa
+
+
 def candidate_rows(d: pd.DataFrame) -> pd.DataFrame:
     if d.empty:
         return d
-    return d[
-        d.track.isin(SA_TRACKS)
-        & d.model_rank.eq(2)
-        & d.value_calc.lt(-0.07)
-    ].copy()
+    return d[d.track.isin(SA_TRACKS) & d.model_rank.eq(2) & d.value_calc.lt(-0.07)].copy()
 
 
 def pnl(candidate: pd.DataFrame, commission: float) -> dict:
@@ -130,7 +166,7 @@ def pnl(candidate: pd.DataFrame, commission: float) -> dict:
 
 
 def main() -> None:
-    # Freeze/re-verify the exact pre-August historical vintage before evaluating unseen dates.
+    # Rules were frozen before August settlement/BSP inspection. Re-verify the exact pre-Aug source vintage.
     historical_fingerprints = verify_source_vintage()
     history, integrity = candidate_history()
     history = history[history.date < HOLDOUT_START].sort_values(["date", "market_id", "selection_id"]).copy()
@@ -159,47 +195,45 @@ def main() -> None:
         adv = mb - rb
         gate_on = bool(adv > 0)
 
-        url = KASH_DAILY.format(date=str(date.date()))
-        status, raw, ct = get_bytes(url)
+        rating_url = KASH_DAILY.format(date=str(date.date()))
+        bsp_url = BSP_DAILY.format(ddmmyyyy=date.strftime("%d%m%Y"))
+        rs, rr, rct = get_bytes(rating_url)
+        bs, br, bct = get_bytes(bsp_url)
         qa = {
-            "date": str(date.date()), "url": url, "http_status": status,
-            "content_type": ct, "bytes": int(len(raw)),
-            "sha256": sha256_bytes(raw) if status == 200 else None,
+            "date": str(date.date()),
+            "rating_url": rating_url, "rating_http_status": rs, "rating_content_type": rct,
+            "rating_bytes": int(len(rr)), "rating_sha256": sha256_bytes(rr) if rs == 200 else None,
+            "bsp_url": bsp_url, "bsp_http_status": bs, "bsp_content_type": bct,
+            "bsp_bytes": int(len(br)), "bsp_sha256": sha256_bytes(br) if bs == 200 else None,
         }
-        if status != 200:
-            qa["status"] = "HTTP_UNAVAILABLE"
+        if rs != 200 or bs != 200:
+            qa["status"] = "SOURCE_UNAVAILABLE"
             daily_qa.append(qa)
-            gate_days.append({
-                "date": str(date.date()), "gate_on": gate_on, "past_n": int(len(prior)),
-                "past_brier_adv": adv, "candidate_n": None, "settled": False,
-            })
+            gate_days.append({"date": str(date.date()), "gate_on": gate_on, "past_n": int(len(prior)), "past_brier_adv": adv, "candidate_n": None, "settled": False})
             continue
 
-        parsed, pqa = parse_daily(raw, date, f"daily:{date.date()}")
-        qa.update(pqa)
+        ratings, rqa = parse_ratings(rr, date)
+        bsp, bqa = parse_bsp(br)
+        settled, sqa = settle_day(ratings, bsp, date)
+        qa.update({"ratings_qa": rqa, "bsp_qa": bqa, "settlement_qa": sqa})
+        if settled.empty:
+            qa["status"] = "SETTLEMENT_UNAVAILABLE"
+            daily_qa.append(qa)
+            gate_days.append({"date": str(date.date()), "gate_on": gate_on, "past_n": int(len(prior)), "past_brier_adv": adv, "candidate_n": None, "settled": False})
+            continue
+
+        qa["status"] = "SETTLED"
         daily_qa.append(qa)
-        if parsed.empty and pqa.get("status") != "PARSED":
-            gate_days.append({
-                "date": str(date.date()), "gate_on": gate_on, "past_n": int(len(prior)),
-                "past_brier_adv": adv, "candidate_n": None, "settled": False,
-            })
-            continue
-
         settlement_available_days += 1
-        cand = candidate_rows(parsed)
+        cand = candidate_rows(settled)
         if not cand.empty:
             cand["gate_on"] = gate_on
             cand["past_brier_adv"] = adv
             all_aug_candidates.append(cand)
-        gate_days.append({
-            "date": str(date.date()), "gate_on": gate_on, "past_n": int(len(prior)),
-            "past_brier_adv": adv, "candidate_n": int(len(cand)), "settled": True,
-        })
-        # Only after date D is settled may D outcomes enter the history for D+1.
+        gate_days.append({"date": str(date.date()), "gate_on": gate_on, "past_n": int(len(prior)), "past_brier_adv": adv, "candidate_n": int(len(cand)), "settled": True})
+        # Date-safe sequential update: date D can affect D+1 only after D is settled.
         if not cand.empty:
-            working_history = pd.concat([working_history, cand], ignore_index=True).sort_values(
-                ["date", "market_id", "selection_id"]
-            )
+            working_history = pd.concat([working_history, cand], ignore_index=True).sort_values(["date", "market_id", "selection_id"])
 
     aug = pd.concat(all_aug_candidates, ignore_index=True) if all_aug_candidates else pd.DataFrame()
     gated = aug[aug.gate_on].copy() if not aug.empty else aug
@@ -224,11 +258,12 @@ def main() -> None:
         "capability": "HorseRacing.UntouchedForwardHoldout",
         "status": "COMPLETE",
         "holdout_window": [str(HOLDOUT_START.date()), str(HOLDOUT_END.date())],
-        "freeze_timestamp_semantics": "Rules frozen before any August outcome/result inspection in Round029.",
+        "freeze_timestamp_semantics": "Frozen signal/gate before any August BSP/WIN_LOSE settlement inspection; first probe saw ratings schema/row counts only.",
         "source_vintage": "ROUND026_SHA256_FROZEN_VINTAGE for pre-Aug history",
         "historical_source_hashes_match": bool(all(r["match_round026_vintage"] for r in historical_fingerprints)),
         "frozen_signal": "SA × model rank 2 × continuous value_calc < -7% × LAY",
         "frozen_gate": "past 50 candidate outcomes, date-safe; MODEL_TRUSTED iff RP Brier < BSP Brier",
+        "signal_price_caveat": "value_calc uses final BSP; this is an untouched outcome holdout, not yet a deployable pre-off live signal.",
         "primary_commission": PRIMARY_COMMISSION,
         "source_probe": source_probe,
         "settlement_available_days": settlement_available_days,
@@ -244,7 +279,7 @@ def main() -> None:
         "governance": {
             "betting_ready": False,
             "promotion_forbidden_this_round": True,
-            "reason": "Initial untouched batch is deliberately small; no tuning or strategy promotion from Round029 alone.",
+            "reason": "Initial untouched batch is deliberately small and signal still references final BSP; no tuning or strategy promotion from Round029 alone.",
         },
         "history_integrity": integrity,
     }
@@ -252,10 +287,7 @@ def main() -> None:
     pd.DataFrame(daily_qa).to_json(OUT / "daily_source_qa.json", orient="records", indent=2)
     pd.DataFrame(gate_days).to_csv(OUT / "gate_days.csv", index=False)
     if not aug.empty:
-        aug[[
-            "date", "track", "market_id", "selection_id", "model_odds", "bsp", "win",
-            "model_rank", "value_calc", "gate_on", "past_brier_adv"
-        ]].to_csv(OUT / "holdout_candidates.csv", index=False)
+        aug[["date", "track", "horse", "market_id", "selection_id", "model_odds", "bsp", "win", "model_rank", "value_calc", "gate_on", "past_brier_adv"]].to_csv(OUT / "holdout_candidates.csv", index=False)
     print(json.dumps(status, indent=2))
 
 
