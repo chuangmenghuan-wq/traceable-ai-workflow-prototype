@@ -1,0 +1,37 @@
+name: horse-round025-runtime
+
+on:
+  push:
+    branches:
+      - research/horse-round025-runtime
+    paths:
+      - 'research/horse_round025_runtime.py'
+      - '.github/workflows/horse-round025-runtime.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install numpy pandas requests
+      - name: Execute frozen rolling regime gate
+        run: python research/horse_round025_runtime.py
+      - name: Commit compact research outputs
+        run: |
+          git config user.name 'future-ability-research-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add research_outputs/horse_round025
+          if git diff --cached --quiet; then
+            echo 'No output changes'
+          else
+            git commit -m 'research: round025 isolated runtime outputs'
+            git push
+          fi
