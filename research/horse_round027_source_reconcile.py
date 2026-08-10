@@ -69,7 +69,6 @@ def market_net_pnl(x: pd.DataFrame, commission: float) -> pd.DataFrame:
         "gross": gross,
         "liability": (x.bsp - 1.0).to_numpy(),
     })
-    # Candidate is one R2 selection per market, but retain market aggregation for contract consistency.
     z = z.groupby(["date", "market_id"], as_index=False).agg(gross=("gross", "sum"), liability=("liability", "sum"))
     z["net"] = z.gross - np.where(z.gross > 0, commission * z.gross, 0.0)
     return z.sort_values(["date", "market_id"]).reset_index(drop=True)
@@ -87,22 +86,16 @@ def max_drawdown(z: pd.DataFrame) -> float:
 def bootstrap_pot(x: pd.DataFrame, commission: float, draws: int = BOOTSTRAP_DRAWS) -> dict:
     if x.empty:
         return {"ci95": [None, None], "p_nonpositive": None}
-    # One candidate per market after rank/dedup, resample markets to preserve market atomicity.
-    markets = list(x.market_id.unique())
-    groups = {m: x[x.market_id.eq(m)] for m in markets}
+    gross = np.where(x.win.eq(1), -(x.bsp - 1.0), 1.0)
+    units = pd.DataFrame({"market_id": x.market_id.to_numpy(), "gross": gross, "bet_n": 1})
+    units = units.groupby("market_id", as_index=False).agg(gross=("gross", "sum"), bet_n=("bet_n", "sum"))
+    units["net"] = units.gross - np.where(units.gross > 0, commission * units.gross, 0.0)
+    net = units.net.to_numpy(float)
+    bet_n = units.bet_n.to_numpy(float)
+    n_markets = len(units)
     rng = np.random.default_rng(RNG_SEED + int(round(commission * 1000)))
-    vals = np.empty(draws)
-    for i in range(draws):
-        sampled = rng.choice(markets, size=len(markets), replace=True)
-        pieces = []
-        # Re-label duplicated market draws so duplicated samples remain distinct settlement units.
-        for j, m in enumerate(sampled):
-            g = groups[m].copy()
-            g["market_id"] = f"{m}__boot{j}"
-            pieces.append(g)
-        s = pd.concat(pieces, ignore_index=True)
-        z = market_net_pnl(s, commission)
-        vals[i] = float(z.net.sum() / len(s))
+    idx = rng.integers(0, n_markets, size=(draws, n_markets))
+    vals = net[idx].sum(axis=1) / bet_n[idx].sum(axis=1)
     q = np.quantile(vals, [0.025, 0.975])
     return {"ci95": [float(q[0]), float(q[1])], "p_nonpositive": float((vals <= 0).mean())}
 
@@ -183,8 +176,6 @@ def main() -> None:
     periods = [period_metrics(x, p) for p in PERIOD_ORDER]
     months = monthly_metrics(x)
     aggregate = aggregate_metrics(x)
-
-    # A reconciliation round must report the current-vintage baseline only; older-vintage values remain historical receipts.
     status = {
         "round": 27,
         "capability": "HorseRacing.SourceVersionReconciliation",
