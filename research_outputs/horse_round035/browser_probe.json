@@ -1,0 +1,133 @@
+{
+  "round": 35,
+  "capability": "HorseRacing.SettlementLedgerRecovery",
+  "phase": "OFFICIAL_BROWSER_TRANSPORT_PROBE",
+  "status": "COMPLETE",
+  "official_files_requested": 11,
+  "official_files_recovered": 0,
+  "official_transport_ready": false,
+  "rows": [
+    {
+      "date_token": "31072026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin31072026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "01082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin01082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "02082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin02082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "03082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin03082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "04082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin04082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "05082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin05082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "06082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin06082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "07082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin07082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "08082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin08082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "09082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin09082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    },
+    {
+      "date_token": "10082026",
+      "url": "https://promo.betfair.com/betfairsp/prices/dwbfpricesauswin10082026.csv",
+      "base_status": 403,
+      "request_status": 403,
+      "request_bytes": 2347,
+      "request_ct": "text/html; charset=UTF-8",
+      "fetch_status": 403,
+      "fetch_bytes": 2347,
+      "fetch_ct": "text/html; charset=UTF-8"
+    }
+  ],
+  "next": "PROVISIONAL_MIRROR_FALLBACK"
+}
