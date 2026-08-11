@@ -1,0 +1,53 @@
+{
+  "round": 37,
+  "capability": "HorseRacing.BetfairDelayedAuthActivation",
+  "status": "COMPLETE",
+  "captured_at_utc": "2026-08-11T10:07:25.073498+00:00",
+  "contract_sha256": "e446a15ebc40bd4ad7ccc820e60ec829d623311f22d71b425c98c01fc13724e3",
+  "strategy_tuning": false,
+  "paper_only": true,
+  "real_betting_allowed": false,
+  "runtime_auth_presence": {
+    "session_present": false,
+    "session_source": null,
+    "session_fingerprint": null,
+    "configured_app_key_present": false,
+    "configured_app_key_source": null,
+    "effective_delayed_key_present": false,
+    "effective_delayed_key_fingerprint": null,
+    "username_secret_present": false,
+    "password_secret_present": false
+  },
+  "racecard_qa": [
+    {
+      "date": "2026-08-11",
+      "http_status": 200,
+      "aus_thoroughbred_markets": 39
+    },
+    {
+      "date": "2026-08-12",
+      "http_status": 200,
+      "aus_thoroughbred_markets": 39
+    }
+  ],
+  "candidate_market_count_for_smoke": 78,
+  "auth_activation_audit": {
+    "unauthenticated_control": {
+      "http_status": 403,
+      "error": "<!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-js ie8 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if gt IE 8]><!--> <html class=\"no-js\" lang=\"en-US\"> <!--<![endif]-->\n<head>\n<title>Attention Required! | Cloudflare</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />\n<meta name=\"robots\" content=\"noindex, nofollow\" />\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n<link rel=\"stylesheet\" id=\"cf_styles-css\" href=\"/cdn-cgi/s"
+    }
+  },
+  "marketbook_smoke": {
+    "status": "AUTH_MISSING"
+  },
+  "classification": "EXTERNAL_BETFAIR_ACCOUNT_SESSION_REQUIRED",
+  "delayed_auth_activation_ready": false,
+  "remaining_blocker": "BETFAIR_AUTHENTICATED_SESSION_NOT_AVAILABLE_TO_RUNTIME",
+  "governance": {
+    "delayed_key_only": true,
+    "live_key_activation_forbidden_this_round": true,
+    "orders_forbidden": true,
+    "no_secrets_committed": true,
+    "no_threshold_window_state_or_rank_changes": true
+  }
+}
