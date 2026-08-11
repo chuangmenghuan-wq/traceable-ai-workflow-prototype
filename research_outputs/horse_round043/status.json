@@ -1,0 +1,32 @@
+{
+  "round": 43,
+  "capability": "HorseRacing.ScheduleAwarePreoffCapture",
+  "status": "CAPTURE_IN_PROGRESS",
+  "capture_mode": "SCHEDULE_AWARE_DAILY_ROLLOVER",
+  "active_date": "2026-08-12",
+  "last_run_utc": "2026-08-11T23:36:08.111262+00:00",
+  "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-08-12.json",
+  "target_offsets_minutes": [
+    30,
+    15,
+    10,
+    5,
+    1
+  ],
+  "today": {
+    "snapshot_count": 0,
+    "captured_market_count": 0,
+    "target_capture_counts": {}
+  },
+  "cumulative": {
+    "snapshot_count": 0,
+    "captured_market_count": 0,
+    "target_capture_counts": {},
+    "live_model_price_seen": false,
+    "fifteen_min_price_seen": false
+  },
+  "paper_only": true,
+  "real_betting_allowed": false,
+  "strategy_tuning": false,
+  "next_gate": "continue daily T-30/T-15/T-10/T-5/T-1 capture until cumulative validation is satisfied"
+}
