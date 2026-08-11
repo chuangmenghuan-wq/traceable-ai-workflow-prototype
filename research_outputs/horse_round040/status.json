@@ -1,0 +1,80 @@
+{
+  "round": 40,
+  "capability": "HorseRacing.BetfairCredentialInjectionContract",
+  "status": "COMPLETE",
+  "captured_at_utc": "2026-08-11T11:13:33.666919+00:00",
+  "contract_sha256": "e446a15ebc40bd4ad7ccc820e60ec829d623311f22d71b425c98c01fc13724e3",
+  "strategy_tuning": false,
+  "paper_only": true,
+  "real_betting_allowed": false,
+  "required_secret_contract": {
+    "required_names": [
+      "BETFAIR_USERNAME",
+      "BETFAIR_PASSWORD",
+      "BETFAIR_DELAYED_APP_KEY",
+      "BETFAIR_CERT_PEM",
+      "BETFAIR_CERT_KEY_PEM"
+    ],
+    "optional_session_names": [
+      "BETFAIR_SESSION_TOKEN",
+      "BETFAIR_SSOID"
+    ],
+    "secrets_must_never_be_committed": true,
+    "workflow_dispatch_plaintext_inputs_forbidden": true,
+    "issue_pr_comment_injection_forbidden": true,
+    "chat_password_paste_not_required": true
+  },
+  "runtime_material_validation": {
+    "BETFAIR_USERNAME": {
+      "present": false,
+      "format_valid": null
+    },
+    "BETFAIR_PASSWORD": {
+      "present": false,
+      "format_valid": null
+    },
+    "BETFAIR_DELAYED_APP_KEY": {
+      "present": false,
+      "format_valid": null
+    },
+    "BETFAIR_CERT_PEM": {
+      "present": false,
+      "format_valid": null
+    },
+    "BETFAIR_CERT_KEY_PEM": {
+      "present": false,
+      "format_valid": null
+    }
+  },
+  "optional_session_presence": {
+    "BETFAIR_SESSION_TOKEN": false,
+    "BETFAIR_SSOID": false
+  },
+  "material_state": "IDENTITY_SECRET_SET_EMPTY",
+  "missing_required_secrets": [
+    "BETFAIR_USERNAME",
+    "BETFAIR_PASSWORD",
+    "BETFAIR_DELAYED_APP_KEY",
+    "BETFAIR_CERT_PEM",
+    "BETFAIR_CERT_KEY_PEM"
+  ],
+  "bad_format_secrets": [],
+  "github_actions_secret_control_probe": {
+    "public_key_http": 403,
+    "sentinel_write_http": null,
+    "sentinel_delete_http": null,
+    "sentinel_name": "FUTURE_ABILITY_SECRET_WRITE_PROBE",
+    "sentinel_contains_sensitive_material": false,
+    "status": "SECRET_PUBLIC_KEY_UNAVAILABLE"
+  },
+  "classification": "CREDENTIAL_INJECTION_CONTRACT_READY_CONTROL_PLANE_WRITE_UNAVAILABLE",
+  "remaining_blocker": "NO_CONNECTED_CAPABILITY_CAN_WRITE_GITHUB_ACTIONS_SECRETS",
+  "next_capability": "HorseRacing.BetfairSecretControlPlaneActivation",
+  "governance": {
+    "sentinel_only_control_plane_probe": true,
+    "sentinel_contains_no_sensitive_material": true,
+    "orders_forbidden": true,
+    "live_key_activation_forbidden": true,
+    "no_strategy_changes": true
+  }
+}
