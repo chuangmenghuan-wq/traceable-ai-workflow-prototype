@@ -1,0 +1,117 @@
+[
+  {
+    "date": "2026-08-01",
+    "meeting_names": [
+      "BELMONT PARK",
+      "BROOME",
+      "DARWIN",
+      "DOOMBEN",
+      "FLEMINGTON",
+      "GILGANDRA",
+      "GOLD COAST",
+      "HAMILTON",
+      "MORPHETTVILLE",
+      "NEWCASTLE",
+      "ROSEHILL",
+      "RUAKAKA",
+      "TOOWOOMBA",
+      "TOWNSVILLE"
+    ]
+  },
+  {
+    "date": "2026-08-02",
+    "meeting_names": [
+      "FORBES",
+      "PORT HEDLAND",
+      "SANDOWN",
+      "SUNSHINE COAST",
+      "WANGANUI",
+      "WYONG"
+    ]
+  },
+  {
+    "date": "2026-08-03",
+    "meeting_names": [
+      "DARWIN",
+      "GOULBURN",
+      "PAKENHAM"
+    ]
+  },
+  {
+    "date": "2026-08-04",
+    "meeting_names": [
+      "BAIRNSDALE",
+      "GUNDAGAI",
+      "QUIRINDI",
+      "WARWICK"
+    ]
+  },
+  {
+    "date": "2026-08-05",
+    "meeting_names": [
+      "BELMONT PARK",
+      "CANTERBURY",
+      "DOOMBEN",
+      "HOBART",
+      "MURRAY BRIDGE",
+      "RICCARTON PARK"
+    ]
+  },
+  {
+    "date": "2026-08-06",
+    "meeting_names": [
+      "BALLARAT",
+      "GOSFORD",
+      "MOREE",
+      "MOUNT ISA",
+      "NORTHAM"
+    ]
+  },
+  {
+    "date": "2026-08-07",
+    "meeting_names": [
+      "CANBERRA",
+      "COFFS HARBOUR",
+      "IPSWICH",
+      "MOUNT GAMBIER",
+      "SEYMOUR"
+    ]
+  },
+  {
+    "date": "2026-08-08",
+    "meeting_names": [
+      "ALICE SPRINGS",
+      "BELMONT PARK",
+      "CASINO",
+      "CAULFIELD",
+      "EAGLE FARM",
+      "KEMBLA GRANGE",
+      "MILDURA",
+      "MORPHETTVILLE",
+      "RANDWICK",
+      "TE RAPA",
+      "TOOWOOMBA",
+      "TOWNSVILLE"
+    ]
+  },
+  {
+    "date": "2026-08-09",
+    "meeting_names": [
+      "BALLARAT",
+      "CASTERTON",
+      "HAWERA",
+      "KALGOORLIE",
+      "MUSWELLBROOK",
+      "SUNSHINE COAST"
+    ]
+  },
+  {
+    "date": "2026-08-10",
+    "meeting_names": [
+      "DUBBO",
+      "KILCOY",
+      "NOWRA",
+      "PAKENHAM"
+    ]
+  }
+]
