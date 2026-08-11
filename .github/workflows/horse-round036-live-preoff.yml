@@ -1,0 +1,34 @@
+name: horse-round036-live-preoff
+on:
+  push:
+    branches:
+      - research/horse-round036-live-preoff
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: horse-round036-live-preoff
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    env:
+      BETFAIR_APP_KEY: ${{ secrets.BETFAIR_APP_KEY }}
+      BETFAIR_SESSION_TOKEN: ${{ secrets.BETFAIR_SESSION_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install audit dependencies
+        run: pip install pandas requests
+      - name: Audit live pre-off price adapter readiness
+        run: python research/horse_round036_live_preoff_readiness.py
+      - name: Commit compact research outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round036
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record horse round036 live pre-off readiness"
+          git push
