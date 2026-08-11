@@ -1,0 +1,79 @@
+{
+  "round": 42,
+  "capability": "HorseRacing.AlternativeSecureDataPlaneDiscovery",
+  "status": "COMPLETE_WITH_TIMING_VALIDATION_PENDING",
+  "captured_at_utc": "2026-08-11T16:13:05Z",
+  "strategy_tuning": false,
+  "paper_only": true,
+  "real_betting_allowed": false,
+  "objective": "Find a legal read-only pre-off research data plane that does not depend on the currently blocked GitHub Actions secret-control path.",
+  "execution": {
+    "branch": "research/horse-round042-bff-public-probe",
+    "workflow": ".github/workflows/horse-round042-bff-public-probe.yml",
+    "run_1": 31510943685,
+    "run_2": 31511097815,
+    "run_3": 31511199592,
+    "run_3_conclusion": "success",
+    "secrets_supplied": false,
+    "authentication_header_supplied": false,
+    "orders_or_transactions": false
+  },
+  "betfair_bff_probe": {
+    "thoroughbred_model_2026_07_21_http": 200,
+    "thoroughbred_model_2026_07_21_events": 4,
+    "thoroughbred_model_2026_08_11_http": 200,
+    "thoroughbred_model_2026_08_11_events": 5,
+    "thoroughbred_model_2026_08_11_first_event": "BALLARAT",
+    "thoroughbred_model_2026_08_11_first_market_id": "1.260958828",
+    "rated_price_sample": "6.61",
+    "runner_schema_contains": ["ratedPrice", "backPrice", "layPrice", "value"],
+    "closed_market_back_lay_value_state": "NULL_AFTER_CLOSE_IN_TESTED_SAMPLE",
+    "thoroughbred_model_2026_08_12_http": 404,
+    "thoroughbred_model_2026_08_12_detail": "No thoroughbred model data available for date 2026-08-12",
+    "interpretation": "The credential-free request crosses the access-control boundary; 2026-08-12 was not yet published at probe time rather than rejected for authentication."
+  },
+  "anonymous_market_surface_probe": {
+    "market_id": "1.260958828",
+    "market_movers_http": 200,
+    "market_movers_selection_count": 12,
+    "market_movers_first_last_traded_price": 1.13,
+    "market_movers_first_morning_price": null,
+    "market_movers_first_fifteen_min_price": null,
+    "racing_rating_model_http": 200,
+    "market_header_http": 200,
+    "market_header_track_condition": "Good 3",
+    "market_header_weather": "OCAST",
+    "market_header_race_distance": "2100m",
+    "runners_list_http": 200,
+    "runners_list_count": 12,
+    "historical_t15_retention_proven": false,
+    "live_t15_capture_possible": "UNPROVEN_UNTIL_TIMED_PREOFF_SNAPSHOT"
+  },
+  "racing_australia_probe": {
+    "surface": "FreeFields Form",
+    "meeting": "Thomas Farms RC Murray Bridge",
+    "date": "2026-08-12",
+    "http": 200,
+    "body_bytes_approx": 1105480,
+    "known_runner_detected": "STRONG MINDED",
+    "final_fields_publication_marker_detected": true,
+    "role": "credential-free official fundamental/form source"
+  },
+  "classification": "CREDENTIAL_FREE_RESEARCH_DATA_PLANE_FOUND",
+  "resolved_blocker": "BETFAIR_SECRET_CONTROL_PLANE_IS_NO_LONGER_REQUIRED_FOR_READ_ONLY_MODEL_AND_MARKET_RESEARCH_SURFACES",
+  "remaining_limits": [
+    "Current-day thoroughbred model payload is publication-time dependent.",
+    "Closed-market sample did not retain morningPrice or fifteenMinPrice values for the sampled selection.",
+    "A timed pre-off snapshot must prove non-null backPrice/layPrice/value and T-15 fields before this source can replace authenticated delayed-market capture.",
+    "Public/website data usage remains subject to source terms and must not be treated as permission for unrestricted redistribution."
+  ],
+  "next_capability": "HorseRacing.PublicHubTimedPreoffSnapshotValidation",
+  "governance": {
+    "read_only": true,
+    "no_credentials": true,
+    "no_secret_injection": true,
+    "no_strategy_changes": true,
+    "orders_forbidden": true,
+    "betting_ready": false
+  }
+}
