@@ -22,7 +22,7 @@ S.headers.update({'User-Agent': 'FutureAbilityHorsePaper/1.0 (identity-bootstrap
 
 def probe(name: str, url: str) -> dict:
     try:
-        # Deliberately send no credentials/session so this is transport-only and cannot consume account login attempts.
+        # No credentials/session: transport-only probe, so this cannot consume account login attempts.
         if name == 'keep_alive':
             r = S.get(url, headers={'Accept': 'application/json'}, timeout=30)
         else:
@@ -35,18 +35,20 @@ def probe(name: str, url: str) -> dict:
         low = body.lower()
         cloudflare = 'cloudflare' in low or 'attention required' in low
         betfair_json = isinstance(j, dict)
+        app_server = 'application server - error report' in low or 'http status 400' in low
         return {
             'url': url,
             'http_status': r.status_code,
             'content_type': r.headers.get('content-type'),
             'cloudflare_block': cloudflare,
             'betfair_json_response': betfair_json,
+            'betfair_app_server_response': app_server,
             'json_status': (j or {}).get('status') if betfair_json else None,
             'json_error': (j or {}).get('error') if betfair_json else None,
             'body_prefix': None if betfair_json else body,
         }
     except Exception as e:
-        return {'url': url, 'error': repr(e), 'cloudflare_block': False, 'betfair_json_response': False}
+        return {'url': url, 'error': repr(e), 'cloudflare_block': False, 'betfair_json_response': False, 'betfair_app_server_response': False}
 
 
 def main() -> None:
@@ -62,7 +64,16 @@ def main() -> None:
         'BETFAIR_CERT_KEY_PEM': bool(os.getenv('BETFAIR_CERT_KEY_PEM', '').strip()),
     }
 
-    cert_transport = probes['cert_login'].get('betfair_json_response', False) and not probes['cert_login'].get('cloudflare_block', False)
+    cp = probes['cert_login']
+    # Correct certlogin endpoint returning Betfair application-server HTTP 400 with deliberately missing cert/credentials proves route reachability.
+    cert_transport = bool(
+        not cp.get('cloudflare_block', False)
+        and (
+            cp.get('betfair_json_response', False)
+            or cp.get('betfair_app_server_response', False)
+            or cp.get('http_status') in (400, 401)
+        )
+    )
     interactive_transport = probes['interactive_login'].get('betfair_json_response', False) and not probes['interactive_login'].get('cloudflare_block', False)
     keepalive_transport = probes['keep_alive'].get('betfair_json_response', False) and not probes['keep_alive'].get('cloudflare_block', False)
 
@@ -89,9 +100,9 @@ def main() -> None:
         'real_betting_allowed': False,
         'secret_presence': secret_presence,
         'transport': {
-            'interactive_login_reachable': interactive_transport,
-            'cert_login_reachable': cert_transport,
-            'keep_alive_reachable': keepalive_transport,
+            'interactive_login_reachable_without_account_material': interactive_transport,
+            'cert_login_route_reachable': cert_transport,
+            'keep_alive_reachable_without_session': keepalive_transport,
             'probes': probes,
         },
         'target_architecture': {
