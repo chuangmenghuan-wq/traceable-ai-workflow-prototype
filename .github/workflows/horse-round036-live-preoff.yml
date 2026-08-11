@@ -23,7 +23,7 @@ jobs:
       - name: Install audit dependencies
         run: pip install pandas requests
       - name: Audit live pre-off price adapter readiness
-        run: python research/horse_round036_live_preoff_readiness.py
+        run: python research/horse_round036_live_preoff_readiness_v2.py
       - name: Commit compact research outputs
         run: |
           git config user.name "github-actions[bot]"
