@@ -18,20 +18,14 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install recovery dependencies
-        run: |
-          pip install playwright requests kaggle
-          python -m playwright install --with-deps chromium
-      - name: Probe official Promo browser transport
-        run: python research/horse_round035_official_browser_probe.py
-      - name: Probe provisional mirror transport
-        run: python research/horse_round035_kaggle_probe.py
-      - name: Discover Betfair Racing Results data endpoint
-        run: python research/horse_round035_results_endpoint_probe.py
-      - name: Commit probe outputs
+        run: pip install numpy pandas requests
+      - name: Validate results API and rebuild August settlement ledger
+        run: python research/horse_round035_results_recovery.py
+      - name: Commit compact recovery outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add research_outputs/horse_round035
           git diff --cached --quiet && exit 0
-          git commit -m "research: record horse round035 settlement recovery probes"
+          git commit -m "research: record horse round035 recovered settlement ledger"
           git push
