@@ -1,0 +1,194 @@
+name: horse-round044-frozen-paper-signal
+
+on:
+  workflow_run:
+    workflows: ["horse-round043-timed-preoff"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: horse-round044-frozen-paper-signal
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Evaluate frozen SA rank2 paper signal only after round043 validation
+        shell: bash
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+
+          R43 = Path('research_outputs/horse_round043')
+          R44 = Path('research_outputs/horse_round044')
+          STATUS43 = R43 / 'status.json'
+          SNAPS = R43 / 'snapshots'
+          R44.mkdir(parents=True, exist_ok=True)
+
+          SA_TRACKS = {
+              'BALAKLAVA','BORDERTOWN','CLARE','GAWLER','HALIDON','KANGAROO ISLAND',
+              'MORPHETTVILLE','MORPHETTVILLE PARKS','MOUNT GAMBIER','MURRAY BRIDGE',
+              'NARACOORTE','OAKBANK','PENOLA','PORT AUGUSTA','PORT LINCOLN','STRATHALBYN'
+          }
+          GATE_ON = True
+          GATE_HIST_N = 50
+          GATE_BRIER_ADV = 0.002318895
+          GATE_AUTHORITY = 'round035-last-verified-through-2026-08-08'
+          COMMISSION = 0.07
+          VALUE_THRESHOLD = -0.07
+
+          def write_status(state: str, **extra):
+              payload = {
+                  'round': 44,
+                  'capability': 'HorseRacing.FrozenPreoffPaperSignalEvaluator',
+                  'status': state,
+                  'paper_only': True,
+                  'real_betting_allowed': False,
+                  'strategy_tuning': False,
+                  'rule': 'SA × model_rank_2 × (1/ratedPrice - 1/layPrice) < -0.07 → PAPER LAY',
+                  'commission': COMMISSION,
+                  'gate': {
+                      'on': GATE_ON,
+                      'hist_n': GATE_HIST_N,
+                      'brier_adv': GATE_BRIER_ADV,
+                      'authority': GATE_AUTHORITY,
+                      'note': 'Last verified rolling-50 authority; paper signals remain provisional until any newer settled candidate is reconciled.'
+                  },
+                  **extra,
+              }
+              (R44 / 'status.json').write_text(json.dumps(payload, indent=2), encoding='utf-8')
+              print('ROUND044_STATUS=' + state)
+
+          if not STATUS43.exists():
+              print('ROUND043_STATUS_MISSING=true')
+              raise SystemExit(0)
+
+          s43 = json.loads(STATUS43.read_text(encoding='utf-8'))
+          if s43.get('status') != 'VALIDATED':
+              print('ROUND043_VALIDATED=false')
+              raise SystemExit(0)
+
+          if not SNAPS.exists():
+              write_status('BLOCKED_NO_SNAPSHOTS', round043_status=s43)
+              raise SystemExit(0)
+
+          records = []
+          for p in sorted(SNAPS.glob('*.json')):
+              try:
+                  r = json.loads(p.read_text(encoding='utf-8'))
+                  r['_snapshot_path'] = str(p)
+                  records.append(r)
+              except Exception as e:
+                  print(f'SNAPSHOT_PARSE_SKIP={p}:{type(e).__name__}')
+
+          by_market = {}
+          for r in records:
+              event_name = str((r.get('event') or {}).get('name') or '').upper().strip()
+              if event_name not in SA_TRACKS:
+                  continue
+              market = r.get('market') or {}
+              market_id = str(market.get('id') or '')
+              if not market_id:
+                  continue
+              mins = r.get('minutes_to_start')
+              try:
+                  mins = float(mins)
+              except Exception:
+                  continue
+              # Scheduled-off translation: prefer the closest preserved snapshot at or before scheduled off.
+              if mins < 0:
+                  continue
+              cur = by_market.get(market_id)
+              if cur is None or mins < float(cur.get('minutes_to_start')):
+                  by_market[market_id] = r
+
+          rows = []
+          for market_id, r in sorted(by_market.items()):
+              market = r.get('market') or {}
+              runners = []
+              for x in market.get('runners') or []:
+                  try:
+                      rp = float(x.get('ratedPrice'))
+                  except Exception:
+                      continue
+                  if rp <= 1:
+                      continue
+                  status = str(x.get('status') or '').upper()
+                  if status in {'REMOVED','SCRATCHED'}:
+                      continue
+                  runners.append((rp, x))
+              runners.sort(key=lambda z: (z[0], str(z[1].get('id'))))
+              if len(runners) < 2:
+                  continue
+
+              model_odds, runner = runners[1]
+              try:
+                  lay = float(runner.get('layPrice'))
+              except Exception:
+                  lay = None
+
+              value_calc = None
+              candidate = False
+              if lay is not None and lay > 1:
+                  value_calc = 1.0 / model_odds - 1.0 / lay
+                  candidate = bool(GATE_ON and value_calc < VALUE_THRESHOLD)
+
+              rows.append({
+                  'market_id': market_id,
+                  'event_name': (r.get('event') or {}).get('name'),
+                  'market_name': market.get('name'),
+                  'scheduled_start': market.get('startTime'),
+                  'snapshot_path': r.get('_snapshot_path'),
+                  'minutes_to_start': r.get('minutes_to_start'),
+                  'selection_id': runner.get('id'),
+                  'runner_name': runner.get('name'),
+                  'model_rank': 2,
+                  'rated_price': model_odds,
+                  'lay_price': lay,
+                  'bff_value_field': runner.get('value'),
+                  'value_calc': value_calc,
+                  'threshold': VALUE_THRESHOLD,
+                  'gate_on': GATE_ON,
+                  'paper_lay_candidate': candidate,
+                  'paper_only': True,
+              })
+
+          signal_path = R44 / 'paper_signals.jsonl'
+          signal_path.write_text(''.join(json.dumps(x, separators=(',', ':')) + '\n' for x in rows), encoding='utf-8')
+          cands = [x for x in rows if x['paper_lay_candidate']]
+          write_status(
+              'PAPER_SIGNALS_EVALUATED',
+              round043_status=s43,
+              evaluated_sa_markets=len(rows),
+              paper_lay_candidates=len(cands),
+              candidate_selection_ids=[x['selection_id'] for x in cands],
+              next_gate='settle paper candidates and refresh rolling-50 gate before any promotion discussion'
+          )
+          PY
+
+      - name: Persist round044 evidence if produced
+        shell: bash
+        run: |
+          if git status --porcelain research_outputs/horse_round044 | grep -q .; then
+            git config user.name "future-ability-research-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add research_outputs/horse_round044
+            git commit -m "research: round044 frozen paper signal evaluation"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "Round043 not validated yet; Round044 remains armed and no-op."
+          fi
