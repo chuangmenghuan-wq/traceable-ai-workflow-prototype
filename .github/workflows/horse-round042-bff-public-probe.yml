@@ -26,66 +26,60 @@ jobs:
 
           UA = "FutureAbility-HorseResearch/round042 read-only capability probe"
 
-          def fetch(label, url, headers=None):
-              h = {"User-Agent": UA, "Accept": "application/json,text/html;q=0.9,*/*;q=0.8"}
-              if headers:
-                  h.update(headers)
-              req = urllib.request.Request(url, headers=h, method="GET")
+          def fetch(label, url, accept="application/json,text/html;q=0.9,*/*;q=0.8"):
+              req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": accept}, method="GET")
               try:
                   with urllib.request.urlopen(req, timeout=30) as r:
                       body = r.read(2_000_000)
                       print(f"{label}_HTTP={r.status}")
                       print(f"{label}_CONTENT_TYPE={r.headers.get('content-type','')}")
                       print(f"{label}_BODY_BYTES={len(body)}")
-                      return r.status, r.headers, body
+                      return r.status, body
               except urllib.error.HTTPError as e:
                   body = e.read(200_000)
                   print(f"{label}_HTTP={e.code}")
-                  print(f"{label}_CONTENT_TYPE={e.headers.get('content-type','')}")
                   print(f"{label}_BODY_BYTES={len(body)}")
                   print(f"{label}_ERROR_PREFIX={body[:200].decode('utf-8','replace')!r}")
-                  return e.code, e.headers, body
+                  return e.code, body
               except Exception as e:
                   print(f"{label}_ERROR={type(e).__name__}:{e}")
-                  return None, {}, b""
+                  return None, b""
 
-          bff_url = "https://bff.senservices.betfair.com.au/api/v1/hub/thoroughbred-model?date=2026-08-12"
-          status, headers, body = fetch("BFF", bff_url)
-          if status == 200:
+          def inspect_bff(date):
+              label = "BFF_" + date.replace("-", "")
+              url = "https://bff.senservices.betfair.com.au/api/v1/hub/thoroughbred-model?date=" + date
+              status, body = fetch(label, url)
+              if status != 200:
+                  return
               try:
                   payload = json.loads(body)
-                  if isinstance(payload, dict):
-                      print("BFF_TOP_KEYS=" + ",".join(sorted(payload.keys())))
-                      events = payload.get("events") or []
-                  elif isinstance(payload, list):
-                      print("BFF_TOP_TYPE=list")
-                      events = payload
-                  else:
-                      events = []
-                  print(f"BFF_EVENT_COUNT={len(events)}")
-                  if events:
-                      event = events[0]
-                      print(f"BFF_FIRST_EVENT_NAME={event.get('name')}")
-                      markets = event.get("markets") or []
-                      print(f"BFF_FIRST_EVENT_MARKETS={len(markets)}")
-                      if markets:
-                          market = markets[0]
-                          print("BFF_MARKET_KEYS=" + ",".join(sorted(market.keys())))
-                          runners = market.get("runners") or []
-                          print(f"BFF_FIRST_MARKET_RUNNERS={len(runners)}")
-                          if runners:
-                              runner = runners[0]
-                              wanted = ["id","name","ratedPrice","backPrice","layPrice","value","status"]
-                              print("BFF_RUNNER_FIELDS=" + json.dumps({k: runner.get(k) for k in wanted}, separators=(",",":")))
-                              print("BFF_REQUIRED_FIELDS_PRESENT=" + str(all(k in runner for k in ["ratedPrice","backPrice","layPrice","value"])).lower())
+                  events = payload.get("events") or [] if isinstance(payload, dict) else payload if isinstance(payload, list) else []
+                  print(f"{label}_EVENT_COUNT={len(events)}")
+                  if not events:
+                      return
+                  event = events[0]
+                  markets = event.get("markets") or []
+                  print(f"{label}_FIRST_EVENT={event.get('name')}")
+                  print(f"{label}_MARKET_COUNT={len(markets)}")
+                  if not markets:
+                      return
+                  runners = markets[0].get("runners") or []
+                  print(f"{label}_RUNNER_COUNT={len(runners)}")
+                  if runners:
+                      runner = runners[0]
+                      wanted = ["id","name","ratedPrice","backPrice","layPrice","value","status"]
+                      print(f"{label}_RUNNER_FIELDS=" + json.dumps({k: runner.get(k) for k in wanted}, separators=(",",":")))
+                      print(f"{label}_REQUIRED_FIELDS_PRESENT=" + str(all(k in runner for k in ["ratedPrice","backPrice","layPrice","value"])).lower())
               except Exception as e:
-                  print(f"BFF_JSON_PARSE_ERROR={type(e).__name__}:{e}")
+                  print(f"{label}_JSON_PARSE_ERROR={type(e).__name__}:{e}")
+
+          for date in ["2026-07-21", "2026-08-11", "2026-08-12", "2026-08-13"]:
+              inspect_bff(date)
 
           ra_url = "https://www.racingaustralia.horse/FreeFields/Form.aspx?Key=2026Aug12%2CSA%2CThomas+Farms+RC+Murray+Bridge"
-          status, headers, body = fetch("RA", ra_url, {"Accept": "text/html,*/*;q=0.8"})
+          status, body = fetch("RA", ra_url, "text/html,*/*;q=0.8")
           text = body.decode("utf-8", "replace")
           compact = re.sub(r"\s+", " ", text)
-          print("RA_HEAVY9=" + str("Heavy 9" in compact).lower())
           print("RA_STRONG_MINDED=" + str("STRONG MINDED" in compact.upper()).lower())
           print("RA_FINALFIELDS_PUBLISHED=" + str("FinalFields Last Published" in compact).lower())
           print("ROUND042_PROBE_COMPLETE=true")
