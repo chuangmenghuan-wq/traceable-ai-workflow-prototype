@@ -5,84 +5,285 @@
   "metadata_status": 200,
   "metadata_content_type": "application/json",
   "metadata_bytes": 10604,
-  "metadata_keys": [
-    "creatorName",
-    "creatorNameNullable",
-    "creatorUrl",
-    "currentVersionNumber",
-    "currentVersionNumberNullable",
-    "description",
-    "descriptionNullable",
-    "downloadCount",
-    "files",
-    "hasCreatorName",
-    "hasCreatorUrl",
-    "hasCurrentVersionNumber",
-    "hasDescription",
-    "hasLicenseName",
-    "hasOwnerName",
-    "hasOwnerRef",
-    "hasSubtitle",
-    "hasThumbnailImageUrl",
-    "hasTitle",
-    "hasTotalBytes",
-    "hasUrl",
-    "hasUsabilityRating",
-    "id",
-    "isFeatured",
-    "isPrivate",
-    "kernelCount",
-    "lastUpdated",
-    "licenseName",
-    "licenseNameNullable",
-    "ownerName",
-    "ownerNameNullable",
-    "ownerRef",
-    "ownerRefNullable",
-    "ref",
-    "subtitle",
-    "subtitleNullable",
-    "tags",
-    "thumbnailImageUrl",
-    "thumbnailImageUrlNullable",
-    "title",
-    "titleNullable",
-    "topicCount",
-    "totalBytes",
-    "totalBytesNullable",
-    "url",
-    "usabilityRating",
-    "usabilityRatingNullable",
-    "versions",
-    "viewCount",
-    "voteCount"
-  ],
   "version_number": 291,
-  "file_count_metadata": 0,
-  "target_count_metadata": 0,
-  "target_examples": [],
-  "list_probes": [
+  "dataset_last_updated": "2026-04-12T16:23:44.363Z",
+  "dataset_total_bytes": 3993648448,
+  "page_qa": [
     {
-      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp",
+      "page": 1,
       "status": 200,
-      "bytes": 7969,
-      "ct": "application/json",
-      "keys": [
-        "datasetFiles",
-        "errorMessage",
-        "hasErrorMessage",
-        "hasNextPageToken",
-        "nextPageToken",
-        "nextPageTokenNullable"
-      ]
+      "bytes": 83701,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
     },
     {
-      "url": "https://www.kaggle.com/api/i/datasets.ListFiles?ownerSlug=eonsky&datasetSlug=betfair-sp&pageSize=200",
-      "status": 404,
-      "bytes": 5206,
-      "ct": "text/html; charset=utf-8"
+      "page": 2,
+      "status": 200,
+      "bytes": 84656,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPdrfk2O-lTTGYWs4dm9liA3j4M_bU9Gkt-Nodr5mBUbBdfStVXApvaQZKPIhPM65S6XCpZ6xaPjNvmqOXcm7_AbsGS8DLa4WGF8ucfAFQ8Xe9wrEfUDnhlr75mudo71zq_o5R1QSQ0uoRnsOS_EPW2tVTImVjdyxFFUQQcYZFi44ty-Y2jcsQ",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 3,
+      "status": 200,
+      "bytes": 84628,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPfF14DBLAw0cNgKdWZ86YRHzeNTyb4w_wgGvvFIKpGzWfKjpS9DhK7hW71Asns5gG8kFK0Otf4D_vus-bxCrIAvXl7qxmWyRrxn0F8LPIGGMw9w3uFcnnulbAtS6cWo1JVvgUi5l8i5DUvnzq-bC_aECxD3X1V5X_cb4ucT-2LfyVSghrs",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 4,
+      "status": 200,
+      "bytes": 84679,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPc8jKLARv60I9al5LhuNpha0URHzPiKmAJUNZs18MgKiZ7iavO9WiK_nlqk5BNw98g1GbmDmnZndtt2kwUHfRjedVMJZXhk-2j1FHrSY3Jd_nAYl_AJqTwTS9f0bWQZNTGGhoWDABpyFr1ODNYpUcC-BT84Fm9G3Ejye4xWIOVKCEc0Mfk",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 5,
+      "status": 200,
+      "bytes": 84713,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPdfGvBsS-13_3h0OrXtlMJpfS8KZ5NzKbTjBqoOVG4kjuR3_oVtbBEwig315pDGW9sRX0ckcIeec5ZMKf1Iu9Ytv_U8C44r3fDPYS5us15PhnQsjH2MbpWdtneSqYk9qxtwzPz-NAxsbL4pBilXvYZdhDOfm2-0yZVdgnIDRl4_baDiWKswLw",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 6,
+      "status": 200,
+      "bytes": 84663,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPc4lHCoEOvLDa0V-M8RR4yvOyl3kWyZT9yuHLsLJlfuQ9oCP9nHF_r66714rbaluZ2cOBw3fXmQUkMgBvSu7HRHDkVcfPX0WasgH7yxpkuLDbjw8tDR9ogrUxISNewEnbDMhVzHd_umUjN6unKwEFY0t30X7igHlSH2czB-nVG9svOLIJ8HDw",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 7,
+      "status": 200,
+      "bytes": 84656,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPeGNMMvJ_fHM6JY0BJPWCtTfNGyflOEZXnjQ6uZLJInFzUWmhGa4iBxzZI7lxfwJ3Yszz7qTDT1pthoxVxX41tR2HxewmM4qrLIkAn6BiNck0pHRuPZzI5mztuwloN_m3dQg2h94RGZQFxRAqM3bGLd1nDFWOb7KRh4r1_47_BWT2rNYLY",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 8,
+      "status": 200,
+      "bytes": 84718,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPctU1ghajeccB0sF4r_wTfMXwPeLGEs4weAuH8IE-U_ChwhjQQ293Jev4ub8IX27mOkh0H4lgEkLwTQXD-DCSPoH2Xoxj4nOI7y1eJL5KoOab-QwlqqYzyllrMfDt6ZJ3r1r2GY-H9I1Kfyt_xVZ1dKBiJ9_E-pxZIQCwkVCPPTnMJ4IB0",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 9,
+      "status": 200,
+      "bytes": 84669,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPe7KX4k_bvaUzJt-UFd8PveUzxwPla40oCAlxXh4w6bOo-04-OClvLvLrtUi3-jP-7nXpLIXjRt9QmbX09BkfMWGFWmyEaNsCOanNJVRSGpxoP5QgjpMWveXWr4w1bowCvQgvKOtAaMN2XuYUKHwZ7Qt99t8k86LUjIwEOPXon0WDD7hdnCNw",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 10,
+      "status": 200,
+      "bytes": 84633,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPcRlkDx89YiXAlsnTlqhDu9lErO6yIyDOuRTyy9kJiAYcTbwF3-Z531UDxklt8slhXSisjl6yU4PlwQ0gib49srTpec4TIbmBAYyH3bXIrz6duLTFE5W6RFl3OU2UlG1s0DstddrfpuKZ3_UJeN59ZOUlMBilSwWsUhq3u-lrM4KwgAorU",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 11,
+      "status": 200,
+      "bytes": 84664,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPd2qDTJad6q46Ie4lkl9mdqfUgGfxCu7xyw8-SE3Awfyo7FbC0x5VVtVTuwKFhj_29zH8tDsZdstEjhiPF_WvpGnEuPlr9KOx_U6ciV_YtsdrY8wUzS1nSrEsHxP22pJclxRF7Ke_8e6eOYnnGu-gDywmgadNfBeVBwJfE7Se-9vtRE_zk",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 12,
+      "status": 200,
+      "bytes": 84696,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPdGiMhyhWWcnX7xr8aHibOgfGRT5-QgAlwCxWzvBgtjrDaFFMjdNi1ByI7Gl931zc4koElSTU9gPwu2wj_50p6i1_KZu62HFqobcsFEvA2uSkV0lTRcGZRvB1o6PJcwwwDgHkLxz3E3of_PCJgeyQRkqDSFi_M1FRX9BI0OjohCjhDTXAfRbg",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 13,
+      "status": 200,
+      "bytes": 84666,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPeyZFkMT13mq-Rv1RkGuYIAJf9e3wzri4BJ9c8e5K6zZf7Gu85FOzxDCwzIPK4TCYQmcfimX0ptZZ-1LUTFV7rSdJIklpECmRwIFqr-9A4nNt-Ul7Ak5_Hifs7406ZyufACLP8pJt_6PFhUjXkM9wlOm10aEnPQRECUCFhp1fxky3ZNqThiXw",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 14,
+      "status": 200,
+      "bytes": 84653,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPdnk-JeWlGprW-zNvZQ5UUhe5gPPt8Z_51u2FSzczKa0_9pT5H7kbpO2suzOzkrbe_rGdw51QqHGs126mDkSxvOgs0Yip1vlqrI3qV9vl_i4Mmjf9f4ANEIvOyRHxYvkyAKzG5mfMS59w4fte6GUadXA1rL8OcqlRPRvr09foWmUFz98EM",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 15,
+      "status": 200,
+      "bytes": 84751,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPeP5LLk2JM_q6Yz-qgtZVs35zy2VlQBxbBroE5mhcVNYCdk1Sv-c7hfEtLntXLy18PSuTVeGxhZgywhixe5n9BM4rUsSRa4oRYSAvfr9lrCPmgN9XxylsVofy_AabdOl0VEKxcuwP1zsKe7xRc5N7L6nE2fMpIvCSuR26Ja_ctIAcEmOCA",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 16,
+      "status": 200,
+      "bytes": 84708,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPcf5tgbqM97FY4vMSpj0sB_COYtZMMHs120b7hhX_ElaQtC75y2Vw7R13t2iGXHYxrTpcUv4GCZ9mo8RfWrDPw8JYrXXVdgOBmZ7oDkE0MUfGHe3GXfqlYHMdiDMj7PygDIM8SMzq2KYwbYgXR2pITv1JDlut3m88SzFb5XEHdA7ifLHPh0OA",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 17,
+      "status": 200,
+      "bytes": 84673,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPdUgazyX3lAQ98KorPDT2Dj6LNxW0QP2b5bqnqTQJdkI39zi4mqgga06SV_fcQ6JcDEcuqvqgeEqU_vabDPIcEJtTprEMoenuYjcLAKub-4V5sL9L3Gb2XA2_ApWPlLioBRzJy6FF_YFqOvRP0aCODLjkyyCYEzDcgQANWRRf0qF9fNy_8",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 18,
+      "status": 200,
+      "bytes": 84732,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPfZ8ojWJa6M1zEDUrfHdmU8_NwMhpWsb2_t9mv4_tqtZwEO1oWdKIIeWHfHuFoau7HYNy171uTlbY7zp4GxO2Lu-Oot8PJ40O-DoGGCmFr2qLzl4V888CNQmcLCwN0iXJfokK8VjOnVEIGPBf9BtkxoTAVLZfA6Z_APTZ7OqEbUaFqKTnY",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 19,
+      "status": 200,
+      "bytes": 84741,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPeMVx0oKe2FeQHuSKfZDvMTueit13N10hm4wZSipHf9DQm-UzP5sC1hleyx0uTOuJl6eslbCOKw_LZR36yddHKiB3jt9xpdOW6cD5v1rtDwN6_EMjZsGi2hFL1mQMvS6vJ-ayh-iaOQxm1Q2uPYTq-gWgZR2od6OCX6uojvOXPYOwzzAokr6w",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 20,
+      "status": 200,
+      "bytes": 84677,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPcF9w88Zk4AuiTLbonkWbbaixtucQKwX3UU5JsVnFTD48PaVonCbVb1iDhBpkcMtqFfQ9UZUQo9BEltedZCSmbeTsM2haIucPRVpf7HECB7_FCydrI46umxcnaFnUnKaH2uF_KgLH0Hben7IyDWhVdC5kXM_h3HuUvGlRdqaq52Hg6yriLIpw",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 21,
+      "status": 200,
+      "bytes": 84685,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPdXXs6U5Vd7kq9Hbkqc-DWbqMDwWVGc5UJyro6RGFOv5cczeqmExRAaZ-Dt5-QrzA0BTJW3gGMhnhPCvHj_L6Frn-Bo57y9eiA9AHp1xE7AjiVLTrnW2Uyqw7Fj20t4BgAV5k2onVRxqnoGaid-TwUYHBA3UDpViuyRLkxiYuItMG2Oak8",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 22,
+      "status": 200,
+      "bytes": 84721,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPcz7aHC1vGz2snO7XkNsSmZCQhKOFOFZbY-qHY9pOnZheQizINs820cZhWXV50HuaYjhor8AWYsC1s752nLb5SXrGLiUA_XU7a-QFtzNECPohFxYqVGLbgYac08UKjzaP8UwsW71P8-3m7aL_zS1AcPS-HkWwxgPGB_-7wDpfgIRQq9gfbcAA",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 23,
+      "status": 200,
+      "bytes": 84665,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPf8oV50Sqx_bBOp9OZYBk4Ig6cWkUHB_d-sEPVRMxDT8qFCvmBYbyLBx-IgUL2wKWoq8shLsRx9HI3NzlWMmuhnLD76ub-ABkt0N1RsJp1MfiIOdgYip5KEFpNIPfr-pwQ5qohDUCYgmNlJDl__ATwMayxRrGw4DvTwMDV-Sn_z-BBT7V9W7w",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 24,
+      "status": 200,
+      "bytes": 84677,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPem_a7iJN1rzKw0e90tgU5n-MdrHSsJCWdZunsq3QtcS1Qpra0JYBPK0hWrtuvHey5iZ-D2pEbAdRMo0Q7Lm_izLYQOOSZARaUFh-L2ux7kXSuFWxRtTSo8bs2Mzq9NS45VZcCKRBmqWBPolvuiYuN2zX0-MlRkuIYOILBbSydvhnhkJwU",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 25,
+      "status": 200,
+      "bytes": 84705,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPe6TzsStG9m1WTlBLIXM4_TW3sAahboEirrSf5S94JDcCK5kiVJfVSQZc8w5rzUpYyLcatb61Mse3n53lZlPZcjTcIe2e8598l1nWnfjvrncIUoq9DGGaZDxFb_9-EBKtrdDkxEeCnIwEZioiYA4F84nm9DUSGCS_grDrAdNcsFNbM9Bj8",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 26,
+      "status": 200,
+      "bytes": 84735,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPcY2tow61aY90habdbfFL4JTmmx4dA_qux0-qWi35FpOvnArUn2q1_MVt4o9zV9iCZ9S_Bwvf_NP7HaOlzYotEJnKyQZXaUvrXcn3QBiiNovCGHJjkaXnu7QgJ_x3H52k60DzLuo5dzCimcJLrK0zBoHVwtaCE-KDOw5glpe9GkdCEfb9UB_A",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 27,
+      "status": 200,
+      "bytes": 84657,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPeXzeodm3c0pSKAirkjSmouD2eXdWQ87iqqp6WVMn_wUgRQUo__yi3OFbaTd_84vAs4wmA01IbUY24VsGPNdn8049kc6wEIj6EmKAFIwPM2abciXCGzP5pxMIPCvmtBW-EeiFfBBVwetJlbscAYmrmylmO1BI9Zl8XEV30KIILnXh3DEekgsw",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 28,
+      "status": 200,
+      "bytes": 84690,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPcPkONvOyCWkTVjKxkTpgpWU2GEpEffA51t4SdOUA4A9ik3fYugRo8TGDX2VeWBuLbk1vPkJT5W9HnL9PolbN504-eIwD_qBQhhbyHEB8QepDXZ2aK1mie-J7J9SArowRxnUYaic6PYC2Sw14ncbkV_uff0iO2_XHMF8lhV-IDmwB3kteQ",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 29,
+      "status": 200,
+      "bytes": 84757,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPc2PA8R-qJPjtTmMEl1QOhxd5vtxusE8whpsQaAZl-uiGuYSQaOWj1fMJj-fwop8-KqDQeTo1XTEDqsHxMmqHbiHwLeRgnCXqv_QJAqLS-fGHvr89tUTFWp1K-5quHi_uWZ_L1g8rLIwGeDJSJXBZ7ho-teDc56xjK-UsbukbCQihuMu3IzZQ",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
+    },
+    {
+      "page": 30,
+      "status": 200,
+      "bytes": 84717,
+      "url": "https://www.kaggle.com/api/v1/datasets/list/eonsky/betfair-sp?pageSize=200&pageToken=CfDJ8GNxPX3qpaJEpxfoBSRBZPfIBPoFzQg4eVlWzwZjfFZKfSr-hkoJG2S5aP7fzaPM3GuBEhpB_DeIxWrTuQ9JckRj0JC0zI05E8lT5uYlGpG1UIINOVKKp4P_fymFGtTkuyIjkYEsZfnqJpRGq2uURK7MDgguFEkjLU01N3cmye5qixec2FstITTe3mTFCDHjmCAG5XaoQg",
+      "file_count": 200,
+      "has_next": true,
+      "next_token_prefix": "CfDJ8GNxPX3qpaJEpxfoBSRB"
     }
   ],
+  "file_count_listed": 6000,
+  "target_count": 0,
+  "targets": [],
   "download_results": [],
+  "ready_count": 0,
   "classification": "PROVISIONAL_MIRROR_NOT_YET_READY"
 }
