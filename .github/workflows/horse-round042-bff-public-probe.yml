@@ -45,42 +45,67 @@ jobs:
                   print(f"{label}_ERROR={type(e).__name__}:{e}")
                   return None, b""
 
-          def inspect_bff(date):
+          def bff(date):
               label = "BFF_" + date.replace("-", "")
-              url = "https://bff.senservices.betfair.com.au/api/v1/hub/thoroughbred-model?date=" + date
-              status, body = fetch(label, url)
+              status, body = fetch(label, "https://bff.senservices.betfair.com.au/api/v1/hub/thoroughbred-model?date=" + date)
               if status != 200:
-                  return
-              try:
-                  payload = json.loads(body)
-                  events = payload.get("events") or [] if isinstance(payload, dict) else payload if isinstance(payload, list) else []
-                  print(f"{label}_EVENT_COUNT={len(events)}")
-                  if not events:
-                      return
-                  event = events[0]
-                  markets = event.get("markets") or []
-                  print(f"{label}_FIRST_EVENT={event.get('name')}")
-                  print(f"{label}_MARKET_COUNT={len(markets)}")
-                  if not markets:
-                      return
-                  runners = markets[0].get("runners") or []
-                  print(f"{label}_RUNNER_COUNT={len(runners)}")
-                  if runners:
-                      runner = runners[0]
-                      wanted = ["id","name","ratedPrice","backPrice","layPrice","value","status"]
-                      print(f"{label}_RUNNER_FIELDS=" + json.dumps({k: runner.get(k) for k in wanted}, separators=(",",":")))
-                      print(f"{label}_REQUIRED_FIELDS_PRESENT=" + str(all(k in runner for k in ["ratedPrice","backPrice","layPrice","value"])).lower())
-              except Exception as e:
-                  print(f"{label}_JSON_PARSE_ERROR={type(e).__name__}:{e}")
+                  return None
+              payload = json.loads(body)
+              events = payload.get("events") or []
+              print(f"{label}_EVENT_COUNT={len(events)}")
+              if not events or not (events[0].get("markets") or []):
+                  return None
+              event = events[0]
+              market = event["markets"][0]
+              runners = market.get("runners") or []
+              print(f"{label}_FIRST_EVENT={event.get('name')}")
+              print(f"{label}_MARKET_ID={market.get('id')}")
+              print(f"{label}_MARKET_STATUS={market.get('status')}")
+              print(f"{label}_MARKET_START={market.get('startTime')}")
+              if runners:
+                  r = runners[0]
+                  wanted = ["id","name","ratedPrice","backPrice","layPrice","value","status"]
+                  print(f"{label}_RUNNER_FIELDS=" + json.dumps({k: r.get(k) for k in wanted}, separators=(",",":")))
+              return str(market.get("id")) if market.get("id") else None
 
-          for date in ["2026-07-21", "2026-08-11", "2026-08-12", "2026-08-13"]:
-              inspect_bff(date)
+          historical_market = bff("2026-08-11")
+          bff("2026-08-12")
+
+          if historical_market:
+              probes = {
+                  "MOVERS": f"https://bff.senservices.betfair.com.au/api/v1/models/racing-market-movers/{historical_market}",
+                  "RATING": f"https://bff.senservices.betfair.com.au/api/v1/models/racing-rating-model/{historical_market}?modelName=BFA_THOROUGHBRED",
+                  "HEADER": f"https://bff.senservices.betfair.com.au/api/v1/bema/race-market-screen/market-header/{historical_market}",
+                  "RUNNERS": f"https://bff.senservices.betfair.com.au/api/v1/bema/race-market-screen/runners-list/{historical_market}",
+              }
+              for label, url in probes.items():
+                  status, body = fetch(label, url)
+                  if status == 200:
+                      try:
+                          data = json.loads(body)
+                          if label == "MOVERS" and isinstance(data, dict):
+                              sels = data.get("selections") or []
+                              print(f"MOVERS_SELECTION_COUNT={len(sels)}")
+                              if sels:
+                                  wanted = ["selectionId","morningPrice","fifteenMinPrice","lastTradedPrice","movement","moverStatus"]
+                                  print("MOVERS_FIRST=" + json.dumps({k: sels[0].get(k) for k in wanted}, separators=(",",":")))
+                          elif label == "HEADER" and isinstance(data, dict):
+                              wanted = ["id","status","startTime","trackCondition","weather","raceDist","raceClass"]
+                              print("HEADER_FIELDS=" + json.dumps({k: data.get(k) for k in wanted}, separators=(",",":")))
+                          elif label == "RUNNERS" and isinstance(data, list):
+                              print(f"RUNNERS_COUNT={len(data)}")
+                              if data:
+                                  md = data[0].get("runnerMetadata") or {}
+                                  print("RUNNERS_FIRST_META=" + json.dumps({"id":data[0].get("id"),"name":data[0].get("name"),"bsp":data[0].get("bsp"),"stallDraw":md.get("stallDraw"),"jockeyName":md.get("jockeyName"),"trainerName":md.get("trainerName")}, separators=(",",":")))
+                          elif label == "RATING":
+                              print("RATING_JSON_TYPE=" + type(data).__name__)
+                      except Exception as e:
+                          print(f"{label}_PARSE_ERROR={type(e).__name__}:{e}")
 
           ra_url = "https://www.racingaustralia.horse/FreeFields/Form.aspx?Key=2026Aug12%2CSA%2CThomas+Farms+RC+Murray+Bridge"
           status, body = fetch("RA", ra_url, "text/html,*/*;q=0.8")
-          text = body.decode("utf-8", "replace")
-          compact = re.sub(r"\s+", " ", text)
-          print("RA_STRONG_MINDED=" + str("STRONG MINDED" in compact.upper()).lower())
-          print("RA_FINALFIELDS_PUBLISHED=" + str("FinalFields Last Published" in compact).lower())
+          text = re.sub(r"\s+", " ", body.decode("utf-8", "replace"))
+          print("RA_STRONG_MINDED=" + str("STRONG MINDED" in text.upper()).lower())
+          print("RA_FINALFIELDS_PUBLISHED=" + str("FinalFields Last Published" in text).lower())
           print("ROUND042_PROBE_COMPLETE=true")
           PY
