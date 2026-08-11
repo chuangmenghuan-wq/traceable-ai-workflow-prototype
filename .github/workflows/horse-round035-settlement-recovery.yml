@@ -20,7 +20,7 @@ jobs:
       - name: Install recovery dependencies
         run: pip install numpy pandas requests
       - name: Validate results API and rebuild August settlement ledger
-        run: python research/horse_round035_results_recovery.py
+        run: python research/horse_round035_results_recovery_v2.py
       - name: Commit compact recovery outputs
         run: |
           git config user.name "github-actions[bot]"
