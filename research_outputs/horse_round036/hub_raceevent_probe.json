@@ -1,0 +1,416 @@
+{
+  "tested": 8,
+  "accepted_as_exchange_price_source": false,
+  "explicit_exchange_price_paths": [],
+  "price_like_paths": [
+    "runners[0].markets[0].price",
+    "runners[1].markets[0].price",
+    "runners[2].markets[0].price",
+    "runners[3].markets[0].price",
+    "runners[4].markets[0].price",
+    "runners[5].markets[0].price"
+  ],
+  "probes": [
+    {
+      "market_id": "1.260999937",
+      "venue": "ANGLE PARK",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999937",
+      "http_status": 200,
+      "content_type": "application/json",
+      "top_level_keys": [
+        "country",
+        "day",
+        "products",
+        "raceEventId",
+        "raceEventStatus",
+        "raceLength",
+        "raceName",
+        "raceNo",
+        "raceType",
+        "runners",
+        "timeZone",
+        "trackCondition",
+        "venueEventId",
+        "venueName",
+        "weather"
+      ],
+      "price_like_samples": [
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[5].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    },
+    {
+      "market_id": "1.260999940",
+      "venue": "ANGLE PARK",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999940",
+      "http_status": 200,
+      "content_type": "application/json",
+      "top_level_keys": [
+        "country",
+        "day",
+        "products",
+        "raceEventId",
+        "raceEventStatus",
+        "raceLength",
+        "raceName",
+        "raceNo",
+        "raceType",
+        "runners",
+        "timeZone",
+        "trackCondition",
+        "venueEventId",
+        "venueName",
+        "weather"
+      ],
+      "price_like_samples": [
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[5].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    },
+    {
+      "market_id": "1.260999943",
+      "venue": "ANGLE PARK",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999943",
+      "http_status": 200,
+      "content_type": "application/json",
+      "top_level_keys": [
+        "country",
+        "day",
+        "products",
+        "raceEventId",
+        "raceEventStatus",
+        "raceLength",
+        "raceName",
+        "raceNo",
+        "raceType",
+        "runners",
+        "timeZone",
+        "trackCondition",
+        "venueEventId",
+        "venueName",
+        "weather"
+      ],
+      "price_like_samples": [
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[5].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    },
+    {
+      "market_id": "1.260999946",
+      "venue": "ANGLE PARK",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999946",
+      "http_status": 200,
+      "content_type": "application/json",
+      "top_level_keys": [
+        "country",
+        "day",
+        "products",
+        "raceEventId",
+        "raceEventStatus",
+        "raceLength",
+        "raceName",
+        "raceNo",
+        "raceType",
+        "runners",
+        "timeZone",
+        "trackCondition",
+        "venueEventId",
+        "venueName",
+        "weather"
+      ],
+      "price_like_samples": [
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    },
+    {
+      "market_id": "1.260999949",
+      "venue": "ANGLE PARK",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999949",
+      "http_status": 200,
+      "content_type": "application/json",
+      "top_level_keys": [
+        "country",
+        "day",
+        "products",
+        "raceEventId",
+        "raceEventStatus",
+        "raceLength",
+        "raceName",
+        "raceNo",
+        "raceType",
+        "runners",
+        "timeZone",
+        "trackCondition",
+        "venueEventId",
+        "venueName",
+        "weather"
+      ],
+      "price_like_samples": [
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    },
+    {
+      "market_id": "1.260999952",
+      "venue": "ANGLE PARK",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999952",
+      "http_status": 200,
+      "content_type": "application/json",
+      "top_level_keys": [
+        "country",
+        "day",
+        "products",
+        "raceEventId",
+        "raceEventStatus",
+        "raceLength",
+        "raceName",
+        "raceNo",
+        "raceType",
+        "runners",
+        "timeZone",
+        "trackCondition",
+        "venueEventId",
+        "venueName",
+        "weather"
+      ],
+      "price_like_samples": [
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[5].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    },
+    {
+      "market_id": "1.260999955",
+      "venue": "ANGLE PARK",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999955",
+      "http_status": 200,
+      "content_type": "application/json",
+      "top_level_keys": [
+        "country",
+        "day",
+        "products",
+        "raceEventId",
+        "raceEventStatus",
+        "raceLength",
+        "raceName",
+        "raceNo",
+        "raceType",
+        "runners",
+        "timeZone",
+        "trackCondition",
+        "venueEventId",
+        "venueName",
+        "weather"
+      ],
+      "price_like_samples": [
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    },
+    {
+      "market_id": "1.260999958",
+      "venue": "ANGLE PARK",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999958",
+      "http_status": 200,
+      "content_type": "application/json",
+      "top_level_keys": [
+        "country",
+        "day",
+        "products",
+        "raceEventId",
+        "raceEventStatus",
+        "raceLength",
+        "raceName",
+        "raceNo",
+        "raceType",
+        "runners",
+        "timeZone",
+        "trackCondition",
+        "venueEventId",
+        "venueName",
+        "weather"
+      ],
+      "price_like_samples": [
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[5].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    }
+  ],
+  "governance_note": "Accept only explicit Betfair Exchange back/lay ladder fields; tote/bestPrice/generic odds are rejected."
+}
