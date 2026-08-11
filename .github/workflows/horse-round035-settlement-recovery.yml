@@ -21,10 +21,12 @@ jobs:
         run: |
           pip install playwright requests kaggle
           python -m playwright install --with-deps chromium
-      - name: Probe official browser transport
+      - name: Probe official Promo browser transport
         run: python research/horse_round035_official_browser_probe.py
       - name: Probe provisional mirror transport
         run: python research/horse_round035_kaggle_probe.py
+      - name: Discover Betfair Racing Results data endpoint
+        run: python research/horse_round035_results_endpoint_probe.py
       - name: Commit probe outputs
         run: |
           git config user.name "github-actions[bot]"
