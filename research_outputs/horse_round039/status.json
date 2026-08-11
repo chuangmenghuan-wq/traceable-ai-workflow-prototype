@@ -1,0 +1,45 @@
+{
+  "round": 39,
+  "capability": "HorseRacing.BetfairCertificateRuntime",
+  "status": "COMPLETE",
+  "captured_at_utc": "2026-08-11T11:07:12.523941+00:00",
+  "contract_sha256": "e446a15ebc40bd4ad7ccc820e60ec829d623311f22d71b425c98c01fc13724e3",
+  "strategy_tuning": false,
+  "paper_only": true,
+  "real_betting_allowed": false,
+  "runtime_secret_presence": {
+    "username": false,
+    "password": false,
+    "app_key": false,
+    "cert": false,
+    "cert_key": false,
+    "existing_session": false
+  },
+  "auth_mode": "NONE",
+  "session_fingerprint": null,
+  "keepalive": null,
+  "certlogin": null,
+  "racecard_qa": {
+    "date": "2026-08-11",
+    "http_status": 200,
+    "aus_thoroughbred_markets": 39,
+    "sa_thoroughbred_markets": 0
+  },
+  "open_au_thoroughbred_markets": 39,
+  "open_sa_thoroughbred_markets": 0,
+  "marketbook": {
+    "ok": false,
+    "status": "AUTH_MISSING"
+  },
+  "immutable_snapshot": null,
+  "classification": "CERTIFICATE_RUNTIME_ARMED_AWAITING_IDENTITY_MATERIAL",
+  "remaining_blocker": "MISSING_RUNTIME_SECRETS:username,password,app_key,cert,cert_key",
+  "governance": {
+    "orders_forbidden": true,
+    "delayed_key_only_for_paper": true,
+    "session_never_written_to_repo": true,
+    "private_key_tempfile_mode": "0600_DELETE_AFTER_USE",
+    "final_bsp_for_signal_forbidden": true,
+    "no_threshold_window_state_or_rank_changes": true
+  }
+}
