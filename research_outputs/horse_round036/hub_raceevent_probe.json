@@ -3,58 +3,100 @@
   "accepted_as_exchange_price_source": false,
   "explicit_exchange_price_paths": [],
   "price_like_paths": [
+    "runners[0].bestTote",
     "runners[0].markets[0].price",
+    "runners[10].bestTote",
+    "runners[10].markets[0].price",
+    "runners[11].bestTote",
+    "runners[11].markets[0].price",
+    "runners[12].bestTote",
+    "runners[12].markets[0].price",
+    "runners[13].bestTote",
+    "runners[13].markets[0].price",
+    "runners[14].bestTote",
+    "runners[14].markets[0].price",
+    "runners[15].bestTote",
+    "runners[15].markets[0].price",
+    "runners[16].bestTote",
+    "runners[16].markets[0].price",
+    "runners[17].bestTote",
+    "runners[17].markets[0].price",
+    "runners[18].bestTote",
+    "runners[18].markets[0].price",
+    "runners[19].bestTote",
+    "runners[19].markets[0].price",
+    "runners[1].bestTote",
     "runners[1].markets[0].price",
+    "runners[2].bestTote",
     "runners[2].markets[0].price",
+    "runners[3].bestTote",
     "runners[3].markets[0].price",
+    "runners[4].bestTote",
     "runners[4].markets[0].price",
-    "runners[5].markets[0].price"
+    "runners[5].bestTote",
+    "runners[5].markets[0].price",
+    "runners[6].bestTote",
+    "runners[6].markets[0].price",
+    "runners[7].bestTote",
+    "runners[7].markets[0].price",
+    "runners[8].bestTote",
+    "runners[8].markets[0].price",
+    "runners[9].bestTote",
+    "runners[9].markets[0].price"
   ],
   "probes": [
     {
-      "market_id": "1.260999937",
-      "venue": "ANGLE PARK",
+      "market_id": "1.260957842",
+      "venue": "BENDIGO",
       "date": "2026-08-12",
-      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999937",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260957842",
       "http_status": 200,
       "content_type": "application/json",
-      "top_level_keys": [
-        "country",
-        "day",
-        "products",
-        "raceEventId",
-        "raceEventStatus",
-        "raceLength",
-        "raceName",
-        "raceNo",
-        "raceType",
-        "runners",
-        "timeZone",
-        "trackCondition",
-        "venueEventId",
-        "venueName",
-        "weather"
-      ],
+      "race_type": "Thoroughbreds",
       "price_like_samples": [
+        {
+          "path": "runners[0].bestTote",
+          "value": 4.3
+        },
         {
           "path": "runners[0].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[1].bestTote",
+          "value": 147
         },
         {
           "path": "runners[1].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[2].bestTote",
+          "value": 2.5
+        },
+        {
           "path": "runners[2].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[3].bestTote",
+          "value": 14.6
         },
         {
           "path": "runners[3].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[4].bestTote",
+          "value": 20.5
+        },
+        {
           "path": "runners[4].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[5].bestTote",
+          "value": 51.3
         },
         {
           "path": "runners[5].markets[0].price",
@@ -64,337 +106,565 @@
       "explicit_exchange_price_paths": []
     },
     {
-      "market_id": "1.260999940",
-      "venue": "ANGLE PARK",
+      "market_id": "1.260957851",
+      "venue": "BENDIGO",
       "date": "2026-08-12",
-      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999940",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260957851",
       "http_status": 200,
       "content_type": "application/json",
-      "top_level_keys": [
-        "country",
-        "day",
-        "products",
-        "raceEventId",
-        "raceEventStatus",
-        "raceLength",
-        "raceName",
-        "raceNo",
-        "raceType",
-        "runners",
-        "timeZone",
-        "trackCondition",
-        "venueEventId",
-        "venueName",
-        "weather"
-      ],
+      "race_type": "Thoroughbreds",
       "price_like_samples": [
+        {
+          "path": "runners[0].bestTote",
+          "value": 83.7
+        },
         {
           "path": "runners[0].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[1].bestTote",
+          "value": 41.8
         },
         {
           "path": "runners[1].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[2].bestTote",
+          "value": 29.5
+        },
+        {
           "path": "runners[2].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[3].bestTote",
+          "value": 36.9
         },
         {
           "path": "runners[3].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[4].bestTote",
+          "value": 20.9
+        },
+        {
           "path": "runners[4].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[5].bestTote",
+          "value": 2.2
         },
         {
           "path": "runners[5].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[6].bestTote",
+          "value": 41.8
+        },
+        {
+          "path": "runners[6].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[7].bestTote",
+          "value": 9.3
+        },
+        {
+          "path": "runners[7].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[8].bestTote",
+          "value": 24.6
+        },
+        {
+          "path": "runners[8].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[9].bestTote",
+          "value": 19.8
+        },
+        {
+          "path": "runners[9].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[10].bestTote",
+          "value": 13.7
+        },
+        {
+          "path": "runners[10].markets[0].price",
+          "value": 0
         }
       ],
       "explicit_exchange_price_paths": []
     },
     {
-      "market_id": "1.260999943",
-      "venue": "ANGLE PARK",
+      "market_id": "1.260957860",
+      "venue": "BENDIGO",
       "date": "2026-08-12",
-      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999943",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260957860",
       "http_status": 200,
       "content_type": "application/json",
-      "top_level_keys": [
-        "country",
-        "day",
-        "products",
-        "raceEventId",
-        "raceEventStatus",
-        "raceLength",
-        "raceName",
-        "raceNo",
-        "raceType",
-        "runners",
-        "timeZone",
-        "trackCondition",
-        "venueEventId",
-        "venueName",
-        "weather"
-      ],
+      "race_type": "Thoroughbreds",
       "price_like_samples": [
+        {
+          "path": "runners[0].bestTote",
+          "value": 501.8
+        },
         {
           "path": "runners[0].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[1].bestTote",
+          "value": 250.9
         },
         {
           "path": "runners[1].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[2].bestTote",
+          "value": 18.5
+        },
+        {
           "path": "runners[2].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[3].bestTote",
+          "value": 17
         },
         {
           "path": "runners[3].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[4].bestTote",
+          "value": 197.5
+        },
+        {
           "path": "runners[4].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[5].bestTote",
+          "value": 55.7
         },
         {
           "path": "runners[5].markets[0].price",
           "value": 0
-        }
-      ],
-      "explicit_exchange_price_paths": []
-    },
-    {
-      "market_id": "1.260999946",
-      "venue": "ANGLE PARK",
-      "date": "2026-08-12",
-      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999946",
-      "http_status": 200,
-      "content_type": "application/json",
-      "top_level_keys": [
-        "country",
-        "day",
-        "products",
-        "raceEventId",
-        "raceEventStatus",
-        "raceLength",
-        "raceName",
-        "raceNo",
-        "raceType",
-        "runners",
-        "timeZone",
-        "trackCondition",
-        "venueEventId",
-        "venueName",
-        "weather"
-      ],
-      "price_like_samples": [
+        },
         {
-          "path": "runners[0].markets[0].price",
+          "path": "runners[6].bestTote",
+          "value": 2.1
+        },
+        {
+          "path": "runners[6].markets[0].price",
           "value": 0
         },
         {
-          "path": "runners[1].markets[0].price",
-          "value": 0
+          "path": "runners[7].bestTote",
+          "value": 45.6
         },
         {
-          "path": "runners[2].markets[0].price",
-          "value": 0
-        },
-        {
-          "path": "runners[3].markets[0].price",
-          "value": 0
-        },
-        {
-          "path": "runners[4].markets[0].price",
+          "path": "runners[7].markets[0].price",
           "value": 0
         }
       ],
       "explicit_exchange_price_paths": []
     },
     {
-      "market_id": "1.260999949",
-      "venue": "ANGLE PARK",
+      "market_id": "1.260957869",
+      "venue": "BENDIGO",
       "date": "2026-08-12",
-      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999949",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260957869",
       "http_status": 200,
       "content_type": "application/json",
-      "top_level_keys": [
-        "country",
-        "day",
-        "products",
-        "raceEventId",
-        "raceEventStatus",
-        "raceLength",
-        "raceName",
-        "raceNo",
-        "raceType",
-        "runners",
-        "timeZone",
-        "trackCondition",
-        "venueEventId",
-        "venueName",
-        "weather"
-      ],
+      "race_type": "Thoroughbreds",
       "price_like_samples": [
+        {
+          "path": "runners[0].bestTote",
+          "value": 177.8
+        },
         {
           "path": "runners[0].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[1].bestTote",
+          "value": 13.6
         },
         {
           "path": "runners[1].markets[0].price",
           "value": 0
         },
         {
-          "path": "runners[2].markets[0].price",
-          "value": 0
-        },
-        {
-          "path": "runners[3].markets[0].price",
-          "value": 0
-        },
-        {
-          "path": "runners[4].markets[0].price",
-          "value": 0
-        }
-      ],
-      "explicit_exchange_price_paths": []
-    },
-    {
-      "market_id": "1.260999952",
-      "venue": "ANGLE PARK",
-      "date": "2026-08-12",
-      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999952",
-      "http_status": 200,
-      "content_type": "application/json",
-      "top_level_keys": [
-        "country",
-        "day",
-        "products",
-        "raceEventId",
-        "raceEventStatus",
-        "raceLength",
-        "raceName",
-        "raceNo",
-        "raceType",
-        "runners",
-        "timeZone",
-        "trackCondition",
-        "venueEventId",
-        "venueName",
-        "weather"
-      ],
-      "price_like_samples": [
-        {
-          "path": "runners[0].markets[0].price",
-          "value": 0
-        },
-        {
-          "path": "runners[1].markets[0].price",
-          "value": 0
+          "path": "runners[2].bestTote",
+          "value": 177.8
         },
         {
           "path": "runners[2].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[3].bestTote",
+          "value": 3.4
+        },
+        {
           "path": "runners[3].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[4].bestTote",
+          "value": 44.4
+        },
+        {
           "path": "runners[4].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[5].bestTote",
+          "value": 78.2
         },
         {
           "path": "runners[5].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[6].bestTote",
+          "value": 7.9
+        },
+        {
+          "path": "runners[6].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[7].bestTote",
+          "value": 8.4
+        },
+        {
+          "path": "runners[7].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[8].bestTote",
+          "value": 17.3
+        },
+        {
+          "path": "runners[8].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[9].bestTote",
+          "value": 16.1
+        },
+        {
+          "path": "runners[9].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[10].bestTote",
+          "value": 158.9
+        },
+        {
+          "path": "runners[10].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[11].bestTote",
+          "value": 20.6
+        },
+        {
+          "path": "runners[11].markets[0].price",
+          "value": 0
         }
       ],
       "explicit_exchange_price_paths": []
     },
     {
-      "market_id": "1.260999955",
-      "venue": "ANGLE PARK",
+      "market_id": "1.260957878",
+      "venue": "BENDIGO",
       "date": "2026-08-12",
-      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999955",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260957878",
       "http_status": 200,
       "content_type": "application/json",
-      "top_level_keys": [
-        "country",
-        "day",
-        "products",
-        "raceEventId",
-        "raceEventStatus",
-        "raceLength",
-        "raceName",
-        "raceNo",
-        "raceType",
-        "runners",
-        "timeZone",
-        "trackCondition",
-        "venueEventId",
-        "venueName",
-        "weather"
-      ],
+      "race_type": "Thoroughbreds",
       "price_like_samples": [
+        {
+          "path": "runners[0].bestTote",
+          "value": 88.4
+        },
         {
           "path": "runners[0].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[1].bestTote",
+          "value": 20.3
         },
         {
           "path": "runners[1].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[2].bestTote",
+          "value": 75.4
+        },
+        {
           "path": "runners[2].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[3].bestTote",
+          "value": 44.2
         },
         {
           "path": "runners[3].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[4].bestTote",
+          "value": 17.6
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[5].bestTote",
+          "value": 42.5
+        },
+        {
+          "path": "runners[5].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[6].bestTote",
+          "value": 29.3
+        },
+        {
+          "path": "runners[6].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[7].bestTote",
+          "value": 12.2
+        },
+        {
+          "path": "runners[7].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[8].bestTote",
+          "value": 11.2
+        },
+        {
+          "path": "runners[8].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[9].bestTote",
+          "value": 22.1
+        },
+        {
+          "path": "runners[9].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[10].bestTote",
+          "value": 170.1
+        },
+        {
+          "path": "runners[10].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[11].bestTote",
+          "value": 10.5
+        },
+        {
+          "path": "runners[11].markets[0].price",
+          "value": 0
         }
       ],
       "explicit_exchange_price_paths": []
     },
     {
-      "market_id": "1.260999958",
-      "venue": "ANGLE PARK",
+      "market_id": "1.260957887",
+      "venue": "BENDIGO",
       "date": "2026-08-12",
-      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260999958",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260957887",
       "http_status": 200,
       "content_type": "application/json",
-      "top_level_keys": [
-        "country",
-        "day",
-        "products",
-        "raceEventId",
-        "raceEventStatus",
-        "raceLength",
-        "raceName",
-        "raceNo",
-        "raceType",
-        "runners",
-        "timeZone",
-        "trackCondition",
-        "venueEventId",
-        "venueName",
-        "weather"
-      ],
+      "race_type": "Thoroughbreds",
       "price_like_samples": [
+        {
+          "path": "runners[0].bestTote",
+          "value": 18.1
+        },
         {
           "path": "runners[0].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[1].bestTote",
+          "value": 90.9
         },
         {
           "path": "runners[1].markets[0].price",
           "value": 0
         },
         {
+          "path": "runners[2].bestTote",
+          "value": 68.1
+        },
+        {
           "path": "runners[2].markets[0].price",
           "value": 0
+        },
+        {
+          "path": "runners[3].bestTote",
+          "value": 38.9
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[4].bestTote",
+          "value": 60.7
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[5].bestTote",
+          "value": 60.7
+        },
+        {
+          "path": "runners[5].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[6].bestTote",
+          "value": 156
+        },
+        {
+          "path": "runners[6].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[7].bestTote",
+          "value": 22.7
+        },
+        {
+          "path": "runners[7].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[8].bestTote",
+          "value": 32.8
+        },
+        {
+          "path": "runners[8].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[9].bestTote",
+          "value": 30.3
+        },
+        {
+          "path": "runners[9].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[10].bestTote",
+          "value": 24.7
+        },
+        {
+          "path": "runners[10].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[11].bestTote",
+          "value": 6
+        },
+        {
+          "path": "runners[11].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[12].bestTote",
+          "value": 16.8
+        },
+        {
+          "path": "runners[12].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[13].bestTote",
+          "value": 38.9
+        },
+        {
+          "path": "runners[13].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[14].bestTote",
+          "value": 90.9
+        },
+        {
+          "path": "runners[14].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    },
+    {
+      "market_id": "1.260957896",
+      "venue": "BENDIGO",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260957896",
+      "http_status": 200,
+      "content_type": "application/json",
+      "race_type": "Thoroughbreds",
+      "price_like_samples": [
+        {
+          "path": "runners[0].bestTote",
+          "value": 30.8
+        },
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].bestTote",
+          "value": 20.2
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].bestTote",
+          "value": 58.5
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].bestTote",
+          "value": 292.8
         },
         {
           "path": "runners[3].markets[0].price",
@@ -405,12 +675,300 @@
           "value": 0
         },
         {
+          "path": "runners[5].bestTote",
+          "value": 13.4
+        },
+        {
           "path": "runners[5].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[6].bestTote",
+          "value": 202.2
+        },
+        {
+          "path": "runners[6].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[7].bestTote",
+          "value": 461.2
+        },
+        {
+          "path": "runners[7].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[8].bestTote",
+          "value": 97.6
+        },
+        {
+          "path": "runners[8].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[9].bestTote",
+          "value": 48.5
+        },
+        {
+          "path": "runners[9].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[10].bestTote",
+          "value": 11.5
+        },
+        {
+          "path": "runners[10].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[11].bestTote",
+          "value": 36.7
+        },
+        {
+          "path": "runners[11].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[12].bestTote",
+          "value": 404.4
+        },
+        {
+          "path": "runners[12].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[13].bestTote",
+          "value": 202.2
+        },
+        {
+          "path": "runners[13].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[14].bestTote",
+          "value": 404.4
+        },
+        {
+          "path": "runners[14].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[15].bestTote",
+          "value": 31.8
+        },
+        {
+          "path": "runners[15].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[16].bestTote",
+          "value": 92.2
+        },
+        {
+          "path": "runners[16].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[17].bestTote",
+          "value": 24.9
+        },
+        {
+          "path": "runners[17].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[18].bestTote",
+          "value": 230.6
+        },
+        {
+          "path": "runners[18].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[19].bestTote",
+          "value": 117.1
+        },
+        {
+          "path": "runners[19].markets[0].price",
+          "value": 0
+        }
+      ],
+      "explicit_exchange_price_paths": []
+    },
+    {
+      "market_id": "1.260957905",
+      "venue": "BENDIGO",
+      "date": "2026-08-12",
+      "url": "https://apigateway.betfair.com.au/hub/raceevent/1.260957905",
+      "http_status": 200,
+      "content_type": "application/json",
+      "race_type": "Thoroughbreds",
+      "price_like_samples": [
+        {
+          "path": "runners[0].bestTote",
+          "value": 18.8
+        },
+        {
+          "path": "runners[0].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[1].bestTote",
+          "value": 71.8
+        },
+        {
+          "path": "runners[1].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[2].bestTote",
+          "value": 16.5
+        },
+        {
+          "path": "runners[2].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[3].bestTote",
+          "value": 21.8
+        },
+        {
+          "path": "runners[3].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[4].bestTote",
+          "value": 25.1
+        },
+        {
+          "path": "runners[4].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[5].bestTote",
+          "value": 19.3
+        },
+        {
+          "path": "runners[5].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[6].bestTote",
+          "value": 53.5
+        },
+        {
+          "path": "runners[6].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[7].bestTote",
+          "value": 18.8
+        },
+        {
+          "path": "runners[7].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[8].bestTote",
+          "value": 339.4
+        },
+        {
+          "path": "runners[8].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[9].bestTote",
+          "value": 135.7
+        },
+        {
+          "path": "runners[9].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[10].bestTote",
+          "value": 14.3
+        },
+        {
+          "path": "runners[10].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[11].bestTote",
+          "value": 226.2
+        },
+        {
+          "path": "runners[11].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[12].bestTote",
+          "value": 169.7
+        },
+        {
+          "path": "runners[12].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[13].bestTote",
+          "value": 71.8
+        },
+        {
+          "path": "runners[13].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[14].bestTote",
+          "value": 143.6
+        },
+        {
+          "path": "runners[14].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[15].bestTote",
+          "value": 339.4
+        },
+        {
+          "path": "runners[15].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[16].bestTote",
+          "value": 75.4
+        },
+        {
+          "path": "runners[16].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[17].bestTote",
+          "value": 32.1
+        },
+        {
+          "path": "runners[17].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[18].bestTote",
+          "value": 226.2
+        },
+        {
+          "path": "runners[18].markets[0].price",
+          "value": 0
+        },
+        {
+          "path": "runners[19].bestTote",
+          "value": 226.2
+        },
+        {
+          "path": "runners[19].markets[0].price",
           "value": 0
         }
       ],
       "explicit_exchange_price_paths": []
     }
   ],
-  "governance_note": "Accept only explicit Betfair Exchange back/lay ladder fields; tote/bestPrice/generic odds are rejected."
+  "governance_note": "Only explicit Exchange back/lay ladders qualify. Generic runner market price/tote/BSP fields do not."
 }

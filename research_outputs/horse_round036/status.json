@@ -2,10 +2,11 @@
   "round": 36,
   "capability": "HorseRacing.LivePreOffPriceAdapterReadiness",
   "status": "COMPLETE",
+  "run_scope": "AUS_THOROUGHBRED_ONLY",
   "strategy_tuning": false,
-  "real_betting_allowed": false,
   "paper_only": true,
-  "captured_at_utc": "2026-08-11T09:38:59.474921+00:00",
+  "real_betting_allowed": false,
+  "captured_at_utc": "2026-08-11T09:39:57.613643+00:00",
   "racecard_qa": [
     {
       "url": "https://apigateway.betfair.com.au/hub/racecard?date=2026-08-11",
@@ -13,7 +14,8 @@
       "content_type": "application/json",
       "parsed_markets": 215,
       "au_markets": 215,
-      "sa_markets": 0
+      "aus_thoroughbred_markets": 39,
+      "sa_thoroughbred_markets": 0
     },
     {
       "url": "https://apigateway.betfair.com.au/hub/racecard?date=2026-08-12",
@@ -21,28 +23,29 @@
       "content_type": "application/json",
       "parsed_markets": 81,
       "au_markets": 73,
-      "sa_markets": 0
+      "aus_thoroughbred_markets": 39,
+      "sa_thoroughbred_markets": 0
     }
   ],
   "target_market_ids": [
-    "1.260994734",
-    "1.260994737",
-    "1.260994740",
-    "1.261000153",
-    "1.260999937"
+    "1.260956672",
+    "1.260957741",
+    "1.260956678",
+    "1.260957842",
+    "1.260957750"
   ],
-  "runtime_secret_presence": {
-    "BETFAIR_APP_KEY": false,
-    "BETFAIR_SESSION_TOKEN": false
+  "runtime_auth": {
+    "app_key_present": false,
+    "session_token_present": false,
+    "ready": false
   },
   "public_hub_raceevent": {
     "tested": 8,
     "accepted_as_exchange_price_source": false,
     "explicit_exchange_price_paths": []
   },
-  "exchange_api": {
-    "unauthenticated_status": "FAILED",
-    "authenticated_status": "NOT_ATTEMPTED_MISSING_SECRETS",
+  "exchange_adapter": {
+    "status": "AUTH_MISSING",
     "market_books": 0,
     "usable_runner_lay_quotes": 0,
     "is_market_data_delayed_flags": []
@@ -51,6 +54,7 @@
   "preoff_adapter_ready": false,
   "realtime_preoff_ready": false,
   "remaining_blocker": "BETFAIR_APP_KEY_AND_SESSION_TOKEN_NOT_PRESENT_IN_RUNTIME",
+  "reusable_adapter": "research/horse_round036_preoff_adapter.py",
   "frozen_execution_contract": {
     "observable_price_required": true,
     "final_bsp_for_signal_forbidden": true,
