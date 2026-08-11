@@ -1,0 +1,202 @@
+name: horse-round043-timed-preoff
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/horse-round043-timed-preoff.yml
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: horse-round043-timed-preoff
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Capture credential-free timed preoff snapshot
+        id: capture
+        shell: bash
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          TARGET_DATE = "2026-08-12"
+          LOCAL_TZ = ZoneInfo("Australia/Adelaide")
+          BASE = "https://bff.senservices.betfair.com.au/api/v1"
+          UA = "FutureAbility-HorseResearch/round043 timed-preoff read-only validation"
+          out = Path("research_outputs/horse_round043")
+          snaps = out / "snapshots"
+          snaps.mkdir(parents=True, exist_ok=True)
+
+          now_utc = datetime.now(timezone.utc)
+          now_local = now_utc.astimezone(LOCAL_TZ)
+          print(f"CAPTURE_UTC={now_utc.isoformat()}")
+          print(f"CAPTURE_ADELAIDE={now_local.isoformat()}")
+
+          if now_local.date().isoformat() != TARGET_DATE:
+              print("ROUND043_ACTIVE_DATE=false")
+              raise SystemExit(0)
+
+          def get_json(url: str):
+              req = urllib.request.Request(
+                  url,
+                  headers={"User-Agent": UA, "Accept": "application/json"},
+                  method="GET",
+              )
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      return r.status, json.loads(r.read())
+              except urllib.error.HTTPError as e:
+                  raw = e.read(200000)
+                  try:
+                      body = json.loads(raw)
+                  except Exception:
+                      body = {"raw": raw[:500].decode("utf-8", "replace")}
+                  return e.code, body
+
+          model_url = f"{BASE}/hub/thoroughbred-model?date={TARGET_DATE}"
+          model_http, model = get_json(model_url)
+          print(f"MODEL_HTTP={model_http}")
+          if model_http != 200:
+              detail = model.get("detail") if isinstance(model, dict) else None
+              print(f"MODEL_DETAIL={detail}")
+              raise SystemExit(0)
+
+          events = model.get("events") or []
+          candidates = []
+          for event in events:
+              for market in event.get("markets") or []:
+                  raw_start = market.get("startTime")
+                  if not raw_start:
+                      continue
+                  start = datetime.fromisoformat(raw_start.replace("Z", "+00:00"))
+                  mins = (start - now_utc).total_seconds() / 60.0
+                  status = str(market.get("status") or "").upper()
+                  if -3 <= mins <= 35 and status != "CLOSED":
+                      candidates.append((event, market, mins))
+
+          print(f"MODEL_EVENT_COUNT={len(events)}")
+          print(f"WINDOW_MARKET_COUNT={len(candidates)}")
+          if not candidates:
+              raise SystemExit(0)
+
+          ledger_rows = []
+          any_live_model_price = False
+          any_t15 = False
+          for event, market, mins in candidates:
+              market_id = str(market.get("id"))
+              mover_http, movers = get_json(f"{BASE}/models/racing-market-movers/{market_id}")
+              rating_http, rating = get_json(f"{BASE}/models/racing-rating-model/{market_id}?modelName=BFA_THOROUGHBRED")
+              header_http, header = get_json(f"{BASE}/bema/race-market-screen/market-header/{market_id}")
+              runners_http, runners = get_json(f"{BASE}/bema/race-market-screen/runners-list/{market_id}")
+
+              model_runners = market.get("runners") or []
+              live_count = sum(
+                  1 for r in model_runners
+                  if r.get("backPrice") is not None or r.get("layPrice") is not None or r.get("value") is not None
+              )
+              mover_sels = movers.get("selections") or [] if isinstance(movers, dict) else []
+              t15_count = sum(1 for s in mover_sels if s.get("fifteenMinPrice") is not None)
+              morning_count = sum(1 for s in mover_sels if s.get("morningPrice") is not None)
+              any_live_model_price = any_live_model_price or live_count > 0
+              any_t15 = any_t15 or t15_count > 0
+
+              record = {
+                  "round": 43,
+                  "capability": "HorseRacing.PublicHubTimedPreoffSnapshotValidation",
+                  "captured_at_utc": now_utc.isoformat(),
+                  "captured_at_adelaide": now_local.isoformat(),
+                  "target_date": TARGET_DATE,
+                  "minutes_to_start": mins,
+                  "event": {"id": event.get("id"), "name": event.get("name")},
+                  "market": market,
+                  "model_live_price_runner_count": live_count,
+                  "endpoints": {
+                      "market_movers_http": mover_http,
+                      "rating_http": rating_http,
+                      "header_http": header_http,
+                      "runners_http": runners_http,
+                  },
+                  "market_movers": movers,
+                  "rating_model": rating,
+                  "market_header": header,
+                  "runners_list": runners,
+                  "movers_fifteen_min_non_null_count": t15_count,
+                  "movers_morning_non_null_count": morning_count,
+                  "governance": {
+                      "read_only": True,
+                      "credentials_supplied": False,
+                      "orders_allowed": False,
+                      "strategy_tuning": False,
+                  },
+              }
+              stamp = now_utc.strftime("%Y%m%dT%H%M%SZ")
+              safe_market = market_id.replace(".", "_")
+              path = snaps / f"{stamp}_{safe_market}.json"
+              path.write_text(json.dumps(record, indent=2), encoding="utf-8")
+              ledger_rows.append({
+                  "captured_at_utc": now_utc.isoformat(),
+                  "market_id": market_id,
+                  "event_name": event.get("name"),
+                  "minutes_to_start": mins,
+                  "model_live_price_runner_count": live_count,
+                  "movers_fifteen_min_non_null_count": t15_count,
+                  "movers_morning_non_null_count": morning_count,
+                  "snapshot": str(path),
+              })
+              print(f"CAPTURED_MARKET={market_id} EVENT={event.get('name')} MINS={mins:.2f} LIVE_MODEL={live_count} T15={t15_count} MORNING={morning_count}")
+
+          ledger = out / "capture_ledger.jsonl"
+          with ledger.open("a", encoding="utf-8") as fh:
+              for row in ledger_rows:
+                  fh.write(json.dumps(row, separators=(",", ":")) + "\n")
+
+          status = {
+              "round": 43,
+              "capability": "HorseRacing.PublicHubTimedPreoffSnapshotValidation",
+              "status": "VALIDATED" if any_live_model_price and any_t15 else "CAPTURE_IN_PROGRESS",
+              "last_capture_utc": now_utc.isoformat(),
+              "target_date": TARGET_DATE,
+              "captured_markets": len(ledger_rows),
+              "live_model_price_seen": any_live_model_price,
+              "fifteen_min_price_seen": any_t15,
+              "paper_only": True,
+              "real_betting_allowed": False,
+              "next_gate": "compare frozen SA rank2 value<-7% LAY signal using preserved preoff snapshots" if any_live_model_price and any_t15 else "continue timed snapshots until non-null preoff fields are observed",
+          }
+          (out / "status.json").write_text(json.dumps(status, indent=2), encoding="utf-8")
+          print("ROUND043_STATUS=" + status["status"])
+          PY
+
+      - name: Persist evidence only when a timed market was captured
+        shell: bash
+        run: |
+          if git status --porcelain research_outputs/horse_round043 | grep -q .; then
+            git config user.name "future-ability-research-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add research_outputs/horse_round043
+            git commit -m "research: round043 timed preoff snapshot"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "No timed market in capture window; no repository write."
+          fi
