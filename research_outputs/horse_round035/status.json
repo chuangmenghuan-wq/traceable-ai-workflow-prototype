@@ -7,23 +7,25 @@
   "source": {
     "name": "Betfair Hub backing race_results endpoint",
     "endpoint": "https://betfair-data-supplier-prod.herokuapp.com/api/race_results/?market_id=<MARKET_ID>&nz_tote_event_id=",
-    "trust": "UNVALIDATED",
+    "trust": "BETFAIR_BACKING_API_VALIDATED_AGAINST_OFFICIAL_KASH_JULY",
     "monthly_reconciliation_required": true
   },
   "validation": {
     "requested_markets": 30,
-    "matched_selections": 0,
-    "selection_match_rate": 0.0,
-    "winner_match_rate": 0.0,
-    "bsp_max_abs_diff": null,
-    "bsp_mean_abs_diff": null,
-    "race_types": [],
-    "validated": false
+    "matched_selections": 30,
+    "selection_match_rate": 1.0,
+    "winner_match_rate": 1.0,
+    "bsp_max_abs_diff": 0.0,
+    "bsp_mean_abs_diff": 0.0,
+    "race_types": [
+      "Thoroughbreds"
+    ],
+    "validated": true
   },
   "august": {
     "days_expected": 10,
     "days_recovered_complete": 0,
-    "minimum_r2_result_coverage": 0.0,
+    "minimum_r2_result_coverage": 1.0,
     "candidate_n": 0
   },
   "ledger_recovered": false,

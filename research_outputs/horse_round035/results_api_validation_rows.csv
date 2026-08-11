@@ -1,31 +1,31 @@
 date,track,market_id,selection_id,official_bsp,official_win,api_http_status,api_status,api_race_type,api_day,api_bsp,api_win,bsp_abs_diff,win_match,selection_found
-2026-07-01,Murray Bridge,259574031,99731354,6.2,0.0,200,None,,,,,,False,False
-2026-07-04,Murray Bridge,259636701,87454083,6.0,1.0,200,None,,,,,,False,False
-2026-07-04,Murray Bridge,259636737,88611148,6.88,0.0,200,None,,,,,,False,False
-2026-07-05,Port Augusta,259692814,100262420,5.9,0.0,200,None,,,,,,False,False
-2026-07-05,Port Augusta,259692838,96694456,5.5,0.0,200,None,,,,,,False,False
-2026-07-07,Murray Bridge,259756122,44590763,4.0,0.0,200,None,,,,,,False,False
-2026-07-07,Murray Bridge,259756146,69066730,6.66,1.0,200,None,,,,,,False,False
-2026-07-08,Morphettville,259784887,100396540,4.4,0.0,200,None,,,,,,False,False
-2026-07-08,Morphettville,259784923,85445107,4.9,0.0,200,None,,,,,,False,False
-2026-07-11,Morphettville,259843861,46889707,3.64,0.0,200,None,,,,,,False,False
-2026-07-11,Morphettville,259843897,100454278,3.1,0.0,200,None,,,,,,False,False
-2026-07-12,Mount Gambier,259896001,81812256,5.0,0.0,200,None,,,,,,False,False
-2026-07-12,Mount Gambier,259896025,44590763,5.36,1.0,200,None,,,,,,False,False
-2026-07-15,Balaklava,259996681,92966032,3.13,0.0,200,None,,,,,,False,False
-2026-07-17,Murray Bridge,260071837,100693611,3.25,1.0,200,None,,,,,,False,False
-2026-07-17,Murray Bridge,260071861,89347653,4.7,0.0,200,None,,,,,,False,False
-2026-07-18,Morphettville,260072847,2983221,11.0,0.0,200,None,,,,,,False,False
-2026-07-18,Morphettville,260072883,100693729,7.0,0.0,200,None,,,,,,False,False
-2026-07-19,Port Augusta,260116875,100721151,3.35,1.0,200,None,,,,,,False,False
-2026-07-19,Port Augusta,260116899,40050597,4.24,0.0,200,None,,,,,,False,False
-2026-07-22,Murray Bridge,260224939,100860666,4.43,0.0,200,None,,,,,,False,False
-2026-07-22,Murray Bridge,260224975,87164656,5.66,0.0,200,None,,,,,,False,False
-2026-07-24,Naracoorte,260297419,46652342,4.7,0.0,200,None,,,,,,False,False
-2026-07-24,Naracoorte,260297444,68890281,4.67,1.0,200,None,,,,,,False,False
-2026-07-25,Morphettville,260297570,72510931,3.74,0.0,200,None,,,,,,False,False
-2026-07-25,Morphettville,260297606,67855158,5.5,0.0,200,None,,,,,,False,False
-2026-07-26,Balaklava,260355984,100957212,8.27,0.0,200,None,,,,,,False,False
-2026-07-26,Balaklava,260356009,47989008,7.2,0.0,200,None,,,,,,False,False
-2026-07-29,Strathalbyn,260467914,101100578,10.23,1.0,200,None,,,,,,False,False
-2026-07-29,Strathalbyn,260467950,101100586,4.0,1.0,200,None,,,,,,False,False
+2026-07-01,Murray Bridge,259574031,99731354,6.2,0.0,200,RESULT,Thoroughbreds,01-07-2026,6.2,0.0,0.0,True,True
+2026-07-04,Murray Bridge,259636701,87454083,6.0,1.0,200,RESULT,Thoroughbreds,04-07-2026,6.0,1.0,0.0,True,True
+2026-07-04,Murray Bridge,259636737,88611148,6.88,0.0,200,RESULT,Thoroughbreds,04-07-2026,6.88,0.0,0.0,True,True
+2026-07-05,Port Augusta,259692814,100262420,5.9,0.0,200,RESULT,Thoroughbreds,05-07-2026,5.9,0.0,0.0,True,True
+2026-07-05,Port Augusta,259692838,96694456,5.5,0.0,200,RESULT,Thoroughbreds,05-07-2026,5.5,0.0,0.0,True,True
+2026-07-07,Murray Bridge,259756122,44590763,4.0,0.0,200,RESULT,Thoroughbreds,07-07-2026,4.0,0.0,0.0,True,True
+2026-07-07,Murray Bridge,259756146,69066730,6.66,1.0,200,RESULT,Thoroughbreds,07-07-2026,6.66,1.0,0.0,True,True
+2026-07-08,Morphettville,259784887,100396540,4.4,0.0,200,RESULT,Thoroughbreds,08-07-2026,4.4,0.0,0.0,True,True
+2026-07-08,Morphettville,259784923,85445107,4.9,0.0,200,RESULT,Thoroughbreds,08-07-2026,4.9,0.0,0.0,True,True
+2026-07-11,Morphettville,259843861,46889707,3.64,0.0,200,RESULT,Thoroughbreds,11-07-2026,3.64,0.0,0.0,True,True
+2026-07-11,Morphettville,259843897,100454278,3.1,0.0,200,RESULT,Thoroughbreds,11-07-2026,3.1,0.0,0.0,True,True
+2026-07-12,Mount Gambier,259896001,81812256,5.0,0.0,200,RESULT,Thoroughbreds,12-07-2026,5.0,0.0,0.0,True,True
+2026-07-12,Mount Gambier,259896025,44590763,5.36,1.0,200,RESULT,Thoroughbreds,12-07-2026,5.36,1.0,0.0,True,True
+2026-07-15,Balaklava,259996681,92966032,3.13,0.0,200,RESULT,Thoroughbreds,15-07-2026,3.13,0.0,0.0,True,True
+2026-07-17,Murray Bridge,260071837,100693611,3.25,1.0,200,RESULT,Thoroughbreds,17-07-2026,3.25,1.0,0.0,True,True
+2026-07-17,Murray Bridge,260071861,89347653,4.7,0.0,200,RESULT,Thoroughbreds,17-07-2026,4.7,0.0,0.0,True,True
+2026-07-18,Morphettville,260072847,2983221,11.0,0.0,200,RESULT,Thoroughbreds,18-07-2026,11.0,0.0,0.0,True,True
+2026-07-18,Morphettville,260072883,100693729,7.0,0.0,200,RESULT,Thoroughbreds,18-07-2026,7.0,0.0,0.0,True,True
+2026-07-19,Port Augusta,260116875,100721151,3.35,1.0,200,RESULT,Thoroughbreds,19-07-2026,3.35,1.0,0.0,True,True
+2026-07-19,Port Augusta,260116899,40050597,4.24,0.0,200,RESULT,Thoroughbreds,19-07-2026,4.24,0.0,0.0,True,True
+2026-07-22,Murray Bridge,260224939,100860666,4.43,0.0,200,RESULT,Thoroughbreds,22-07-2026,4.43,0.0,0.0,True,True
+2026-07-22,Murray Bridge,260224975,87164656,5.66,0.0,200,RESULT,Thoroughbreds,22-07-2026,5.66,0.0,0.0,True,True
+2026-07-24,Naracoorte,260297419,46652342,4.7,0.0,200,RESULT,Thoroughbreds,24-07-2026,4.7,0.0,0.0,True,True
+2026-07-24,Naracoorte,260297444,68890281,4.67,1.0,200,RESULT,Thoroughbreds,24-07-2026,4.67,1.0,0.0,True,True
+2026-07-25,Morphettville,260297570,72510931,3.74,0.0,200,RESULT,Thoroughbreds,25-07-2026,3.74,0.0,0.0,True,True
+2026-07-25,Morphettville,260297606,67855158,5.5,0.0,200,RESULT,Thoroughbreds,25-07-2026,5.5,0.0,0.0,True,True
+2026-07-26,Balaklava,260355984,100957212,8.27,0.0,200,RESULT,Thoroughbreds,26-07-2026,8.27,0.0,0.0,True,True
+2026-07-26,Balaklava,260356009,47989008,7.2,0.0,200,RESULT,Thoroughbreds,26-07-2026,7.2,0.0,0.0,True,True
+2026-07-29,Strathalbyn,260467914,101100578,10.23,1.0,200,RESULT,Thoroughbreds,29-07-2026,10.23,1.0,0.0,True,True
+2026-07-29,Strathalbyn,260467950,101100586,4.0,1.0,200,RESULT,Thoroughbreds,29-07-2026,4.0,1.0,0.0,True,True
