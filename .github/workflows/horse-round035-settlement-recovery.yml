@@ -19,7 +19,7 @@ jobs:
           python-version: '3.11'
       - name: Install recovery dependencies
         run: |
-          pip install playwright requests
+          pip install playwright requests kaggle
           python -m playwright install --with-deps chromium
       - name: Probe official browser transport
         run: python research/horse_round035_official_browser_probe.py
