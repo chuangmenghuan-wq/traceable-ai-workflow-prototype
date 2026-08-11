@@ -1,0 +1,42 @@
+name: horse-round039-certificate-runtime
+on:
+  push:
+    branches:
+      - research/horse-round039-certificate-runtime
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: horse-round039-certificate-runtime
+  cancel-in-progress: true
+jobs:
+  runtime-smoke:
+    runs-on: ubuntu-24.04
+    env:
+      BETFAIR_USERNAME: ${{ secrets.BETFAIR_USERNAME }}
+      BETFAIR_PASSWORD: ${{ secrets.BETFAIR_PASSWORD }}
+      BETFAIR_DELAYED_APP_KEY: ${{ secrets.BETFAIR_DELAYED_APP_KEY }}
+      BETFAIR_CERT_PEM: ${{ secrets.BETFAIR_CERT_PEM }}
+      BETFAIR_CERT_KEY_PEM: ${{ secrets.BETFAIR_CERT_KEY_PEM }}
+      BETFAIR_SESSION_TOKEN: ${{ secrets.BETFAIR_SESSION_TOKEN }}
+      BETFAIR_SSOID: ${{ secrets.BETFAIR_SSOID }}
+      BETFAIR_APP_KEY: ''
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Compile certificate runtime
+        run: python -m py_compile research/horse_round039_certificate_runtime.py
+      - name: Execute fail-closed certificate runtime
+        run: python research/horse_round039_certificate_runtime.py
+      - name: Commit sanitized runtime receipt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round039
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record horse round039 certificate runtime"
+          git push
