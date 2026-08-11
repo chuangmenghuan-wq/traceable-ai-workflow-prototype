@@ -19,42 +19,41 @@ concurrency:
 jobs:
   capture:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Capture credential-free timed preoff snapshot
-        id: capture
+      - name: Capture schedule-aware credential-free preoff snapshots
         shell: bash
         run: |
           python - <<'PY'
           from __future__ import annotations
           import json
-          import os
+          import time
           import urllib.error
           import urllib.request
-          from datetime import datetime, timezone
+          from collections import Counter
+          from datetime import datetime, timedelta, timezone
           from pathlib import Path
           from zoneinfo import ZoneInfo
 
           TARGET_DATE = "2026-08-12"
           LOCAL_TZ = ZoneInfo("Australia/Adelaide")
           BASE = "https://bff.senservices.betfair.com.au/api/v1"
-          UA = "FutureAbility-HorseResearch/round043 timed-preoff read-only validation"
+          UA = "FutureAbility-HorseResearch/round043 schedule-aware read-only validation"
+          TARGETS = [("T-30", 30.0), ("T-15", 15.0), ("T-10", 10.0), ("T-5", 5.0), ("T-1", 1.0)]
+          SAMPLE_LOOPS = 6
+          SAMPLE_SLEEP_SECONDS = 55
+
           out = Path("research_outputs/horse_round043")
           snaps = out / "snapshots"
+          out.mkdir(parents=True, exist_ok=True)
           snaps.mkdir(parents=True, exist_ok=True)
-
-          now_utc = datetime.now(timezone.utc)
-          now_local = now_utc.astimezone(LOCAL_TZ)
-          print(f"CAPTURE_UTC={now_utc.isoformat()}")
-          print(f"CAPTURE_ADELAIDE={now_local.isoformat()}")
-
-          if now_local.date().isoformat() != TARGET_DATE:
-              print("ROUND043_ACTIVE_DATE=false")
-              raise SystemExit(0)
+          ledger = out / "capture_ledger.jsonl"
+          plan_path = out / "schedule_plan.json"
+          status_path = out / "status.json"
 
           def get_json(url: str):
               req = urllib.request.Request(
@@ -73,130 +72,257 @@ jobs:
                       body = {"raw": raw[:500].decode("utf-8", "replace")}
                   return e.code, body
 
+          now_utc = datetime.now(timezone.utc)
+          now_local = now_utc.astimezone(LOCAL_TZ)
+          print(f"ROUND043_START_UTC={now_utc.isoformat()}")
+          print(f"ROUND043_START_ADELAIDE={now_local.isoformat()}")
+          if now_local.date().isoformat() != TARGET_DATE:
+              print("ROUND043_ACTIVE_DATE=false")
+              raise SystemExit(0)
+
+          captured_keys = set()
+          if ledger.exists():
+              for line in ledger.read_text(encoding="utf-8").splitlines():
+                  try:
+                      row = json.loads(line)
+                      mid = str(row.get("market_id") or "")
+                      label = str(row.get("target_label") or "")
+                      if mid and label:
+                          captured_keys.add((mid, label))
+                  except Exception:
+                      pass
+
           model_url = f"{BASE}/hub/thoroughbred-model?date={TARGET_DATE}"
-          model_http, model = get_json(model_url)
-          print(f"MODEL_HTTP={model_http}")
-          if model_http != 200:
-              detail = model.get("detail") if isinstance(model, dict) else None
+          first_http, first_model = get_json(model_url)
+          print(f"MODEL_HTTP_INITIAL={first_http}")
+          if first_http != 200:
+              detail = first_model.get("detail") if isinstance(first_model, dict) else None
               print(f"MODEL_DETAIL={detail}")
               raise SystemExit(0)
 
-          events = model.get("events") or []
-          candidates = []
-          for event in events:
-              for market in event.get("markets") or []:
-                  raw_start = market.get("startTime")
-                  if not raw_start:
-                      continue
-                  start = datetime.fromisoformat(raw_start.replace("Z", "+00:00"))
-                  mins = (start - now_utc).total_seconds() / 60.0
-                  status = str(market.get("status") or "").upper()
-                  if -3 <= mins <= 35 and status != "CLOSED":
-                      candidates.append((event, market, mins))
-
-          print(f"MODEL_EVENT_COUNT={len(events)}")
-          print(f"WINDOW_MARKET_COUNT={len(candidates)}")
-          if not candidates:
-              raise SystemExit(0)
-
-          ledger_rows = []
-          any_live_model_price = False
-          any_t15 = False
-          for event, market, mins in candidates:
-              market_id = str(market.get("id"))
-              mover_http, movers = get_json(f"{BASE}/models/racing-market-movers/{market_id}")
-              rating_http, rating = get_json(f"{BASE}/models/racing-rating-model/{market_id}?modelName=BFA_THOROUGHBRED")
-              header_http, header = get_json(f"{BASE}/bema/race-market-screen/market-header/{market_id}")
-              runners_http, runners = get_json(f"{BASE}/bema/race-market-screen/runners-list/{market_id}")
-
-              model_runners = market.get("runners") or []
-              live_count = sum(
-                  1 for r in model_runners
-                  if r.get("backPrice") is not None or r.get("layPrice") is not None or r.get("value") is not None
-              )
-              mover_sels = movers.get("selections") or [] if isinstance(movers, dict) else []
-              t15_count = sum(1 for s in mover_sels if s.get("fifteenMinPrice") is not None)
-              morning_count = sum(1 for s in mover_sels if s.get("morningPrice") is not None)
-              any_live_model_price = any_live_model_price or live_count > 0
-              any_t15 = any_t15 or t15_count > 0
-
-              record = {
+          def build_schedule_plan(model: dict, generated_at: datetime):
+              rows = []
+              for event in model.get("events") or []:
+                  for market in event.get("markets") or []:
+                      raw_start = market.get("startTime")
+                      if not raw_start:
+                          continue
+                      start = datetime.fromisoformat(raw_start.replace("Z", "+00:00"))
+                      rows.append({
+                          "event_id": event.get("id"),
+                          "event_name": event.get("name"),
+                          "market_id": str(market.get("id")),
+                          "market_name": market.get("name"),
+                          "scheduled_start_utc": start.isoformat(),
+                          "scheduled_start_adelaide": start.astimezone(LOCAL_TZ).isoformat(),
+                          "capture_targets": {
+                              label: (start - timedelta(minutes=offset)).isoformat()
+                              for label, offset in TARGETS
+                          },
+                      })
+              payload = {
                   "round": 43,
                   "capability": "HorseRacing.PublicHubTimedPreoffSnapshotValidation",
-                  "captured_at_utc": now_utc.isoformat(),
-                  "captured_at_adelaide": now_local.isoformat(),
+                  "mode": "SCHEDULE_AWARE",
                   "target_date": TARGET_DATE,
-                  "minutes_to_start": mins,
-                  "event": {"id": event.get("id"), "name": event.get("name")},
-                  "market": market,
-                  "model_live_price_runner_count": live_count,
-                  "endpoints": {
-                      "market_movers_http": mover_http,
-                      "rating_http": rating_http,
-                      "header_http": header_http,
-                      "runners_http": runners_http,
-                  },
-                  "market_movers": movers,
-                  "rating_model": rating,
-                  "market_header": header,
-                  "runners_list": runners,
-                  "movers_fifteen_min_non_null_count": t15_count,
-                  "movers_morning_non_null_count": morning_count,
+                  "generated_at_utc": generated_at.isoformat(),
+                  "targets": [label for label, _ in TARGETS],
+                  "market_count": len(rows),
+                  "markets": rows,
                   "governance": {
-                      "read_only": True,
-                      "credentials_supplied": False,
-                      "orders_allowed": False,
+                      "paper_only": True,
+                      "real_betting_allowed": False,
                       "strategy_tuning": False,
+                      "credentials_supplied": False,
                   },
               }
-              stamp = now_utc.strftime("%Y%m%dT%H%M%SZ")
-              safe_market = market_id.replace(".", "_")
-              path = snaps / f"{stamp}_{safe_market}.json"
-              path.write_text(json.dumps(record, indent=2), encoding="utf-8")
-              ledger_rows.append({
-                  "captured_at_utc": now_utc.isoformat(),
-                  "market_id": market_id,
-                  "event_name": event.get("name"),
-                  "minutes_to_start": mins,
-                  "model_live_price_runner_count": live_count,
-                  "movers_fifteen_min_non_null_count": t15_count,
-                  "movers_morning_non_null_count": morning_count,
-                  "snapshot": str(path),
-              })
-              print(f"CAPTURED_MARKET={market_id} EVENT={event.get('name')} MINS={mins:.2f} LIVE_MODEL={live_count} T15={t15_count} MORNING={morning_count}")
+              if not plan_path.exists():
+                  plan_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+                  print(f"SCHEDULE_PLAN_CREATED=true MARKET_COUNT={len(rows)}")
+              else:
+                  print(f"SCHEDULE_PLAN_EXISTS=true MARKET_COUNT={len(rows)}")
 
-          ledger = out / "capture_ledger.jsonl"
-          with ledger.open("a", encoding="utf-8") as fh:
-              for row in ledger_rows:
-                  fh.write(json.dumps(row, separators=(",", ":")) + "\n")
+          build_schedule_plan(first_model, now_utc)
+          new_rows = []
 
+          for sample_idx in range(SAMPLE_LOOPS):
+              sample_utc = datetime.now(timezone.utc)
+              sample_local = sample_utc.astimezone(LOCAL_TZ)
+              if sample_local.date().isoformat() != TARGET_DATE:
+                  break
+
+              model_http, model = get_json(model_url)
+              print(f"SAMPLE={sample_idx + 1}/{SAMPLE_LOOPS} UTC={sample_utc.isoformat()} MODEL_HTTP={model_http}")
+              if model_http != 200:
+                  break
+
+              due = []
+              for event in model.get("events") or []:
+                  for market in event.get("markets") or []:
+                      raw_start = market.get("startTime")
+                      if not raw_start:
+                          continue
+                      start = datetime.fromisoformat(raw_start.replace("Z", "+00:00"))
+                      mins = (start - sample_utc).total_seconds() / 60.0
+                      status = str(market.get("status") or "").upper()
+                      if status == "CLOSED":
+                          continue
+                      market_id = str(market.get("id") or "")
+                      if not market_id:
+                          continue
+
+                      for label, target in TARGETS:
+                          if (market_id, label) in captured_keys:
+                              continue
+                          if label == "T-1":
+                              matched = 0.0 <= mins <= 1.35
+                          else:
+                              matched = (target - 2.25) <= mins <= (target + 0.25)
+                          if matched:
+                              due.append((event, market, mins, label, target))
+
+              print(f"DUE_TARGET_COUNT={len(due)}")
+              for event, market, mins, label, target in due:
+                  market_id = str(market.get("id"))
+                  key = (market_id, label)
+                  if key in captured_keys:
+                      continue
+
+                  mover_http, movers = get_json(f"{BASE}/models/racing-market-movers/{market_id}")
+                  rating_http, rating = get_json(f"{BASE}/models/racing-rating-model/{market_id}?modelName=BFA_THOROUGHBRED")
+                  header_http, header = get_json(f"{BASE}/bema/race-market-screen/market-header/{market_id}")
+                  runners_http, runners = get_json(f"{BASE}/bema/race-market-screen/runners-list/{market_id}")
+
+                  model_runners = market.get("runners") or []
+                  live_count = sum(
+                      1 for r in model_runners
+                      if r.get("backPrice") is not None or r.get("layPrice") is not None or r.get("value") is not None
+                  )
+                  mover_sels = (movers.get("selections") or []) if isinstance(movers, dict) else []
+                  t15_count = sum(1 for s in mover_sels if s.get("fifteenMinPrice") is not None)
+                  morning_count = sum(1 for s in mover_sels if s.get("morningPrice") is not None)
+
+                  record = {
+                      "round": 43,
+                      "capability": "HorseRacing.PublicHubTimedPreoffSnapshotValidation",
+                      "capture_mode": "SCHEDULE_AWARE",
+                      "target_label": label,
+                      "target_minutes_before_start": target,
+                      "captured_at_utc": sample_utc.isoformat(),
+                      "captured_at_adelaide": sample_local.isoformat(),
+                      "target_date": TARGET_DATE,
+                      "minutes_to_start": mins,
+                      "timing_error_minutes": mins - target,
+                      "event": {"id": event.get("id"), "name": event.get("name")},
+                      "market": market,
+                      "model_live_price_runner_count": live_count,
+                      "endpoints": {
+                          "market_movers_http": mover_http,
+                          "rating_http": rating_http,
+                          "header_http": header_http,
+                          "runners_http": runners_http,
+                      },
+                      "market_movers": movers,
+                      "rating_model": rating,
+                      "market_header": header,
+                      "runners_list": runners,
+                      "movers_fifteen_min_non_null_count": t15_count,
+                      "movers_morning_non_null_count": morning_count,
+                      "governance": {
+                          "read_only": True,
+                          "credentials_supplied": False,
+                          "orders_allowed": False,
+                          "strategy_tuning": False,
+                          "paper_only": True,
+                      },
+                  }
+                  stamp = sample_utc.strftime("%Y%m%dT%H%M%SZ")
+                  safe_market = market_id.replace(".", "_")
+                  path = snaps / f"{stamp}_{safe_market}_{label.replace('-', 'm')}.json"
+                  path.write_text(json.dumps(record, indent=2), encoding="utf-8")
+
+                  row = {
+                      "captured_at_utc": sample_utc.isoformat(),
+                      "market_id": market_id,
+                      "event_name": event.get("name"),
+                      "target_label": label,
+                      "target_minutes_before_start": target,
+                      "minutes_to_start": mins,
+                      "timing_error_minutes": mins - target,
+                      "model_live_price_runner_count": live_count,
+                      "movers_fifteen_min_non_null_count": t15_count,
+                      "movers_morning_non_null_count": morning_count,
+                      "snapshot": str(path),
+                  }
+                  new_rows.append(row)
+                  captured_keys.add(key)
+                  print(
+                      f"CAPTURED TARGET={label} MARKET={market_id} EVENT={event.get('name')} "
+                      f"MINS={mins:.2f} LIVE_MODEL={live_count} T15={t15_count} MORNING={morning_count}"
+                  )
+
+              if sample_idx < SAMPLE_LOOPS - 1:
+                  time.sleep(SAMPLE_SLEEP_SECONDS)
+
+          if new_rows:
+              with ledger.open("a", encoding="utf-8") as fh:
+                  for row in new_rows:
+                      fh.write(json.dumps(row, separators=(",", ":")) + "\n")
+
+          all_records = []
+          for p in sorted(snaps.glob("*.json")):
+              try:
+                  all_records.append(json.loads(p.read_text(encoding="utf-8")))
+              except Exception:
+                  pass
+
+          cumulative_live = any((r.get("model_live_price_runner_count") or 0) > 0 for r in all_records)
+          cumulative_t15 = any((r.get("movers_fifteen_min_non_null_count") or 0) > 0 for r in all_records)
+          target_counts = Counter(str(r.get("target_label") or "LEGACY") for r in all_records)
+          market_ids = {
+              str((r.get("market") or {}).get("id") or "")
+              for r in all_records
+              if (r.get("market") or {}).get("id") is not None
+          }
+          validated = cumulative_live and cumulative_t15
           status = {
               "round": 43,
               "capability": "HorseRacing.PublicHubTimedPreoffSnapshotValidation",
-              "status": "VALIDATED" if any_live_model_price and any_t15 else "CAPTURE_IN_PROGRESS",
-              "last_capture_utc": now_utc.isoformat(),
+              "status": "VALIDATED" if validated else "CAPTURE_IN_PROGRESS",
+              "capture_mode": "SCHEDULE_AWARE",
               "target_date": TARGET_DATE,
-              "captured_markets": len(ledger_rows),
-              "live_model_price_seen": any_live_model_price,
-              "fifteen_min_price_seen": any_t15,
+              "last_run_utc": datetime.now(timezone.utc).isoformat(),
+              "schedule_plan_present": plan_path.exists(),
+              "target_offsets_minutes": [30, 15, 10, 5, 1],
+              "snapshot_count_total": len(all_records),
+              "captured_market_count_total": len(market_ids),
+              "target_capture_counts": dict(sorted(target_counts.items())),
+              "live_model_price_seen": cumulative_live,
+              "fifteen_min_price_seen": cumulative_t15,
               "paper_only": True,
               "real_betting_allowed": False,
-              "next_gate": "compare frozen SA rank2 value<-7% LAY signal using preserved preoff snapshots" if any_live_model_price and any_t15 else "continue timed snapshots until non-null preoff fields are observed",
+              "strategy_tuning": False,
+              "next_gate": (
+                  "compare frozen SA rank2 value<-7% LAY signal using preserved scheduled-off snapshots"
+                  if validated else
+                  "continue schedule-aware T-30/T-15/T-10/T-5/T-1 capture until cumulative validation is satisfied"
+              ),
           }
-          (out / "status.json").write_text(json.dumps(status, indent=2), encoding="utf-8")
+          status_path.write_text(json.dumps(status, indent=2), encoding="utf-8")
           print("ROUND043_STATUS=" + status["status"])
+          print("TARGET_CAPTURE_COUNTS=" + json.dumps(status["target_capture_counts"], sort_keys=True))
           PY
 
-      - name: Persist evidence only when a timed market was captured
+      - name: Persist schedule plan and timed evidence
         shell: bash
         run: |
           if git status --porcelain research_outputs/horse_round043 | grep -q .; then
             git config user.name "future-ability-research-bot"
             git config user.email "actions@users.noreply.github.com"
             git add research_outputs/horse_round043
-            git commit -m "research: round043 timed preoff snapshot"
+            git commit -m "research: round043 schedule-aware timed evidence"
             git pull --rebase origin main
             git push origin HEAD:main
           else
-            echo "No timed market in capture window; no repository write."
+            echo "No new round043 schedule/timed evidence to persist."
           fi
