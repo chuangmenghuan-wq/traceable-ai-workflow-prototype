@@ -1,0 +1,77 @@
+{
+  "round": 38,
+  "capability": "HorseRacing.BetfairIdentityBootstrap",
+  "status": "COMPLETE",
+  "captured_at_utc": "2026-08-11T10:51:47.736413+00:00",
+  "strategy_tuning": false,
+  "paper_only": true,
+  "real_betting_allowed": false,
+  "secret_presence": {
+    "BETFAIR_SESSION_TOKEN": false,
+    "BETFAIR_SSOID": false,
+    "BETFAIR_APP_KEY": false,
+    "BETFAIR_DELAYED_APP_KEY": false,
+    "BETFAIR_USERNAME": false,
+    "BETFAIR_PASSWORD": false,
+    "BETFAIR_CERT_PEM": false,
+    "BETFAIR_CERT_KEY_PEM": false
+  },
+  "transport": {
+    "interactive_login_reachable": false,
+    "cert_login_reachable": false,
+    "keep_alive_reachable": false,
+    "probes": {
+      "interactive_login": {
+        "url": "https://identitysso.betfair.com/api/login",
+        "http_status": 403,
+        "content_type": "text/html; charset=UTF-8",
+        "cloudflare_block": false,
+        "betfair_json_response": false,
+        "json_status": null,
+        "json_error": null,
+        "body_prefix": "<!DOCTYPE html>\n<html manifest=\"\" lang=\"en-US\">\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n    <title>Betfair</title>\n    <meta name=\"theme-color\" content=\"#004833\" />\n    <style>\n      * {\n        margin: 0;\n        padding: 0;\n      }\n      html,\n      body {\n        height: 100%;\n      }\n      body {\n        background: #000;\n        font-family: Arial, sans-serif;\n      }\n      .container {\n        width: 100%;\n        height: 100%;\n        display: table;\n        border-collapse: collapse;\n      }\n      section {\n        display: table-cell;\n        vertical-align: middle;\n        text-align: center;\n        padding: 1em;\n        width: 60%;\n     "
+      },
+      "cert_login": {
+        "url": "https://identitysso-cert.betfair.com/api/certlogin",
+        "http_status": 400,
+        "content_type": "text/html;charset=utf-8",
+        "cloudflare_block": false,
+        "betfair_json_response": false,
+        "json_status": null,
+        "json_error": null,
+        "body_prefix": "<html><head><title>Application Server - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400"
+      },
+      "keep_alive": {
+        "url": "https://identitysso.betfair.com/api/keepAlive",
+        "http_status": 403,
+        "content_type": "text/html; charset=UTF-8",
+        "cloudflare_block": false,
+        "betfair_json_response": false,
+        "json_status": null,
+        "json_error": null,
+        "body_prefix": "<!DOCTYPE html>\n<html manifest=\"\" lang=\"en-US\">\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n    <title>Betfair</title>\n    <meta name=\"theme-color\" content=\"#004833\" />\n    <style>\n      * {\n        margin: 0;\n        padding: 0;\n      }\n      html,\n      body {\n        height: 100%;\n      }\n      body {\n        background: #000;\n        font-family: Arial, sans-serif;\n      }\n      .container {\n        width: 100%;\n        height: 100%;\n        display: table;\n        border-collapse: collapse;\n      }\n      section {\n        display: table-cell;\n        vertical-align: middle;\n        text-align: center;\n        padding: 1em;\n        width: 60%;\n     "
+      }
+    }
+  },
+  "target_architecture": {
+    "bootstrap": "One authenticated Betfair browser/session is sufficient to create/retrieve Delayed App Key.",
+    "persistent_runtime": "Non-interactive certificate login renews session autonomously; KeepAlive extends active session.",
+    "two_factor_note": "Betfair documents that website 2FA does not prevent non-interactive certificate login.",
+    "secret_storage_required": [
+      "BETFAIR_USERNAME",
+      "BETFAIR_PASSWORD",
+      "BETFAIR_APP_KEY",
+      "BETFAIR_CERT_PEM",
+      "BETFAIR_CERT_KEY_PEM"
+    ],
+    "session_material_must_never_be_committed": true
+  },
+  "classification": "IDENTITY_TRANSPORT_BLOCKED_OR_UNVERIFIED",
+  "remaining_blocker": "GITHUB_RUNNER_CANNOT_YET_PROVE_CERTLOGIN_TRANSPORT",
+  "governance": {
+    "orders_forbidden": true,
+    "live_key_activation_forbidden": true,
+    "no_credentials_written_to_repo": true,
+    "no_account_login_attempts_performed": true
+  }
+}
