@@ -1,0 +1,38 @@
+name: horse-round037-delayed-auth
+on:
+  push:
+    branches:
+      - research/horse-round037-delayed-auth
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: horse-round037-delayed-auth
+  cancel-in-progress: true
+jobs:
+  activate:
+    runs-on: ubuntu-24.04
+    env:
+      BETFAIR_SESSION_TOKEN: ${{ secrets.BETFAIR_SESSION_TOKEN }}
+      BETFAIR_SSOID: ${{ secrets.BETFAIR_SSOID }}
+      BETFAIR_DELAYED_APP_KEY: ${{ secrets.BETFAIR_DELAYED_APP_KEY }}
+      BETFAIR_APP_KEY: ${{ secrets.BETFAIR_APP_KEY }}
+      BETFAIR_USERNAME: ${{ secrets.BETFAIR_USERNAME }}
+      BETFAIR_PASSWORD: ${{ secrets.BETFAIR_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Execute delayed auth activation state machine
+        run: python research/horse_round037_delayed_auth_activation.py
+      - name: Commit sanitized activation receipt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round037
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record horse round037 delayed auth activation"
+          git push
