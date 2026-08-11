@@ -1,0 +1,33 @@
+name: horse-round035-settlement-recovery
+on:
+  push:
+    branches:
+      - research/horse-round035-settlement-recovery
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: horse-round035-settlement-recovery
+  cancel-in-progress: true
+jobs:
+  recover:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install browser transport
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Probe official browser transport
+        run: python research/horse_round035_official_browser_probe.py
+      - name: Commit probe outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research_outputs/horse_round035
+          git diff --cached --quiet && exit 0
+          git commit -m "research: record horse round035 official browser probe"
+          git push
