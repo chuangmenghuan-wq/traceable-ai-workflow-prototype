@@ -1,0 +1,38 @@
+{
+  "round": 35,
+  "capability": "HorseRacing.SettlementLedgerRecovery",
+  "status": "COMPLETE",
+  "strategy_tuning": false,
+  "real_betting_allowed": false,
+  "source": {
+    "name": "Betfair Hub backing race_results endpoint",
+    "endpoint": "https://betfair-data-supplier-prod.herokuapp.com/api/race_results/?market_id=<MARKET_ID>&nz_tote_event_id=",
+    "trust": "UNVALIDATED",
+    "monthly_reconciliation_required": true
+  },
+  "validation": {
+    "requested_markets": 30,
+    "matched_selections": 0,
+    "selection_match_rate": 0.0,
+    "winner_match_rate": 0.0,
+    "bsp_max_abs_diff": null,
+    "bsp_mean_abs_diff": null,
+    "race_types": [],
+    "validated": false
+  },
+  "august": {
+    "days_expected": 10,
+    "days_recovered_complete": 0,
+    "minimum_r2_result_coverage": 0.0,
+    "candidate_n": 0
+  },
+  "ledger_recovered": false,
+  "gate_snapshot_2026_08_11": null,
+  "classification": "SETTLEMENT_LEDGER_RECOVERY_INCOMPLETE",
+  "governance": {
+    "paper_only": true,
+    "betting_ready": false,
+    "monthly_official_reconciliation_required": true,
+    "no_threshold_or_window_changes": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "requested_markets": 30,
+  "matched_selections": 0,
+  "selection_match_rate": 0.0,
+  "winner_match_rate": 0.0,
+  "bsp_max_abs_diff": null,
+  "bsp_mean_abs_diff": null,
+  "race_types": [],
+  "validated": false
+}
