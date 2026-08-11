@@ -2,7 +2,7 @@
   "round": 38,
   "capability": "HorseRacing.BetfairIdentityBootstrap",
   "status": "COMPLETE",
-  "captured_at_utc": "2026-08-11T10:51:47.736413+00:00",
+  "captured_at_utc": "2026-08-11T10:52:50.336658+00:00",
   "strategy_tuning": false,
   "paper_only": true,
   "real_betting_allowed": false,
@@ -17,9 +17,9 @@
     "BETFAIR_CERT_KEY_PEM": false
   },
   "transport": {
-    "interactive_login_reachable": false,
-    "cert_login_reachable": false,
-    "keep_alive_reachable": false,
+    "interactive_login_reachable_without_account_material": false,
+    "cert_login_route_reachable": true,
+    "keep_alive_reachable_without_session": false,
     "probes": {
       "interactive_login": {
         "url": "https://identitysso.betfair.com/api/login",
@@ -27,6 +27,7 @@
         "content_type": "text/html; charset=UTF-8",
         "cloudflare_block": false,
         "betfair_json_response": false,
+        "betfair_app_server_response": false,
         "json_status": null,
         "json_error": null,
         "body_prefix": "<!DOCTYPE html>\n<html manifest=\"\" lang=\"en-US\">\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n    <title>Betfair</title>\n    <meta name=\"theme-color\" content=\"#004833\" />\n    <style>\n      * {\n        margin: 0;\n        padding: 0;\n      }\n      html,\n      body {\n        height: 100%;\n      }\n      body {\n        background: #000;\n        font-family: Arial, sans-serif;\n      }\n      .container {\n        width: 100%;\n        height: 100%;\n        display: table;\n        border-collapse: collapse;\n      }\n      section {\n        display: table-cell;\n        vertical-align: middle;\n        text-align: center;\n        padding: 1em;\n        width: 60%;\n     "
@@ -37,6 +38,7 @@
         "content_type": "text/html;charset=utf-8",
         "cloudflare_block": false,
         "betfair_json_response": false,
+        "betfair_app_server_response": true,
         "json_status": null,
         "json_error": null,
         "body_prefix": "<html><head><title>Application Server - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 400"
@@ -47,6 +49,7 @@
         "content_type": "text/html; charset=UTF-8",
         "cloudflare_block": false,
         "betfair_json_response": false,
+        "betfair_app_server_response": false,
         "json_status": null,
         "json_error": null,
         "body_prefix": "<!DOCTYPE html>\n<html manifest=\"\" lang=\"en-US\">\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n    <title>Betfair</title>\n    <meta name=\"theme-color\" content=\"#004833\" />\n    <style>\n      * {\n        margin: 0;\n        padding: 0;\n      }\n      html,\n      body {\n        height: 100%;\n      }\n      body {\n        background: #000;\n        font-family: Arial, sans-serif;\n      }\n      .container {\n        width: 100%;\n        height: 100%;\n        display: table;\n        border-collapse: collapse;\n      }\n      section {\n        display: table-cell;\n        vertical-align: middle;\n        text-align: center;\n        padding: 1em;\n        width: 60%;\n     "
@@ -66,8 +69,8 @@
     ],
     "session_material_must_never_be_committed": true
   },
-  "classification": "IDENTITY_TRANSPORT_BLOCKED_OR_UNVERIFIED",
-  "remaining_blocker": "GITHUB_RUNNER_CANNOT_YET_PROVE_CERTLOGIN_TRANSPORT",
+  "classification": "IDENTITY_TRANSPORT_READY_EXTERNAL_ACCOUNT_BOOTSTRAP_REQUIRED",
+  "remaining_blocker": "ONE_TIME_BETFAIR_ACCOUNT_AUTH_AND_CERTIFICATE_REGISTRATION_REQUIRED",
   "governance": {
     "orders_forbidden": true,
     "live_key_activation_forbidden": true,
