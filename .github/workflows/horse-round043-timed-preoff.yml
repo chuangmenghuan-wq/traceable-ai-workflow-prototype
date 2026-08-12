@@ -1,5 +1,5 @@
 name: horse-round043-timed-preoff
-# Round045/046 chain verification trigger; no strategy/data logic changed.
+# Round047 live-capture verification trigger; no strategy/data logic changed.
 
 on:
   push:
