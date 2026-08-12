@@ -1,0 +1,47 @@
+name: horse-round047-forward-ledger
+
+on:
+  workflow_run:
+    workflows: ["horse-round046-parallel-settlement"]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/horse-round047-forward-ledger.yml
+      - research/horse_round047_forward_performance_ledger.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: horse-round047-forward-ledger
+  cancel-in-progress: false
+
+jobs:
+  ledger:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Update permanent per-state forward ledger
+        run: python research/horse_round047_forward_performance_ledger.py
+
+      - name: Persist round047 forward ledger
+        shell: bash
+        run: |
+          if git status --porcelain research_outputs/horse_round047 | grep -q .; then
+            git config user.name "future-ability-research-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add research_outputs/horse_round047
+            git commit -m "research: round047 update state forward performance ledger"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "No round047 ledger changes to persist."
+          fi
