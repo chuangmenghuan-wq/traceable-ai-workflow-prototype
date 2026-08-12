@@ -1,0 +1,39 @@
+name: horse-round048-next-day-preflight
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/horse-round048-next-day-preflight.yml
+      - research/horse_round048_next_day_preflight.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Probe next Adelaide day thoroughbred model publication
+        run: python research/horse_round048_next_day_preflight.py
+
+      - name: Persist round048 evidence
+        shell: bash
+        run: |
+          if git status --porcelain research_outputs/horse_round048 | grep -q .; then
+            git config user.name "future-ability-research-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add research_outputs/horse_round048
+            git commit -m "research: round048 next-day model preflight"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "No round048 changes to persist."
+          fi
