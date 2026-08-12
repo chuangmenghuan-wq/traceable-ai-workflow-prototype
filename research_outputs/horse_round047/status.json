@@ -1,0 +1,42 @@
+{
+  "round": 47,
+  "capability": "HorseRacing.StateForwardPerformanceLedger",
+  "status": "FORWARD_LEDGER_UPDATED",
+  "paper_only": true,
+  "real_betting_allowed": false,
+  "strategy_tuning": false,
+  "ledger_rows": 1,
+  "settled_rows": 1,
+  "pending_rows": 0,
+  "dates_observed": [
+    "2026-08-12"
+  ],
+  "per_state": {
+    "WA": {
+      "candidates": 1,
+      "settled": 1,
+      "pending": 0,
+      "lay_wins": 1,
+      "lay_losses": 0,
+      "profit_units": 0.9299999999999999,
+      "liability_units": 2.1,
+      "first_date": "2026-08-12",
+      "last_date": "2026-08-12",
+      "lay_win_rate_pct": 100.0,
+      "pot_on_lay_stake_pct": 93.0,
+      "roi_on_liability_pct": 44.285714285714285
+    }
+  },
+  "governance": {
+    "sa_remains_frozen_benchmark": true,
+    "non_sa_results_are_exploratory_only": true,
+    "cross_state_pooling_for_promotion_forbidden": true,
+    "append_only_forward_history": true,
+    "dedupe_key": [
+      "active_date",
+      "market_id",
+      "selection_id"
+    ]
+  },
+  "next_gate": "accumulate genuine future candidates by state; assess sample size and stability before any state-specific promotion"
+}
