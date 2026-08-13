@@ -2,7 +2,7 @@
   "active_date": "2026-08-13",
   "capability": "HorseRacing.StateParallelPaperValidator",
   "commission_reference": 0.07,
-  "evaluated_markets_total": 12,
+  "evaluated_markets_total": 13,
   "governance": {
     "cross_state_pooling_for_promotion_forbidden": true,
     "non_sa_results_are_exploratory_only": true,
@@ -40,7 +40,7 @@
     },
     "WA": {
       "candidate_selection_ids": [],
-      "evaluated_markets": 2,
+      "evaluated_markets": 3,
       "lane": "PARALLEL_EXPLORATORY",
       "raw_paper_lay_candidates": 0
     }
@@ -48,7 +48,7 @@
   "raw_paper_lay_candidates_total": 0,
   "round": 45,
   "rule": "all mapped states \u00d7 model_rank_2 \u00d7 (1/ratedPrice - 1/layPrice) < -0.07",
-  "snapshot_records_considered": 13,
+  "snapshot_records_considered": 14,
   "status": "PARALLEL_PAPER_EVALUATED",
   "unknown_venues": [
     "AWAPUNI"
