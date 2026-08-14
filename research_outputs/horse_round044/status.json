@@ -19,9 +19,9 @@
     "capability": "HorseRacing.ScheduleAwarePreoffCapture",
     "status": "VALIDATED",
     "capture_mode": "SCHEDULE_AWARE_DAILY_ROLLOVER",
-    "active_date": "2026-08-14",
-    "last_run_utc": "2026-08-14T13:40:14.251616+00:00",
-    "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-08-14.json",
+    "active_date": "2026-08-15",
+    "last_run_utc": "2026-08-14T23:50:31.107413+00:00",
+    "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-08-15.json",
     "target_offsets_minutes": [
       30,
       15,
@@ -30,15 +30,9 @@
       1
     ],
     "today": {
-      "snapshot_count": 18,
-      "captured_market_count": 13,
-      "target_capture_counts": {
-        "T-1": 5,
-        "T-10": 3,
-        "T-15": 3,
-        "T-30": 4,
-        "T-5": 3
-      }
+      "snapshot_count": 0,
+      "captured_market_count": 0,
+      "target_capture_counts": {}
     },
     "cumulative": {
       "snapshot_count": 51,
