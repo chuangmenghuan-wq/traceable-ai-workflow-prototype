@@ -20,7 +20,7 @@
     "status": "VALIDATED",
     "capture_mode": "SCHEDULE_AWARE_DAILY_ROLLOVER",
     "active_date": "2026-08-15",
-    "last_run_utc": "2026-08-15T05:06:42.098904+00:00",
+    "last_run_utc": "2026-08-15T05:38:44.692943+00:00",
     "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-08-15.json",
     "target_offsets_minutes": [
       30,
@@ -30,25 +30,25 @@
       1
     ],
     "today": {
-      "snapshot_count": 56,
-      "captured_market_count": 41,
+      "snapshot_count": 69,
+      "captured_market_count": 50,
       "target_capture_counts": {
-        "T-1": 7,
-        "T-10": 12,
-        "T-15": 16,
-        "T-30": 10,
-        "T-5": 11
+        "T-1": 10,
+        "T-10": 14,
+        "T-15": 19,
+        "T-30": 12,
+        "T-5": 14
       }
     },
     "cumulative": {
-      "snapshot_count": 107,
-      "captured_market_count": 81,
+      "snapshot_count": 120,
+      "captured_market_count": 90,
       "target_capture_counts": {
-        "T-1": 17,
-        "T-10": 20,
-        "T-15": 27,
-        "T-30": 23,
-        "T-5": 20
+        "T-1": 20,
+        "T-10": 22,
+        "T-15": 30,
+        "T-30": 25,
+        "T-5": 23
       },
       "live_model_price_seen": true,
       "fifteen_min_price_seen": true
@@ -58,7 +58,7 @@
     "strategy_tuning": false,
     "next_gate": "compare frozen SA rank2 value<-7% LAY signal using preserved scheduled-off snapshots"
   },
-  "evaluated_sa_markets": 4,
+  "evaluated_sa_markets": 5,
   "paper_lay_candidates": 0,
   "candidate_selection_ids": [],
   "next_gate": "settle paper candidates and refresh rolling-50 gate before any promotion discussion"
