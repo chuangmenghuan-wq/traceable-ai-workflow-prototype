@@ -2,7 +2,7 @@
   "active_date": "2026-08-15",
   "capability": "HorseRacing.StateParallelPaperValidator",
   "commission_reference": 0.07,
-  "evaluated_markets_total": 50,
+  "evaluated_markets_total": 58,
   "governance": {
     "cross_state_pooling_for_promotion_forbidden": true,
     "non_sa_results_are_exploratory_only": true,
@@ -22,13 +22,13 @@
     },
     "QLD": {
       "candidate_selection_ids": [],
-      "evaluated_markets": 9,
+      "evaluated_markets": 11,
       "lane": "PARALLEL_EXPLORATORY",
       "raw_paper_lay_candidates": 0
     },
     "SA": {
       "candidate_selection_ids": [],
-      "evaluated_markets": 3,
+      "evaluated_markets": 4,
       "lane": "SA_BENCHMARK",
       "raw_paper_lay_candidates": 0
     },
@@ -36,13 +36,13 @@
       "candidate_selection_ids": [
         46675625
       ],
-      "evaluated_markets": 22,
+      "evaluated_markets": 26,
       "lane": "PARALLEL_EXPLORATORY",
       "raw_paper_lay_candidates": 1
     },
     "VIC": {
       "candidate_selection_ids": [],
-      "evaluated_markets": 5,
+      "evaluated_markets": 6,
       "lane": "PARALLEL_EXPLORATORY",
       "raw_paper_lay_candidates": 0
     }
@@ -50,7 +50,7 @@
   "raw_paper_lay_candidates_total": 1,
   "round": 45,
   "rule": "all mapped states \u00d7 model_rank_2 \u00d7 (1/ratedPrice - 1/layPrice) < -0.07",
-  "snapshot_records_considered": 69,
+  "snapshot_records_considered": 82,
   "status": "PARALLEL_PAPER_EVALUATED",
   "unknown_venues": [
     "BELMONT PARK",
