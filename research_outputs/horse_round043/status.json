@@ -4,7 +4,7 @@
   "status": "VALIDATED",
   "capture_mode": "SCHEDULE_AWARE_DAILY_ROLLOVER",
   "active_date": "2026-08-16",
-  "last_run_utc": "2026-08-16T00:06:03.421443+00:00",
+  "last_run_utc": "2026-08-16T01:56:55.754053+00:00",
   "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-08-16.json",
   "target_offsets_minutes": [
     30,
@@ -14,23 +14,25 @@
     1
   ],
   "today": {
-    "snapshot_count": 4,
-    "captured_market_count": 2,
+    "snapshot_count": 10,
+    "captured_market_count": 6,
     "target_capture_counts": {
-      "T-1": 1,
+      "T-1": 2,
+      "T-10": 1,
       "T-15": 2,
-      "T-5": 1
+      "T-30": 2,
+      "T-5": 3
     }
   },
   "cumulative": {
-    "snapshot_count": 172,
-    "captured_market_count": 124,
+    "snapshot_count": 178,
+    "captured_market_count": 128,
     "target_capture_counts": {
-      "T-1": 28,
-      "T-10": 32,
+      "T-1": 29,
+      "T-10": 33,
       "T-15": 46,
-      "T-30": 32,
-      "T-5": 34
+      "T-30": 34,
+      "T-5": 36
     },
     "live_model_price_seen": true,
     "fifteen_min_price_seen": true
