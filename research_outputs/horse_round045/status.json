@@ -2,7 +2,7 @@
   "active_date": "2026-08-16",
   "capability": "HorseRacing.StateParallelPaperValidator",
   "commission_reference": 0.07,
-  "evaluated_markets_total": 24,
+  "evaluated_markets_total": 27,
   "governance": {
     "cross_state_pooling_for_promotion_forbidden": true,
     "non_sa_results_are_exploratory_only": true,
@@ -18,7 +18,7 @@
       "candidate_selection_ids": [
         101639345
       ],
-      "evaluated_markets": 5,
+      "evaluated_markets": 6,
       "lane": "PARALLEL_EXPLORATORY",
       "raw_paper_lay_candidates": 1
     },
@@ -30,7 +30,7 @@
     },
     "UNKNOWN": {
       "candidate_selection_ids": [],
-      "evaluated_markets": 12,
+      "evaluated_markets": 13,
       "lane": "PARALLEL_EXPLORATORY",
       "raw_paper_lay_candidates": 0
     },
@@ -38,7 +38,7 @@
       "candidate_selection_ids": [
         89018836
       ],
-      "evaluated_markets": 5,
+      "evaluated_markets": 6,
       "lane": "PARALLEL_EXPLORATORY",
       "raw_paper_lay_candidates": 1
     }
@@ -46,7 +46,7 @@
   "raw_paper_lay_candidates_total": 2,
   "round": 45,
   "rule": "all mapped states \u00d7 model_rank_2 \u00d7 (1/ratedPrice - 1/layPrice) < -0.07",
-  "snapshot_records_considered": 33,
+  "snapshot_records_considered": 38,
   "status": "PARALLEL_PAPER_EVALUATED",
   "unknown_venues": [
     "MORUYA",
