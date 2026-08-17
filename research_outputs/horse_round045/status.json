@@ -1,8 +1,8 @@
 {
-  "active_date": "2026-08-17",
+  "active_date": "2026-08-18",
   "capability": "HorseRacing.StateParallelPaperValidator",
   "commission_reference": 0.07,
-  "evaluated_markets_total": 20,
+  "evaluated_markets_total": 0,
   "governance": {
     "cross_state_pooling_for_promotion_forbidden": true,
     "non_sa_results_are_exploratory_only": true,
@@ -13,31 +13,12 @@
   },
   "model_rank": 2,
   "next_gate": "settle each state independently; compare forward hit-rate/POT and only then consider state-specific promotion",
-  "per_state": {
-    "NSW": {
-      "candidate_selection_ids": [],
-      "evaluated_markets": 6,
-      "lane": "PARALLEL_EXPLORATORY",
-      "raw_paper_lay_candidates": 0
-    },
-    "UNKNOWN": {
-      "candidate_selection_ids": [
-        7405979
-      ],
-      "evaluated_markets": 14,
-      "lane": "PARALLEL_EXPLORATORY",
-      "raw_paper_lay_candidates": 1
-    }
-  },
-  "raw_paper_lay_candidates_total": 1,
+  "per_state": {},
+  "raw_paper_lay_candidates_total": 0,
   "round": 45,
   "rule": "all mapped states \u00d7 model_rank_2 \u00d7 (1/ratedPrice - 1/layPrice) < -0.07",
-  "snapshot_records_considered": 27,
+  "snapshot_records_considered": 0,
   "status": "PARALLEL_PAPER_EVALUATED",
-  "unknown_venues": [
-    "BATHURST",
-    "EMERALD",
-    "WODONGA"
-  ],
+  "unknown_venues": [],
   "value_threshold": -0.07
 }
