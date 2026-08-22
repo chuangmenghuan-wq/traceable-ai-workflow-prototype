@@ -48,7 +48,7 @@
   "raw_paper_lay_candidates_total": 0,
   "round": 45,
   "rule": "all mapped states \u00d7 model_rank_2 \u00d7 (1/ratedPrice - 1/layPrice) < -0.07",
-  "snapshot_records_considered": 102,
+  "snapshot_records_considered": 104,
   "status": "PARALLEL_PAPER_EVALUATED",
   "unknown_venues": [
     "BELMONT PARK",
