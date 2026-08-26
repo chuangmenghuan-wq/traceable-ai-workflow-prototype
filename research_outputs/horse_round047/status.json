@@ -5,9 +5,9 @@
   "paper_only": true,
   "real_betting_allowed": false,
   "strategy_tuning": false,
-  "ledger_rows": 10,
+  "ledger_rows": 11,
   "settled_rows": 10,
-  "pending_rows": 0,
+  "pending_rows": 1,
   "dates_observed": [
     "2026-08-12",
     "2026-08-15",
@@ -32,6 +32,20 @@
       "lay_win_rate_pct": 0.0,
       "pot_on_lay_stake_pct": -250.0,
       "roi_on_liability_pct": -100.0
+    },
+    "QLD": {
+      "candidates": 1,
+      "settled": 0,
+      "pending": 1,
+      "lay_wins": 0,
+      "lay_losses": 0,
+      "profit_units": 0.0,
+      "liability_units": 0.0,
+      "first_date": "2026-08-26",
+      "last_date": "2026-08-26",
+      "lay_win_rate_pct": null,
+      "pot_on_lay_stake_pct": null,
+      "roi_on_liability_pct": null
     },
     "TAS": {
       "candidates": 1,
