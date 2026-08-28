@@ -19,9 +19,9 @@
     "capability": "HorseRacing.ScheduleAwarePreoffCapture",
     "status": "VALIDATED",
     "capture_mode": "SCHEDULE_AWARE_DAILY_ROLLOVER",
-    "active_date": "2026-08-27",
-    "last_run_utc": "2026-08-27T10:30:15.432395+00:00",
-    "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-08-27.json",
+    "active_date": "2026-08-28",
+    "last_run_utc": "2026-08-28T04:34:29.169389+00:00",
+    "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-08-28.json",
     "target_offsets_minutes": [
       30,
       15,
@@ -30,19 +30,24 @@
       1
     ],
     "today": {
-      "snapshot_count": 0,
-      "captured_market_count": 0,
-      "target_capture_counts": {}
+      "snapshot_count": 6,
+      "captured_market_count": 5,
+      "target_capture_counts": {
+        "T-1": 2,
+        "T-15": 2,
+        "T-30": 1,
+        "T-5": 1
+      }
     },
     "cumulative": {
-      "snapshot_count": 602,
-      "captured_market_count": 431,
+      "snapshot_count": 608,
+      "captured_market_count": 436,
       "target_capture_counts": {
-        "T-1": 99,
+        "T-1": 101,
         "T-10": 132,
-        "T-15": 133,
-        "T-30": 121,
-        "T-5": 117
+        "T-15": 135,
+        "T-30": 122,
+        "T-5": 118
       },
       "live_model_price_seen": true,
       "fifteen_min_price_seen": true
@@ -52,7 +57,7 @@
     "strategy_tuning": false,
     "next_gate": "compare frozen SA rank2 value<-7% LAY signal using preserved scheduled-off snapshots"
   },
-  "evaluated_sa_markets": 27,
+  "evaluated_sa_markets": 28,
   "paper_lay_candidates": 0,
   "candidate_selection_ids": [],
   "next_gate": "settle paper candidates and refresh rolling-50 gate before any promotion discussion"
