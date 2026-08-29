@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://future-ability-outcome-assurance-de.vercel.app/sitemap.xml
