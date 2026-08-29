@@ -4,18 +4,19 @@ Future Ability is an Adaptive Outcome Assurance public beta for AI agents and au
 
 Core principle: an AI claiming "Done" is not sufficient evidence that a real-world or business-system outcome occurred.
 
-Public beta capabilities:
+## Capabilities
 - Zero-credential public GitHub deployment evidence scan.
 - Outcome states including PARTIAL_ASSURANCE, MISMATCH, and UNKNOWN when evidence is insufficient.
 - Live isolated Supabase reconciliation sandbox demonstrating claimed success, authoritative reread, mismatch, idempotent recovery, reread, and a verified outcome receipt.
 - Private pilot intake with minimum-access choices: metadata only, sandbox/staging, read-only production, or a local connector.
 
-Important limits:
+## Limits
 - v0.1 does not automatically modify customer production systems.
 - The public scanner does not request credentials and is not designed to read repository source files.
 - Public-beta results are evidence signals, not warranties or compliance certifications.
 
-Canonical site: https://future-ability-outcome-assurance-de.vercel.app/
-Privacy: https://future-ability-outcome-assurance-de.vercel.app/privacy
-Terms: https://future-ability-outcome-assurance-de.vercel.app/terms
-Contact: https://future-ability-outcome-assurance-de.vercel.app/contact
+## Public URLs
+- Canonical site: https://future-ability-outcome-assurance-de.vercel.app/
+- Privacy: https://future-ability-outcome-assurance-de.vercel.app/privacy
+- Terms: https://future-ability-outcome-assurance-de.vercel.app/terms
+- Contact: https://future-ability-outcome-assurance-de.vercel.app/contact
