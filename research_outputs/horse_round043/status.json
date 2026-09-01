@@ -3,9 +3,9 @@
   "capability": "HorseRacing.ScheduleAwarePreoffCapture",
   "status": "VALIDATED",
   "capture_mode": "SCHEDULE_AWARE_DAILY_ROLLOVER",
-  "active_date": "2026-08-31",
-  "last_run_utc": "2026-08-31T07:35:27.092370+00:00",
-  "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-08-31.json",
+  "active_date": "2026-09-01",
+  "last_run_utc": "2026-09-01T00:19:41.146602+00:00",
+  "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-09-01.json",
   "target_offsets_minutes": [
     30,
     15,
