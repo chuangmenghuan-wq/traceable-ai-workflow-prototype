@@ -2,7 +2,7 @@
   "active_date": "2026-09-02",
   "capability": "HorseRacing.StateParallelPaperValidator",
   "commission_reference": 0.07,
-  "evaluated_markets_total": 1,
+  "evaluated_markets_total": 6,
   "governance": {
     "cross_state_pooling_for_promotion_forbidden": true,
     "non_sa_results_are_exploratory_only": true,
@@ -14,19 +14,46 @@
   "model_rank": 2,
   "next_gate": "settle each state independently; compare forward hit-rate/POT and only then consider state-specific promotion",
   "per_state": {
-    "UNKNOWN": {
+    "NSW": {
       "candidate_selection_ids": [],
       "evaluated_markets": 1,
       "lane": "PARALLEL_EXPLORATORY",
       "raw_paper_lay_candidates": 0
+    },
+    "QLD": {
+      "candidate_selection_ids": [],
+      "evaluated_markets": 1,
+      "lane": "PARALLEL_EXPLORATORY",
+      "raw_paper_lay_candidates": 0
+    },
+    "SA": {
+      "candidate_selection_ids": [],
+      "evaluated_markets": 1,
+      "lane": "SA_BENCHMARK",
+      "raw_paper_lay_candidates": 0
+    },
+    "TAS": {
+      "candidate_selection_ids": [
+        74264576
+      ],
+      "evaluated_markets": 1,
+      "lane": "PARALLEL_EXPLORATORY",
+      "raw_paper_lay_candidates": 1
+    },
+    "UNKNOWN": {
+      "candidate_selection_ids": [],
+      "evaluated_markets": 2,
+      "lane": "PARALLEL_EXPLORATORY",
+      "raw_paper_lay_candidates": 0
     }
   },
-  "raw_paper_lay_candidates_total": 0,
+  "raw_paper_lay_candidates_total": 1,
   "round": 45,
   "rule": "all mapped states \u00d7 model_rank_2 \u00d7 (1/ratedPrice - 1/layPrice) < -0.07",
-  "snapshot_records_considered": 1,
+  "snapshot_records_considered": 9,
   "status": "PARALLEL_PAPER_EVALUATED",
   "unknown_venues": [
+    "BELMONT PARK",
     "RUAKAKA"
   ],
   "value_threshold": -0.07
