@@ -6,8 +6,8 @@
   "real_betting_allowed": false,
   "strategy_tuning": false,
   "ledger_rows": 15,
-  "settled_rows": 13,
-  "pending_rows": 2,
+  "settled_rows": 15,
+  "pending_rows": 0,
   "dates_observed": [
     "2026-08-12",
     "2026-08-15",
@@ -38,17 +38,17 @@
     },
     "QLD": {
       "candidates": 2,
-      "settled": 1,
-      "pending": 1,
-      "lay_wins": 1,
+      "settled": 2,
+      "pending": 0,
+      "lay_wins": 2,
       "lay_losses": 0,
-      "profit_units": 0.9299999999999999,
-      "liability_units": 1.98,
+      "profit_units": 1.8599999999999999,
+      "liability_units": 3.92,
       "first_date": "2026-08-26",
       "last_date": "2026-09-09",
       "lay_win_rate_pct": 100.0,
       "pot_on_lay_stake_pct": 93.0,
-      "roi_on_liability_pct": 46.96969696969697
+      "roi_on_liability_pct": 47.44897959183673
     },
     "TAS": {
       "candidates": 2,
@@ -66,17 +66,17 @@
     },
     "UNKNOWN": {
       "candidates": 4,
-      "settled": 3,
-      "pending": 1,
-      "lay_wins": 1,
+      "settled": 4,
+      "pending": 0,
+      "lay_wins": 2,
       "lay_losses": 2,
-      "profit_units": -3.3099999999999996,
-      "liability_units": 7.24,
+      "profit_units": -2.38,
+      "liability_units": 10.04,
       "first_date": "2026-08-15",
       "last_date": "2026-09-09",
-      "lay_win_rate_pct": 33.333333333333336,
-      "pot_on_lay_stake_pct": -110.33333333333331,
-      "roi_on_liability_pct": -45.718232044198885
+      "lay_win_rate_pct": 50.0,
+      "pot_on_lay_stake_pct": -59.5,
+      "roi_on_liability_pct": -23.705179282868528
     },
     "VIC": {
       "candidates": 3,
