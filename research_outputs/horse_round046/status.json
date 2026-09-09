@@ -6,28 +6,28 @@
   "real_betting_allowed": false,
   "commission": 0.07,
   "candidate_count": 2,
-  "settled_count": 0,
-  "pending_count": 2,
+  "settled_count": 2,
+  "pending_count": 0,
   "per_state": {
     "QLD": {
       "candidates": 1,
-      "settled": 0,
-      "wins": 0,
+      "settled": 1,
+      "wins": 1,
       "losses": 0,
-      "profit_units": 0.0,
-      "liability_units": 0.0,
-      "pot_on_lay_stake_pct": null,
-      "roi_on_liability_pct": null
+      "profit_units": 0.9299999999999999,
+      "liability_units": 1.94,
+      "pot_on_lay_stake_pct": 93.0,
+      "roi_on_liability_pct": 47.93814432989691
     },
     "UNKNOWN": {
       "candidates": 1,
-      "settled": 0,
-      "wins": 0,
+      "settled": 1,
+      "wins": 1,
       "losses": 0,
-      "profit_units": 0.0,
-      "liability_units": 0.0,
-      "pot_on_lay_stake_pct": null,
-      "roi_on_liability_pct": null
+      "profit_units": 0.9299999999999999,
+      "liability_units": 2.8,
+      "pot_on_lay_stake_pct": 93.0,
+      "roi_on_liability_pct": 33.214285714285715
     }
   },
   "governance": {
