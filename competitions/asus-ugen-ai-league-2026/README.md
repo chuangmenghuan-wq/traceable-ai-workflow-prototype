@@ -55,6 +55,12 @@ Future Ability makes those questions explicit system states rather than relying 
 - **C — Authority Violation:** out-of-policy action → DENY → no write/deploy.
 - **D — Capability Source Change:** model/runtime/hardware changes → prior qualification not inherited → requalification required.
 
+## Public reviewer preview
+
+Static reviewer preview: https://chuangmenghuan-wq.github.io/traceable-ai-workflow-prototype/asus-ugen-ai-league-2026.html
+
+This page uses **synthetic receipts** to make the control logic visible. It is not presented as a live production runtime.
+
 ## Reviewer path
 
 1. [Architecture](docs/architecture.md)
