@@ -1,0 +1,34 @@
+{
+  "notice": "Synthetic public examples. These illustrate the receipt schema and safety logic; they are not production logs.",
+  "scenarios": [
+    {
+      "scenario": "false_completion_trap",
+      "qualification": "PASS",
+      "authority": "AUTO",
+      "execution": {"status": "PASS", "execution_ok": true},
+      "verification": {
+        "health": "PASS",
+        "authentication": "FAIL",
+        "transaction": "FAIL"
+      },
+      "business_restored": false,
+      "completion_allowed": false,
+      "next_state": "RECOVER_OR_REPLAN"
+    },
+    {
+      "scenario": "authority_violation",
+      "qualification": "PASS",
+      "authority": "DENY",
+      "execution": {"status": "NOT_EXECUTED"},
+      "completion_allowed": false,
+      "next_state": "REFORMULATE_OR_ESCALATE"
+    },
+    {
+      "scenario": "capability_source_change",
+      "old_source": "qualified_source_A",
+      "new_source": "candidate_source_B",
+      "new_source_qualification": "REQUIRED",
+      "production_authority": "WITHHELD_UNTIL_PASS"
+    }
+  ]
+}
