@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Future Ability — ASUS UGen AI League 2026</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f6f7f9;color:#111}
+.wrap{max-width:1100px;margin:0 auto;padding:28px}
+.hero{background:#111;color:#fff;padding:28px;border-radius:12px}
+.hero h1{margin:0 0 8px;font-size:32px}.hero p{margin:6px 0;line-height:1.5}
+.notice{margin-top:12px;font-size:13px;color:#ddd}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:20px 0}
+.card{background:#fff;border:1px solid #d7dbe0;border-radius:10px;padding:14px}
+.card b{display:block;margin-bottom:6px}
+.ok{border-left:6px solid #2c8b57}.warn{border-left:6px solid #c58a00}.deny{border-left:6px solid #b53434}
+.scenarios{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+button{width:100%;padding:12px;border:1px solid #bbb;background:#fff;border-radius:8px;cursor:pointer;font-weight:700}
+button:hover{background:#f0f1f3}
+.panel{background:#fff;border:1px solid #d7dbe0;border-radius:10px;padding:18px;margin-top:12px}
+table{border-collapse:collapse;width:100%;margin-top:12px}th,td{border:1px solid #ddd;padding:9px;text-align:left}th{background:#f0f1f3}
+code{background:#eee;padding:2px 4px;border-radius:4px}
+@media(max-width:850px){.grid,.scenarios{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<h1>Future Ability — Autonomous AI Operations & Assurance</h1>
+<p><b>The assurance layer that decides whether autonomous AI was qualified, allowed, effective — and safe to trust again.</b></p>
+<p>ASUS UGen AI League 2026 · Workplace AI · Battlefield Thunderstorm</p>
+<div class="notice">Public reviewer preview. All receipts below are synthetic examples that illustrate the control logic; this page is not a production console.</div>
+</div>
+
+<div class="grid">
+<div class="card ok"><b>QUALIFIED?</b><span id="q">PASS</span></div>
+<div class="card ok"><b>AUTHORISED?</b><span id="a">AUTO</span></div>
+<div class="card ok"><b>EXECUTION</b><span id="e">PASS</span></div>
+<div class="card deny"><b>EXTERNAL OUTCOME</b><span id="o">FAIL</span></div>
+<div class="card deny"><b>COMPLETION</b><span id="c">BLOCKED</span></div>
+</div>
+
+<div class="scenarios">
+<button onclick="show('recovery')">A · Verified Recovery</button>
+<button onclick="show('false')">B · False Completion</button>
+<button onclick="show('authority')">C · Authority Violation</button>
+<button onclick="show('swap')">D · Source Change</button>
+</div>
+
+<div class="panel">
+<h2 id="title">Scene B — False Completion Trap</h2>
+<p id="summary">The repair command and local tests pass, but a required business transaction still fails. Completion Truth blocks closure and opens a recovery frontier.</p>
+<table>
+<tr><th>Stage</th><th>Receipt</th></tr>
+<tbody id="rows">
+<tr><td>Qualification</td><td>PASS</td></tr>
+<tr><td>Authority</td><td>AUTO</td></tr>
+<tr><td>Execution</td><td><code>execution_ok=true</code></td></tr>
+<tr><td>Independent verification</td><td>health=PASS, authentication=FAIL, transaction=FAIL</td></tr>
+<tr><td>Completion Truth</td><td>Business Restored=false; Completion BLOCKED</td></tr>
+<tr><td>Next state</td><td>RECOVER_OR_REPLAN</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="panel">
+<h2>Capability Source</h2>
+<p><code>model + runtime + hardware + tool adapters + authority profile</code></p>
+<p>A material change to the source can invalidate prior trust and require requalification. For the competition, the ASUS UGen Intel Arc Pro B70 32GB is treated as part of that source rather than as decorative compute.</p>
+</div>
+</div>
+<script>
+const scenes={
+recovery:{t:"Scene A — Verified Recovery",q:"PASS",a:"AUTO",e:"PASS",o:"PASS",c:"CLOSED",s:"A deterministic service failure is repaired under authority. Independent business probes pass, so Completion Truth permits closure.",rows:[["Qualification","PASS"],["Authority","AUTO"],["Execution","repair + local tests PASS"],["Independent verification","required service/business probes PASS"],["Completion Truth","Business Restored=true"],["Next state","CLOSED"]]},
+false:{t:"Scene B — False Completion Trap",q:"PASS",a:"AUTO",e:"PASS",o:"FAIL",c:"BLOCKED",s:"The repair command and local tests pass, but a required business transaction still fails. Completion Truth blocks closure and opens a recovery frontier.",rows:[["Qualification","PASS"],["Authority","AUTO"],["Execution","execution_ok=true"],["Independent verification","health=PASS, authentication=FAIL, transaction=FAIL"],["Completion Truth","Business Restored=false; Completion BLOCKED"],["Next state","RECOVER_OR_REPLAN"]]},
+authority:{t:"Scene C — Authority Violation",q:"PASS",a:"DENY",e:"NOT EXECUTED",o:"N/A",c:"BLOCKED",s:"An executor requests an out-of-policy action. The authority layer denies it before any write or deployment occurs.",rows:[["Qualification","PASS"],["Authority","DENY"],["Execution","NOT_EXECUTED"],["Independent verification","not required"],["Completion Truth","cannot close"],["Next state","REFORMULATE_OR_ESCALATE"]]},
+swap:{t:"Scene D — Capability Source Change",q:"REQUIRED",a:"WITHHELD",e:"NOT EXECUTED",o:"N/A",c:"BLOCKED",s:"A model/runtime/hardware source changes. Prior qualification is not inherited; production authority stays withheld until the new source passes the task-family gate.",rows:[["Old source","qualified_source_A"],["New source","candidate_source_B"],["Qualification","REQUIRED"],["Authority","WITHHELD_UNTIL_PASS"],["Execution","NOT_EXECUTED"],["Next state","RUN_QUALIFICATION_SUITE"]]}
+};
+function show(k){const x=scenes[k];q.textContent=x.q;a.textContent=x.a;e.textContent=x.e;o.textContent=x.o;c.textContent=x.c;title.textContent=x.t;summary.textContent=x.s;rows.innerHTML=x.rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("");}
+</script>
+</body></html>
