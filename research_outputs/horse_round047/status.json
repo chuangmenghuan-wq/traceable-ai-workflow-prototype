@@ -6,8 +6,8 @@
   "real_betting_allowed": false,
   "strategy_tuning": false,
   "ledger_rows": 20,
-  "settled_rows": 19,
-  "pending_rows": 1,
+  "settled_rows": 20,
+  "pending_rows": 0,
   "dates_observed": [
     "2026-08-12",
     "2026-08-15",
@@ -56,17 +56,17 @@
     },
     "TAS": {
       "candidates": 3,
-      "settled": 2,
-      "pending": 1,
-      "lay_wins": 1,
+      "settled": 3,
+      "pending": 0,
+      "lay_wins": 2,
       "lay_losses": 1,
-      "profit_units": -1.3699999999999999,
-      "liability_units": 4.08,
+      "profit_units": -0.43999999999999995,
+      "liability_units": 6.38,
       "first_date": "2026-08-26",
       "last_date": "2026-09-25",
-      "lay_win_rate_pct": 50.0,
-      "pot_on_lay_stake_pct": -68.5,
-      "roi_on_liability_pct": -33.57843137254902
+      "lay_win_rate_pct": 66.66666666666667,
+      "pot_on_lay_stake_pct": -14.666666666666664,
+      "roi_on_liability_pct": -6.89655172413793
     },
     "UNKNOWN": {
       "candidates": 6,
