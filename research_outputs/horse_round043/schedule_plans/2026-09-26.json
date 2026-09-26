@@ -3,7 +3,7 @@
   "capability": "HorseRacing.ScheduleAwarePreoffCapture",
   "mode": "SCHEDULE_AWARE",
   "target_date": "2026-09-26",
-  "generated_at_utc": "2026-09-26T00:42:39.527628+00:00",
+  "generated_at_utc": "2026-09-26T05:31:59.883073+00:00",
   "targets": [
     "T-30",
     "T-15",
@@ -11,7 +11,7 @@
     "T-5",
     "T-1"
   ],
-  "market_count": 89,
+  "market_count": 84,
   "markets": [
     {
       "event_id": 36107308,
@@ -346,51 +346,6 @@
     {
       "event_id": 36107379,
       "event_name": "HASTINGS",
-      "market_id": "1.262835565",
-      "market_name": "R1 2100m Hcap",
-      "scheduled_start_utc": "2026-09-26T00:35:00+00:00",
-      "scheduled_start_adelaide": "2026-09-26T10:05:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-09-26T00:05:00+00:00",
-        "T-15": "2026-09-26T00:20:00+00:00",
-        "T-10": "2026-09-26T00:25:00+00:00",
-        "T-5": "2026-09-26T00:30:00+00:00",
-        "T-1": "2026-09-26T00:34:00+00:00"
-      }
-    },
-    {
-      "event_id": 36107379,
-      "event_name": "HASTINGS",
-      "market_id": "1.262835567",
-      "market_name": "R2 1300m Hcap",
-      "scheduled_start_utc": "2026-09-26T01:10:00+00:00",
-      "scheduled_start_adelaide": "2026-09-26T10:40:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-09-26T00:40:00+00:00",
-        "T-15": "2026-09-26T00:55:00+00:00",
-        "T-10": "2026-09-26T01:00:00+00:00",
-        "T-5": "2026-09-26T01:05:00+00:00",
-        "T-1": "2026-09-26T01:09:00+00:00"
-      }
-    },
-    {
-      "event_id": 36107379,
-      "event_name": "HASTINGS",
-      "market_id": "1.262835569",
-      "market_name": "R3 1300m Hcap",
-      "scheduled_start_utc": "2026-09-26T01:45:00+00:00",
-      "scheduled_start_adelaide": "2026-09-26T11:15:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-09-26T01:15:00+00:00",
-        "T-15": "2026-09-26T01:30:00+00:00",
-        "T-10": "2026-09-26T01:35:00+00:00",
-        "T-5": "2026-09-26T01:40:00+00:00",
-        "T-1": "2026-09-26T01:44:00+00:00"
-      }
-    },
-    {
-      "event_id": 36107379,
-      "event_name": "HASTINGS",
       "market_id": "1.262835571",
       "market_name": "R4 1200m Hcap",
       "scheduled_start_utc": "2026-09-26T02:20:00+00:00",
@@ -708,6 +663,21 @@
       "event_name": "MINGENEW",
       "market_id": "1.262870066",
       "market_name": "R1 1400m Hcap",
+      "scheduled_start_utc": "2026-09-26T05:57:00+00:00",
+      "scheduled_start_adelaide": "2026-09-26T15:27:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-09-26T05:27:00+00:00",
+        "T-15": "2026-09-26T05:42:00+00:00",
+        "T-10": "2026-09-26T05:47:00+00:00",
+        "T-5": "2026-09-26T05:52:00+00:00",
+        "T-1": "2026-09-26T05:56:00+00:00"
+      }
+    },
+    {
+      "event_id": 36111101,
+      "event_name": "MINGENEW",
+      "market_id": "1.262870070",
+      "market_name": "R2 1200m Mdn",
       "scheduled_start_utc": "2026-09-26T06:32:00+00:00",
       "scheduled_start_adelaide": "2026-09-26T16:02:00+09:30",
       "capture_targets": {
@@ -721,8 +691,8 @@
     {
       "event_id": 36111101,
       "event_name": "MINGENEW",
-      "market_id": "1.262870070",
-      "market_name": "R2 1200m Mdn",
+      "market_id": "1.262870074",
+      "market_name": "R3 1200m Hcap",
       "scheduled_start_utc": "2026-09-26T07:12:00+00:00",
       "scheduled_start_adelaide": "2026-09-26T16:42:00+09:30",
       "capture_targets": {
@@ -736,23 +706,23 @@
     {
       "event_id": 36111101,
       "event_name": "MINGENEW",
-      "market_id": "1.262870074",
-      "market_name": "R3 1200m Hcap",
-      "scheduled_start_utc": "2026-09-26T07:50:00+00:00",
-      "scheduled_start_adelaide": "2026-09-26T17:20:00+09:30",
+      "market_id": "1.262870078",
+      "market_name": "R4 1200m Hcap",
+      "scheduled_start_utc": "2026-09-26T07:45:00+00:00",
+      "scheduled_start_adelaide": "2026-09-26T17:15:00+09:30",
       "capture_targets": {
-        "T-30": "2026-09-26T07:20:00+00:00",
-        "T-15": "2026-09-26T07:35:00+00:00",
-        "T-10": "2026-09-26T07:40:00+00:00",
-        "T-5": "2026-09-26T07:45:00+00:00",
-        "T-1": "2026-09-26T07:49:00+00:00"
+        "T-30": "2026-09-26T07:15:00+00:00",
+        "T-15": "2026-09-26T07:30:00+00:00",
+        "T-10": "2026-09-26T07:35:00+00:00",
+        "T-5": "2026-09-26T07:40:00+00:00",
+        "T-1": "2026-09-26T07:44:00+00:00"
       }
     },
     {
       "event_id": 36111101,
       "event_name": "MINGENEW",
-      "market_id": "1.262870078",
-      "market_name": "R4 1200m Hcap",
+      "market_id": "1.262870082",
+      "market_name": "R5 2000m Cup",
       "scheduled_start_utc": "2026-09-26T08:25:00+00:00",
       "scheduled_start_adelaide": "2026-09-26T17:55:00+09:30",
       "capture_targets": {
@@ -766,8 +736,8 @@
     {
       "event_id": 36111101,
       "event_name": "MINGENEW",
-      "market_id": "1.262870082",
-      "market_name": "R5 2000m Cup",
+      "market_id": "1.262870086",
+      "market_name": "R6 1400m Hcap",
       "scheduled_start_utc": "2026-09-26T08:55:00+00:00",
       "scheduled_start_adelaide": "2026-09-26T18:25:00+09:30",
       "capture_targets": {
@@ -776,36 +746,6 @@
         "T-10": "2026-09-26T08:45:00+00:00",
         "T-5": "2026-09-26T08:50:00+00:00",
         "T-1": "2026-09-26T08:54:00+00:00"
-      }
-    },
-    {
-      "event_id": 36111101,
-      "event_name": "MINGENEW",
-      "market_id": "1.262870086",
-      "market_name": "R6 1400m Hcap",
-      "scheduled_start_utc": "2026-09-26T09:29:00+00:00",
-      "scheduled_start_adelaide": "2026-09-26T18:59:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-09-26T08:59:00+00:00",
-        "T-15": "2026-09-26T09:14:00+00:00",
-        "T-10": "2026-09-26T09:19:00+00:00",
-        "T-5": "2026-09-26T09:24:00+00:00",
-        "T-1": "2026-09-26T09:28:00+00:00"
-      }
-    },
-    {
-      "event_id": 36106999,
-      "event_name": "MORNINGTON",
-      "market_id": "1.262829836",
-      "market_name": "R1 1500m Hcap",
-      "scheduled_start_utc": "2026-09-26T02:10:00+00:00",
-      "scheduled_start_adelaide": "2026-09-26T11:40:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-09-26T01:40:00+00:00",
-        "T-15": "2026-09-26T01:55:00+00:00",
-        "T-10": "2026-09-26T02:00:00+00:00",
-        "T-5": "2026-09-26T02:05:00+00:00",
-        "T-1": "2026-09-26T02:09:00+00:00"
       }
     },
     {
@@ -1046,21 +986,6 @@
         "T-10": "2026-09-26T07:45:00+00:00",
         "T-5": "2026-09-26T07:50:00+00:00",
         "T-1": "2026-09-26T07:54:00+00:00"
-      }
-    },
-    {
-      "event_id": 36107339,
-      "event_name": "ROSEHILL",
-      "market_id": "1.262835078",
-      "market_name": "R1 1300m Hcap",
-      "scheduled_start_utc": "2026-09-26T01:55:00+00:00",
-      "scheduled_start_adelaide": "2026-09-26T11:25:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-09-26T01:25:00+00:00",
-        "T-15": "2026-09-26T01:40:00+00:00",
-        "T-10": "2026-09-26T01:45:00+00:00",
-        "T-5": "2026-09-26T01:50:00+00:00",
-        "T-1": "2026-09-26T01:54:00+00:00"
       }
     },
     {
