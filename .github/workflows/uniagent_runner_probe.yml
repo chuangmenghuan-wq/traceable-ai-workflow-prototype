@@ -1,0 +1,12 @@
+name: UniAgent runner probe
+on:
+  push:
+    branches: [uniagent-runner-probe-20260930]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo RUNNER_OK
+          docker --version
+          python3 --version
