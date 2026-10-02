@@ -3,7 +3,7 @@
   "capability": "HorseRacing.ScheduleAwarePreoffCapture",
   "mode": "SCHEDULE_AWARE",
   "target_date": "2026-10-02",
-  "generated_at_utc": "2026-10-02T02:33:00.583326+00:00",
+  "generated_at_utc": "2026-10-02T08:56:32.595634+00:00",
   "targets": [
     "T-30",
     "T-15",
@@ -11,7 +11,7 @@
     "T-5",
     "T-1"
   ],
-  "market_count": 47,
+  "market_count": 51,
   "markets": [
     {
       "event_id": 36134078,
@@ -108,14 +108,14 @@
       "event_name": "DUBBO",
       "market_id": "1.263146515",
       "market_name": "R7 1000m Hcap",
-      "scheduled_start_utc": "2026-10-02T07:00:00+00:00",
-      "scheduled_start_adelaide": "2026-10-02T16:30:00+09:30",
+      "scheduled_start_utc": "2026-10-02T07:15:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T16:45:00+09:30",
       "capture_targets": {
-        "T-30": "2026-10-02T06:30:00+00:00",
-        "T-15": "2026-10-02T06:45:00+00:00",
-        "T-10": "2026-10-02T06:50:00+00:00",
-        "T-5": "2026-10-02T06:55:00+00:00",
-        "T-1": "2026-10-02T06:59:00+00:00"
+        "T-30": "2026-10-02T06:45:00+00:00",
+        "T-15": "2026-10-02T07:00:00+00:00",
+        "T-10": "2026-10-02T07:05:00+00:00",
+        "T-5": "2026-10-02T07:10:00+00:00",
+        "T-1": "2026-10-02T07:14:00+00:00"
       }
     },
     {
@@ -138,21 +138,6 @@
       "event_name": "LAUNCESTON",
       "market_id": "1.263149432",
       "market_name": "R1 1200m CL1",
-      "scheduled_start_utc": "2026-10-02T08:00:00+00:00",
-      "scheduled_start_adelaide": "2026-10-02T17:30:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-10-02T07:30:00+00:00",
-        "T-15": "2026-10-02T07:45:00+00:00",
-        "T-10": "2026-10-02T07:50:00+00:00",
-        "T-5": "2026-10-02T07:55:00+00:00",
-        "T-1": "2026-10-02T07:59:00+00:00"
-      }
-    },
-    {
-      "event_id": 36134661,
-      "event_name": "LAUNCESTON",
-      "market_id": "1.263149438",
-      "market_name": "R2 1100m Hcap",
       "scheduled_start_utc": "2026-10-02T08:30:00+00:00",
       "scheduled_start_adelaide": "2026-10-02T18:00:00+09:30",
       "capture_targets": {
@@ -166,8 +151,8 @@
     {
       "event_id": 36134661,
       "event_name": "LAUNCESTON",
-      "market_id": "1.263149444",
-      "market_name": "R3 1100m Mdn",
+      "market_id": "1.263149438",
+      "market_name": "R2 1100m Hcap",
       "scheduled_start_utc": "2026-10-02T09:00:00+00:00",
       "scheduled_start_adelaide": "2026-10-02T18:30:00+09:30",
       "capture_targets": {
@@ -181,8 +166,8 @@
     {
       "event_id": 36134661,
       "event_name": "LAUNCESTON",
-      "market_id": "1.263149450",
-      "market_name": "R4 1400m CL3",
+      "market_id": "1.263149444",
+      "market_name": "R3 1100m Mdn",
       "scheduled_start_utc": "2026-10-02T09:30:00+00:00",
       "scheduled_start_adelaide": "2026-10-02T19:00:00+09:30",
       "capture_targets": {
@@ -196,8 +181,8 @@
     {
       "event_id": 36134661,
       "event_name": "LAUNCESTON",
-      "market_id": "1.263149456",
-      "market_name": "R5 1400m CL1",
+      "market_id": "1.263149450",
+      "market_name": "R4 1400m CL3",
       "scheduled_start_utc": "2026-10-02T10:00:00+00:00",
       "scheduled_start_adelaide": "2026-10-02T19:30:00+09:30",
       "capture_targets": {
@@ -211,8 +196,8 @@
     {
       "event_id": 36134661,
       "event_name": "LAUNCESTON",
-      "market_id": "1.263149462",
-      "market_name": "R6 1200m Hcap",
+      "market_id": "1.263149456",
+      "market_name": "R5 1400m CL1",
       "scheduled_start_utc": "2026-10-02T10:30:00+00:00",
       "scheduled_start_adelaide": "2026-10-02T20:00:00+09:30",
       "capture_targets": {
@@ -226,8 +211,8 @@
     {
       "event_id": 36134661,
       "event_name": "LAUNCESTON",
-      "market_id": "1.263149468",
-      "market_name": "R7 2000m CL1",
+      "market_id": "1.263149462",
+      "market_name": "R6 1200m Hcap",
       "scheduled_start_utc": "2026-10-02T11:00:00+00:00",
       "scheduled_start_adelaide": "2026-10-02T20:30:00+09:30",
       "capture_targets": {
@@ -241,8 +226,8 @@
     {
       "event_id": 36134661,
       "event_name": "LAUNCESTON",
-      "market_id": "1.263149474",
-      "market_name": "R8 1600m Hcap",
+      "market_id": "1.263149468",
+      "market_name": "R7 2000m CL1",
       "scheduled_start_utc": "2026-10-02T11:30:00+00:00",
       "scheduled_start_adelaide": "2026-10-02T21:00:00+09:30",
       "capture_targets": {
@@ -251,6 +236,21 @@
         "T-10": "2026-10-02T11:20:00+00:00",
         "T-5": "2026-10-02T11:25:00+00:00",
         "T-1": "2026-10-02T11:29:00+00:00"
+      }
+    },
+    {
+      "event_id": 36134661,
+      "event_name": "LAUNCESTON",
+      "market_id": "1.263149474",
+      "market_name": "R8 1600m Hcap",
+      "scheduled_start_utc": "2026-10-02T12:00:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T21:30:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-10-02T11:30:00+00:00",
+        "T-15": "2026-10-02T11:45:00+00:00",
+        "T-10": "2026-10-02T11:50:00+00:00",
+        "T-5": "2026-10-02T11:55:00+00:00",
+        "T-1": "2026-10-02T11:59:00+00:00"
       }
     },
     {
@@ -371,6 +371,126 @@
         "T-10": "2026-10-02T07:10:00+00:00",
         "T-5": "2026-10-02T07:15:00+00:00",
         "T-1": "2026-10-02T07:19:00+00:00"
+      }
+    },
+    {
+      "event_id": 36141499,
+      "event_name": "PAKENHAM",
+      "market_id": "1.263220575",
+      "market_name": "R1 1200m Mdn",
+      "scheduled_start_utc": "2026-10-02T08:15:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T17:45:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-10-02T07:45:00+00:00",
+        "T-15": "2026-10-02T08:00:00+00:00",
+        "T-10": "2026-10-02T08:05:00+00:00",
+        "T-5": "2026-10-02T08:10:00+00:00",
+        "T-1": "2026-10-02T08:14:00+00:00"
+      }
+    },
+    {
+      "event_id": 36141499,
+      "event_name": "PAKENHAM",
+      "market_id": "1.263220584",
+      "market_name": "R2 1000m 3yo",
+      "scheduled_start_utc": "2026-10-02T08:45:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T18:15:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-10-02T08:15:00+00:00",
+        "T-15": "2026-10-02T08:30:00+00:00",
+        "T-10": "2026-10-02T08:35:00+00:00",
+        "T-5": "2026-10-02T08:40:00+00:00",
+        "T-1": "2026-10-02T08:44:00+00:00"
+      }
+    },
+    {
+      "event_id": 36141499,
+      "event_name": "PAKENHAM",
+      "market_id": "1.263220593",
+      "market_name": "R3 1600m Hcap",
+      "scheduled_start_utc": "2026-10-02T09:15:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T18:45:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-10-02T08:45:00+00:00",
+        "T-15": "2026-10-02T09:00:00+00:00",
+        "T-10": "2026-10-02T09:05:00+00:00",
+        "T-5": "2026-10-02T09:10:00+00:00",
+        "T-1": "2026-10-02T09:14:00+00:00"
+      }
+    },
+    {
+      "event_id": 36141499,
+      "event_name": "PAKENHAM",
+      "market_id": "1.263220602",
+      "market_name": "R4 1000m Hcap",
+      "scheduled_start_utc": "2026-10-02T09:45:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T19:15:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-10-02T09:15:00+00:00",
+        "T-15": "2026-10-02T09:30:00+00:00",
+        "T-10": "2026-10-02T09:35:00+00:00",
+        "T-5": "2026-10-02T09:40:00+00:00",
+        "T-1": "2026-10-02T09:44:00+00:00"
+      }
+    },
+    {
+      "event_id": 36141499,
+      "event_name": "PAKENHAM",
+      "market_id": "1.263220611",
+      "market_name": "R5 1000m Hcap",
+      "scheduled_start_utc": "2026-10-02T10:15:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T19:45:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-10-02T09:45:00+00:00",
+        "T-15": "2026-10-02T10:00:00+00:00",
+        "T-10": "2026-10-02T10:05:00+00:00",
+        "T-5": "2026-10-02T10:10:00+00:00",
+        "T-1": "2026-10-02T10:14:00+00:00"
+      }
+    },
+    {
+      "event_id": 36141499,
+      "event_name": "PAKENHAM",
+      "market_id": "1.263220620",
+      "market_name": "R6 2200m Hcap",
+      "scheduled_start_utc": "2026-10-02T10:45:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T20:15:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-10-02T10:15:00+00:00",
+        "T-15": "2026-10-02T10:30:00+00:00",
+        "T-10": "2026-10-02T10:35:00+00:00",
+        "T-5": "2026-10-02T10:40:00+00:00",
+        "T-1": "2026-10-02T10:44:00+00:00"
+      }
+    },
+    {
+      "event_id": 36141499,
+      "event_name": "PAKENHAM",
+      "market_id": "1.263220629",
+      "market_name": "R7 1400m Hcap",
+      "scheduled_start_utc": "2026-10-02T11:15:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T20:45:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-10-02T10:45:00+00:00",
+        "T-15": "2026-10-02T11:00:00+00:00",
+        "T-10": "2026-10-02T11:05:00+00:00",
+        "T-5": "2026-10-02T11:10:00+00:00",
+        "T-1": "2026-10-02T11:14:00+00:00"
+      }
+    },
+    {
+      "event_id": 36141499,
+      "event_name": "PAKENHAM",
+      "market_id": "1.263220638",
+      "market_name": "R8 1200m Hcap",
+      "scheduled_start_utc": "2026-10-02T11:45:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T21:15:00+09:30",
+      "capture_targets": {
+        "T-30": "2026-10-02T11:15:00+00:00",
+        "T-15": "2026-10-02T11:30:00+00:00",
+        "T-10": "2026-10-02T11:35:00+00:00",
+        "T-5": "2026-10-02T11:40:00+00:00",
+        "T-1": "2026-10-02T11:44:00+00:00"
       }
     },
     {
@@ -601,66 +721,6 @@
     {
       "event_id": 36134729,
       "event_name": "WINGATUI",
-      "market_id": "1.263150768",
-      "market_name": "R1 2200m Hcap",
-      "scheduled_start_utc": "2026-10-02T00:33:00+00:00",
-      "scheduled_start_adelaide": "2026-10-02T10:03:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-10-02T00:03:00+00:00",
-        "T-15": "2026-10-02T00:18:00+00:00",
-        "T-10": "2026-10-02T00:23:00+00:00",
-        "T-5": "2026-10-02T00:28:00+00:00",
-        "T-1": "2026-10-02T00:32:00+00:00"
-      }
-    },
-    {
-      "event_id": 36134729,
-      "event_name": "WINGATUI",
-      "market_id": "1.263150770",
-      "market_name": "R2 1200m Mdn",
-      "scheduled_start_utc": "2026-10-02T01:06:00+00:00",
-      "scheduled_start_adelaide": "2026-10-02T10:36:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-10-02T00:36:00+00:00",
-        "T-15": "2026-10-02T00:51:00+00:00",
-        "T-10": "2026-10-02T00:56:00+00:00",
-        "T-5": "2026-10-02T01:01:00+00:00",
-        "T-1": "2026-10-02T01:05:00+00:00"
-      }
-    },
-    {
-      "event_id": 36134729,
-      "event_name": "WINGATUI",
-      "market_id": "1.263150772",
-      "market_name": "R3 1400m Mdn",
-      "scheduled_start_utc": "2026-10-02T01:44:00+00:00",
-      "scheduled_start_adelaide": "2026-10-02T11:14:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-10-02T01:14:00+00:00",
-        "T-15": "2026-10-02T01:29:00+00:00",
-        "T-10": "2026-10-02T01:34:00+00:00",
-        "T-5": "2026-10-02T01:39:00+00:00",
-        "T-1": "2026-10-02T01:43:00+00:00"
-      }
-    },
-    {
-      "event_id": 36134729,
-      "event_name": "WINGATUI",
-      "market_id": "1.263150774",
-      "market_name": "R4 1600m Hcap",
-      "scheduled_start_utc": "2026-10-02T02:20:00+00:00",
-      "scheduled_start_adelaide": "2026-10-02T11:50:00+09:30",
-      "capture_targets": {
-        "T-30": "2026-10-02T01:50:00+00:00",
-        "T-15": "2026-10-02T02:05:00+00:00",
-        "T-10": "2026-10-02T02:10:00+00:00",
-        "T-5": "2026-10-02T02:15:00+00:00",
-        "T-1": "2026-10-02T02:19:00+00:00"
-      }
-    },
-    {
-      "event_id": 36134729,
-      "event_name": "WINGATUI",
       "market_id": "1.263150776",
       "market_name": "R5 1400m Hcap",
       "scheduled_start_utc": "2026-10-02T02:53:00+00:00",
@@ -708,14 +768,14 @@
       "event_name": "WINGATUI",
       "market_id": "1.263150782",
       "market_name": "R8 1200m Hcap",
-      "scheduled_start_utc": "2026-10-02T04:32:00+00:00",
-      "scheduled_start_adelaide": "2026-10-02T14:02:00+09:30",
+      "scheduled_start_utc": "2026-10-02T04:33:00+00:00",
+      "scheduled_start_adelaide": "2026-10-02T14:03:00+09:30",
       "capture_targets": {
-        "T-30": "2026-10-02T04:02:00+00:00",
-        "T-15": "2026-10-02T04:17:00+00:00",
-        "T-10": "2026-10-02T04:22:00+00:00",
-        "T-5": "2026-10-02T04:27:00+00:00",
-        "T-1": "2026-10-02T04:31:00+00:00"
+        "T-30": "2026-10-02T04:03:00+00:00",
+        "T-15": "2026-10-02T04:18:00+00:00",
+        "T-10": "2026-10-02T04:23:00+00:00",
+        "T-5": "2026-10-02T04:28:00+00:00",
+        "T-1": "2026-10-02T04:32:00+00:00"
       }
     }
   ],
