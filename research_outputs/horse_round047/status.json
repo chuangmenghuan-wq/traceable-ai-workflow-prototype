@@ -5,9 +5,9 @@
   "paper_only": true,
   "real_betting_allowed": false,
   "strategy_tuning": false,
-  "ledger_rows": 21,
+  "ledger_rows": 22,
   "settled_rows": 21,
-  "pending_rows": 0,
+  "pending_rows": 1,
   "dates_observed": [
     "2026-08-12",
     "2026-08-15",
@@ -24,7 +24,8 @@
     "2026-09-19",
     "2026-09-21",
     "2026-09-25",
-    "2026-09-30"
+    "2026-09-30",
+    "2026-10-04"
   ],
   "per_state": {
     "NSW": {
@@ -98,15 +99,15 @@
       "roi_on_liability_pct": 17.857142857142858
     },
     "WA": {
-      "candidates": 2,
+      "candidates": 3,
       "settled": 2,
-      "pending": 0,
+      "pending": 1,
       "lay_wins": 1,
       "lay_losses": 1,
       "profit_units": -0.95,
       "liability_units": 3.98,
       "first_date": "2026-08-12",
-      "last_date": "2026-08-20",
+      "last_date": "2026-10-04",
       "lay_win_rate_pct": 50.0,
       "pot_on_lay_stake_pct": -47.5,
       "roi_on_liability_pct": -23.86934673366834
