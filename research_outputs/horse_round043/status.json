@@ -4,7 +4,7 @@
   "status": "VALIDATED",
   "capture_mode": "SCHEDULE_AWARE_DAILY_ROLLOVER",
   "active_date": "2026-10-05",
-  "last_run_utc": "2026-10-05T05:33:35.534768+00:00",
+  "last_run_utc": "2026-10-05T12:31:59.926231+00:00",
   "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-10-05.json",
   "target_offsets_minutes": [
     30,
