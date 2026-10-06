@@ -1,0 +1,107 @@
+name: Agenthon T2 T3 T4 public images
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/agenthon-t234-public.yml]
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  t2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build push verify T2
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://github.com/Agenthon-2026/track2-forecasting-public.git src
+          cat > src/Dockerfile.fa <<'EOF'
+          FROM python:3.13-slim-bookworm
+          LABEL qfbench2.interface_version="2.0"
+          LABEL qfbench2.track="forecasting"
+          LABEL org.opencontainers.image.source="https://github.com/chuangmenghuan-wq/traceable-ai-workflow-prototype"
+          ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 HOME=/tmp XDG_CACHE_HOME=/tmp MPLCONFIGDIR=/tmp MODEL_THINKING=off MODEL_MAX_TOKENS=3000
+          RUN pip install --no-cache-dir "numpy==2.1.3" "pandas==2.2.3" "pyarrow==18.1.0" "jsonschema==4.23.0" "qfbench2-common @ https://github.com/Agenthon-2026/Agenthon2026-public/archive/refs/tags/v2.4.4.tar.gz#subdirectory=common"
+          WORKDIR /work
+          COPY qfbench2_track_forecasting /opt/qfbench2_track_forecasting
+          COPY baselines /opt/baselines
+          ENV PYTHONPATH=/opt
+          RUN printf '#!/bin/sh\nexec python3 -m baselines.reasoning_agent --card /input/card.toml "$@"\n' > /usr/local/bin/forecast && chmod +x /usr/local/bin/forecast && useradd --create-home --uid 1000 runner
+          USER runner
+          CMD ["forecast","--help"]
+          EOF
+          IMG=ghcr.io/chuangmenghuan-wq/agenthon-2026-t2-v1:dev-20261006
+          docker buildx build --platform linux/amd64 -f src/Dockerfile.fa -t "$IMG" --push src
+          DIGEST=$(docker buildx imagetools inspect "$IMG" --format '{{.Manifest.Digest}}')
+          echo "T2_REF=ghcr.io/chuangmenghuan-wq/agenthon-2026-t2-v1@$DIGEST"
+          docker logout ghcr.io || true
+          docker pull "ghcr.io/chuangmenghuan-wq/agenthon-2026-t2-v1@$DIGEST"
+          docker inspect "ghcr.io/chuangmenghuan-wq/agenthon-2026-t2-v1@$DIGEST" --format 'VERIFY={{.Os}}/{{.Architecture}} LABEL={{index .Config.Labels "qfbench2.interface_version"}}'
+          echo "T2_ANON_PULL=PASS"
+
+  t4:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build push verify T4
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://github.com/Agenthon-2026/track4-analysis-public.git src
+          cat > src/Dockerfile.fa <<'EOF'
+          FROM python:3.13-slim-bookworm
+          LABEL qfbench2.interface_version="2.0"
+          LABEL qfbench2.track="analysis"
+          LABEL org.opencontainers.image.source="https://github.com/chuangmenghuan-wq/traceable-ai-workflow-prototype"
+          ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 HOME=/tmp XDG_CACHE_HOME=/tmp T4_MODEL_RETRIES=0 T4_TOP_K=10
+          WORKDIR /app
+          COPY baselines /app/baselines
+          ENV PYTHONPATH=/app
+          RUN printf '#!/bin/sh\nexec python3 -m baselines.strong_rag_baseline.cli "$@"\n' > /usr/local/bin/analyze && chmod +x /usr/local/bin/analyze && useradd --create-home --uid 1000 runner
+          USER runner
+          CMD ["analyze","--help"]
+          EOF
+          IMG=ghcr.io/chuangmenghuan-wq/agenthon-2026-t4-v1:dev-20261006
+          docker buildx build --platform linux/amd64 -f src/Dockerfile.fa -t "$IMG" --push src
+          DIGEST=$(docker buildx imagetools inspect "$IMG" --format '{{.Manifest.Digest}}')
+          echo "T4_REF=ghcr.io/chuangmenghuan-wq/agenthon-2026-t4-v1@$DIGEST"
+          docker logout ghcr.io || true
+          docker pull "ghcr.io/chuangmenghuan-wq/agenthon-2026-t4-v1@$DIGEST"
+          docker inspect "ghcr.io/chuangmenghuan-wq/agenthon-2026-t4-v1@$DIGEST" --format 'VERIFY={{.Os}}/{{.Architecture}} LABEL={{index .Config.Labels "qfbench2.interface_version"}}'
+          echo "T4_ANON_PULL=PASS"
+
+  t3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build push verify T3
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://github.com/Agenthon-2026/track3-simulation-public.git src
+          IMG=ghcr.io/chuangmenghuan-wq/agenthon-2026-t3-v1:dev-20261006
+          docker buildx build --platform linux/amd64 --label org.opencontainers.image.source=https://github.com/chuangmenghuan-wq/traceable-ai-workflow-prototype -f src/baselines/Dockerfile -t "$IMG" --push src/baselines
+          DIGEST=$(docker buildx imagetools inspect "$IMG" --format '{{.Manifest.Digest}}')
+          echo "T3_REF=ghcr.io/chuangmenghuan-wq/agenthon-2026-t3-v1@$DIGEST"
+          docker logout ghcr.io || true
+          docker pull "ghcr.io/chuangmenghuan-wq/agenthon-2026-t3-v1@$DIGEST"
+          docker inspect "ghcr.io/chuangmenghuan-wq/agenthon-2026-t3-v1@$DIGEST" --format 'VERIFY={{.Os}}/{{.Architecture}} LABEL={{index .Config.Labels "qfbench2.interface_version"}}'
+          echo "T3_ANON_PULL=PASS"
