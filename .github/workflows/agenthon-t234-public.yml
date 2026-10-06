@@ -105,3 +105,4 @@ jobs:
           docker pull "ghcr.io/chuangmenghuan-wq/agenthon-2026-t3-v1@$DIGEST"
           docker inspect "ghcr.io/chuangmenghuan-wq/agenthon-2026-t3-v1@$DIGEST" --format 'VERIFY={{.Os}}/{{.Architecture}} LABEL={{index .Config.Labels "qfbench2.interface_version"}}'
           echo "T3_ANON_PULL=PASS"
+# refresh: 2026-10-06 multi-track v1 current official heads
