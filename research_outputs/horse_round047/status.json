@@ -5,8 +5,8 @@
   "paper_only": true,
   "real_betting_allowed": false,
   "strategy_tuning": false,
-  "ledger_rows": 24,
-  "settled_rows": 24,
+  "ledger_rows": 26,
+  "settled_rows": 26,
   "pending_rows": 0,
   "dates_observed": [
     "2026-08-12",
@@ -27,7 +27,8 @@
     "2026-09-30",
     "2026-10-04",
     "2026-10-05",
-    "2026-10-08"
+    "2026-10-08",
+    "2026-10-15"
   ],
   "per_state": {
     "NSW": {
@@ -87,32 +88,32 @@
       "roi_on_liability_pct": -3.4009156311314586
     },
     "VIC": {
-      "candidates": 8,
-      "settled": 8,
+      "candidates": 9,
+      "settled": 9,
       "pending": 0,
-      "lay_wins": 7,
+      "lay_wins": 8,
       "lay_losses": 1,
-      "profit_units": 4.01,
-      "liability_units": 17.04,
+      "profit_units": 4.9399999999999995,
+      "liability_units": 19.29,
       "first_date": "2026-08-16",
-      "last_date": "2026-10-08",
-      "lay_win_rate_pct": 87.5,
-      "pot_on_lay_stake_pct": 50.125,
-      "roi_on_liability_pct": 23.53286384976526
+      "last_date": "2026-10-15",
+      "lay_win_rate_pct": 88.88888888888889,
+      "pot_on_lay_stake_pct": 54.888888888888886,
+      "roi_on_liability_pct": 25.609123898392948
     },
     "WA": {
-      "candidates": 3,
-      "settled": 3,
+      "candidates": 4,
+      "settled": 4,
       "pending": 0,
       "lay_wins": 2,
-      "lay_losses": 1,
-      "profit_units": -0.020000000000000018,
-      "liability_units": 6.18,
+      "lay_losses": 2,
+      "profit_units": -1.54,
+      "liability_units": 7.699999999999999,
       "first_date": "2026-08-12",
-      "last_date": "2026-10-04",
-      "lay_win_rate_pct": 66.66666666666667,
-      "pot_on_lay_stake_pct": -0.6666666666666673,
-      "roi_on_liability_pct": -0.323624595469256
+      "last_date": "2026-10-15",
+      "lay_win_rate_pct": 50.0,
+      "pot_on_lay_stake_pct": -38.5,
+      "roi_on_liability_pct": -20.000000000000004
     }
   },
   "governance": {
