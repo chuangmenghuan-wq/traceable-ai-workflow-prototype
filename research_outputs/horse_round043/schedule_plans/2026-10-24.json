@@ -3,7 +3,7 @@
   "capability": "HorseRacing.ScheduleAwarePreoffCapture",
   "mode": "SCHEDULE_AWARE",
   "target_date": "2026-10-24",
-  "generated_at_utc": "2026-10-23T23:25:39.168627+00:00",
+  "generated_at_utc": "2026-10-24T01:47:01.818985+00:00",
   "targets": [
     "T-30",
     "T-15",
@@ -378,14 +378,14 @@
       "event_name": "DARWIN",
       "market_id": "1.264365261",
       "market_name": "R2 1200m Hcap",
-      "scheduled_start_utc": "2026-10-24T05:27:00+00:00",
-      "scheduled_start_adelaide": "2026-10-24T15:57:00+10:30",
+      "scheduled_start_utc": "2026-10-24T05:29:00+00:00",
+      "scheduled_start_adelaide": "2026-10-24T15:59:00+10:30",
       "capture_targets": {
-        "T-30": "2026-10-24T04:57:00+00:00",
-        "T-15": "2026-10-24T05:12:00+00:00",
-        "T-10": "2026-10-24T05:17:00+00:00",
-        "T-5": "2026-10-24T05:22:00+00:00",
-        "T-1": "2026-10-24T05:26:00+00:00"
+        "T-30": "2026-10-24T04:59:00+00:00",
+        "T-15": "2026-10-24T05:14:00+00:00",
+        "T-10": "2026-10-24T05:19:00+00:00",
+        "T-5": "2026-10-24T05:24:00+00:00",
+        "T-1": "2026-10-24T05:28:00+00:00"
       }
     },
     {
@@ -393,14 +393,14 @@
       "event_name": "DARWIN",
       "market_id": "1.264365264",
       "market_name": "R3 1200m Hcap",
-      "scheduled_start_utc": "2026-10-24T06:17:00+00:00",
-      "scheduled_start_adelaide": "2026-10-24T16:47:00+10:30",
+      "scheduled_start_utc": "2026-10-24T06:19:00+00:00",
+      "scheduled_start_adelaide": "2026-10-24T16:49:00+10:30",
       "capture_targets": {
-        "T-30": "2026-10-24T05:47:00+00:00",
-        "T-15": "2026-10-24T06:02:00+00:00",
-        "T-10": "2026-10-24T06:07:00+00:00",
-        "T-5": "2026-10-24T06:12:00+00:00",
-        "T-1": "2026-10-24T06:16:00+00:00"
+        "T-30": "2026-10-24T05:49:00+00:00",
+        "T-15": "2026-10-24T06:04:00+00:00",
+        "T-10": "2026-10-24T06:09:00+00:00",
+        "T-5": "2026-10-24T06:14:00+00:00",
+        "T-1": "2026-10-24T06:18:00+00:00"
       }
     },
     {
@@ -1173,21 +1173,6 @@
       "event_name": "MORPHETTVILLE",
       "market_id": "1.264269861",
       "market_name": "R1 1050m Mdn",
-      "scheduled_start_utc": "2026-10-24T01:37:00+00:00",
-      "scheduled_start_adelaide": "2026-10-24T12:07:00+10:30",
-      "capture_targets": {
-        "T-30": "2026-10-24T01:07:00+00:00",
-        "T-15": "2026-10-24T01:22:00+00:00",
-        "T-10": "2026-10-24T01:27:00+00:00",
-        "T-5": "2026-10-24T01:32:00+00:00",
-        "T-1": "2026-10-24T01:36:00+00:00"
-      }
-    },
-    {
-      "event_id": 36220157,
-      "event_name": "MORPHETTVILLE",
-      "market_id": "1.264269870",
-      "market_name": "R2 1200m CL2",
       "scheduled_start_utc": "2026-10-24T02:12:00+00:00",
       "scheduled_start_adelaide": "2026-10-24T12:42:00+10:30",
       "capture_targets": {
@@ -1201,8 +1186,8 @@
     {
       "event_id": 36220157,
       "event_name": "MORPHETTVILLE",
-      "market_id": "1.264269879",
-      "market_name": "R3 1050m Hcap",
+      "market_id": "1.264269870",
+      "market_name": "R2 1200m CL2",
       "scheduled_start_utc": "2026-10-24T02:52:00+00:00",
       "scheduled_start_adelaide": "2026-10-24T13:22:00+10:30",
       "capture_targets": {
@@ -1216,8 +1201,8 @@
     {
       "event_id": 36220157,
       "event_name": "MORPHETTVILLE",
-      "market_id": "1.264269888",
-      "market_name": "R4 1500m CL1",
+      "market_id": "1.264269879",
+      "market_name": "R3 1050m Hcap",
       "scheduled_start_utc": "2026-10-24T03:32:00+00:00",
       "scheduled_start_adelaide": "2026-10-24T14:02:00+10:30",
       "capture_targets": {
@@ -1231,8 +1216,8 @@
     {
       "event_id": 36220157,
       "event_name": "MORPHETTVILLE",
-      "market_id": "1.264269897",
-      "market_name": "R5 1200m Hcap",
+      "market_id": "1.264269888",
+      "market_name": "R4 1500m CL1",
       "scheduled_start_utc": "2026-10-24T04:12:00+00:00",
       "scheduled_start_adelaide": "2026-10-24T14:42:00+10:30",
       "capture_targets": {
@@ -1246,8 +1231,8 @@
     {
       "event_id": 36220157,
       "event_name": "MORPHETTVILLE",
-      "market_id": "1.264269906",
-      "market_name": "R6 1800m Hcap",
+      "market_id": "1.264269897",
+      "market_name": "R5 1200m Hcap",
       "scheduled_start_utc": "2026-10-24T04:52:00+00:00",
       "scheduled_start_adelaide": "2026-10-24T15:22:00+10:30",
       "capture_targets": {
@@ -1261,8 +1246,8 @@
     {
       "event_id": 36220157,
       "event_name": "MORPHETTVILLE",
-      "market_id": "1.264269915",
-      "market_name": "R7 2000m Hcap",
+      "market_id": "1.264269906",
+      "market_name": "R6 1800m Hcap",
       "scheduled_start_utc": "2026-10-24T05:34:00+00:00",
       "scheduled_start_adelaide": "2026-10-24T16:04:00+10:30",
       "capture_targets": {
@@ -1276,8 +1261,8 @@
     {
       "event_id": 36220157,
       "event_name": "MORPHETTVILLE",
-      "market_id": "1.264269924",
-      "market_name": "R8 1200m Hcap",
+      "market_id": "1.264269915",
+      "market_name": "R7 2000m Hcap",
       "scheduled_start_utc": "2026-10-24T06:24:00+00:00",
       "scheduled_start_adelaide": "2026-10-24T16:54:00+10:30",
       "capture_targets": {
@@ -1291,8 +1276,8 @@
     {
       "event_id": 36220157,
       "event_name": "MORPHETTVILLE",
-      "market_id": "1.264269933",
-      "market_name": "R9 1600m Hcap",
+      "market_id": "1.264269924",
+      "market_name": "R8 1200m Hcap",
       "scheduled_start_utc": "2026-10-24T07:11:00+00:00",
       "scheduled_start_adelaide": "2026-10-24T17:41:00+10:30",
       "capture_targets": {
@@ -1301,6 +1286,21 @@
         "T-10": "2026-10-24T07:01:00+00:00",
         "T-5": "2026-10-24T07:06:00+00:00",
         "T-1": "2026-10-24T07:10:00+00:00"
+      }
+    },
+    {
+      "event_id": 36220157,
+      "event_name": "MORPHETTVILLE",
+      "market_id": "1.264269933",
+      "market_name": "R9 1600m Hcap",
+      "scheduled_start_utc": "2026-10-24T07:41:00+00:00",
+      "scheduled_start_adelaide": "2026-10-24T18:11:00+10:30",
+      "capture_targets": {
+        "T-30": "2026-10-24T07:11:00+00:00",
+        "T-15": "2026-10-24T07:26:00+00:00",
+        "T-10": "2026-10-24T07:31:00+00:00",
+        "T-5": "2026-10-24T07:36:00+00:00",
+        "T-1": "2026-10-24T07:40:00+00:00"
       }
     },
     {
