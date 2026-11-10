@@ -1,5 +1,5 @@
 {
-  "active_date": "2026-11-09",
+  "active_date": "2026-11-10",
   "capability": "HorseRacing.StateParallelPaperValidator",
   "commission_reference": 0.07,
   "evaluated_markets_total": 2,
@@ -14,7 +14,7 @@
   "model_rank": 2,
   "next_gate": "settle each state independently; compare forward hit-rate/POT and only then consider state-specific promotion",
   "per_state": {
-    "UNKNOWN": {
+    "VIC": {
       "candidate_selection_ids": [],
       "evaluated_markets": 2,
       "lane": "PARALLEL_EXPLORATORY",
@@ -26,9 +26,6 @@
   "rule": "all mapped states \u00d7 model_rank_2 \u00d7 (1/ratedPrice - 1/layPrice) < -0.07",
   "snapshot_records_considered": 2,
   "status": "PARALLEL_PAPER_EVALUATED",
-  "unknown_venues": [
-    "LISMORE",
-    "MOUNT ISA"
-  ],
+  "unknown_venues": [],
   "value_threshold": -0.07
 }
