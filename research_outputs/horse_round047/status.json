@@ -6,8 +6,8 @@
   "real_betting_allowed": false,
   "strategy_tuning": false,
   "ledger_rows": 33,
-  "settled_rows": 32,
-  "pending_rows": 1,
+  "settled_rows": 33,
+  "pending_rows": 0,
   "dates_observed": [
     "2026-08-12",
     "2026-08-15",
@@ -109,17 +109,17 @@
     },
     "VIC": {
       "candidates": 12,
-      "settled": 11,
-      "pending": 1,
-      "lay_wins": 10,
+      "settled": 12,
+      "pending": 0,
+      "lay_wins": 11,
       "lay_losses": 1,
-      "profit_units": 6.799999999999999,
-      "liability_units": 24.39,
+      "profit_units": 7.729999999999999,
+      "liability_units": 26.79,
       "first_date": "2026-08-16",
       "last_date": "2026-11-17",
-      "lay_win_rate_pct": 90.9090909090909,
-      "pot_on_lay_stake_pct": 61.818181818181806,
-      "roi_on_liability_pct": 27.880278802788023
+      "lay_win_rate_pct": 91.66666666666667,
+      "pot_on_lay_stake_pct": 64.41666666666666,
+      "roi_on_liability_pct": 28.854050018663678
     },
     "WA": {
       "candidates": 4,
