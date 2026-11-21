@@ -3,9 +3,9 @@
   "capability": "HorseRacing.ScheduleAwarePreoffCapture",
   "status": "VALIDATED",
   "capture_mode": "SCHEDULE_AWARE_DAILY_ROLLOVER",
-  "active_date": "2026-11-20",
-  "last_run_utc": "2026-11-20T13:18:11.709754+00:00",
-  "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-11-20.json",
+  "active_date": "2026-11-21",
+  "last_run_utc": "2026-11-21T02:31:58.177142+00:00",
+  "schedule_plan": "research_outputs/horse_round043/schedule_plans/2026-11-21.json",
   "target_offsets_minutes": [
     30,
     15,
@@ -14,22 +14,25 @@
     1
   ],
   "today": {
-    "snapshot_count": 2,
-    "captured_market_count": 2,
+    "snapshot_count": 10,
+    "captured_market_count": 7,
     "target_capture_counts": {
-      "T-10": 1,
-      "T-5": 1
+      "T-1": 1,
+      "T-10": 2,
+      "T-15": 2,
+      "T-30": 2,
+      "T-5": 3
     }
   },
   "cumulative": {
-    "snapshot_count": 1077,
-    "captured_market_count": 795,
+    "snapshot_count": 1087,
+    "captured_market_count": 802,
     "target_capture_counts": {
-      "T-1": 184,
-      "T-10": 236,
-      "T-15": 221,
-      "T-30": 216,
-      "T-5": 220
+      "T-1": 185,
+      "T-10": 238,
+      "T-15": 223,
+      "T-30": 218,
+      "T-5": 223
     },
     "live_model_price_seen": true,
     "fifteen_min_price_seen": true
